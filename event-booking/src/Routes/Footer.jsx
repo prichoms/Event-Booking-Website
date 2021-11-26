@@ -4,31 +4,11 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <div>
-            {/* <span>Home</span> */}
-            <div className={styles.privacy_policy}>
-                <div>Privacy Note</div>
-                <div>
-                    By
-                    using www.bookmyshow.com(our website), you are fully accepting the
-                    Privacy Policy available at  governing your access to Bookmyshow
-                    and provision of services by Bookmyshow to you. If you do not accept
-                    terms mentioned in the <a href="/privacy">Privacy Policy</a>,
-                    ou must not share any of your personal information and immediately
-                    exit Bookmyshow.</div>
-            </div>
-            <div className={styles.part1}>
-                <div>
-                    <div style={{ fontSize: '20px', marginRight: '30px' }}>List your show</div>
 
-                    <div>Got a show, event, activity or a great experience? Partner
-                    with us &amp; get listed on BookMyShow
-                    </div>
-                </div>
-                <div className={styles.contact_button}>
-                    <button>Contact Today!</button>
-                </div>
-            </div>
+
+
             <div className={styles.part2}>
+
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 102 102" id="icon-callcenter" width="100%" height="100%"><path d="M68.8 29.4c0-10.4-8.4-18.8-18.8-18.8S31.2 19 31.2 29.4 39.6 48.2 50 48.2s18.8-8.4 18.8-18.8zm-35.8 0c0-9.3 7.6-17 17-17 9.3 0 17 7.6 17 17 0 9.3-7.6 17-17 17-9.3 0-17-7.6-17-17z"></path><path d="M24 30.3c.5 0 .9-.4.9-.9C24.9 15.6 36.2 4.3 50 4.3s25.1 11.3 25.1 25.1c0 13.1-10.5 28.3-24.2 29v-3.9c0-.5-.4-.9-.9-.9s-.9.4-.9.9v8.6c0 .5.4.9.9.9s.9-.4.9-.9v-2.9c14.7-.7 26-16.8 26-30.8C76.9 14.6 64.8 2.5 50 2.5S23.1 14.6 23.1 29.4c0 .5.4.9.9.9z"></path><path d="M68.1 63c-.6-.2-1.2-.3-1.9-.3-.9 0-2.3.7-4.9 2.1-3.2 1.7-7.7 4-10.6 4-3.2 0-8-2.3-11.5-4-2.8-1.3-4.3-2-5.3-2-.7 0-1.3.1-1.9.3C16.7 68.2 11.2 86 11.2 96.7c0 .5.4.9.9.9H88c.5 0 .9-.4.9-.9 0-10.8-5.6-28.6-20.8-33.7zM13 95.7c.3-12.1 7.2-26.8 19.6-30.9.4-.1.8-.2 1.3-.2.6 0 2.7 1 4.5 1.9 3.9 1.9 8.7 4.2 12.3 4.2 3.3 0 7.8-2.3 11.4-4.2 1.6-.8 3.6-1.9 4.1-1.9s.9.1 1.3.2C79.9 68.9 86.7 83.6 87 95.7H13zm3.6-55.3c.5 0 .9-.4.9-.9V26.3c0-.5-.4-.9-.9-.9s-.9.4-.9.9v13.2c0 .5.4.9.9.9zm66.8 0c.5 0 .9-.4.9-.9V26.3c0-.5-.4-.9-.9-.9s-.9.4-.9.9v13.2c-.1.5.4.9.9.9z"></path></svg>
                     <div>24 x 7 Customer care</div>
@@ -41,203 +21,10 @@ const Footer = () => {
                     <svg xmlns="http://www.w3.org/2000/svg" id="icon-newsletter" viewBox="-1 -1 102 102" width="100%" height="100%"><g id="elnewsletter"><path class="elst0" d="M97.5 90.3V33.6c0-.5-.4-1-1-1H82.9V9.8c0-.5-.4-1-1-1H18.1a1 1 0 0 0-1 1v22.8H3.5a1 1 0 0 0-1 1v56.9c0 .1.1.1.1.2v.1c0 .1.1.1.2.1.1.1.2.1.2.1.1 0 .1 0 .2.1h93.4c.1 0 .3 0 .4-.1 0 0 .1 0 .1-.1.1-.1.2-.1.2-.2v-.1c0-.1.1-.1.1-.2.1 0 .1 0 .1-.1zm-1.9-55.7v53.6L63.9 64.1l18.6-17.7 7.7-7.4c.3-.3.4-.7.2-1.1-.1-.4-.5-.6-.9-.6h-6.8v-2.7h12.9zM50.2 56.1l43.4 33.1H6.4l43.8-33.1zm32.7-16.8h4.4l-4.4 4.1v-4.1zM19.1 10.8h61.8v34.5L62.4 62.9l-11.6-8.8c-.3-.3-.8-.3-1.2 0L37.8 63 19.1 45.3V10.8zm-2 32.6l-4.4-4.1h4.4v4.1zm0-8.8v2.7h-6.8c-.4 0-.8.2-.9.6-.1.4-.1.8.2 1.1l26.5 25.2-31.8 24V34.6h12.8z"></path><path class="elst0" d="M28.9 22.5h42.7a1 1 0 0 0 0-2H28.9c-.5 0-1 .4-1 1s.4 1 1 1zm0 10h42.7a1 1 0 0 0 0-2H28.9a1 1 0 0 0 0 2zm0 9.9h42.7a1 1 0 0 0 0-2H28.9c-.5 0-1 .4-1 1s.4 1 1 1z"></path></g></svg>
                     <div>Subscribe to newsletter</div>
                 </div>
-            </div>
-            <div className={styles.part3}>
                 <div>
-                    <div>Movies playing in Chandigarh</div>
-                    <div className={styles.movies}>
-                        <Link to="/movies/roohi/ET00099813" className={styles.link}>Roohi</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/roberrt-telugu/ET00307859" className={styles.link}>Roberrt</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/srikaaram-sreekaram/ET00106100" className={styles.link}>Srikaaram (Sreekaram)</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/jathi-ratnalu/ET00305719" className={styles.link}>Jathi Ratnalu</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/nenjam-marappathillai/ET00043136" className={styles.link}>Nenjam Marappathillai</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/gaali-sampath/ET00307385" className={styles.link}>Gaali Sampath</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/hero/ET00306303" className={styles.link}>Hero</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/a1-express/ET00113853" className={styles.link}>A1 Express</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/tom-jerry-tamil/ET00304828" className={styles.link}>Tom &amp; Jerry</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/tiny-forest-adventure-need-for-speed-7d/ET00043561" className={styles.link}>Tiny Forest Adventure &amp; Need for Speed (7D)</Link>
-                    </div>
-                </div>
 
-                <div>
-                    <div>Upcomimg Movies</div>
-                    <div className={styles.movies}>
-                        <Link to="/movies/tsunami/ET00307578" className={styles.link}>Tsunami</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/srikaaram-sreekaram/ET00106100" className={styles.link}>Srikaaram (Sreekaram)</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/roohi/ET00099813" className={styles.link}>Roohi</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/jathi-ratnalu/ET00305719" className={styles.link}>Jathi Ratnalu</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/romiyo-whisky/ET00307958" className={styles.link}>Romiyo Whisky</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/puaada/ET00099872" className={styles.link}>Puaada</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/gaali-sampath/ET00307385" className={styles.link}>Gaali Sampath</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/tandav/ET00308037" className={styles.link}>Tandav</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/aarkkariyam/ET00307366" className={styles.link}>Aarkkariyam</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/the-priest/ET00305064" className={styles.link}>The Priest</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/devarakondalo-vijay-premakatha/ET00307858" className={styles.link}>Devarakondalo Vijay Premakatha</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/roberrt/ET00121878" className={styles.link}>Roberrt</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/koli-taal/ET00132563" className={styles.link}>Koli Taal</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/theethum-nandrum/ET00308033" className={styles.link}>Theethum Nandrum</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/time-to-dance/ET00078875" className={styles.link}>Time To Dance</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/love-life-and-pakodi/ET00136443" className={styles.link}>Love Life And Pakodi</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/ganesapuram/ET00306595" className={styles.link}>Ganesapuram</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/varthamanam/ET00132941" className={styles.link}>Varthamanam</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/jeene-ki-ummeed-tumse-hi/ET00307787" className={styles.link}>Jeene Ki Ummeed Tumse Hi</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/movies/kaathal-ithu-kaathal/ET00308060" className={styles.link}>Kaathal Ithu Kaathal</Link>
-                    </div>
-                </div>
-
-                <div>
-                    <div>Upcomimg Movies</div>
-                    <div className={styles.movies}>
-                        <Link to="/explore/action-movies" className={styles.link}>Action Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/drama-movies" className={styles.link}>Drama Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/thriller-movies" className={styles.link}>Thriller Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/comedy-movies" className={styles.link}>Comedy Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/romantic-movies" className={styles.link}>Romantic Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adventure-movies" className={styles.link}>Adventure Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/horror-movies" className={styles.link}>Horror Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/fantasy-movies" className={styles.link}>Fantasy Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/animation-movies" className={styles.link}>Animation Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/crime-movies" className={styles.link}>Crime Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/biography-movies" className={styles.link}>Biography Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/musical-movies" className={styles.link}>Musical Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/sci-fi-movies" className={styles.link}>Sci-Fi Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/mystery-movies" className={styles.link}>Mystery Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/suspense-movies" className={styles.link}>Suspense Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/period-movies" className={styles.link}>Period Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/Screening-movies" className={styles.link}>screening Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/war-movies" className={styles.link}>War Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/supernatural-movies" className={styles.link}>Supernatural Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adult-movies" className={styles.link}>Adult Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/historical-movies" className={styles.link}>Historical Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/psychological-movies" className={styles.link}>Psychological Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/noir-movies" className={styles.link}>Noir Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/political-movies" className={styles.link}>Political Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/tragedy-movies" className={styles.link}>Tragedy Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/mythological-movies" className={styles.link}>Mythological Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/devotional-movies" className={styles.link}>Devotional Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/bollywood-movies" className={styles.link}>Bollywood Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adaptation-movies" className={styles.link}>Adaptation Movies</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/classic-movies" className={styles.link}>Classic Movies</Link>
-                    </div>
-                </div>
-                <div>
-                    <div>Upcomimg Movies</div>
-                    <div className={styles.movies}>
-                        <Link to="/explore/online-streaming-plays-plays" className={styles.link}>Online Streaming Plays Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/drama-plays" className={styles.link}>Drama Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/fantasy-plays" className={styles.link}>Fantasy Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/mystery-plays" className={styles.link}>Mystery Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/noir-plays" className={styles.link}>Noir Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/political-plays" className={styles.link}>Political Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/tragedy-plays" className={styles.link}>Tragedy Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/suspense-plays" className={styles.link}>Suspense Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adult-plays" className={styles.link}>Adult Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/biography-plays" className={styles.link}>Biography Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/action-plays" className={styles.link}>Action Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/historical-plays" className={styles.link}>Historical Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/musical-plays" className={styles.link}>Musical Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/psychological-plays" className={styles.link}>Psychological Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/sci-fi-plays" className={styles.link}>Sci-Fi Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/broadway-plays" className={styles.link}>Broadway Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/period-plays" className={styles.link}>Period Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/war-plays" className={styles.link}>War Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adventure-plays" className={styles.link}>Adventure Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/mythological-plays" className={styles.link}>Mythological Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/regional-plays" className={styles.link}>Regional Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/horror-plays" className={styles.link}>Horror Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/adaptation-plays" className={styles.link}>Adaptation Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/classic-plays" className={styles.link}>Classic Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/tribute-plays" className={styles.link}>Tribute Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/romantic-plays" className={styles.link}>Romantic Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/contemporary-plays" className={styles.link}>Contemporary Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/comedy-plays" className={styles.link}>Comedy Plays</Link>
-                        <div className={styles.line}></div>
-                        <Link to="/explore/thriller-plays" className={styles.link}>Thriller Plays</Link>
-                        <div className={styles.line}></div>
+                    <div className={styles.contact_button}>
+                        <button>Contact Today!</button>
                     </div>
                 </div>
             </div>
@@ -258,14 +45,11 @@ const Footer = () => {
 
             <div className={styles.part6}>
                 <div>Copyright 2021
-                     © Bigtree Entertainment Pvt. Ltd. All Rights Reserved.</div>
-                <div>The content and images used on
-                this site are copyright protected and copyrights vests with the respective owners. The usage of the content and
-                    images on this website is intended to promote the works and no endorsement of the artist shall be implied.</div>
-                <div>Unauthorized use is prohibited and punishable by law.
-                </div>
+                    © Group 20 All Rights Reserved.</div>
+
             </div>
         </div>
+
     )
 }
 

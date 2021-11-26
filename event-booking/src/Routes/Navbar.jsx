@@ -373,6 +373,9 @@ const Navbar = () => {
       </Dialog>
       <div className={styles.secondNav}>
         <div>
+        <Link className={styles.link} to="/about">
+            About
+          </Link>
           <Link className={styles.link} to="">
             Movies
           </Link>
