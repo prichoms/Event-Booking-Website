@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
             <div className={styles.part4}>
                 <div></div>
-                <img src="bookmyshow-logo.png" alt="" />
+                <img src="https://www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png" alt="" />
                 <div></div>
             </div>
 

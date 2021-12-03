@@ -70,10 +70,7 @@ const location = [
     link: "https://in.bmscdn.com/m6/images/common-modules/regions/kolk.png",
     name: "Kolkata",
   },
-  {
-    link: "https://in.bmscdn.com/m6/images/common-modules/regions/koch.png",
-    name: "Kochi",
-  },
+  
 ];
 const Navbar = () => {
   const [query, setQuery] = React.useState("");
@@ -140,20 +137,13 @@ const Navbar = () => {
           <Link className={styles.link} to="/">
             <svg height="40" width="150">
               <image
-                href="//in.bmscdn.com/webin/common/icons/bms.svg"
+                href="//www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png"
                 width="150"
                 height="40"
               ></image>
             </svg>
           </Link>
-          <div className={styles.searchBar}>
-            <SearchIcon />
-            <input
-              type="text"
-              placeholder="Search for Movies, Events, Plays, Sports and Activities"
-              onChange={(e) => setQuery(e.target.value)}
-            />
-          </div>
+          
         </div>
         <div
           style={{ display: "flex", alignItems: "center", fontSize: "17px" }}
