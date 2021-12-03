@@ -40,3 +40,9 @@
 .premier__container>div>div div {
     color: white;
 }
+  .parent>div>div div :hover {
+    -ms-transform: scale(1.5); /* For Internet explorer 9*/
+    -webkit-transform: scale(1.5); /* For safari 3-8*/
+    transform: scale(1.5);
+  }
+ 
