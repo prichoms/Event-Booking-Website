@@ -13,6 +13,9 @@ import Slider from "@material-ui/core/Slider";
 import { RecommendedMovies } from "../../Components/HomePage/RecommendedMovies";
 import Login from "../LoginPage";
 import { storeAuth } from "../../Redux/app/actions";
+import ReactPlayer from 'react-player'
+import MuteIcon from '../../static/mute.svg'
+import UnmuteIcon from '../../static/unmute.svg'
 
 function valuetext(value) {
   return `${value}`;
@@ -39,6 +42,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MoviePage = () => {
+  const [isMuted, setIsMuted] = React.useState(true)
+  const video = 'https://vimeo.com/384025132';
   const [rValue, setRvalue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -113,34 +118,42 @@ const MoviePage = () => {
           <div
             className="container"
             style={{
-              backgroundImage: `linear-gradient(90deg, rgb(34, 34, 34) 24.97%, rgb(34, 34, 34) 38.3%, rgba(34, 34, 34, 0.04) 97.47%, rgb(34, 34, 34) 100%),url(${data.cover_image_url})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat",
+              backgroundColor: `#222539`
             }}
           >
-            <Login action={action} handleCloseLogin={handleCloseLogin} />
             
-            <div className="container__movieDetail">
-              <h1>{data.movie_name}</h1>
-              <br/><br/><br/><br/>
-              <div className="container__movieDetail_language">
-                <div>
-                  <p>2D</p>
-                </div>
-                <div>
-                  <p>{data.languages}</p>
-                </div>
+            <Login action={action} handleCloseLogin={handleCloseLogin} />
+            <div className="video">
+              <div className="movie_details"
+              style={{
+                backgroundImage: `linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+              }}
+              >
+                <h1>{data.movie_name}</h1>
+                <div className="BookButton">
+                <button onClick={handleClick}>Book Tickets</button>
               </div>
-              <div style={{ color: "white", fontSize: 18 }}>
-                <h5 style={{ color: "white", fontSize: 18 }}>
-                  {`${data.movie_duration} - ${data.movie_genre.map(
-                    (e) => " " + e.genre
-                  )} - ${data.release_date}`}
-                </h5>
-              </div>
-              
+              {isMuted ? (
+                <button className='btnVolume' onClick={() => setIsMuted(false)}>{UnmuteIcon}</button>
+              ) : (
+                <button className='btnVolume' onClick={() => setIsMuted(true)} >{MuteIcon}</button>
+              )}
             </div>
+            <ReactPlayer
+              playing={true}
+              loop={true}
+              width='100%'
+              height='100%'
+              volume={1}
+              muted={isMuted}
+              className='movie_video'
+              url={video}
+            /> 
+            </div>
+            
           </div>
           <div className='rowC'>
           <div className="middleContainer">
@@ -213,9 +226,23 @@ const MoviePage = () => {
                   <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
                 </div>
               </div>
-              <div className="BookButton">
-                <button onClick={handleClick}>Book Tickets</button>
-              </div>
+              <div className="container__movieDetail">
+                <div className="container__movieDetail_language">
+                  <div>
+                    <p>2D</p>
+                  </div>
+                  <div>
+                    <p>{data.languages}</p>
+                  </div>
+                </div>
+                <div style={{ color: "white", fontSize: 18 }}>
+                  <h5 style={{ color: "white", fontSize: 18 }}>
+                    {`${data.movie_duration} - ${data.movie_genre.map(
+                      (e) => " " + e.genre
+                    )} - ${data.release_date}`}
+                  </h5>
+                </div>
+            </div>
           </div>
           </div>
         </>

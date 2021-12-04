@@ -11,6 +11,7 @@ body {
 	justify-content: space-between;
 	/* width: 100%; */
 	padding: 0 80px;
+	position: sticky;
 }
 .link {
 	text-decoration: none;
