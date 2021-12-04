@@ -14,8 +14,8 @@ import { RecommendedMovies } from "../../Components/HomePage/RecommendedMovies";
 import Login from "../LoginPage";
 import { storeAuth } from "../../Redux/app/actions";
 import ReactPlayer from 'react-player'
-import MuteIcon from '../../static/mute.svg'
-import UnmuteIcon from '../../static/unmute.svg'
+import { ReactComponent as MuteIcon } from '../../static/mute.svg'
+import { ReactComponent as UnmuteIcon } from '../../static/unmute.svg'
 
 function valuetext(value) {
   return `${value}`;
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 
 const MoviePage = () => {
   const [isMuted, setIsMuted] = React.useState(true)
-  const video = 'https://vimeo.com/384025132';
+  const video = 'https://vimeo.com/331414823';
   const [rValue, setRvalue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
@@ -137,9 +137,9 @@ const MoviePage = () => {
                 <button onClick={handleClick}>Book Tickets</button>
               </div>
               {isMuted ? (
-                <button className='btnVolume' onClick={() => setIsMuted(false)}>{UnmuteIcon}</button>
+                <UnmuteIcon className='btnVolume' onClick={() => setIsMuted(false)}/>
               ) : (
-                <button className='btnVolume' onClick={() => setIsMuted(true)} >{MuteIcon}</button>
+                <MuteIcon className='btnVolume' onClick={() => setIsMuted(true)}/>
               )}
             </div>
             <ReactPlayer
