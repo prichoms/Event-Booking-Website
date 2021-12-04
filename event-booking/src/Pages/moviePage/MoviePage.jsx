@@ -120,29 +120,10 @@ const MoviePage = () => {
             }}
           >
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="container__card">
-              <img src={data.banner_image_url} alt="title" />
-            </div>
+            
             <div className="container__movieDetail">
               <h1>{data.movie_name}</h1>
-              <div className="container__movieDetail_rating">
-                <img
-                  src="https://www.leadingwithhonor.com/wp-content/uploads/2021/02/redheart.png"
-                  alt="Rating"
-                  style={{ width: 25 }}
-                />
-                <h1>{data.rating.percentage}%</h1>
-                <p style={{ marginBottom: 0 }}>{Math.ceil(data.rating.no_of_ratings)} Ratings</p>
-              </div>
-              <div className="container__movieDetail_ratingButton">
-                <div>
-                  <h4 style={{ color: "white" }}>Add your rating and review</h4>
-                  <p>Your ratings matter</p>
-                </div>
-                <div>
-                  <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
-                </div>
-              </div>
+              <br/><br/><br/><br/>
               <div className="container__movieDetail_language">
                 <div>
                   <p>2D</p>
@@ -158,11 +139,10 @@ const MoviePage = () => {
                   )} - ${data.release_date}`}
                 </h5>
               </div>
-              <div className="BookButton">
-                <button onClick={handleClick}>Book Tickets</button>
-              </div>
+              
             </div>
           </div>
+          <div className='rowC'>
           <div className="middleContainer">
             <div>
               <h1>About the movie</h1>
@@ -171,9 +151,9 @@ const MoviePage = () => {
             <hr />
             <div>
               <h1>Cast</h1>
-              <Carousel itemsToShow={8} pagination={false}>
+              <Carousel itemsToShow={5} pagination={true}>
                 {data.cast.map((e) => (
-                  <div key={e.id}>
+                  <div key={e.id} className="carousel_cast">
                     <div>
                       <img
                         className="carousel_image"
@@ -192,9 +172,9 @@ const MoviePage = () => {
             <hr />
             <div className="carousel">
               <h1>Crew</h1>
-              <Carousel itemsToShow={8} pagination={false}>
+              <Carousel itemsToShow={5} pagination={true}>
                 {data.crew.map((e) => (
-                  <div key={e.id}>
+                  <div key={e.id} className="carousel_cast">
                     <div>
                       <img
                         className="carousel_image"
@@ -211,6 +191,32 @@ const MoviePage = () => {
               </Carousel>
             </div>
             <hr />
+          </div>
+          <div className="middleContainer_right">
+            <div className="container__card">
+              <img src={data.banner_image_url} alt="title" />
+            </div>
+            <div className="container__movieDetail_rating">
+                <img
+                  src="https://www.leadingwithhonor.com/wp-content/uploads/2021/02/redheart.png"
+                  alt="Rating"
+                  style={{ width: 30 }}
+                />
+                <h1>{data.rating.percentage}%</h1>
+              </div>
+              <h3>{Math.ceil(data.rating.no_of_ratings)} Ratings</h3>
+              <div className="container__movieDetail_ratingButton">
+                <div>
+                  <h4 style={{ color: "white" }}>Your ratings matter</h4>
+                </div>
+                <div>
+                  <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
+                </div>
+              </div>
+              <div className="BookButton">
+                <button onClick={handleClick}>Book Tickets</button>
+              </div>
+          </div>
           </div>
         </>
       )}
