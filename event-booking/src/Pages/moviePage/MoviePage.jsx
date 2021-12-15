@@ -16,6 +16,8 @@ import { storeAuth } from "../../Redux/app/actions";
 import ReactPlayer from 'react-player'
 import { ReactComponent as MuteIcon } from '../../static/mute.svg'
 import { ReactComponent as UnmuteIcon } from '../../static/unmute.svg'
+import AliceCarousel from 'react-alice-carousel';
+import "react-alice-carousel/lib/alice-carousel.css";
 
 function valuetext(value) {
   return `${value}`;
@@ -53,7 +55,6 @@ const MoviePage = () => {
   const history = useHistory();
   const [action, setAction] = React.useState(false);
   const isAuth = useSelector(state => state.app.isAuth)
-
   const [auth, setAuth] = React.useState(false);
   React.useEffect(() => {
     dispatch(getMovies(id));
@@ -118,52 +119,29 @@ const MoviePage = () => {
           <div
             className="container"
             style={{
-              backgroundColor: `#222539`
+              backgroundImage: "linear-gradient(315deg, #f9484a 0%, #fbd72b 74%)",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
             }}
           >
-            
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="video">
-              <div className="movie_details"
-              style={{
-                backgroundImage: `linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));`,
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-              >
-                <h1>{data.movie_name}</h1>
-                <div className="BookButton">
+            <div className="movie_details">
+              <h1>{data.name}</h1>
+              <div className="BookButton">
                 <button onClick={handleClick}>Book Tickets</button>
               </div>
-              {isMuted ? (
-                <UnmuteIcon className='btnVolume' onClick={() => setIsMuted(false)}/>
-              ) : (
-                <MuteIcon className='btnVolume' onClick={() => setIsMuted(true)}/>
-              )}
             </div>
-            <ReactPlayer
-              playing={true}
-              loop={true}
-              width='100%'
-              height='100%'
-              volume={1}
-              muted={isMuted}
-              className='movie_video'
-              url={video}
-            /> 
-            </div>
-            
           </div>
           <div className='rowC'>
           <div className="middleContainer">
             <div>
-              <h1>About the movie</h1>
-              <p>{data.about_movie}</p>
+              <h1>About</h1>
+              <p>{data.about}</p>
             </div>
             <hr />
-            <div>
-              <h1>Cast</h1>
+             <div>
+              <h1>Starring</h1>
               <Carousel itemsToShow={5} pagination={true}>
                 {data.cast.map((e) => (
                   <div key={e.id} className="carousel_cast">
@@ -176,32 +154,21 @@ const MoviePage = () => {
                     </div>
                     <div style={{ textAlign: "center" }}>
                       <h4>{e.original_name}</h4>
-                      <p>{e.character}</p>
                     </div>
                   </div>
                 ))}
               </Carousel>
             </div>
             <hr />
-            <div className="carousel">
-              <h1>Crew</h1>
-              <Carousel itemsToShow={5} pagination={true}>
-                {data.crew.map((e) => (
-                  <div key={e.id} className="carousel_cast">
-                    <div>
-                      <img
-                        className="carousel_image"
-                        src={e.crew_image}
-                        alt="e.cast_image"
-                      />
-                    </div>
-                    <div style={{ textAlign: "center" }}>
-                      <h4>{e.name}</h4>
-                      <p>{e.crew_position}</p>
-                    </div>
-                  </div>
-                ))}
-              </Carousel>
+            <div className="cimg">
+              <h1>Highlights</h1>
+              <AliceCarousel autoPlay autoPlayInterval="3000" infinite autoHeight>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAcC4jk3L5nr5wp358To4YCDRvZJL8rS3zlL5VxWmoHriH6-6lwbNktamxKWAiF8FD1Y&usqp=CAU" className="sliderimg"/>
+                    <img src="https://cdn.livekindly.co/wp-content/uploads/2021/01/male-chick.jpeg" className="sliderimg"/>
+                    <img src="https://www.macmillandictionary.com/external/slideshow/full/155876_full.jpg" className="sliderimg"/>
+                    <img src="https://media.wired.com/photos/5926ea678d4ebc5ab806be8c/master/w_2560%2Cc_limit/GettyImages-79312712-sa.jpg" className="sliderimg"/>
+                    
+              </AliceCarousel>
             </div>
             <hr />
           </div>
@@ -229,15 +196,12 @@ const MoviePage = () => {
               <div className="container__movieDetail">
                 <div className="container__movieDetail_language">
                   <div>
-                    <p>2D</p>
-                  </div>
-                  <div>
                     <p>{data.languages}</p>
                   </div>
                 </div>
                 <div style={{ color: "white", fontSize: 18 }}>
                   <h5 style={{ color: "white", fontSize: 18 }}>
-                    {`${data.movie_duration} - ${data.movie_genre.map(
+                    {`${data.movie_duration} - ${data.genre.map(
                       (e) => " " + e.genre
                     )} - ${data.release_date}`}
                   </h5>
@@ -247,91 +211,6 @@ const MoviePage = () => {
           </div>
         </>
       )}
-      <div>
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          className={classes.modal}
-          open={open}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={open}>
-            <div className={classes.paper}>
-              <div style={{ textAlign: "center", position: "relative" }}>
-                <h5 style={{ margin: 0, padding: 0, marginTop: 10 }}>
-                  How was the movies?
-                </h5>
-                <p style={{ margin: 0, padding: 0 }}>
-                  {data && data.movie_name}
-                </p>
-                <button
-                  onClick={handleClose}
-                  style={{ position: "absolute", right: 10, top: 0 }}
-                >
-                  X
-                </button>
-              </div>
-              <hr />
-              <div className={classes.root}>
-                <Typography id="discrete-slider" gutterBottom>
-                  How would you rate the movie?
-                </Typography>
-                <Slider
-                  onChange={handleChange}
-                  defaultValue={10}
-                  getAriaValueText={valuetext}
-                  aria-labelledby="discrete-slider"
-                  valueLabelDisplay="auto"
-                  step={10}
-                  marks
-                  min={0}
-                  max={100}
-                  color="secondary"
-                />
-
-                <div
-                  style={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: "50%",
-                    backgroundColor: "#f84464",
-                    color: "white",
-                    display: "flex",
-                    alignItems: "center",
-                    marginLeft: 60,
-                    position: "relative"
-                  }}
-                >
-                  <h1 style={{ color: "white", margin: 0, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
-                    {rValue}%
-                  </h1>
-                </div>
-              </div>
-              <button
-                onClick={handleRating}
-                style={{
-                  width: "80%",
-                  margin: "30px",
-                  height: 50,
-                  fontSize: 18,
-                  color: "white",
-                  backgroundColor: "#f84464",
-                  borderRadius: 10,
-                  border: "none",
-                  outline: "none",
-                  cursor: "pointer"
-                }}
-              >
-                Submit Rating
-              </button>
-            </div>
-          </Fade>
-        </Modal>
-      </div>
       <RecommendedMovies></RecommendedMovies>
     </div>
   );

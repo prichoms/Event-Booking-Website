@@ -16,6 +16,9 @@ import {
     GET_POPULAR_EVENTS_SUCCESS
 } from "./actionTypes"
 import axios from "axios";
+import dat from '../../scraped_data/bookMyShow.json';
+import dat1 from '../../scraped_data/popular_events.json';
+
 export const cityRequest = (city) => {
     return {
         type: "cityChange",
@@ -46,62 +49,14 @@ const getMoviesFailure = (error) => {
 
 export const getMovies = () => (dispatch) => {
     dispatch(getMoviesRequest);
-    return axios.get("https://bookmyshow-clone-masai.herokuapp.com/movies")
-        .then(res => dispatch(getMoviesSuccess(res.data.data)))
-        .catch(error => dispatch(getMoviesFailure(error)));
+    // return axios.get("https://bookmyshow-clone-masai.herokuapp.com/movies")
+    //     .then(res => dispatch(getMoviesSuccess(res.data.data)))
+    //     .catch(error => dispatch(getMoviesFailure(error)));
+    return dispatch(getMoviesSuccess(dat.data));
 }
 
 
-//GET OUTDOOR EVENTS---------------------------------------------
 
-const getOutdoorEventsRequest = () => {
-    return {
-        type: GET_OUTDOOR_EVENTS_REQUEST
-    }
-}
-const getOutdoorEventsSuccess = (payload) => {
-    return {
-        type: GET_OUTDOOR_EVENTS_SUCCESS,
-        payload
-    }
-}
-const getOutdoorEventsFailure = () => {
-    return {
-        type: GET_OUTDOOR_EVENTS_FAILURE
-    }
-}
-
-export const getOutdoorEvents = () => dispatch => {
-    dispatch(getOutdoorEventsRequest());
-    return axios.get("https://bookmyshow-clone-masai.herokuapp.com/outdoor")
-        .then(res => dispatch(getOutdoorEventsSuccess(res.data.data)))
-        .catch(error => dispatch(getOutdoorEventsFailure(error)))
-}
-//GET LAUGHTER EVENTS---------------------------------------------
-
-const getLaughterEventsRequest = () => {
-    return {
-        type: GET_LAUGHTER_EVENTS_REQUEST
-    }
-}
-const getLaughterEventsSuccess = (payload) => {
-    return {
-        type: GET_LAUGHTER_EVENTS_SUCCESS,
-        payload
-    }
-}
-const getLaughterEventsFailure = () => {
-    return {
-        type: GET_LAUGHTER_EVENTS_FAILURE
-    }
-}
-
-export const getLaughterEvents = () => dispatch => {
-    dispatch(getLaughterEventsRequest());
-    return axios.get("https://bookmyshow-clone-masai.herokuapp.com/laughter")
-        .then(res => dispatch(getLaughterEventsSuccess(res.data.data)))
-        .catch(error => dispatch(getLaughterEventsFailure(error)))
-}
 //GET POPULAR EVENTS---------------------------------------------
 
 const getPopularEventsRequest = () => {
@@ -123,9 +78,12 @@ const getPopularEventsFailure = () => {
 
 export const getPopularEvents = () => dispatch => {
     dispatch(getPopularEventsRequest());
-    return axios.get("https://bookmyshow-clone-masai.herokuapp.com/popular")
+    
+   /*return axios.get("https://bookmyshow-clone-masai.herokuapp.com/popular")
         .then(res => dispatch(getPopularEventsSuccess(res.data.data)))
-        .catch(error => dispatch(getPopularEventsFailure(error)))
+        .catch(error => dispatch(getPopularEventsFailure(error)))*/
+       return dispatch(getPopularEventsSuccess(dat1));
+        
 }
 
 //GET LATEST EVENTS---------------------------------------------

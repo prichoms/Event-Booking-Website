@@ -6,6 +6,7 @@ import SeeAll from "../Pages/SeeAll";
 import { BookTicketsPage } from '../Pages/BookTicketsPage';
 import AdminPage  from '../Pages/AdminPage';
 import UserPage  from '../Pages/UserPage';
+import ContactPage  from '../Pages/ContactPage';
 import AboutPage  from '../Pages/AboutPage';
 import { BookingHistory } from "../Components/BookingHistory";
 
@@ -19,23 +20,17 @@ const Router = () => {
                 <Route exact path="/about">
                     <AboutPage />
                 </Route>
-                <Route exact path="/ncr/movies">
-                    <SeeAll />
-                </Route>
-                <Route exact path="/booktickets/:id">
-                    <BookTicketsPage />
-                </Route>
-                <Route exact path="/movies/:id">
+                <Route exact path="/events/:id">
                     <MoviePage></MoviePage>
-                </Route>
-                <Route exact path="/profile/booking-history">
-                    <BookingHistory />
                 </Route>
                 <Route exact path="/admin">
                     <AdminPage />
                 </Route>
                 <Route exact path="/user">
                     <UserPage />
+                </Route>
+                <Route exact path="/contact">
+                    <ContactPage />
                 </Route>
                 <Route>
                     <div>404. Page not found</div>

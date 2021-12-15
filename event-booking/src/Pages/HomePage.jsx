@@ -1,39 +1,187 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AddCarousel } from "../Components/HomePage/AddCarousel";
-import { Entertainment } from "../Components/HomePage/Entertainment";
-import { LatestEvents } from "../Components/HomePage/LatestEvents";
-import { LaughterEvents } from "../Components/HomePage/LaughterEvents";
-import { OutdoorEvents } from "../Components/HomePage/OutdoorEvents";
 import { PopularEvents } from "../Components/HomePage/PopularEvents";
 import { PremierMovies } from "../Components/HomePage/PremierMovies";
 import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
-import { getLatestEvents, getLaughterEvents, getMovies, getOutdoorEvents, getPopularEvents } from "../Redux/app/actions";
-import { getBookingDetails } from "../Redux/booking/action";
+import { getMovies, getPopularEvents } from "../Redux/app/actions";
+import { makeStyles } from "@material-ui/core/styles";
+import Modal from "@material-ui/core/Modal";
+import Backdrop from "@material-ui/core/Backdrop";
+import Fade from "@material-ui/core/Fade";
+import Typography from "@material-ui/core/Typography";
+import Slider from "@material-ui/core/Slider";
+import { useHistory, useParams } from "react-router-dom";
+import { putMovies } from "../Redux/data/actions";
+
+
+
+
+
+var fs = require('fs');
+
+function valuetext(value) {
+  return `${value}`;
+}
+
+const useStyles = makeStyles((theme) => ({
+  modal: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: "2px solid #000",
+    boxShadow: theme.shadows[5],
+    height: "400px",
+    width: "300px",
+  },
+  root: {
+    width: 250,
+    margin: 20,
+    textAlign: "center",
+  },
+}));
 
 export const HomePage = () => {
-    const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(getMovies());
-        dispatch(getOutdoorEvents());
-        dispatch(getLaughterEvents());
-        dispatch(getPopularEvents());
-        dispatch(getLatestEvents());
-        dispatch(getBookingDetails());
-    }, [])
-    return (
-        <div style={{ backgroundColor: "#F2F5F9" }}>
-            <AddCarousel />
-            <RecommendedMovies />
-            <Entertainment />
-            <PremierMovies />
-            <OutdoorEvents />
-            <div style={{ backgroundColor: "#F2F2F2" }}>
-                <LaughterEvents />
-                <PopularEvents />
-                <LatestEvents />
-            </div>
+  const [open, setOpen] = React.useState(false);
+  const classes = useStyles();
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+  function getMax(arr, prop) {
+    var max = -1;
+    for (var i = 0; i < arr.length; i++) {
+      if (arr[i].id > max)
+        max = arr[i].id;
+    }
+    return max;
+  }
+  const feedback_submit = () => {
+    let n = document.getElementById("name").value;
+    let f = document.getElementById("feed").value;
+    console.log(n, f);
+    fetch("http://localhost:3001/feed")
+      .then(res => res.json())
+      .then(result =>
+        fetch("http://localhost:3001/feed", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ "id": getMax(result) + 1, "name": n, "feed": f })
+        })
+      )
+    handleClose();
+  };
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMovies());
+    dispatch(getPopularEvents());
+  }, [])
+  return (
+
+    <div style={{ backgroundColor: "#16161D" }}>
+      <div>
+        <AddCarousel />
+        <div>
+        <button style={{ cursor: "pointer", 
+                  margin: "20px 20px",
+                  height: 90,
+                  width: 90,
+                  fontSize: 24,
+                  color: "white",
+                  backgroundColor: "#f84464",
+                  borderRadius: 50,
+                  borderColor: "greenyellow",
+                  borderWidth: "5px",
+                  outline: "none",
+                  position: "fixed",
+                  bottom: "0px",
+                  right: "0px",
+                  }} onClick={handleOpen} className="ratebutton">Rate Us</button>
+      </div>
+
+        <PremierMovies />
+        <div style={{ backgroundColor: "#16161D" }}>
+          <RecommendedMovies />
         </div>
-    )
+        <div style={{ backgroundColor: "#16161D" }}>
+          <PopularEvents />
+        </div>
+
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <div className={classes.paper}>
+              <div style={{ textAlign: "center", position: "relative" }}>
+                <h5 style={{ margin: 0, padding: 0, marginTop: 10 }}>
+
+                </h5>
+                <p style={{ margin: 0, padding: 0 }}>
+                  {/* {"movie" && "hehe"} */}
+                </p>
+                <button
+                  onClick={handleClose}
+                  style={{ position: "absolute", right: 10, top: 0 }}
+                >
+                  X
+                </button>
+              </div>
+              <br /><br />
+              <div className={classes.root}>
+                <Typography id="discrete-slider" gutterBottom>
+                  How would you rate the website?
+                </Typography>
+                <form>
+                  <div class="form-group">
+                    <label for="name">Name:</label><br />
+                    <input class="form-control" type="text" id="name" name="name" placeholder="Your name" /><br />
+                  </div>
+                  <div class="form-group">
+                    <label for="feed">Feedback:</label><br />
+                    <input class="form-control form-control-lg" type="text-area" id="feed" name="feed" placeholder="Your feedback" /><br /><br />
+                  </div>
+                </form>
+              </div>
+              <button
+                onClick={feedback_submit}
+                style={{
+                  width: "80%",
+                  margin: "30px",
+                  height: 50,
+                  fontSize: 24,
+                  color: "white",
+                  backgroundColor: "#f84464",
+                  borderRadius: 10,
+                  border: "none",
+                  outline: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Submit Rating
+              </button>
+            </div>
+          </Fade>
+        </Modal>
+      </div>
+    </div>
+  )
 }

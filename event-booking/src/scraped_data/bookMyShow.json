@@ -1,0 +1,768 @@
+{
+  "data": [
+    {
+      "_id":16,"name": "Sunburn Music Festival",
+      "movie_grade": "UA",
+      "languages": "English, Hindi, Tamil, Telugu",
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "rating":{"percentage":93,
+       "no_of_ratings": 1032},
+      "movie_duration":"12h",
+      "release_date":"29 Dec, 2020",
+      "is_premier":true,
+      "screen_type": [
+       {
+        "type": "Live"
+       }
+      ],
+      "genre": [
+       {
+        "genre": "Music"
+       }
+      
+      ],
+      "about": "Sunburn is a commercial electronic dance music festival held in India. It is Asia's largest music festival. The festival is an amalgamation of Music, Entertainment, Food and Shopping, and was ranked by CNN in 2009 as one of the Top 10 Festivals in the world. Mayank Kataria is the major event promoter.",
+      "cast": [
+       {
+        "original_name": "Gal Gadot",
+        "character": "as Wonder Woman/ Diana Prince",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+       },
+       {
+        "original_name": "Chris Pine",
+        "character": "as Steve Trevor",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+       },
+       {
+        "original_name": "Kristen Wiig",
+        "character": "as Cheetah",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+       },
+       {
+        "original_name": "Pedro Pascal",
+        "character": "as Max Lord",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+       },
+       {
+        "original_name": "Connie Nielsen",
+        "character": "as Hippolyta",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+       },
+       {
+        "original_name": "Robin Wright",
+        "character": "as Antiope",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+       }
+      ]
+     },
+     {
+      "_id":17,"name": "Power Thinking by Dr Ujjwal Patni",
+      "movie_grade": "UA",
+      "languages": "English, Hindi, Tamil, Telugu",
+      "banner_image_url": "data:image/jpeg;base64,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",
+      "rating":{"percentage":100,
+       "no_of_ratings": 700000},
+      "movie_duration":"1h",
+      "release_date":"31 Dec, 2021",
+      "is_premier":false,
+      "screen_type": [
+       {
+        "type": "Live"
+       },
+       {
+        "type": "3D"
+       }
+      ],
+      "genre": [
+       {
+        "genre": "Motivational"
+       }
+      
+      
+      ],
+      "about": "Sid Talks needs no introduction. The GOAT of speakers, he shall enlighten you to explore new paths you never saw were there.",
+      "cast": [
+       {
+        "original_name": "Gal Gadot",
+        "character": "as Wonder Woman/ Diana Prince",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+       },
+       {
+        "original_name": "Chris Pine",
+        "character": "as Steve Trevor",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+       },
+       {
+        "original_name": "Kristen Wiig",
+        "character": "as Cheetah",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+       },
+       {
+        "original_name": "Pedro Pascal",
+        "character": "as Max Lord",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+       },
+       {
+        "original_name": "Connie Nielsen",
+        "character": "as Hippolyta",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+       },
+       {
+        "original_name": "Robin Wright",
+        "character": "as Antiope",
+        "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+       }
+      ]
+     },
+  {
+    "_id":1,"name": "The Wonderland",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "data:image/jpeg;base64,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",
+    "rating":{"percentage":73,
+     "no_of_ratings": 7.5},
+    "movie_duration":"2h 31m",
+    "release_date":"24 Dec, 2020",
+    "is_premier":false,
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Comedy By Amit Tandon"
+     }
+    
+    ],
+    "about": "Set in the 1980s, Wonder Woman`s next big screen adventure finds her facing two all-new foes, Max Lord and The Cheetah, and the unexpected return of a face from her past.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   },
+ {
+    "is_premier":true,"_id":2,"name": "Best of Laugh Store",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWMgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00315288-sjvzpzabju-portrait.jpg",
+    "rating":{"percentage":88,
+     "no_of_ratings": 197},
+    "movie_duration":"2h 41m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "By Gaurav Gupta"
+     }
+    ],
+    "about": "Based on Jack Kirby`s Eternals, Marvel Studios brings yet another thrilling superhero flick with the saga of The Eternals, a race of immortal beings who lived on Earth and shaped its history and civilizations.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   }
+ ,
+ 
+ {
+    "is_premier":true,"_id":3,"name": "Stand up Solo",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00318931-frbraqrrnr-portrait.jpg",
+    "rating":{"percentage":91,
+     "no_of_ratings": 171},
+    "movie_duration":"2h 11m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "By Devesh Dixit"
+     }
+    ],
+    "about": "Bond has left active service. His peace is short-lived when his old friend Felix Leiter from the CIA turns up asking for help, leading Bond onto the trail of a mysterious villain armed with dangerous new technology. Will bond be able to find out what`s it all about? An action-packed thriller awaits you.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   }
+ ,
+ {
+    "is_premier":true,"_id":4,"name": "Fitness First",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
+    "rating":{"percentage":91,
+     "no_of_ratings": 171},
+    "movie_duration":"2h 11m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "By Select Walk City"
+     }
+    
+    ],
+    "about": "Feature adaptation of Frank Herbert`s science fiction novel, Dune revolves around Paul Atreides, who leads nomadic tribes in a battle to control the desert planet Arrakis.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   },
+ 
+ 
+ {
+    "is_premier":false,"_id":5,"name": "Ruskin Bond Teaches Writing",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWMgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00305161-gwqjrgblmb-portrait.jpg",
+    "rating":{"percentage":71,
+     "no_of_ratings": 130},
+    "movie_duration":"1h 31m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Zoom Platform"
+     }
+    ],
+    "about": "When deranged serial killer Cletus Kasady becomes host to an alien symbiote, Eddie Brock and Venom must put aside their differences to stop his reign of terror.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   }
+ ,
+ {
+  "is_premier":false,"_id":6,"name": "Ways of Passive Income",
+  "movie_grade": "UA",
+  "languages": "English, Hindi, Tamil, Telugu",
+  "banner_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAhjRtkHdhOanActd6YdrHj0qa1sUF2Gidg&usqp=CAU",
+  "rating":{"percentage":61,
+   "no_of_ratings": 130},
+  "movie_duration":"1h 31m",
+  "screen_type": [
+   {
+    "type": "2D"
+   },
+   {
+    "type": "MX4D"
+   },
+   {
+    "type": "4DX"
+   },
+   {
+    "type": "2D SCREEN X"
+   },
+   {
+    "type": "IMAX 2D"
+   }
+  ],
+  "genre": [
+   {
+    "genre": "Bussiness"
+   }
+  ],
+  "about": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town where evil is brewing below the surface. A small group of survivors must work together to uncover the truth.",
+  "cast": [
+   {
+    "original_name": "Gal Gadot",
+    "character": "as Wonder Woman/ Diana Prince",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+   },
+   {
+    "original_name": "Chris Pine",
+    "character": "as Steve Trevor",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+   },
+   {
+    "original_name": "Kristen Wiig",
+    "character": "as Cheetah",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+   },
+   {
+    "original_name": "Pedro Pascal",
+    "character": "as Max Lord",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+   },
+   {
+    "original_name": "Connie Nielsen",
+    "character": "as Hippolyta",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+   },
+   {
+    "original_name": "Robin Wright",
+    "character": "as Antiope",
+    "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+   }
+  ]
+ },
+ {
+    "is_premier":true,"_id":7,"name": "Abstract Painting",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWMgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00307000-ypevsemcch-portrait.jpg",
+    "rating":{"percentage":61,
+     "no_of_ratings": 130},
+    "movie_duration":"1h 31m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Netflix"
+     }
+    ],
+    "about": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town where evil is brewing below the surface. A small group of survivors must work together to uncover the truth.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   },
+   {
+    "is_premier":true,"_id":8,"name": "Learn Mandala Art",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWMgb253YXJkcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00145653-puesrtwuvc-portrait.jpg",
+    "rating":{"percentage":61,
+     "no_of_ratings": 130},
+    "movie_duration":"1h 31m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Arts and Craft"
+     }
+    ],
+    "about": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town where evil is brewing below the surface. A small group of survivors must work together to uncover the truth.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   },
+   {
+    "is_premier":false,"_id":9,"name": "What is the aim of Life by Sri Sri Ravi Shankar",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "data:image/jpeg;base64,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",
+    "rating":{"percentage":61,
+     "no_of_ratings": 130},
+    "movie_duration":"1h 31m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Motivational"
+     }
+    ],
+    "about": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town where evil is brewing below the surface. A small group of survivors must work together to uncover the truth.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   },
+   {
+    "is_premier":false,"_id":10,"name": "Experience, The Ulimate Measure",
+    "movie_grade": "UA",
+    "languages": "English, Hindi, Tamil, Telugu",
+    "banner_image_url": "https://streamer.espeakers.com/assets/5/34385/167765.jpg",
+    "rating":{"percentage":61,
+     "no_of_ratings": 130},
+    "movie_duration":"1h 31m",
+    "screen_type": [
+     {
+      "type": "2D"
+     },
+     {
+      "type": "MX4D"
+     },
+     {
+      "type": "4DX"
+     },
+     {
+      "type": "2D SCREEN X"
+     },
+     {
+      "type": "IMAX 2D"
+     }
+    ],
+    "genre": [
+     {
+      "genre": "Motivational"
+     }
+    ],
+    "about": "Once the booming home of pharmaceutical giant Umbrella Corporation, Raccoon City is now a dying Midwestern town where evil is brewing below the surface. A small group of survivors must work together to uncover the truth.",
+    "cast": [
+     {
+      "original_name": "Gal Gadot",
+      "character": "as Wonder Woman/ Diana Prince",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+     },
+     {
+      "original_name": "Chris Pine",
+      "character": "as Steve Trevor",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+     },
+     {
+      "original_name": "Kristen Wiig",
+      "character": "as Cheetah",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+     },
+     {
+      "original_name": "Pedro Pascal",
+      "character": "as Max Lord",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+     },
+     {
+      "original_name": "Connie Nielsen",
+      "character": "as Hippolyta",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+     },
+     {
+      "original_name": "Robin Wright",
+      "character": "as Antiope",
+      "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+     }
+    ]
+   }
+  ]
+}
