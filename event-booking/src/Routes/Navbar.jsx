@@ -20,6 +20,7 @@ import { useReducer } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cityRequest, storeAuth } from "../Redux/app/actions";
 import Login from "../Pages/LoginPage";
+import { useHistory } from 'react-router-dom';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="down" ref={ref} {...props} />;
@@ -46,6 +47,7 @@ const Navbar = () => {
   const [auth, setAuth] = React.useState(false);
   const [action, setAction] = React.useState(false);
   const isAuth = useSelector((state) => state.app.isAuth);
+  let history = useHistory();
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -71,21 +73,61 @@ const Navbar = () => {
     setAction(true);
     setState(false);
   };
+
+  const redirect_admin = () => {
+    history.push('/admin')
+  }
+
   const handleCloseLogin = (number) => {
-    if (+number === 7275584516) {
-      setAuth(true);
-      alert("Successfully Logged in");
-    } else if (+number === 123456789) {
-      setAuth(true);
-      alert("Successfully Logged in");
-    } else if (+number === "") {
-      alert("Please type your number");
-      handleCloseLogin(number);
-    } //else {
-    //   alert("You are not registered");
-    // }
-    setAction(false);
-    setState(false);
+    let r = "";
+    if (document.getElementById('tab-1').checked) {
+      r = document.getElementById('tab-1').value;
+    }
+    else if (document.getElementById('tab-2').checked) {
+      r = document.getElementById('tab-2').value;
+    }
+    else{
+      alert("Select User Type");
+    }
+    if (r==="Organizer"){
+      if (+number === 9876543210){
+        setAuth(true);
+        alert("Successfully Logged in");
+        redirect_admin();
+      }
+      else if(+number === ""){
+        alert("Please type your number");
+        handleCloseLogin(number);
+      }else {
+        alert("You are not registered");
+      }
+      setAction(false);
+      setState(false);
+    }
+    else if (r=="User"){
+      if (+number === 7275584516) {
+        setAuth(true);
+        alert("Successfully Logged in");
+      } else if (+number === 123456789) {
+        setAuth(true);
+        alert("Successfully Logged in");
+      } else if (+number === "") {
+        alert("Please type your number");
+        handleCloseLogin(number);
+      }
+      else {
+        alert("You are not registered");
+      }
+      setAction(false);
+      setState(false);
+    }
+    else{
+      // if (+number) {
+      // alert("Select User Type");
+      // }
+      setAction(false);
+      setState(false);
+    }
   };
   React.useEffect(() => {
     dispatch(storeAuth(auth));

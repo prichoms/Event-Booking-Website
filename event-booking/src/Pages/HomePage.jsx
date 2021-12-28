@@ -66,7 +66,6 @@ export const HomePage = () => {
   const feedback_submit = () => {
     let n = document.getElementById("name").value;
     let f = document.getElementById("feed").value;
-    console.log(n, f);
     fetch("http://localhost:3001/feed")
       .then(res => res.json())
       .then(result =>
