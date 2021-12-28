@@ -44,4 +44,3 @@ export default function Login({ action, handleCloseLogin }) {
     </div >
   );
 }
-
