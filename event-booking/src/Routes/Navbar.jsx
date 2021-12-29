@@ -89,6 +89,10 @@ const Navbar = () => {
   const redirect_user = () => {
     history.push('/user')
   }
+  const signout_user = () => {
+    setAuth(false);
+    history.push('/')
+  }
   
   const gotouserpage = (number) => {
     if ((+number === 9876543210)){
@@ -279,7 +283,7 @@ const Navbar = () => {
                   <span>Settings</span>
                 </div>
                 <div className={styles.signout_button}>
-                  <button>Sign out</button>
+                  <button onClick={signout_user}>Sign out</button>
                 </div>
               </div>
             </Drawer>
