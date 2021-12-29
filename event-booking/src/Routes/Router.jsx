@@ -9,6 +9,9 @@ import UserPage  from '../Pages/UserPage';
 import ContactPage  from '../Pages/ContactPage';
 import AboutPage  from '../Pages/AboutPage';
 import { BookingHistory } from "../Components/BookingHistory";
+import  FirstSection  from "../Components/PaymentsPage/FirstSection";
+import styles from '../Components/Styling/PaymentsPage.module.css'
+import  SecondSection  from "../Components/PaymentsPage/SecondSection";
 
 const Router = () => {
     return (
@@ -31,6 +34,10 @@ const Router = () => {
                 </Route>
                 <Route exact path="/contact">
                     <ContactPage />
+                </Route>
+                <Route exact path="/user/booking-history">
+                    <FirstSection />
+                    <SecondSection/>
                 </Route>
                 <Route>
                     <div>404. Page not found</div>

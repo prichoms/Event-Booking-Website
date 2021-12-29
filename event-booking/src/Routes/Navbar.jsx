@@ -36,13 +36,6 @@ const useStyles = makeStyles({
   },
 });
 
-function getobj(id) {
-  var obj = userdata.users.filter(ele => ele.id == id)[0];
-  console.log("Nav");
-  console.log(obj);
-  console.log(obj.phone);
-  console.log(obj.name);
-}
 
 const Navbar = () => {
   const [query, setQuery] = React.useState("");
@@ -301,7 +294,7 @@ const Navbar = () => {
                     ></path>
                   </svg>
                   <Link
-                    to="/profile/booking-history"
+                    to="/user/booking-history"
                     style={{ marginLeft: 20, color: "black" }}
                   >
                     <span>Booking History</span>

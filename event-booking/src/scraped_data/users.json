@@ -1,7 +1,7 @@
 {
     "users":[
         {"id":1, "name": "Shreyash", "booked_events":[1,2,3,4,5,6,7], "phone": "7021904275","email":"user1@gmail.com","password":"user1"},
-        {"id":2, "name": "Aditya", "booked_events":[8,9,10,11,1,2,3,4,5], "phone": "1234567890","email":"user1@gmail.com","password":"user2"}   
+        {"id":2, "name": "Aditya", "booked_events":[8,9,10,11,1,2,3,4,5], "phone": "1234567890","email":"user2@gmail.com","password":"user2"}   
     ],
     "organizers":[
         {"id":1, "name": "Shreyash", "organized_events":[1,2,3,4,5,6,7], "phone": "7021904275","email":"admin1@gmail.com","password":"admin1"},
