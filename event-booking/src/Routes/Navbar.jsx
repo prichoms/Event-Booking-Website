@@ -36,7 +36,7 @@ const useStyles = makeStyles({
   },
 });
 
-function getobj(id){
+function getobj(id) {
   var obj = userdata.users.filter(ele => ele.id == id)[0];
   console.log("Nav");
   console.log(obj);
@@ -93,20 +93,20 @@ const Navbar = () => {
     setAuth(false);
     history.push('/')
   }
-  
-  const gotouserpage = (number) => {
-    if ((+number === 9876543210)){
+
+  const gotouserpage = (email) => {
+    if ((+email === 9876543210)) {
       console.log("admin redirect");
       return "/admin"
     }
-    else if(+number === 123456789){
+    else if (+email === 123456789) {
       console.log("user redirect");
       return "/user"
     }
     return ""
   }
-  
-  const handleCloseLogin = (number) => {
+
+  const handleCloseLogin = (email, pass, number) => {
     let r = "";
     if (document.getElementById('tab-1').checked) {
       r = document.getElementById('tab-1').value;
@@ -114,22 +114,44 @@ const Navbar = () => {
     else if (document.getElementById('tab-2').checked) {
       r = document.getElementById('tab-2').value;
     }
-    else{
+    else {
       alert("Select User Type");
     }
-    if (r==="Organizer"){
-      var obj = userdata.organizers.filter(ele => ele.phone == +number)[0];
-      if (obj){
+
+    if (r === "Organizer") {
+      var obj_email_check = userdata.organizers.filter(ele => ele.email == +email);
+      var obj_pass_check = userdata.organizers.filter(ele => ele.password == +pass);
+      var obj_mob_check = userdata.organizers.filter(ele => ele.phone == +number)[0];
+      if (obj_mob_check) {
         setAuth(true);
         alert("Successfully Logged in");
         redirect_admin();
       }
-      else if (+number == ""){
+      else if (+number == "" && +email == "") {
         setAuth(false);
-        alert("Please type your number");
-        handleCloseLogin(number);
+        alert("Both Email & Mob is missing");
       }
-      else{
+      else if (+number == "") {
+        setAuth(false);
+        if (obj_email_check && obj_pass_check) {
+          setAuth(true);
+          alert("Successfully Logged in");
+          redirect_admin();
+        }
+        else if (+email == "") {
+          setAuth(false);
+          alert("Please type your email");
+          handleCloseLogin(email, pass, number);
+        }
+        else if (+pass == "") {
+          setAuth(false);
+          alert("Please type your passsword");
+          handleCloseLogin(email, pass, number);
+        }
+
+      }
+
+      else {
         setAuth(false);
         alert("You are not registered");
       }
@@ -137,28 +159,46 @@ const Navbar = () => {
       setState(false);
     }
     else if (r=="User"){
-      var obj = userdata.users.filter(ele => ele.phone == +number)[0];
-      if (obj){
+      var obj_email_check = userdata.users.filter(ele => ele.email == +email);
+      var obj_pass_check = userdata.users.filter(ele => ele.password == +pass);
+      var obj_mob_check = userdata.users.filter(ele => ele.phone == +number)[0];
+      if (obj_mob_check) {
         setAuth(true);
         alert("Successfully Logged in");
+        redirect_admin();
       }
-      else if (+number == ""){
+      else if (+number == "" && +email == "") {
         setAuth(false);
-        alert("Please type your number");
-        handleCloseLogin(number);
+        alert("Both Email & Mob is missing");
       }
-      else{
+      else if (+number == "") {
+        setAuth(false);
+        if (obj_email_check && obj_pass_check) {
+          setAuth(true);
+          alert("Successfully Logged in");
+          redirect_user();
+        }
+        else if (+email == "") {
+          setAuth(false);
+          alert("Please type your email");
+          handleCloseLogin(email, pass, number);
+        }
+        else if (+pass == "") {
+          setAuth(false);
+          alert("Please type your passsword");
+          handleCloseLogin(email, pass, number);
+        }
+
+      }
+      else {
         setAuth(false);
         alert("You are not registered");
       }
       setAction(false);
       setState(false);
     }
-    else{
-      setAction(false);
-      setState(false);
-    }
   };
+
   React.useEffect(() => {
     dispatch(storeAuth(auth));
   }, [auth]);
@@ -166,14 +206,14 @@ const Navbar = () => {
   return (
     <div>
       <div className={styles.navbar}>
-        <div style={{ display: "flex", alignItems: "center", width: "60%", height: "100%"}}>
+        <div style={{ display: "flex", alignItems: "center", width: "60%", height: "100%" }}>
           <Link className={styles.link} to="/">
-            <svg style={{marginTop: "55px"}} >
+            <svg style={{ marginTop: "55px" }} >
               <image height="100" width="100"
                 href="//www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png"
               ></image>
             </svg>
-          </Link> 
+          </Link>
         </div>
         <div>
           <Link className={styles.link} to="">
@@ -192,8 +232,8 @@ const Navbar = () => {
             XYZ
           </Link>
         </div>
-        <div style={{ display: "flex", alignItems: "center", fontSize: "20px" , size: "20px"}}>
-          
+        <div style={{ display: "flex", alignItems: "center", fontSize: "20px", size: "20px" }}>
+
           {!isAuth && (
             <button onClick={handleSignIn} className={styles.signBtn}>
               <p>Sign In</p>
@@ -210,7 +250,7 @@ const Navbar = () => {
             {isAuth && <div >Hi, User..</div>}
 
             <Drawer anchor="right" open={state}>
-            <div className={styles.drawer}>
+              <div className={styles.drawer}>
                 <div>
                   <div>Hi, User </div>
                   {/* <Link
@@ -224,14 +264,14 @@ const Navbar = () => {
               </div>
               <div className={styles.sideber_content}>
                 <Link
-                    to="/user"
-                    style={{ marginLeft: 20, color: "black" }}
+                  to="/user"
+                  style={{ marginLeft: 20, color: "black" }}
                 >
-                <div>
-                  <AccountCircleIcon style={{ fontSize: "20px" }} />
+                  <div>
+                    <AccountCircleIcon style={{ fontSize: "20px" }} />
                     <span>Profile</span>
                   </div>
-                  </Link>
+                </Link>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

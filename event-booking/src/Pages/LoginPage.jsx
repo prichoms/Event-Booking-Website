@@ -23,6 +23,8 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function Login({ action, handleCloseLogin }) {
+  const [email_id, setEmail] = React.useState('')
+  const [pass, setPassword] = React.useState('')
   const [number, setNumber] = React.useState('')
   let history = useHistory();
 
@@ -65,8 +67,17 @@ export default function Login({ action, handleCloseLogin }) {
               </div>
               <div> +91 </div>
               <div>
-                <input type="text" placeholder="Continue with mobile number" onChange={(e)=>setNumber(e.target.value)}/>
+                <input type="text" placeholder="Continue with mobile number" onChange={(e)=>setNumber(e.target.value)}  />
               </div>
+              </div>
+              <div>OR</div>
+            <div>
+              
+            <label htmlFor="email">Email</label>
+              <input type="text" name="email" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)} />
+              <br/>
+              <label htmlFor="password">Password</label>
+              <input type="password" name="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
             </div>
             <div>I agree to the <a href=""color="DIMGRAY">Terms &amp; Conditions</a> &amp; <a href=""color="DIMGRAY">Privacy Policy</a></div>
             </form>
@@ -133,7 +144,7 @@ export default function Login({ action, handleCloseLogin }) {
           </>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={()=>handleCloseLogin(number)} color="primary">
+          <Button autoFocus onClick={()=>handleCloseLogin(email_id,pass,number)} color="primary">
             Sign in
           </Button>
         </DialogActions>
