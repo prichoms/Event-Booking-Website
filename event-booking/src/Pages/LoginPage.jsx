@@ -40,12 +40,12 @@ export default function Login({ action, handleCloseLogin }) {
           <div>
           <div style={{ fontSize: '20px', width: '300px', margin: 'auto' }}>Get Started</div>
 
-          <div className="google">
+          {/* <div className="google">
             <Button color="secondary" onClick={redirect_admin}>Admin</Button>
           </div>
           <div className="google">
             <Button color="primary" onClick={redirect_user}>User</Button>
-          </div>
+          </div> */}
           </div>
           <>
             <form>

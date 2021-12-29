@@ -1,0 +1,11 @@
+{
+    "users":[
+        {"id":1, "name": "Shreyash", "booked_events":[1,2,3,4,5,6,7], "phone": "7021904275"},
+        {"id":2, "name": "Aditya", "booked_events":[8,9,10,11,1,2,3,4,5], "phone": "1234567890"}   
+    ],
+    "organizers":[
+        {"id":1, "name": "Shreyash", "organized_events":[1,2,3,4,5,6,7], "phone": "7021904275"},
+        {"id":2, "name": "Priyam", "organized_events":[11,12,13,14,15,16,17], "phone": "1234567890"},
+        {"id":3, "name": "Sid", "organized_events":[6,7,9,10,11,14], "phone": "0987654321"}
+    ]
+}
