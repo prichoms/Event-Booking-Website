@@ -86,7 +86,7 @@ const MoviePage = () => {
 
   const handleClick = () => {
     if (isAuth) {
-      history.push(`/booktickets/${id}`)
+      history.push(`/booktickets/`)
       
     } else {
       alert("Please login to book your tickets")
@@ -225,7 +225,7 @@ const MoviePage = () => {
             }}
           >
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="movie_details">
+            <div className="event_details">
               <h1>{data.name}</h1>
               <div className="BookButton">
                 <button onClick={handleClick}>Book Tickets</button>
