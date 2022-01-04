@@ -18,6 +18,7 @@ import { ReactComponent as MuteIcon } from '../../static/mute.svg'
 import { ReactComponent as UnmuteIcon } from '../../static/unmute.svg'
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
+import userdata from '../../scraped_data/users.json';
 
 function valuetext(value) {
   return `${value}`;
@@ -48,6 +49,7 @@ const MoviePage = () => {
   const video = 'https://vimeo.com/331414823';
   const [rValue, setRvalue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
+  const [state, setState] = React.useState(false);
   const classes = useStyles();
   const { id } = useParams();
   const data = useSelector((state) => state.data.movies.data);
@@ -92,26 +94,123 @@ const MoviePage = () => {
     }
   }
 
-  const handleCloseLogin = (number) => {
-    if (+number === 7275584516) {
-        setAuth(true)
-        alert("Successfully Logged in")
+  const redirect_admin = () => {
+    history.push('/admin')
+  }
+  const redirect_user = () => {
+    history.push('/user')
+  }
+  const signout_user = () => {
+    setAuth(false);
+    history.push('/')
+  }
+
+  const gotouserpage = (email) => {
+    if ((+email === 9876543210)) {
+      console.log("admin redirect");
+      return "/admin"
     }
-    else if (+number === 123456789) {
-        setAuth(true)
-        alert("Successfully Logged in")
-    }else if (+number === "") {
-        alert("Please type your number")
-        handleCloseLogin(number)
+    else if (+email === 123456789) {
+      console.log("user redirect");
+      return "/user"
+    }
+    return ""
+  }
+
+  const handleCloseLogin = (email, pass, number) => {
+    let r = "";
+    if (document.getElementById('tab-1').checked) {
+      r = document.getElementById('tab-1').value;
+    }
+    else if (document.getElementById('tab-2').checked) {
+      r = document.getElementById('tab-2').value;
     }
     else {
-        alert("You are not registered")
+      alert("Select User Type");
     }
-    setAction(false);
-  }
+
+    if (r === "Organizer") {
+      var obj_email_check = userdata.organizers.filter(ele => ele.email == +email);
+      var obj_pass_check = userdata.organizers.filter(ele => ele.password == +pass);
+      var obj_mob_check = userdata.organizers.filter(ele => ele.phone == +number)[0];
+      if (obj_mob_check) {
+        setAuth(true);
+        alert("Successfully Logged in");
+        redirect_admin();
+      }
+      else if (+number == "" && +email == "") {
+        setAuth(false);
+        alert("Both Email & Mob is missing");
+      }
+      else if (+number == "") {
+        setAuth(false);
+        if (obj_email_check && obj_pass_check) {
+          setAuth(true);
+          alert("Successfully Logged in");
+          redirect_admin();
+        }
+        else if (+email == "") {
+          setAuth(false);
+          alert("Please type your email");
+          //handleCloseLogin(email, pass, number);
+        }
+        else if (+pass == "") {
+          setAuth(false);
+          alert("Please type your passsword");
+          //handleCloseLogin(email, pass, number);
+        }
+
+      }
+
+      else {
+        setAuth(false);
+        alert("You are not registered");
+      }
+      setAction(false);
+      setState(false);
+    }
+    else if (r=="User"){
+      var obj_email_check = userdata.users.filter(ele => ele.email == +email);
+      var obj_pass_check = userdata.users.filter(ele => ele.password == +pass);
+      var obj_mob_check = userdata.users.filter(ele => ele.phone == +number)[0];
+      if (obj_mob_check) {
+        setAuth(true);
+        alert("Successfully Logged in");
+      }
+      else if (+number == "" && +email == "") {
+        setAuth(false);
+        alert("Both Email & Mob is missing");
+      }
+      else if (+number == "") {
+        setAuth(false);
+        if (obj_email_check && obj_pass_check) {
+          setAuth(true);
+          alert("Successfully Logged in");
+        }
+        else if (+email == "") {
+          setAuth(false);
+          alert("Please type your email");
+          handleCloseLogin(email, pass, number);
+        }
+        else if (+pass == "") {
+          setAuth(false);
+          alert("Please type your passsword");
+          handleCloseLogin(email, pass, number);
+        }
+
+      }
+      else {
+        setAuth(false);
+        alert("You are not registered");
+      }
+      setAction(false);
+      setState(false);
+    }
+  };
     React.useEffect(() => {
       dispatch(storeAuth(auth))
   }, [auth])
+
   return (
     <div>
       {data && (
