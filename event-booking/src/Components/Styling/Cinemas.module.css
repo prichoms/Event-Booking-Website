@@ -3,7 +3,7 @@
     padding: 25px 0;
     /* border: 1px solid red; */
     margin: 20px auto;
-    background-color: white;
+    background-color:#16161D;
 }
 
 .container__info {
@@ -21,6 +21,7 @@
     justify-content: space-around;
     align-items: center;
     font-size: 13px;
+    color: blue;
 }
 
 .modalText>p {
@@ -38,17 +39,19 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    color: green;
 }
 
 .container__card__title>h4 {
     margin: 0;
     margin-bottom: 2px;
+    color: blue;
 }
 
 .container__card__title__icon {
     font-size: 15px;
     margin-right: 8px;
-    color: rgb(255, 232, 232);
+    color: red;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -59,10 +62,12 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 10px 0;
+    
 }
 
 .container__card__info>div {
     margin-right: 10px;
+    
 }
 
 .container__card__info__options {
@@ -76,6 +81,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .container__card__info__options>div>span {
@@ -114,7 +120,7 @@
     position: absolute;
     top: -290%;
     left: -100%;
-    background-color: white;
+    background-color: ;
     padding: 15px;
     height: 105px;
     box-shadow: 0px 0px 1px 1px gray;
@@ -144,14 +150,14 @@
 
 .container__card__info__times__container .button:hover .price__container {
     display: flex;
-    color: black;
+    color: blue;
 }
 
 
 /* HEADER CSS------------------------------- */
 
 .header__container {
-    background-color: #333545;
+    background-color: #16161D;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -160,7 +166,7 @@
 
 .header_container__info>h1 {
     margin: 0;
-    color: white;
+    color: red;
     font-size: 35px;
     font-weight: 600;
 }

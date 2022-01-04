@@ -6,11 +6,11 @@ const FirstSection = ({ handlePayment }) => {
     
     return (
         <div>
-            <div className={styles.contact}>
+            <div className={styles.contact} >
                 <div>
-                    <span>Share your contact details</span>
+                    <span style={{color:"black"}} >Share your contact details</span>
                 </div>
-                <div className={styles.contact_details}>
+                <div className={styles.contact_details} style={{background:'#4abd5d',color:"black", border: "1px solid #b9b9ba"}}>
                     <input type="email" placeholder="Email Address"/>
                     <input type="text" placeholder="Nobile number" />
                     <button style={{marginBottom:'-5px', color:'white'}}>continue</button>
@@ -22,16 +22,16 @@ const FirstSection = ({ handlePayment }) => {
                 <div>More Payment options</div>
                 <div className={styles.StoredCard}>
                     <div className={styles.sidebar}>
-                        <div>Quick pay</div>
-                        <div style={{background:'white'}}>Credit / Debit card</div>
-                        <div>Net Banking</div>
-                        <div>Mobile wallet</div>
-                        <div>Gift Voucher</div>
-                        <div>UPI</div>
-                        <div>Redeem Points</div>
-                        <div>Credit Voucher</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Quick pay</div>
+                        <div style={{background:'skyblue',color:"black"}}>Credit / Debit card</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Net Banking</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Mobile wallet</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Gift Voucher</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>UPI</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Redeem Points</div>
+                        <div style={{background:'#4abd5d',color:"black"}}>Credit Voucher</div>
                     </div>
-                    <div  className={styles.cardDetails}>
+                    <div  className={styles.cardDetails} style={{background:'#4abd5d', border: "1px solid #b9b9ba"}}>
                         <span>Enter your card details</span>
                         <div className={styles.sampleCard}>
                             <div style={{fontSize:'13px', color:'gray'}}>Card Number</div>

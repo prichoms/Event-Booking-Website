@@ -57,7 +57,7 @@ export const Calendar = () => {
                 {
                     dates?.map((item, index) => (
                         <div className={styles.dateItem} onClick={() => { handleDateChange(index); dispatch(handleSelectDate(dates[index].date, dates[index].day)) }} style={index === selectedDate ? { backgroundColor: "#F84464", color: "white" } : { backgroundColor: "transparent" }} key={item.date}>
-                            <h2 style={index === selectedDate ? { color: "white" } : { color: "black" }}>{item.date}</h2>
+                            <h2 style={index === selectedDate ? { color: "#16161D" } : { color: "green" }}>{item.date}</h2>
                             <p>{item.day.slice(0, 3)}</p>
                         </div>
                     ))

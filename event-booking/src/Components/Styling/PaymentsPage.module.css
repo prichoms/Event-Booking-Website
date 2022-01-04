@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	padding: 20px 80px;
-	background: #eee;
+	background: #16161D;
 	max-width: 100vw;
 }
 .firstSection {
@@ -20,7 +20,7 @@
 .contact > div:first-child,
 .cardDetails > div:first-child {
 	cursor: text;
-	background: #f84464;
+	background: #4abd5d;
 	color: #fff;
 	font-size: 100%;
 	font-weight: 400;
@@ -68,15 +68,16 @@
 	display: flex;
 	max-width: 100%;
 	padding: 10px 40px;
-	background: white;
+	background: #4abd5d;
 }
 .StoredCard {
 	display: flex;
 	width: 100%;
+	background-color: #4abd5d;
 }
 .sidebar {
 	width: 35%;
-	background-color: #eee;
+	background-color:#4abd5d ;
 	font-size: 100%;
 	font-weight: 400;
 	color: #969696;
@@ -114,7 +115,7 @@
 	margin-bottom: 20px;
 	position: relative;
 	zoom: 1;
-	background: #dadee3;
+	background: rgb(238, 238, 238);
 	background: linear-gradient(125deg, #dadee3 0, #dadee3 50%, #d2d6de 51%, #d2d6de 100%);
 }
 .sampleCard input {
@@ -163,7 +164,7 @@
 
 .summeryPart {
 	width: 100%;
-	background: white;
+	background: #4abd5d;
 	border: 1px solid #dadada;
 	max-height: fit-content;
 	margin: auto;
