@@ -16,8 +16,9 @@ import {
     GET_POPULAR_EVENTS_SUCCESS
 } from "./actionTypes"
 import axios from "axios";
-import dat from '../../scraped_data/bookMyShow.json';
-import dat1 from '../../scraped_data/popular_events.json';
+// import dat from '../../scraped_data/bookMyShow.json';
+// import dat1 from '../../scraped_data/popular_events.json';
+import datpop from '../../scraped_data/db.json';
 
 export const cityRequest = (city) => {
     return {
@@ -52,7 +53,8 @@ export const getMovies = () => (dispatch) => {
     // return axios.get("https://bookmyshow-clone-masai.herokuapp.com/movies")
     //     .then(res => dispatch(getMoviesSuccess(res.data.data)))
     //     .catch(error => dispatch(getMoviesFailure(error)));
-    return dispatch(getMoviesSuccess(dat.data));
+    var filtered = datpop.events.filter(a => a.is_popular == false);
+    return dispatch(getMoviesSuccess(filtered));
 }
 
 
@@ -82,7 +84,8 @@ export const getPopularEvents = () => dispatch => {
    /*return axios.get("https://bookmyshow-clone-masai.herokuapp.com/popular")
         .then(res => dispatch(getPopularEventsSuccess(res.data.data)))
         .catch(error => dispatch(getPopularEventsFailure(error)))*/
-       return dispatch(getPopularEventsSuccess(dat1));
+        var filtered = datpop.events.filter(a => a.is_popular == true);
+       return dispatch(getPopularEventsSuccess(filtered));
         
 }
 

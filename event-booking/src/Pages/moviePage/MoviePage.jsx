@@ -300,7 +300,7 @@ const MoviePage = () => {
                 </div>
                 <div style={{ color: "white", fontSize: 18 }}>
                   <h5 style={{ color: "white", fontSize: 18 }}>
-                    {`${data.movie_duration} - ${data.genre.map(
+                    {`${data.duration} - ${data.genre.map(
                       (e) => " " + e.genre
                     )} - ${data.release_date}`}
                   </h5>

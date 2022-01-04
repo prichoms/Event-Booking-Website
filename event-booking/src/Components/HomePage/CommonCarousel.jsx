@@ -29,7 +29,7 @@ export const CommonCarousel = ({ events }) => {
             <Carousel responsive={responsive} removeArrowOnDeviceType={["mobile"]}>
                 {
                     events?.map(event => (
-                        <CommonCard {...event} key={event._id} />
+                        <CommonCard {...event} key={event.id} />
                     ))
                 }
             </Carousel>

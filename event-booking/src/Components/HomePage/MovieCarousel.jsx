@@ -29,7 +29,7 @@ export const MovieCarousel = ({ movies }) => {
             <Carousel responsive={responsive} removeArrowOnDeviceType={["tablet", "mobile"]}>
                 {
                     movies?.map(movie => (
-                        <Card {...movie} key={movie._id} />
+                        <Card {...movie} key={movie.id} />
                     ))
                 }
             </Carousel>
