@@ -225,7 +225,7 @@ const MoviePage = () => {
             }}
           >
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="event_details">
+            <div className="movie_details">
               <h1>{data.name}</h1>
               <div className="BookButton">
                 <button onClick={handleClick}>Book Tickets</button>
