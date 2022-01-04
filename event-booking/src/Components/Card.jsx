@@ -3,11 +3,11 @@ import { useHistory } from 'react-router';
 import styles from './Styling/Card.module.css';
 
 const Card = ({ banner_image_url
-    , name , genre, _id }) => {
+    , name , genre, id }) => {
     
     const history = useHistory();
     const handleChange = () => {
-        history.push(`/events/${_id}`)
+        history.push(`/events/${id}`)
     }
     return (
         <div onClick={handleChange} className={styles.card}> 

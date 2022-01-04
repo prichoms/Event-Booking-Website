@@ -139,7 +139,7 @@ export const CinemasBody = ({ filters }) => {
             <div style={{ padding: "15px" }}>
                 {
                     filteredData?.map(cinema => (
-                        <div key={cinema._id} className={styles.container__card}>
+                        <div key={cinema.id} className={styles.container__card}>
                             <div className={styles.container__card__title}>
                                 <BsHeartFill className={styles.container__card__title__icon} />
                                 <h4>{cinema.name}</h4>

@@ -12,10 +12,10 @@ export const CommonCard = ({ banner_image_url = "https://in.bmscdn.com/discovery
     },
     {
         "genre": "Fantasy"
-    }], _id }) => {
+    }], id }) => {
     const history = useHistory();
     const handleChange = () => {
-        history.push(`/events/${_id}`)
+        history.push(`/events/${id}`)
     }    
     return ( 
         <div onClick={handleChange} className={styles.card}>

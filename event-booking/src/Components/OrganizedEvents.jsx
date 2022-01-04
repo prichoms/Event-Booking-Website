@@ -11,10 +11,10 @@ export const OrganizedEvents = () => {
     const user_events = userdata.organizers.filter(ele => ele.id == 1)[0].organized_events;
 
     const filteredPastEvents = events_data.filter(event => (
-        user_events.includes(event._id) && !event.is_premier
+        user_events.includes(event.id) && !event.is_premier
     ))
     const filteredUpcomingEvents = events_data.filter(event => (
-        user_events.includes(event._id) && event.is_premier
+        user_events.includes(event.id) && event.is_premier
     ))
     return (
         <>

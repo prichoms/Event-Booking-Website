@@ -12,10 +12,10 @@ const Card = ({ banner_image_url="https://in.bmscdn.com/discovery-catalog/events
        },
        {
         "genre": "Fantasy"
-        }], _id }) => {
+        }], id }) => {
             const history = useHistory();
             const handleChange = () => {
-                history.push(`/movies/${_id}`)
+                history.push(`/movies/${id}`)
             }
     return (
         <div onClick={handleChange} className={styles.card}> 

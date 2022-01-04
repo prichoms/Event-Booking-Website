@@ -32,7 +32,7 @@ export const BookingHistory = () => {
                         booking_data?.map(item => {
                             console.log(item.date)
 
-                            return item.date >= new Date().getDate() && <Ticket key={item._id} {...item} />
+                            return item.date >= new Date().getDate() && <Ticket key={item.id} {...item} />
                         })
                     }
                 </div>
@@ -44,7 +44,7 @@ export const BookingHistory = () => {
                         previous_booking?.map(item => {
                             // console.log(item.date)
 
-                            return <Ticket key={item._id} {...item} />
+                            return <Ticket key={item.id} {...item} />
                         })
                     }
                 </div>

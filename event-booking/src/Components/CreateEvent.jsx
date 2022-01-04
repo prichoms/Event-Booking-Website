@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -14,6 +15,7 @@ import { PopularEvents } from "../Components/HomePage/PopularEvents";
 import { PremierMovies } from "../Components/HomePage/PremierMovies";
 import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
 import { BookedEvents } from '../Components/BookedEvents';
+import data from "../scraped_data/db.json"
 //import "../Components/MoviePage/moviePage.css";
 
 const styles = (theme) => ({
@@ -76,17 +78,27 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     g = [{"genre": g}];
     let r = {"percentage":88, "no_of_ratings": 197};
     let c = [{"original_name": "Gal Gadot","character": "as Wonder Woman/ Diana Prince","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"},{"original_name": "Chris Pine","character": "as Steve Trevor","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"},{"original_name": "Kristen Wiig","character": "as Cheetah","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"},{"original_name": "Pedro Pascal","character": "as Max Lord","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"},{"original_name": "Connie Nielsen","character": "as Hippolyta","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"},{"original_name": "Robin Wright","character": "as Antiope","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"}]
-    fetch("http://localhost:3001/feed")
+    fetch("http://localhost:3001/events")
       .then(res => res.json())
       .then(result =>
-        fetch("http://localhost:3001/feed", {
+        fetch("http://localhost:3001/events", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ "_id": getMax(result) + 1, "name": n, "location": l, "about": a, "genre": g, "banner_image_url": p ,"rating":r,"cast":c})
+          body: JSON.stringify({ "id": getMax(result) + 1, "name": n, "location": l, "about": a, "is_popular":false, "duration":d, "languages": "English, Hindi, Tamil, Telugu","release_date":dt,"is_premier":false,"genre": g, "banner_image_url": p ,"rating":r,"cast":c})
         })
       )
+      .then(r => 
+        fetch("http://localhost:3001/organizers", {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ "id": 1, "name": "Shreyash", "organized_events":data.organizers.filter(a => a.id == 1)[0].organized_events.push(getMax(r) + 1), "phone": "7021904275","email":"admin1@gmail.com","password":"admin1"})
+        })
+      )
+
   };
   return (
     <div>
@@ -135,23 +147,25 @@ export default function CreateEvent({ action, handleCloseLogin }) {
                 <input class="form-control form-control-lg" type="text"  id="location" name="location" placeholder="Location..." /><br /><br />
               </div>
           </form>
-          <button
-            onClick={submit_event}
-            style={{
-              width: "80%",
-              margin: "30px",
-              height: 50,
-              fontSize: 24,
-              color: "white",
-              backgroundColor: "#f84464",
-              borderRadius: 10,
-              border: "none",
-              outline: "none",
-              cursor: "pointer",
-            }}
-          >
-            Create Event
-          </button>
+          <Link to="/" style={{ marginLeft: 20, color: "black" }}>  
+            <button
+              onClick={submit_event}
+              style={{
+                width: "80%",
+                margin: "30px",
+                height: 50,
+                fontSize: 24,
+                color: "white",
+                backgroundColor: "#f84464",
+                borderRadius: 10,
+                border: "none",
+                outline: "none",
+                cursor: "pointer",
+              }}
+            >
+              Create Event
+            </button>
+          </Link>
         </div>
       </div>
   );
