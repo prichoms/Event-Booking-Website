@@ -7,6 +7,9 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import "../Components/Styling/admin.css";
 import jsondata from "../scraped_data/db.json"
 import { OrganizedEvents } from '../Components/OrganizedEvents';
+import { Link } from "react-router-dom";
+
+import AddIcon from "@material-ui/icons/Add";
 
 
 export default function AdminPage({ action, handleCloseLogin }) {
@@ -29,6 +32,17 @@ export default function AdminPage({ action, handleCloseLogin }) {
         <h1>Lionel Messi</h1>
         <h4>Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.</h4>
       </div>
+      <br/><br/><br/><br/>
+      <center>
+        <Button autoFocus variant="contained" color="primary">
+          <Link to="/create" style={{ marginLeft: 20, color: "black" }}>
+              <div>
+                <AddIcon style={{ fontSize: "20px" }} />
+                <span>Create New Event</span>
+              </div>
+          </Link>
+        </Button>
+      </center>
       <br/><br/><br/><br/>
       <div style={{ backgroundColor: "#16161D" }}>
           <OrganizedEvents />

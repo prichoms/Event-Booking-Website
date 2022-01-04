@@ -12,6 +12,7 @@ import { BookingHistory } from "../Components/BookingHistory";
 import  FirstSection  from "../Components/PaymentsPage/FirstSection";
 import styles from '../Components/Styling/PaymentsPage.module.css'
 import  SecondSection  from "../Components/PaymentsPage/SecondSection";
+import CreateEvent from "../Components/CreateEvent"
 
 const Router = () => {
     return (
@@ -32,10 +33,14 @@ const Router = () => {
                 <Route exact path="/user">
                     <UserPage />
                 </Route>
+                <Route exact path="/create">
+                    <CreateEvent />
+                </Route>
                 <Route exact path="/contact">
                     <ContactPage />
                 </Route>
                 <Route exact path="/user/booking-history">
+                    <BookingHistory/>
                     <FirstSection />
                     <SecondSection/>
                 </Route>

@@ -134,12 +134,12 @@ const Navbar = () => {
         else if (+email == "") {
           setAuth(false);
           alert("Please type your email");
-          handleCloseLogin(email, pass, number);
+          //handleCloseLogin(email, pass, number);
         }
         else if (+pass == "") {
           setAuth(false);
           alert("Please type your passsword");
-          handleCloseLogin(email, pass, number);
+          //handleCloseLogin(email, pass, number);
         }
 
       }
@@ -158,7 +158,6 @@ const Navbar = () => {
       if (obj_mob_check) {
         setAuth(true);
         alert("Successfully Logged in");
-        redirect_admin();
       }
       else if (+number == "" && +email == "") {
         setAuth(false);
@@ -169,7 +168,6 @@ const Navbar = () => {
         if (obj_email_check && obj_pass_check) {
           setAuth(true);
           alert("Successfully Logged in");
-          redirect_user();
         }
         else if (+email == "") {
           setAuth(false);

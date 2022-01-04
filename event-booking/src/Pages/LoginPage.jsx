@@ -71,14 +71,14 @@ export default function Login({ action, handleCloseLogin }) {
               </div>
               </div>
               <div>OR</div>
-            <div>
+            {/* <div>
               
             <label htmlFor="email">Email</label>
               <input type="text" name="email" placeholder="Enter your email" onChange={(e)=>setEmail(e.target.value)} />
               <br/>
               <label htmlFor="password">Password</label>
               <input type="password" name="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
-            </div>
+            </div> */}
             <div>I agree to the <a href=""color="DIMGRAY">Terms &amp; Conditions</a> &amp; <a href=""color="DIMGRAY">Privacy Policy</a></div>
             </form>
           </>
