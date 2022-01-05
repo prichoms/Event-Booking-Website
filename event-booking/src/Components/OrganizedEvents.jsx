@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { MovieCarousel } from "./HomePage/MovieCarousel";
+import { ModifyCarousel } from "./HomePage/ModifyCarousel";
 import styles from "./Styling/RecommendedMovies.module.css";
 import { RiArrowRightSLine } from "react-icons/ri";
 import userdata from '../scraped_data/users.json';
@@ -25,11 +26,17 @@ export const OrganizedEvents = () => {
                 <MovieCarousel movies={filteredUpcomingEvents} />
             </div>
             <div className={styles.parent}>
-            <div className={styles.parent__text}>
-                <h1>Past Events</h1>
+                <div className={styles.parent__text}>
+                    <h1>Past Events</h1>
+                </div>
+                <MovieCarousel movies={filteredPastEvents} />
             </div>
-            <MovieCarousel movies={filteredPastEvents} />
-        </div>
+            <div className={styles.parent}>
+                <div className={styles.parent__text}>
+                    <h1>Modify Events</h1>
+                </div>
+                <ModifyCarousel movies={events_data} />
+            </div>
         </>
     )
 }

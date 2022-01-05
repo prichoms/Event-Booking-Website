@@ -133,7 +133,9 @@
         5,
         6,
         7,
-        21
+        21,
+        22,
+        23
       ],
       "phone": "7021904275",
       "email": "admin1@gmail.com",
@@ -615,7 +617,7 @@
           "genre": "Comedy By Amit Tandon"
         }
       ],
-      "about": "Set in the 1980s, Wonder Woman`s next big screen adventure finds her facing two all-new foes, Max Lord and The Cheetah, and the unexpected return of a face from her past.",
+      "about": "Set in the 1980s, Wonder Woman`s next big screen adventure finds her facing two all-new foes, Max Lord and The Cheetah, and the unexpected return of a face from her past. Hehehehe",
       "cast": [
         {
           "original_name": "Gal Gadot",
@@ -1248,6 +1250,112 @@
         }
       ],
       "banner_image_url": "https://cdn.onebauer.media/one/media/61c3/5427/d02f/1ec8/e8e3/aea9/doctor-strange-mom-poster.jpg?format=jpg&quality=80&width=440&ratio=1-1&resize=aspectfit",
+      "rating": {
+        "percentage": 88,
+        "no_of_ratings": 197
+      },
+      "cast": [
+        {
+          "original_name": "Gal Gadot",
+          "character": "as Wonder Woman/ Diana Prince",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+        },
+        {
+          "original_name": "Chris Pine",
+          "character": "as Steve Trevor",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+        },
+        {
+          "original_name": "Kristen Wiig",
+          "character": "as Cheetah",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+        },
+        {
+          "original_name": "Pedro Pascal",
+          "character": "as Max Lord",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+        },
+        {
+          "original_name": "Connie Nielsen",
+          "character": "as Hippolyta",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+        },
+        {
+          "original_name": "Robin Wright",
+          "character": "as Antiope",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "name": "wohi",
+      "location": "asc",
+      "about": "wSVdijwsv:K",
+      "is_popular": false,
+      "duration": "o12",
+      "languages": "English, Hindi, Tamil, Telugu",
+      "release_date": "asc",
+      "is_premier": false,
+      "genre": [
+        {
+          "genre": "wv"
+        }
+      ],
+      "banner_image_url": "https://ih1.redbubble.net/image.1810220523.2274/poster,504x498,f8f8f8-pad,600x600,f8f8f8.jpg",
+      "rating": {
+        "percentage": 88,
+        "no_of_ratings": 197
+      },
+      "cast": [
+        {
+          "original_name": "Gal Gadot",
+          "character": "as Wonder Woman/ Diana Prince",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+        },
+        {
+          "original_name": "Chris Pine",
+          "character": "as Steve Trevor",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+        },
+        {
+          "original_name": "Kristen Wiig",
+          "character": "as Cheetah",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+        },
+        {
+          "original_name": "Pedro Pascal",
+          "character": "as Max Lord",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+        },
+        {
+          "original_name": "Connie Nielsen",
+          "character": "as Hippolyta",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+        },
+        {
+          "original_name": "Robin Wright",
+          "character": "as Antiope",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "name": "",
+      "location": "",
+      "about": "",
+      "is_popular": false,
+      "duration": "",
+      "languages": "English, Hindi, Tamil, Telugu",
+      "release_date": "",
+      "is_premier": false,
+      "genre": [
+        {
+          "genre": ""
+        }
+      ],
+      "banner_image_url": "",
       "rating": {
         "percentage": 88,
         "no_of_ratings": 197

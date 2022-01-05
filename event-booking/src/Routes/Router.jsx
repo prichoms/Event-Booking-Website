@@ -13,7 +13,7 @@ import  FirstSection  from "../Components/PaymentsPage/FirstSection";
 import styles from '../Components/Styling/PaymentsPage.module.css'
 import  SecondSection  from "../Components/PaymentsPage/SecondSection";
 import CreateEvent from "../Components/CreateEvent"
-
+import ModifyEvent from "../Components/ModifyEvent"
 const Router = () => {
     return (
         <div>
@@ -26,6 +26,9 @@ const Router = () => {
                 </Route>
                 <Route exact path="/events/:id">
                     <MoviePage></MoviePage>
+                </Route>
+                <Route exact path="/modifyevents/:id">
+                    <ModifyEvent></ModifyEvent>
                 </Route>
                 <Route exact path="/admin">
                     <AdminPage />

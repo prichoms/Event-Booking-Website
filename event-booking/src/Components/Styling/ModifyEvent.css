@@ -1,0 +1,16 @@
+.form-group{
+    color: black;
+}
+.bttn{
+    margin-left: 600px;
+    background-color: #f84464;
+    color: #100e29;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+    padding: 2px;
+}
