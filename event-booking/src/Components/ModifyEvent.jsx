@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies, putMovies } from "../Redux/data/actions";
 import { useHistory, useParams } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 import "./MoviePage/moviePage.css";
 import "./Styling/ModifyEvent.css"
 import Carousel from "react-elastic-carousel";
@@ -11,7 +13,6 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-import { RecommendedMovies } from "./HomePage/RecommendedMovies";
 import Login from "../Pages/LoginPage";
 import { storeAuth } from "../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
@@ -208,7 +209,9 @@ const ModifyEvent = () => {
     abtmodchange();
     let a = document.getElementById("about").value;
     let newdata = data;
-    newdata.about = a;
+    if (a != "" ){
+      newdata.about = a;
+    }
     fetch(`http://localhost:3001/events/${data.id}`, {
           method: "PUT",
           headers: {
@@ -218,7 +221,6 @@ const ModifyEvent = () => {
         }
     )
   }
-
   function Aboutbox(props) {
     const dat = props.dat;
     const abtmod1 = abtmod;
@@ -238,7 +240,143 @@ const ModifyEvent = () => {
     }
     return about;
   }
+
+  const [imgmod, setImgmod] = React.useState(false);
+  const imgmodchange = () => {
+    setImgmod(!imgmod);
+  }
+  const imgmodsave = () => {
+    imgmodchange();
+    let a = document.getElementById("poster").value;
+    let newdata = data;
+    if (a != "" ){
+      newdata.banner_image_url = a;
+    }
+    fetch(`http://localhost:3001/events/${data.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newdata)
+        }
+    )
+  }
+  function Posterbox(props) {
+    const dat = props.dat;
+    const imgmod1 = imgmod;
+    let poster;
+    if (imgmod1) {
+      poster = <>
+                <div className="container__card">
+                  <img src={dat.banner_image_url} alt="title" />
+                </div>
+                <button onClick={imgmodsave} className="bttn_det">Save</button>
+                <div class="form-group">
+                  <input class="form-control form-control-lg" type="text" id="poster" name="poster"/><br/><br/>
+                </div>
+              </>
+    } else {
+      poster = <>
+                <div className="container__card">
+                  <img src={dat.banner_image_url} alt="title" />
+                </div>
+                <button onClick={imgmodchange} className="bttn_det">Modify</button>
+              </>
+    }
+    return poster;
+  }
+
+
+  const [detmod, setDetmod] = React.useState(false);
+  const detmodchange = () => {
+    setDetmod(!detmod);
+  }
+  const detmodsave = () => {
+    detmodchange();
+    let a = document.getElementById("languages").value;
+    let b = document.getElementById("duration").value;
+    let c = document.getElementById("release_date").value;
+    let newdata = data;
+    if (a != "" ){
+      newdata.languages = a;
+    }
+    if (b != "" ){
+      newdata.duration = b;
+    }
+    if (c != "" ){
+      newdata.release_date = c;
+    }
+    fetch(`http://localhost:3001/events/${data.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newdata)
+        }
+    )
+  }
+  function Detailsbox(props) {
+    const dat = props.dat;
+    const detmod1 = detmod;
+    let details;
+    if (detmod1) {
+      details = <>
+                <button onClick={detmodsave} className="bttn_det">Save</button>
+                <div className="container__movieDetail">
+                  <div style={{ color: "white", fontSize: 18 }}>
+                    <div class="form-group otherdet">
+                      <label for="languages"><h3>Languages:</h3></label><br />
+                      <input class="form-control form-control-lg langbox" type="text"  id="languages" name="languages" placeholder={dat.languages} /><br /><br />
+                    </div>
+
+                    <div class="form-group otherdet">
+                      <label for="duration"><h3>Duration:</h3></label><br />
+                      <input class="form-control form-control-lg langbox" type="text"  id="duration" name="duration" placeholder={dat.duration} /><br /><br />
+                    </div>
+                    
+                    <div class="form-group otherdet">
+                      <label for="release_date"><h3>Release Date:</h3></label><br />
+                      <input class="form-control form-control-lg langbox" type="text"  id="release_date" name="release_date" placeholder={dat.release_date} /><br /><br />
+                    </div>
+                  </div>
+                </div>
+              </>
+    } else {
+      details = <>
+                <button onClick={detmodchange} className="bttn_det">Modify</button>
+                <div className="container__movieDetail">
+                  <div className="container__movieDetail_language">
+                    <div>
+                      <p>{dat.languages}</p>
+                    </div>
+                  </div>
+                  <div style={{ color: "white", fontSize: 18 }}>
+                    <h5 style={{ color: "white", fontSize: 18 }}>
+                      {`${dat.duration} - ${dat.genre.map(
+                        (e) => " " + e.genre
+                      )} - ${dat.release_date}`}
+                    </h5>
+                  </div>
+                </div>
+              </>
+    }
+    return details;
+  }
   
+  function DeleteEvent(){
+    let aa = window.confirm('Are you sure you want to delete this event?');
+    if (aa) {
+      console.log('deleted.');
+      fetch(`http://localhost:3001/events/${data.id}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+    )
+    }
+  }
+  const Trash = ({size=40, color="#d0021b"}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>);
   
   return (
     <div>
@@ -261,6 +399,15 @@ const ModifyEvent = () => {
               </div>
             </div>
           </div>
+          <center>
+          <Link to="/admin" style={{ marginLeft: 20, color: "black" }} >
+            <button className="Delete" onClick={DeleteEvent}>
+              <Trash/><br/>
+              Delete Event?
+            </button>
+          </Link>
+
+          </center>
           <div className='rowC'>
           <div className="middleContainer">
             <div>
@@ -298,12 +445,12 @@ const ModifyEvent = () => {
                     
               </AliceCarousel>
             </div>
-            <hr />
           </div>
           <div className="middleContainer_right">
-            <div className="container__card">
+            {/* <div className="container__card">
               <img src={data.banner_image_url} alt="title" />
-            </div>
+            </div> */}
+            <Posterbox dat={data} />
             <div className="container__movieDetail_rating">
                 <img
                   src="https://www.leadingwithhonor.com/wp-content/uploads/2021/02/redheart.png"
@@ -321,7 +468,7 @@ const ModifyEvent = () => {
                   <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
                 </div>
               </div>
-              <div className="container__movieDetail">
+              {/* <div className="container__movieDetail">
                 <div className="container__movieDetail_language">
                   <div>
                     <p>{data.languages}</p>
@@ -334,12 +481,13 @@ const ModifyEvent = () => {
                     )} - ${data.release_date}`}
                   </h5>
                 </div>
-            </div>
+              </div> */}
+            
+              <Detailsbox dat={data} />
           </div>
           </div>
         </>
       )}
-      <RecommendedMovies></RecommendedMovies>
     </div>
   );
 };
