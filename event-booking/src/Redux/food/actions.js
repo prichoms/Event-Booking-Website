@@ -34,9 +34,9 @@ export const storeSelectedFood = (selectedFood) => {
 export const getFood = () => (dispatch) => {
   dispatch(getFoodRequest());
   return axios
-    .get(`https://bookmyshow-clone-masai.herokuapp.com/food`)
+    .get(`http://localhost:3001/food`)
     .then((res) => {
-      dispatch(getFoodSuccess(res.data.data));
+      dispatch(getFoodSuccess(res.data));
     })
     .catch((err) => dispatch(getFoodFailure(err)));
 };

@@ -10,7 +10,7 @@ const ticketList = {
 };
 const Seating = ({
   seatingActive = false,
-  movie_name = "Tom And Jerry",
+  name = "Tom And Jerry",
   location = "INOX: Neelyog, Ghatkopar E",
   timeAndDate = "Tomorrow, 12 Mar, 10:30 AM",
   type1 = "SILVER",
@@ -84,7 +84,7 @@ const Seating = ({
       <div className="seatingModal__nav">
         <div>
           <div>
-            <h4 style={{ color: "white", fontSize: 20 }}>{movie_details.movie_name}</h4>
+            <h4 style={{ color: "white", fontSize: 20 }}>{movie_details.name}</h4>
             <h5 style={{ color: "white" }}>{movie_details.cinemas_name}</h5>
           </div>
           <div>

@@ -47,8 +47,8 @@ const Router = () => {
                     <FirstSection />
                     <SecondSection/>
                 </Route>
-                <Route exact path="/booktickets/">
-                    <BookTicketsPage />
+                <Route exact path="/booktickets/:id">
+                    <BookTicketsPage></BookTicketsPage>
                 </Route>
                 <Route>
                     <div>404. Page not found</div>

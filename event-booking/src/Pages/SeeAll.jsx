@@ -36,7 +36,7 @@ const SeeAll = () => {
             setMovie(updated)
         }
         if (filterGenre.length > 0) {
-            const updated = movie.filter(item => item.movie_genre?.find(gen => (gen.genre === filterGenre[filterGenre.length - 1]) ? gen.genre : genre).genre === filterGenre[filterGenre.length - 1])
+            const updated = movie.filter(item => item.genre?.find(gen => (gen.genre === filterGenre[filterGenre.length - 1]) ? gen.genre : genre).genre === filterGenre[filterGenre.length - 1])
             setMovie(updated)
             console.log(updated)
         }

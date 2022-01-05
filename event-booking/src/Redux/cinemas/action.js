@@ -27,7 +27,9 @@ const getCinemasFailure = () => {
 
 export const getCinemas = () => dispatch => {
     dispatch(getCinemasRequest());
-    return axios.get("https://bookmyshow-clone-masai.herokuapp.com/cinema")
-        .then(res => dispatch(getCinemasSuccess(res.data.data)))
+    return axios.get("http://localhost:3001/cinema")
+        .then(res => {
+            console.log(res.data[0]);
+            dispatch(getCinemasSuccess(res.data[0]))})
         .catch(error => dispatch(getCinemasFailure(error)))
 }

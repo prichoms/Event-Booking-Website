@@ -1,19 +1,19 @@
 import {
     ADD_DATE_DAY,
-    ADD_MOVIE_NAME,
+    ADD_name,
     ADD_NAME_TIME,
     ADD_SEATS_DATA,
     ADD_TOTAL_PRICE
 } from "./actionTypes"
 
 
-export const handleAddMovieName = (movie_name, movie_grade, banner_image_url) => {
+export const handleAddMovieName = (name, grade, banner_image_url) => {
     return {
-        type: ADD_MOVIE_NAME,
+        type: ADD_name,
         payload: {
-            movie_name,
+            name,
             banner_image_url,
-            movie_grade
+            grade
         }
     }
 }

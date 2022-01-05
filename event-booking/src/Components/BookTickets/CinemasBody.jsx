@@ -126,7 +126,7 @@ export const CinemasBody = ({ filters }) => {
                     <p>11. Contactless food and beverage purchase transaction and self pick -up from the counter.</p>
                 </div>
             </Modal>
-            <div className={styles.container__info}>
+            {/* <div className={styles.container__info}>
                 <div>
                     <BsCircleFill style={{ color: "#4ABD5D", fontSize: 10 }} />
                     <span>AVAILABLE</span>
@@ -135,17 +135,20 @@ export const CinemasBody = ({ filters }) => {
                     <BsCircleFill style={{ color: "rgb(253, 102, 0)", fontSize: 10 }} />
                     <span>FAST FILLING</span>
                 </div>
-            </div>
+            </div> */}
             <div style={{ padding: "15px" }}>
                 {
                     filteredData?.map(cinema => (
-                        <div key={cinema.id} className={styles.container__card}>
+                        <div key={cinema.id} className="rowA">
+                        <div className="imagecard"><img src={cinema.image} style={{"height":"100px", "weight":"50px", "flex": 1, "overflow":"hidden"}}/></div>
+                        <div className={styles.container__card}>
                             <div className={styles.container__card__title}>
                                 <BsHeartFill className={styles.container__card__title__icon} />
                                 <h4>{cinema.name}</h4>
+                                
                             </div>
                             <div className={styles.container__card__info}>
-                                <div className={styles.container__card__info__options}>
+                                {/* <div className={styles.container__card__info__options}>
                                     <div style={{ color: "#49BA8E" }}>
                                         <VscDeviceMobile />
                                         <span>M-Ticket</span>
@@ -154,7 +157,7 @@ export const CinemasBody = ({ filters }) => {
                                         <IoFastFoodOutline />
                                         <span>F&B</span>
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className={styles.container__card__info__times__container}>
                                     <div>
                                         {
@@ -167,7 +170,7 @@ export const CinemasBody = ({ filters }) => {
                                                         amOrPm === "AM" || (showTime === currentTime ? showMinutes > new Date().getMinutes() ? true : false : (showTime > currentTime && showTime !== 12)) || (date > new Date().getDate()) ? { pointerEvents: "all" } :
                                                             { pointerEvents: "none", color: "rgb(192,192,192)" }} key={index + 1} className={styles.button}>
                                                         {time.time}
-                                                        <div className={styles.price__container}>
+                                                        {/* <div className={styles.price__container}>
                                                             <div>
                                                                 <p>Rs. 150</p>
                                                                 <span>NORMAL</span> <br />
@@ -183,19 +186,20 @@ export const CinemasBody = ({ filters }) => {
                                                                 <span>VIP</span> <br />
                                                                 <span style={{ color: "#4abd5d" }}>Available</span>
                                                             </div>
-                                                        </div>
+                                                        </div> */}
                                                     </div>
                                                 )
                                             })
                                         }
                                     </div>
-                                    {
+                                    {/* {
                                         cinema.cancellation_availability && <div style={{ display: "flex", alignItems: "center" }} >
                                             <BsCircleFill style={{ color: "#FFC610", fontSize: 8, marginRight: 5 }} /> <span style={{ fontSize: 12, color: "gray" }}>Cancellation Available</span>
                                         </div>
-                                    }
+                                    } */}
                                 </div>
                             </div>
+                        </div>
                         </div>
                     ))
                 }

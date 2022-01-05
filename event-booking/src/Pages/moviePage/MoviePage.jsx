@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies, putMovies } from "../../Redux/data/actions";
+import { getMovies } from "../../Redux/data/actions";
 import { useHistory, useParams } from "react-router-dom";
 import "../../Components/MoviePage/moviePage.css";
 import Carousel from "react-elastic-carousel";
@@ -13,9 +13,6 @@ import Slider from "@material-ui/core/Slider";
 import { RecommendedMovies } from "../../Components/HomePage/RecommendedMovies";
 import Login from "../LoginPage";
 import { storeAuth } from "../../Redux/app/actions";
-import ReactPlayer from 'react-player'
-import { ReactComponent as MuteIcon } from '../../static/mute.svg'
-import { ReactComponent as UnmuteIcon } from '../../static/unmute.svg'
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import userdata from '../../scraped_data/users.json';
@@ -45,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MoviePage = () => {
-  const [isMuted, setIsMuted] = React.useState(true)
+  const [isMuted] = React.useState(true)
   const video = 'https://vimeo.com/331414823';
   const [rValue, setRvalue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
@@ -62,6 +59,8 @@ const MoviePage = () => {
     dispatch(getMovies(id));
     window.scrollTo(window.scrollX, 0);
   }, []);
+  const data_temp = useSelector((state) => state.data);
+  console.log(data_temp);
   const handleOpen = () => {
     setOpen(true);
   };
@@ -73,20 +72,29 @@ const MoviePage = () => {
     setRvalue(v);
   };
   const handleRating = () => {
-    dispatch(
-      putMovies(id, {
-        rating: {
-          percentage: data.rating.percentage,
-          no_of_ratings: data.rating.no_of_ratings + 1,
-        },
-      })
-    );
+    let newdata = data;
+    let per = (data.rating.no_of_ratings)*(data.rating.percentage) + rValue;
+    newdata.rating.no_of_ratings = data.rating.no_of_ratings + 1;
+    newdata.rating.percentage = Math.floor(per/newdata.rating.no_of_ratings);
+    let n = document.getElementById("name").value;
+    let brr = newdata.feedback;
+    let nid = {"name":n,"rating":rValue};
+    brr.push(nid);
+    newdata.feedback = brr;
+    console.log(newdata);
+    fetch(`http://localhost:3001/events/${data.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newdata)
+        })
     setOpen(false);
   };
 
   const handleClick = () => {
     if (isAuth) {
-      history.push(`/booktickets/`)
+      history.push(`/booktickets/${data.id}`)
       
     } else {
       alert("Please login to book your tickets")
@@ -310,6 +318,94 @@ const MoviePage = () => {
           </div>
         </>
       )}
+      <div>
+        <Modal
+          aria-labelledby="transition-modal-title"
+          aria-describedby="transition-modal-description"
+          className={classes.modal}
+          open={open}
+          closeAfterTransition
+          BackdropComponent={Backdrop}
+          BackdropProps={{
+            timeout: 500,
+          }}
+        >
+          <Fade in={open}>
+            <div className={classes.paper}>
+              <div style={{ textAlign: "center", position: "relative" }}>
+                <p style={{ margin: 0, padding: 0 }}>
+                  {data && data.movie_name}
+                </p>
+                <button
+                  onClick={handleClose}
+                  style={{ position: "absolute", right: 10, top: 0 }}
+                >
+                  X
+                </button>
+              </div>
+              <hr />
+              <div className={classes.root}>
+                <Typography id="discrete-slider" gutterBottom>
+                  Name
+                </Typography>
+                <div class="form-group">
+                  <input class="form-control form-control-lg" type="text"  id="name" name="name" placeholder="Your Name...." /><br /><br />
+                </div>
+                <Typography id="discrete-slider" gutterBottom>
+                  How would you rate the movie?
+                </Typography>
+                <Slider
+                  onChange={handleChange}
+                  defaultValue={10}
+                  getAriaValueText={valuetext}
+                  aria-labelledby="discrete-slider"
+                  valueLabelDisplay="auto"
+                  step={10}
+                  marks
+                  min={0}
+                  max={100}
+                  color="secondary"
+                />
+
+                <div
+                  style={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: "50%",
+                    backgroundColor: "#f84464",
+                    color: "white",
+                    display: "flex",
+                    alignItems: "center",
+                    marginLeft: 60,
+                    position: "relative"
+                  }}
+                >
+                  <h1 style={{ color: "white", margin: 0, position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)" }}>
+                    {rValue}%
+                  </h1>
+                </div>
+              </div>
+              <button
+                onClick={handleRating}
+                style={{
+                  width: "80%",
+                  margin: "30px",
+                  height: 50,
+                  fontSize: 18,
+                  color: "white",
+                  backgroundColor: "#f84464",
+                  borderRadius: 10,
+                  border: "none",
+                  outline: "none",
+                  cursor: "pointer"
+                }}
+              >
+                Submit Rating
+              </button>
+            </div>
+          </Fade>
+        </Modal>
+      </div>
       <RecommendedMovies></RecommendedMovies>
     </div>
   );

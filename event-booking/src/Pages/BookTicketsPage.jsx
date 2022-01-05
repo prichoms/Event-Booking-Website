@@ -14,10 +14,10 @@ export const BookTicketsPage = () => {
     const [filters, setFilters] = useState([])
     const [count, setCount] = useState(0)
     // const movie = useSelector(state => state.data.movies).data;
-    const movie_name = useSelector(state => state.booking_details);
-    // console.log(movie_name)
+    const name = useSelector(state => state.booking_details);
+    // console.log(name)
     // const [bookingDetails, setBookingDetails] = useState({
-    //     movie_name: "",
+    //     name: "",
     //     date: "",
     //     day: "",
     //     time: "",
@@ -53,8 +53,8 @@ export const BookTicketsPage = () => {
     //     setCount(prev => prev + 1);
     // }
 
-    // const handleMovieName = (movie_name) => {
-    //     setBookingDetails({ ...bookingDetails, movie_name })
+    // const handleMovieName = (name) => {
+    //     setBookingDetails({ ...bookingDetails, name })
     // }
 
     useEffect(() => {

@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
     background: '#1F2533',
+    height: '50px'
 
   },
   title: {

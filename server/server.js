@@ -15,7 +15,7 @@ const connect = () => {
   });
 };
 const bookingSchema = new mongoose.Schema({
-  movie_name: String,
+  name: String,
   silver: Array,
   date: Number,
   day: String,
@@ -26,7 +26,7 @@ const bookingSchema = new mongoose.Schema({
   price: Number,
   total_price: Number,
   banner_image_url: String,
-  movie_grade: String
+  grade: String
 });
 const Booking = mongoose.model("booking", bookingSchema);
 
@@ -154,7 +154,7 @@ app.get("/cinema", async (req, res) => {
 });
 
 const movieSchema = new mongoose.Schema({
-  movie_name: {
+  name: {
     type: String,
     required: true
   },
@@ -182,7 +182,7 @@ const movieSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
-  movie_duration: {
+  duration: {
     type: String,
     required: true
   },

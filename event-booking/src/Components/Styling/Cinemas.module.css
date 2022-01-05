@@ -28,7 +28,14 @@
     margin: 5px 0;
 }
 
+.rowA{
+    display:flex; 
+    flex-direction:row;
+}
+
+
 .container__card {
+    width: 70%;
     margin: 10px;
     padding: 5px;
     border-bottom: 1px solid rgba(182, 182, 182, 0.801);
@@ -46,6 +53,7 @@
     margin: 0;
     margin-bottom: 2px;
     color: blue;
+    font-size: 20px;
 }
 
 .container__card__title__icon {
@@ -89,7 +97,7 @@
 }
 
 .container__card__info__times__container {
-    margin-left: 15%;
+    margin-left: 40%;
 }
 
 .container__card__info__times__container>div {

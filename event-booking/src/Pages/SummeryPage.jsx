@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   appBar: {
     position: 'relative',
     background: '#1F2533',
+    height: '50px'
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -84,7 +85,7 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
               <ChevronLeftIcon />
             </IconButton>
             <Typography variant="h6" className={classes.title}>
-              {booking_details.movie_name}
+              {booking_details.name}
             </Typography>
             <Button autoFocus color="inherit" onClick={handleCloseFoodModal}>
               <ClearIcon />
