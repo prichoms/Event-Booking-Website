@@ -11,14 +11,10 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
-import { useHistory, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { putMovies } from "../Redux/data/actions";
 
-
-
-
-
-var fs = require('fs');
+var fs = require("fs");
 
 function valuetext(value) {
   return `${value}`;
@@ -45,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const HomePage = () => {
-
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const handleOpen = () => {
@@ -58,8 +53,7 @@ export const HomePage = () => {
   function getMax(arr, prop) {
     var max = -1;
     for (var i = 0; i < arr.length; i++) {
-      if (arr[i].id > max)
-        max = arr[i].id;
+      if (arr[i].id > max) max = arr[i].id;
     }
     return max;
   }
@@ -67,16 +61,16 @@ export const HomePage = () => {
     let n = document.getElementById("name").value;
     let f = document.getElementById("feed").value;
     fetch("http://localhost:3001/feed")
-      .then(res => res.json())
-      .then(result =>
+      .then((res) => res.json())
+      .then((result) =>
         fetch("http://localhost:3001/feed", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify({ "id": getMax(result) + 1, "name": n, "feed": f })
+          body: JSON.stringify({ id: getMax(result) + 1, name: n, feed: f }),
         })
-      )
+      );
     handleClose();
   };
 
@@ -85,29 +79,52 @@ export const HomePage = () => {
   useEffect(() => {
     dispatch(getMovies());
     dispatch(getPopularEvents());
-  }, [])
+  }, []);
   return (
-
     <div style={{ backgroundColor: "#16161D" }}>
       <div>
         <AddCarousel />
         <div>
-        <button style={{ cursor: "pointer", 
-                  margin: "20px 20px",
-                  height: 90,
-                  width: 90,
-                  fontSize: 24,
-                  color: "white",
-                  backgroundColor: "#f84464",
-                  borderRadius: 50,
-                  borderColor: "greenyellow",
-                  borderWidth: "5px",
-                  outline: "none",
-                  position: "fixed",
-                  bottom: "0px",
-                  right: "0px",
-                  }} onClick={handleOpen} className="ratebutton">Rate Us</button>
-      </div>
+          <Link to="/allmovies">
+            <button
+              style={{
+                cursor: "pointer",
+                position: "relative",
+                fontSize: 20,
+                padding: "5px",
+                marginTop: "40px",
+                marginLeft: "47.5%",
+                border: "none",
+                color: "white",
+                backgroundColor: "#f84464",
+              }}
+            >
+              All Events
+            </button>
+          </Link>
+          <button
+            style={{
+              cursor: "pointer",
+              margin: "20px 20px",
+              height: 90,
+              width: 90,
+              fontSize: 24,
+              color: "white",
+              backgroundColor: "#f84464",
+              borderRadius: 50,
+              borderColor: "greenyellow",
+              borderWidth: "5px",
+              outline: "none",
+              position: "fixed",
+              bottom: "0px",
+              right: "0px",
+            }}
+            onClick={handleOpen}
+            className="ratebutton"
+          >
+            Rate Us
+          </button>
+        </div>
 
         <PremierMovies />
         <div style={{ backgroundColor: "#16161D" }}>
@@ -131,9 +148,7 @@ export const HomePage = () => {
           <Fade in={open}>
             <div className={classes.paper}>
               <div style={{ textAlign: "center", position: "relative" }}>
-                <h5 style={{ margin: 0, padding: 0, marginTop: 10 }}>
-
-                </h5>
+                <h5 style={{ margin: 0, padding: 0, marginTop: 10 }}></h5>
                 <p style={{ margin: 0, padding: 0 }}>
                   {/* {"movie" && "hehe"} */}
                 </p>
@@ -144,19 +159,37 @@ export const HomePage = () => {
                   X
                 </button>
               </div>
-              <br /><br />
+              <br />
+              <br />
               <div className={classes.root}>
                 <Typography id="discrete-slider" gutterBottom>
                   How would you rate the website?
                 </Typography>
                 <form>
                   <div class="form-group">
-                    <label for="name">Name:</label><br />
-                    <input class="form-control" type="text" id="name" name="name" placeholder="Your name" /><br />
+                    <label for="name">Name:</label>
+                    <br />
+                    <input
+                      class="form-control"
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Your name"
+                    />
+                    <br />
                   </div>
                   <div class="form-group">
-                    <label for="feed">Feedback:</label><br />
-                    <input class="form-control form-control-lg" type="text-area" id="feed" name="feed" placeholder="Your feedback" /><br /><br />
+                    <label for="feed">Feedback:</label>
+                    <br />
+                    <input
+                      class="form-control form-control-lg"
+                      type="text-area"
+                      id="feed"
+                      name="feed"
+                      placeholder="Your feedback"
+                    />
+                    <br />
+                    <br />
                   </div>
                 </form>
               </div>
@@ -182,5 +215,5 @@ export const HomePage = () => {
         </Modal>
       </div>
     </div>
-  )
-}
+  );
+};
