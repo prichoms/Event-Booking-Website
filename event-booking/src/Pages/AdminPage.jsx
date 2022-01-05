@@ -8,12 +8,82 @@ import "../Components/Styling/admin.css";
 import jsondata from "../scraped_data/db.json"
 import { OrganizedEvents } from '../Components/OrganizedEvents';
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 import AddIcon from "@material-ui/icons/Add";
 
 
 export default function AdminPage({ action, handleCloseLogin }) {
   var feedback_data = jsondata.feed;
+  const user_events = jsondata.organizers.filter(ele => ele.id == 1)[0].organized_events;
+  const events_data = jsondata.events;
+  const filteredEvents = events_data.filter(event => (
+    user_events.includes(event.id) 
+  ))
+  
+  // ddd.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+  const [ascmod, setAscmod] = React.useState(true);
+  const ascmodchange = () => {
+    setAscmod(!ascmod);
+  }
+  function SortButton(props){
+    let ddd = [];
+    let zz = 0;
+    for(let i=0;i<filteredEvents.length;i++){
+      for(let j=0;j<filteredEvents[i].feedback.length;j++){
+        zz = zz + 1;
+        ddd.push({"name": filteredEvents[i].feedback[j].name, "rating": filteredEvents[i].feedback[j].rating, "id": zz, "event":filteredEvents[i].name});
+      }
+    }
+    let btn;
+    if (ascmod){
+      ddd.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+      btn = <>
+              <button onClick={ascmodchange}>Sort in Descending?</button>
+              <table className="styled-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ddd.map((i) => (
+                          <tr key={i.id}>
+                            <td>{i.name}</td>
+                            <td>{i.event}</td>
+                            <td>{i.rating}</td>
+                          </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+    }else{
+      ddd.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
+      btn = <>
+      <button onClick={ascmodchange}>Sort in Ascending?</button>
+      <table className="styled-table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Event</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ddd.map((i) => (
+                  <tr key={i.id}>
+                    <td>{i.name}</td>
+                    <td>{i.event}</td>
+                    <td>{i.rating}</td>
+                  </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+    }
+    return btn;
+  }
   return (
     <div>
       <div
@@ -68,6 +138,30 @@ export default function AdminPage({ action, handleCloseLogin }) {
     ))}
   </tbody>
 </table>
+<br/><br/>
+<h1 style={{"color":"white"}}>Feedback for Each Event</h1>
+<br/>
+<div>
+  <SortButton />
+</div>
+{/* <table className="styled-table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Event</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    {ddd.map((i) => (
+            <tr key={i.id}>
+              <td>{i.name}</td>
+              <td>{i.event}</td>
+              <td>{i.rating}</td>
+            </tr>
+    ))}
+  </tbody>
+</table> */}
 </center>
     </div>
   );
