@@ -125,7 +125,6 @@
   "organizers": [
     {
       "id": 1,
-      "name": "Shreyash",
       "organized_events": [
         1,
         2,
@@ -133,7 +132,8 @@
         4,
         5,
         6,
-        7
+        7,
+        21
       ],
       "phone": "7021904275",
       "email": "admin1@gmail.com",
@@ -1234,20 +1234,20 @@
     },
     {
       "id": 21,
-      "name": "D",
-      "location": "as",
-      "about": "as",
+      "name": "Doctor Strange: MOM",
+      "location": "Gurgaon",
+      "about": "Multiverse of Madness!",
       "is_popular": false,
-      "duration": "as",
+      "duration": "3h 6m",
       "languages": "English, Hindi, Tamil, Telugu",
-      "release_date": "as",
+      "release_date": "12 May 2022",
       "is_premier": false,
       "genre": [
         {
-          "genre": "as"
+          "genre": "Fantasy"
         }
       ],
-      "banner_image_url": "as",
+      "banner_image_url": "https://cdn.onebauer.media/one/media/61c3/5427/d02f/1ec8/e8e3/aea9/doctor-strange-mom-poster.jpg?format=jpg&quality=80&width=440&ratio=1-1&resize=aspectfit",
       "rating": {
         "percentage": 88,
         "no_of_ratings": 197

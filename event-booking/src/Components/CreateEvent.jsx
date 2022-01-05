@@ -17,6 +17,7 @@ import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
 import { BookedEvents } from '../Components/BookedEvents';
 import data from "../scraped_data/db.json"
 //import "../Components/MoviePage/moviePage.css";
+import { useHistory} from "react-router-dom";
 
 const styles = (theme) => ({
   root: {
@@ -59,6 +60,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function CreateEvent({ action, handleCloseLogin }) {
+  const history = useHistory();
   function getMax(arr, prop) {
     var max = -1;
     for (var i = 0; i < arr.length; i++) {
@@ -78,6 +80,9 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     g = [{"genre": g}];
     let r = {"percentage":88, "no_of_ratings": 197};
     let c = [{"original_name": "Gal Gadot","character": "as Wonder Woman/ Diana Prince","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"},{"original_name": "Chris Pine","character": "as Steve Trevor","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"},{"original_name": "Kristen Wiig","character": "as Cheetah","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"},{"original_name": "Pedro Pascal","character": "as Max Lord","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"},{"original_name": "Connie Nielsen","character": "as Hippolyta","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"},{"original_name": "Robin Wright","character": "as Antiope","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"}]
+    let brr = data.organizers.filter(a => a.id == 1)[0].organized_events;
+    let nid = getMax(data.events) + 1;
+    brr.push(nid);
     fetch("http://localhost:3001/events")
       .then(res => res.json())
       .then(result =>
@@ -90,15 +95,16 @@ export default function CreateEvent({ action, handleCloseLogin }) {
         })
       )
       .then(r => 
-        fetch("http://localhost:3001/organizers", {
+        fetch("http://localhost:3001/organizers/1", {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ "id": 1, "name": "Shreyash", "organized_events":data.organizers.filter(a => a.id == 1)[0].organized_events.push(getMax(r) + 1), "phone": "7021904275","email":"admin1@gmail.com","password":"admin1"})
+          body: JSON.stringify({ "id": 1, "organized_events":brr, "phone": "7021904275","email":"admin1@gmail.com","password":"admin1"})
         })
       )
 
+      history.push('/')
   };
   return (
     <div>
