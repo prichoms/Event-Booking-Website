@@ -10,17 +10,26 @@ import { OrganizedEvents } from '../Components/OrganizedEvents';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AddIcon from "@material-ui/icons/Add";
-
+import { useHistory, useParams } from "react-router-dom";
+import { MovieCarousel } from "../Components/HomePage/MovieCarousel";
+import { ModifyCarousel } from "../Components/HomePage/ModifyCarousel";
+import styles from "../Components/Styling/RecommendedMovies.module.css";
 
 export default function AdminPage({ action, handleCloseLogin }) {
+  const { id } = useParams();
+  const admin_data = jsondata.organizers.filter(ele => ele.id == id)[0];
   var feedback_data = jsondata.feed;
-  const user_events = jsondata.organizers.filter(ele => ele.id == 1)[0].organized_events;
+  const user_events = jsondata.organizers.filter(ele => ele.id == id)[0].organized_events;
   const events_data = jsondata.events;
   const filteredEvents = events_data.filter(event => (
     user_events.includes(event.id) 
   ))
-  
-  // ddd.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+  const filteredPastEvents = events_data.filter(event => (
+    user_events.includes(event.id) && !event.is_premier
+  ))
+  const filteredUpcomingEvents = events_data.filter(event => (
+      user_events.includes(event.id) && event.is_premier
+  ))
   const [ascmod, setAscmod] = React.useState(true);
   const ascmodchange = () => {
     setAscmod(!ascmod);
@@ -99,8 +108,8 @@ export default function AdminPage({ action, handleCloseLogin }) {
       </div>
       <img className="profilepic" src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(webp):focal(1390x540:1392x538)/origin-imgresizer.eurosport.com/2021/08/05/3195392-65463108-2560-1440.jpg"/>
       <div className="userdetails">
-        <h1>Lionel Messi</h1>
-        <h4>Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.</h4>
+        <h1>{admin_data.name}</h1>
+        <h4>{admin_data.about}</h4>
       </div>
       <br/><br/><br/><br/>
       <center>
@@ -115,7 +124,27 @@ export default function AdminPage({ action, handleCloseLogin }) {
       </center>
       <br/><br/><br/><br/>
       <div style={{ backgroundColor: "#16161D" }}>
-          <OrganizedEvents />
+          {/* <OrganizedEvents /> */}
+          <>
+            <div className={styles.parent}>
+                <div className={styles.parent__text}>
+                    <h1>Upcoming Events</h1>
+                </div>
+                <MovieCarousel movies={filteredUpcomingEvents} />
+            </div>
+            <div className={styles.parent}>
+                <div className={styles.parent__text}>
+                    <h1>Past Events</h1>
+                </div>
+                <MovieCarousel movies={filteredPastEvents} />
+            </div>
+            <div className={styles.parent}>
+                <div className={styles.parent__text}>
+                    <h1>Modify Events</h1>
+                </div>
+                <ModifyCarousel movies={filteredEvents} />
+            </div>
+        </>
       </div>
 
 <center>

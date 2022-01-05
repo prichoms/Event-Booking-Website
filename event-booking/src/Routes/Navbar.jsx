@@ -41,6 +41,8 @@ const Navbar = () => {
   const [query, setQuery] = React.useState("");
   const [city, setCity] = React.useState("");
   const [open, setOpen] = React.useState(false);
+  const [user,setUser] = React.useState(-1);
+  const [usertype,setUsertype] = React.useState("");
   const [cityName, setCityName] = React.useState("Select City");
   const theme = useTheme();
   const classes = useStyles();
@@ -76,8 +78,8 @@ const Navbar = () => {
     setState(false);
   };
 
-  const redirect_admin = () => {
-    history.push('/admin')
+  const redirect_admin = (tid) => {
+    history.push(`/admin/${tid}`)
   }
   const redirect_user = () => {
     history.push('/user')
@@ -117,27 +119,39 @@ const Navbar = () => {
       var obj_mob_check = userdata.organizers.filter(ele => ele.phone == +number)[0];
       if (obj_mob_check) {
         setAuth(true);
+        setUser(obj_mob_check.id);
+        setUsertype("organizer");
         alert("Successfully Logged in");
-        redirect_admin();
+        redirect_admin(obj_mob_check.id);
       }
       else if (+number == "" && +email == "") {
         setAuth(false);
+        setUser(-1);
+        setUsertype("");
         alert("Both Email & Mob is missing");
       }
       else if (+number == "") {
         setAuth(false);
+        setUser(-1);
+        setUsertype("");
         if (obj_email_check && obj_pass_check) {
           setAuth(true);
+          setUser(obj_email_check.id);
+          setUsertype("organizer");
           alert("Successfully Logged in");
-          redirect_admin();
+          redirect_admin(obj_email_check.id);
         }
         else if (+email == "") {
           setAuth(false);
+          setUser(-1);
+          setUsertype("");
           alert("Please type your email");
           //handleCloseLogin(email, pass, number);
         }
         else if (+pass == "") {
           setAuth(false);
+          setUser(-1);
+          setUsertype("");
           alert("Please type your passsword");
           //handleCloseLogin(email, pass, number);
         }
@@ -146,6 +160,7 @@ const Navbar = () => {
 
       else {
         setAuth(false);
+        setUser(-1);
         alert("You are not registered");
       }
       setAction(false);
@@ -157,25 +172,37 @@ const Navbar = () => {
       var obj_mob_check = userdata.users.filter(ele => ele.phone == +number)[0];
       if (obj_mob_check) {
         setAuth(true);
+        setUser(obj_mob_check.id);
+        setUsertype("user");
         alert("Successfully Logged in");
       }
       else if (+number == "" && +email == "") {
         setAuth(false);
+        setUser(-1);
+        setUsertype("");
         alert("Both Email & Mob is missing");
       }
       else if (+number == "") {
         setAuth(false);
+        setUser(-1);
+        setUsertype("");
         if (obj_email_check && obj_pass_check) {
           setAuth(true);
+          setUser(obj_mob_check.id);
+          setUsertype("user");
           alert("Successfully Logged in");
         }
         else if (+email == "") {
           setAuth(false);
+          setUser(-1);
+          setUsertype("");
           alert("Please type your email");
           handleCloseLogin(email, pass, number);
         }
         else if (+pass == "") {
           setAuth(false);
+          setUser(-1);
+          setUsertype("");
           alert("Please type your passsword");
           handleCloseLogin(email, pass, number);
         }
@@ -183,6 +210,8 @@ const Navbar = () => {
       }
       else {
         setAuth(false);
+        setUser(-1);
+          setUsertype("");
         alert("You are not registered");
       }
       setAction(false);
@@ -194,6 +223,30 @@ const Navbar = () => {
     dispatch(storeAuth(auth));
   }, [auth]);
 
+  function ProfileRedirect(){
+    const tid = user;
+    const tp = usertype;
+    let a;
+    if (tp=="organizer"){
+      a = <><Link to={{ pathname: `/admin/${tid}`}} style={{ marginLeft: 20, color: "black" }}>
+        <div>
+          <AccountCircleIcon style={{ fontSize: "20px" }} />
+          <span>Profile</span>
+        </div>
+      </Link>
+      </>
+    }else if(tp=="user"){
+      a = <><Link to={{ pathname: `/user/${tid}`}} style={{ marginLeft: 20, color: "black" }}>
+        <div>
+          <AccountCircleIcon style={{ fontSize: "20px" }} />
+          <span>Profile</span>
+        </div>
+      </Link>
+      </>
+    }
+    return a;
+
+  }
   return (
     <div>
       <div className={styles.navbar}>
@@ -254,15 +307,7 @@ const Navbar = () => {
                 <AccountCircleIcon style={{ fontSize: "40px" }} />
               </div>
               <div className={styles.sideber_content}>
-                <Link
-                  to="/user"
-                  style={{ marginLeft: 20, color: "black" }}
-                >
-                  <div>
-                    <AccountCircleIcon style={{ fontSize: "20px" }} />
-                    <span>Profile</span>
-                  </div>
-                </Link>
+                <ProfileRedirect/>
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

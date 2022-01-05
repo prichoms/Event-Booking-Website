@@ -90,6 +90,7 @@
     {
       "id": 1,
       "name": "Shreyash",
+      "about":"Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.",
       "booked_events": [
         1,
         2,
@@ -106,6 +107,7 @@
     {
       "id": 2,
       "name": "Aditya",
+      "about":"Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
         8,
         9,
@@ -125,6 +127,8 @@
   "organizers": [
     {
       "id": 1,
+      "name": "Shreyash",
+      "about":"Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.",
       "organized_events": [
         1,
         2,
@@ -145,6 +149,7 @@
     {
       "id": 2,
       "name": "Priyam",
+      "about": "I am currently a sophomore at IIIT Sri City who loves to do competitive coding and Front-end Development. Exploring the field of Machine Learning currently. I like to take up challenges till they are behind my lappy screen.",
       "organized_events": [
         11,
         12,
@@ -161,6 +166,7 @@
     {
       "id": 3,
       "name": "Sid",
+      "about":"A third year undergrad, pursuing B-Tech in CSE from IIIT Sri City. Seeking a challenging career with a progressive organization that provides an opportunity to ameliorate my technical skills and abilities in the field of Computer Science.",
       "organized_events": [
         6,
         7,

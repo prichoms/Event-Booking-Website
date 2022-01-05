@@ -14,6 +14,8 @@ import { PopularEvents } from "../Components/HomePage/PopularEvents";
 import { PremierMovies } from "../Components/HomePage/PremierMovies";
 import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
 import { BookedEvents } from '../Components/BookedEvents';
+import { useHistory, useParams } from "react-router-dom";
+import jsondata from "../scraped_data/db.json"
 
 const styles = (theme) => ({
   root: {
@@ -56,7 +58,8 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function UserPage({ action, handleCloseLogin }) {
-  
+  const { id } = useParams();
+  const user_data = jsondata.users.filter(ele => ele.id == id)[0];
 
 
 
@@ -75,8 +78,8 @@ export default function UserPage({ action, handleCloseLogin }) {
       </div>
       <img className="profilepic" src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(webp):focal(1390x540:1392x538)/origin-imgresizer.eurosport.com/2021/08/05/3195392-65463108-2560-1440.jpg"/>
       <div className="userdetails">
-        <h1>Lionel Messi</h1>
-        <h4>Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.</h4>
+        <h1>{user_data.name}</h1>
+        <h4>{user_data.about}</h4>
       </div>
       <br/><br/><br/><br/>
 

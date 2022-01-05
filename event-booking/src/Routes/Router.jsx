@@ -34,11 +34,11 @@ const Router = () => {
         <Route exact path="/modifyevents/:id">
           <ModifyEvent></ModifyEvent>
         </Route>
-        <Route exact path="/admin">
-          <AdminPage />
+        <Route exact path="/admin/:id">
+          <AdminPage></AdminPage>
         </Route>
-        <Route exact path="/user">
-          <UserPage />
+        <Route exact path="/user/:id">
+          <UserPage></UserPage>
         </Route>
         <Route exact path="/create">
           <CreateEvent />
