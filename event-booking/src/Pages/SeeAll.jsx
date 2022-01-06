@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../Components/Styling/SeeAll.module.css";
-// import "../Components/Styling/sa.css";
+import "../Components/Styling/sa.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../Redux/app/actions";
 import CardSeeAll from "../Components/Card_seeAll";
