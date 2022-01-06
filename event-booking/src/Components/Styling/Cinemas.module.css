@@ -3,7 +3,6 @@
   padding: 25px 0;
   /* border: 1px solid red; */
   margin: 20px auto;
-  background-color: #16161d;
 }
 
 .container__info {
@@ -21,23 +20,17 @@
   justify-content: space-around;
   align-items: center;
   font-size: 13px;
-  color: blue;
+  color: white;
 }
 
 .modalText > p {
   margin: 5px 0;
 }
 
-.rowA {
-  display: flex;
-  flex-direction: row;
-}
-
 .container__card {
   width: 70%;
   margin: 10px;
   padding: 5px;
-  border-bottom: 1px solid rgba(182, 182, 182, 0.801);
 }
 
 .container__card__title {
@@ -108,11 +101,11 @@
 
 .container__card__info__times__container .button {
   background-color: transparent;
-  border: 1px solid gray;
+  border: 1px solid #fff;
   padding: 10px 15px;
   border-radius: 4px;
   margin: 0 5px;
-  color: #4abd5d;
+  color: #f84464;
   font-weight: 500;
   cursor: pointer;
   font-size: 13px;
@@ -124,7 +117,6 @@
   position: absolute;
   top: -290%;
   left: -100%;
-  background-color: ;
   padding: 15px;
   height: 105px;
   box-shadow: 0px 0px 1px 1px gray;

@@ -62,7 +62,7 @@ export const BookTicketsPage = () => {
   }, [count]);
 
   return (
-    <div style={{ backgroundColor: "#383838", paddingBottom: 20 }}>
+    <div style={{ paddingBottom: 20 }}>
       <Header />
       <Filter handleFilters={handleFilters} filters={filters} />
       <CinemasBody filters={filters} />
