@@ -15,13 +15,13 @@ const Card = ({ banner_image_url="https://in.bmscdn.com/discovery-catalog/events
         }], id }) => {
             const history = useHistory();
             const handleChange = () => {
-                history.push(`/movies/${id}`)
+                history.push(`/events/${id}`)
             }
     return (
         <div onClick={handleChange} className={styles.card}> 
             <img src={banner_image_url} alt={name} />
             <div className={styles.title}>{ name }</div>
-            <div className={styles.genre}>{genre?.map((genre, index)=>index === genre.length-1?genre.genre:genre.genre + "/")}</div>
+            <div className={styles.genre}>{genre?.map((genre, index)=>index === genre.length-1?genre.genre:genre.genre )}</div>
         </div>
     )
 }

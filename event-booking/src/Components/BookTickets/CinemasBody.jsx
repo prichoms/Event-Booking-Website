@@ -15,7 +15,7 @@ export const CinemasBody = ({ filters }) => {
     const date = useSelector(state => state.booking_details.date);
     const data = useSelector(state => state.booking_details);
     const dispatch = useDispatch();
-    // console.log(cinemas_data);
+
     let filteredData = cinemas_data;
     const [seatingModalOpen, setSeatingModalOpen] = useState(false);
     const [foodModalOpen, setFoodModalOpen] = useState(false);

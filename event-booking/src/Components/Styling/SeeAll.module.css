@@ -1,3 +1,11 @@
+.pagin{
+	margin: 1rem;
+}
+
+  .items {
+	margin-bottom: 1rem;
+  }
+
 .container {
 	padding: 5% 7%;
 	max-width: 100vw;
@@ -107,4 +115,99 @@
 		width: 85%;
 		flex-direction: column;
 	}
+}
+
+/* 
+ul {
+	margin-left: -250px;
+}
+li {
+	height: 20px;
+	width: 20px;
+	padding: 10px;
+	text-align: center;
+	display:inline;
+	background-color: darkblue;
+	border-radius: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	justify-content: center;
+}
+li>a {
+	color:darkorange;
+}
+li:hover {
+	background-color:darkkhaki;
+}
+li>a:hover {
+	color:darkred
+} */
+
+/* .paginationBttns{
+    margin-left: -240px;
+} */
+.hehehehe {
+	height: 20px;
+	width: 20px;
+	padding: 10px;
+	text-align: center;
+	display:inline;
+	background-color: darkblue;
+	border-radius: 0px;
+	margin-left: 5px;
+	margin-right: 5px;
+	justify-content: center;
+}
+.hehehehe>a {
+	color:darkorange;
+}
+.hehehehe:hover {
+	background-color:darkkhaki;
+}
+.hehehehe>a:hover {
+	color:darkred
+}
+
+.nexthehe {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    text-align: center;
+    display:inline;
+    background-color: darkblue;
+    border-radius: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;
+}
+.nexthehe>a {
+    color:darkorange;
+}
+.nexthehe:hover {
+    background-color:darkkhaki;
+}
+.nexthehe>a:hover {
+    color:darkred
+}
+
+.prevhehe {
+    height: 20px;
+    width: 20px;
+    padding: 10px;
+    text-align: center;
+    display:inline;
+    background-color: darkblue;
+    border-radius: 0px;
+    margin-left: 5px;
+    margin-right: 5px;
+    justify-content: center;
+}
+.prevhehe>a {
+    color:darkorange;
+}
+.prevhehe:hover {
+    background-color:darkkhaki;
+}
+.prevhehe>a:hover {
+    color:darkred
 }
