@@ -261,20 +261,19 @@ const Navbar = () => {
         </div>
         <div>
           <Link className={styles.link} to="">
-            Events
+            Home
           </Link>
           <Link className={styles.link} to="/about">
             About
           </Link>
+          <Link className={styles.link} to="/allevents">
+            Events
+          </Link>
           <Link className={styles.link} to="/contact">
             Contact
           </Link>
-          <Link className={styles.link} to="#">
-            ABC
-          </Link>
-          <Link className={styles.link} to="#">
-            XYZ
-          </Link>
+          
+          
         </div>
         <div style={{ display: "flex", alignItems: "center", fontSize: "20px", size: "20px" }}>
 

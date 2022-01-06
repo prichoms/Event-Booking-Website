@@ -42,8 +42,8 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <p>S20190010163</p>
             </div>
             <div class="btn">
-                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
-                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
+                <a href="mailto:siddharth25pandey@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                <a href="https://github.com/siddharth25pandey"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
             </div>
         </div>
         <div class="box">
@@ -55,8 +55,8 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <p>S20190010120</p>
             </div>
             <div class="btn">
-                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
-                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
+                <a href="mailto:shreyashm1601@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                <a href="https://github.com/Shreyashm16"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
             </div>
         </div>
         <div class="box">
@@ -68,8 +68,8 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <p>S20190010144</p>
             </div>
             <div class="btn">
-                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
-                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
+                <a href="mailto:priyambajpai@yahoo.in"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                <a href="https://github.com/prichoms"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
             </div>
         </div>
         <br/>
@@ -82,8 +82,8 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <p>S201900194</p>
             </div>
             <div class="btn">
-                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
-                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
+                <a href="mailto:yadurajdeshmukh2.303@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                <a href="https://github.com/yaduraj1720562"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
             </div> 
         </div>
         <div class="box">
@@ -95,8 +95,8 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <p>S2019001XXX</p>
             </div>
             <div class="btn">
-                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
-                <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
+                <a href="naveenkumar.v19@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
+                <a href="https://github.com/naveenkumar-192"><i class="fa fa-eye" aria-hidden="true"></i>About</a>
             </div>
         </div>
     </div>

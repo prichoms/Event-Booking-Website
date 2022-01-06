@@ -85,23 +85,7 @@ export const HomePage = () => {
       <div>
         <AddCarousel />
         <div>
-          <Link to="/allmovies">
-            <button
-              style={{
-                cursor: "pointer",
-                position: "relative",
-                fontSize: 20,
-                padding: "5px",
-                marginTop: "40px",
-                marginLeft: "47.5%",
-                border: "none",
-                color: "white",
-                backgroundColor: "#f84464",
-              }}
-            >
-              All Events
-            </button>
-          </Link>
+        
           <button
             style={{
               cursor: "pointer",

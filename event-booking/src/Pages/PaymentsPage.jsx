@@ -102,9 +102,9 @@ export default function FullScreenDialog({ proceed }) {
         <AppBar className={classes.appBar}>
           <Toolbar>
             <Typography variant="h6" className={classes.title}>
-              <svg height="40" width="150">
-                <Link to="/" ><image href="//in.bmscdn.com/webin/common/icons/bms.svg" width="150" height="40"></image></Link>
-              </svg>
+              
+                
+              
             </Typography>
           </Toolbar>
         </AppBar>

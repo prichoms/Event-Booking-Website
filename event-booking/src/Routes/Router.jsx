@@ -25,7 +25,7 @@ const Router = () => {
         <Route exact path="/about">
           <AboutPage />
         </Route>
-        <Route exact path="/allmovies">
+        <Route exact path="/allevents">
           <SeeAll />
         </Route>
         <Route exact path="/events/:id">
@@ -48,8 +48,7 @@ const Router = () => {
         </Route>
         <Route exact path="/user/booking-history">
           <BookingHistory />
-          <FirstSection />
-          <SecondSection />
+         
         </Route>
         <Route exact path="/booktickets/:id">
           <BookTicketsPage></BookTicketsPage>

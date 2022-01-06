@@ -119,19 +119,7 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
               <div> Rs. {totalFood}</div>
             </div>}
 
-            <div className={styles.charity}>
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <input type="checkbox" onChange={handleChange} />
-                  <img src="https://in.bmscdn.com/webin/common/icons/bookasmile-logo.svg" alt="" />
-                </div>
-                <div>Rs 1</div>
-              </div>
-              <div style={{ fontSize: '12px', padding: "10px 20px" }}>
-                <div>Re. 1 will be added to your transaction as a donation.</div>
-                <div>Re.1/1 Ticket</div>
-              </div>
-            </div>
+            
 
             <div style={{ fontSize: '12px', margin: '0 30px', fontWeight: '600' }}>Your current State is <a href="">{city}</a></div>
             <div className={styles.total}>
