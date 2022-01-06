@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMovies } from "../Redux/app/actions";
 import CardSeeAll from "../Components/Card_seeAll";
 import ReactPaginate from "react-paginate";
-import { useEffect, useState } from "react";
+import { useEffect,useState } from "react";
 
 const SeeAll = () => {
+  
+
   const [language, SetLanguage] = React.useState(false);
   const [genre, SetGenre] = React.useState(false);
   const [filterLanguage, setFilterLanguage] = React.useState([]);
@@ -36,23 +38,45 @@ const SeeAll = () => {
       setMovie(updated);
     }
     if (filterGenre.length > 0) {
-      const updated = movie.filter(
-        (item) =>
-          item.genre?.find((gen) =>
-            gen.genre === filterGenre[filterGenre.length - 1]
-              ? gen.genre
-              : genre
-          ).genre === filterGenre[filterGenre.length - 1]
-      );
+      // let updated = movie.filter(
+      //   (item) =>
+      //     item.genre.find((gen) =>
+      //       gen.genre == filterGenre[filterGenre.length - 1]
+      //         ? gen.genre
+      //         : "none"
+      //     ).genre == filterGenre[filterGenre.length - 1]
+      // );
+      let updated = [];
+      let flg=1;
+      for(let ii=0;ii<movie.length;ii++){
+        flg=1;
+        let genre_m = [];
+        for(let jj=0;jj<movie[ii].genre.length;jj++){
+          let n = movie[ii].genre[jj].genre;
+          genre_m.push(n);
+        }
+        for(let kk=0;kk<filterGenre.length;kk++){
+          if(!genre_m.includes(filterGenre[kk])){
+            flg=0;
+          }
+        }
+        if(flg===1){
+          updated.push(movie[ii]);
+        }
+      }
       setMovie(updated);
     }
-    if (filterLanguage.length === 0 && filterGenre.length === 0) {
+    if ( filterLanguage.length === 0 && filterGenre.length === 0) {
       setMovie(movies_data);
     }
+    updateevents();
   };
 
   React.useEffect(() => {
-    if (filterLanguage.length === 0 && filterGenre.length === 0) {
+    if (
+      filterLanguage.length === 0 &&
+      filterGenre.length === 0 
+    ) {
       setMovie(movies_data);
     }
   }, [movie]);
@@ -73,14 +97,18 @@ const SeeAll = () => {
         newf.splice(index, 1);
         setFilterLanguage(newf);
       } else {
-        setFilterLanguage([...filterLanguage, language]);
+        let fff = filterLanguage;
+        fff.push(language)
+        setFilterLanguage(fff);
       }
     } else {
       const index = filterGenre.indexOf(genre);
       if (index !== -1) {
         filterGenre.splice(index, 1);
       } else {
-        setFilterGenre([...filterGenre, genre]);
+        let fff = filterGenre;
+        fff.push(genre)
+        setFilterGenre(fff);
       }
     }
     filterMovies();
@@ -89,57 +117,51 @@ const SeeAll = () => {
   React.useEffect(() => {
     let lan = filterLanguage.includes("");
   });
-  const itms = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
-  const [items, setItems] = useState(itms);
-  const [pageNumber, setPageNumber] = useState(0);
-  const itemsPerPage = 8;
-  const pagesVisited = pageNumber * itemsPerPage;
-  const displayItems = movie
-    .slice(pagesVisited, pagesVisited + itemsPerPage)
-    .map((item) => <CardSeeAll {...item} />);
+  const itms = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+  const[items, setItems]=useState(itms);
+  const [pageNumber, setPageNumber]= useState(0);
+  const itemsPerPage = 6
+  const pagesVisited = pageNumber*itemsPerPage
+  let displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
 
-  const PageCount = Math.ceil(items.length / itemsPerPage);
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
+  let PageCount = Math.ceil(displayItems.length / itemsPerPage);
+  const changePage = ({selected})=>{
+      setPageNumber(selected);
   };
+  const updateevents = () => {
+    displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
+  }
   return (
     <div className={styles.container}>
+      
       <div className={styles.leftsideNav}>
-        <h2
-          style={{
-            background: "none",
-            fontSize: "25px",
-            fontWeight: "700",
-            color: "white",
-          }}
-        >
+        <h2 style={{ background: "none", fontSize: "30px", fontWeight: "700", color: "white" }}>
           Filters
         </h2>
-        <div>
+        <div style={{"border-radius": "30px",	"border-width": "2px",	"border-style": "solid",	"border-color": "fuchsia"}}>
           <div className={styles.header}>
             <div onClick={() => SetLanguage(!language)}>
               <span
                 style={{
                   marginLeft: "10px",
-                  color: `${!language ? "white" : "#f84464"}`,
+                  color: "#e67088",
+                  fontSize: "25px"
                 }}
               >
                 Languages
               </span>
             </div>
-            <div
-              onClick={() => handleClear("languages")}
-              style={{ color: "white" }}
-            >
-              Clear
-            </div>
+            <div onClick={() => handleClear("languages")} style={{fontSize: "15px"}}>Clear</div>
           </div>
-          <div className={styles.dialogue}>
+          <div
+            className={styles.dialogue}
+           
+          >
             <button
               style={
                 filterLanguage.includes("Hindi")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("Hindi", "")}
             >
@@ -148,8 +170,8 @@ const SeeAll = () => {
             <button
               style={
                 filterLanguage.includes("English")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("English", "")}
             >
@@ -158,8 +180,8 @@ const SeeAll = () => {
             <button
               style={
                 filterLanguage.includes("Telugu")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("Telugu", "")}
             >
@@ -167,39 +189,39 @@ const SeeAll = () => {
             </button>
             <button
               style={
-                filterLanguage.includes("Kannada")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                filterLanguage.includes("Tamil")
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
-              onClick={() => handleFilter("Kannada", "")}
+              onClick={() => handleFilter("Tamil", "")}
             >
-              Kannada
+              Tamil
             </button>
             <button
               style={
-                filterLanguage.includes("Japaniese")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                filterLanguage.includes("Japanese")
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
-              onClick={() => handleFilter("Japaniese", "")}
+              onClick={() => handleFilter("Japanese", "")}
             >
-              Japaniese
+              Japanese
             </button>
             <button
               style={
-                filterLanguage.includes("Mulyalam")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                filterLanguage.includes("Malyalam")
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
-              onClick={() => handleFilter("Mulyalam", "")}
+              onClick={() => handleFilter("Malyalam", "")}
             >
-              Mulyalam
+              Malyalam
             </button>
             <button
               style={
                 filterLanguage.includes("Punjabi")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("Punjabi", "")}
             >
@@ -208,31 +230,29 @@ const SeeAll = () => {
           </div>
         </div>
 
-        <div>
+        <div style={{"border-radius": "30px",	"border-width": "2px",	"border-style": "solid",	"border-color": "fuchsia", "marginTop": "30px"}}>
           <div className={styles.header}>
             <div onClick={() => SetGenre(!genre)}>
               <span
                 style={{
                   marginLeft: "10px",
-                  color: `${!genre ? "white" : "#f84464"}`,
+                  color: "#e67088",
+                  fontSize: "25px"
                 }}
               >
                 Genre
               </span>
             </div>
-            <div
-              onClick={() => handleClear("genre")}
-              style={{ color: "white" }}
-            >
-              Clear
-            </div>
+            <div onClick={() => handleClear("genre")} style={{fontSize: "15px"}}>Clear</div>
           </div>
-          <div className={styles.dialogue}>
+          <div
+            className={styles.dialogue}
+          >
             <button
               style={
                 filterGenre.includes("Action")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Action")}
             >
@@ -241,8 +261,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Drama")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Drama")}
             >
@@ -251,8 +271,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Triller")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Triller")}
             >
@@ -261,8 +281,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Comedy")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Comedy")}
             >
@@ -271,8 +291,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Adventure")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Adventure")}
             >
@@ -281,8 +301,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Family")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Family")}
             >
@@ -291,8 +311,8 @@ const SeeAll = () => {
             <button
               style={
                 filterGenre.includes("Fantasy")
-                  ? { background: "#f84464", color: "white" }
-                  : {}
+                  ? { background: "#e67088", color: "white", borderRadius: "15px" }
+                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
               }
               onClick={() => handleFilter("", "Fantasy")}
             >
@@ -303,42 +323,44 @@ const SeeAll = () => {
       </div>
 
       <div>
+        
         <h2
           style={{
             background: "none",
-            fontSize: "25px",
+            fontSize: "30px",
             fontWeight: "700",
             marginLeft: "30px",
-            color: "white",
+            color: "white"
           }}
         >
-          All Events
+          All Events 
         </h2>
         <div className={styles.appliedFilter}>
           {[...filterLanguage, ...filterGenre].map((item) => (
             <div>{item}</div>
           ))}
         </div>
-        <div className={styles.mainCards}>{displayItems}</div>
-        <br />
-        <br />
+        <div className={styles.mainCards}>
+            {displayItems}
+        </div>
+        <br/><br/>
         <center>
-          <ReactPaginate
-            previousLabel={"<"}
-            nextLabel={">"}
-            pageCount={PageCount}
-            onPageChange={changePage}
-            pageClassName={"hehehehe"}
-            nextClassName={"nexthehe"}
-            previousClassName={"prevhehe"}
-            containerClassName={"paginationBttns"}
-            previousLinkClassName={"previousBttn"}
-            nextLinkClassName={"nextBttn"}
-            disabledClassName={"paginationDisabled"}
-            activeClassName={"paginationActive"}
-          />
+        <ReactPaginate  
+             previousLabel={'<'}
+             nextLabel={'>'}
+             pageCount={PageCount}
+             onPageChange={changePage}
+             pageClassName={"hehehehe"}
+             nextClassName={"nexthehe"}
+             previousClassName={"prevhehe"}
+             containerClassName={"paginationBttns"}
+             previousLinkClassName={"previousBttn"}
+             nextLinkClassName={"nextBttn"}
+             disabledClassName={"paginationDisabled"}
+             activeClassName={"paginationActive"}/>
         </center>
       </div>
+      
     </div>
   );
 };
