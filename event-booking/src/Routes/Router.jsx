@@ -40,7 +40,7 @@ const Router = () => {
         <Route exact path="/user/:id">
           <UserPage></UserPage>
         </Route>
-        <Route exact path="/create">
+        <Route exact path="/create/:id">
           <CreateEvent />
         </Route>
         <Route exact path="/contact">

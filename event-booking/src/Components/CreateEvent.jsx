@@ -17,7 +17,17 @@ import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
 import { BookedEvents } from '../Components/BookedEvents';
 import data from "../scraped_data/db.json"
 //import "../Components/MoviePage/moviePage.css";
-import { useHistory} from "react-router-dom";
+import { useHistory, useParams} from "react-router-dom";
+import Select from 'react-select'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import DurationPicker from 'react-duration-picker'
+import Modal from "@material-ui/core/Modal";
+import TextField from '@mui/material/TextField';
+import Grid from '@material-ui/core/Grid'
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
 
 const styles = (theme) => ({
   root: {
@@ -60,6 +70,33 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function CreateEvent({ action, handleCloseLogin }) {
+  const { admin_id } = useParams();
+  const options_time = [
+    {value: 1, label: '1'},
+    {value: 2, label: '2'},
+    {value: 3, label: '3'},
+    {value: 4, label: '4'}
+  ] 
+  const [startDate, setStartDate] = React.useState(new Date());
+  const options_lang = [
+    {value: 'English', label: 'English'},
+    {value:'Hindi', label:'Hindi'},
+    {value: 'Tamil', label: 'Telugu'},
+    {value:'Tamil', label: 'Telugu'},
+    {value: 'Japanese', label: 'Japanese'},
+    {value: 'Kannada', label: 'Kannada'},
+    {value: 'Punjabi', label: 'Punjabi'}
+  ]
+  const options_genre = [
+    {value: 'Action', label:'Action'},
+    {value: 'Drama', label:'Drama'},
+    {value: 'Thriller', label:'Thriller'},
+    {value: 'Comedy', label:'Comedy'},
+    {value: 'Adventure', label: 'Adventure'}, 
+    {value: 'Family', label: 'Family'},
+    {value: 'Fantasy', label: 'Fantasy'},
+    {value: 'Health & Fitness', label:'Health & Fitness'}
+  ]
   const history = useHistory();
   function getMax(arr, prop) {
     var max = -1;
@@ -69,20 +106,56 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     }
     return max;
   }
+  const [lang,setLang] = React.useState([]);
+  const handleLanguage = (e) => {
+    let value = Array.from(e.target.selectedOptions, option => option.value);
+    setLang(value.join());
+  }
+  const handleLang = (e) => {
+    let value = Array.from(e, option => option.value);
+    setLang(value.join());
+  }
+  const [gen,setGenre] = React.useState([]);
+  const handleGenre = (e) => {
+    let value = Array.from(e, option => option.value);
+    setGenre(value);
+  }
+  const [time, setTime] = React.useState({
+    hours: 1,
+    minutes: 25
+  });
+  const handleTime = time => {
+    setTime(time);
+  };
+  const [img,setImg] = React.useState("https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg");
+  const handleImage = (e) => {
+    let value = document.getElementById("poster").value;
+    setImg(value);
+  }
+  const [checked, setChecked] = React.useState(false);
+  const handleChecked = (event) => {
+    setChecked(event.target.checked);
+  };
   const submit_event = () => {
     let n = document.getElementById("name").value;
     let a = document.getElementById("about").value;
     let p = document.getElementById("poster").value;
-    let d = document.getElementById("dur").value;
-    let g = document.getElementById("genre").value;
-    let dt = document.getElementById("date").value;
+    let d = String(time.hours)+"h "+String(time.minutes)+"min";
+    let dt = startDate.toDateString();
     let l = document.getElementById("location").value;
-    g = [{"genre": g}];
+    let prem = checked;
+    let lg = lang;
+    let g = [];
+    for(let i=0;i<gen.length;i++){
+      g.push({"genre": gen[i]})
+    }
     let r = {"percentage":88, "no_of_ratings": 197};
     let c = [{"original_name": "Gal Gadot","character": "as Wonder Woman/ Diana Prince","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"},{"original_name": "Chris Pine","character": "as Steve Trevor","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"},{"original_name": "Kristen Wiig","character": "as Cheetah","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"},{"original_name": "Pedro Pascal","character": "as Max Lord","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"},{"original_name": "Connie Nielsen","character": "as Hippolyta","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"},{"original_name": "Robin Wright","character": "as Antiope","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"}]
     let brr = data.organizers.filter(a => a.id == 1)[0].organized_events;
     let nid = getMax(data.events) + 1;
     brr.push(nid);
+    let admindata =  data.organizers.filter(a => a.id == 1)[0];
+    admindata.organized_events=brr;
     fetch("http://localhost:3001/events")
       .then(res => res.json())
       .then(result =>
@@ -91,16 +164,16 @@ export default function CreateEvent({ action, handleCloseLogin }) {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ "id": getMax(result) + 1, "name": n, "location": l, "about": a, "is_popular":false, "duration":d, "languages": "English, Hindi, Tamil, Telugu","release_date":dt,"is_premier":false,"genre": g, "banner_image_url": p ,"rating":r,"cast":c})
+          body: JSON.stringify({ "id": getMax(result) + 1, "name": n, "location": l, "about": a, "is_popular":false, "duration":d, "languages": lg,"release_date":dt,"is_premier":prem,"genre": g, "banner_image_url": p ,"rating":r,"cast":c,"feedback":[]})
         })
       )
       .then(r => 
-        fetch("http://localhost:3001/organizers/1", {
+        fetch(`http://localhost:3001/organizers/${admin_id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ "id": 1, "organized_events":brr, "phone": "7021904275","email":"admin1@gmail.com","password":"admin1"})
+          body: JSON.stringify(admindata)
         })
       )
 
@@ -122,36 +195,71 @@ export default function CreateEvent({ action, handleCloseLogin }) {
           </div>
         </div>
         <div className='formc'>
-          <form>
-              
-              <div class="form-group">
-                <label for="name">Event Name:</label><br />
-                <input class="form-control" type="text" id="name" name="name" placeholder="Event name..." /><br /><br />
-              </div>
-              <div class="form-group">
-                <label for="about">Event Details:</label><br />
-                <textarea class="form-control form-control-lg" rows="4" cols="100" id="about" name="about" placeholder="Description..." /><br /><br />
-              </div>
-              <div class="form-group">
-                <label for="poster">Event Poster</label><br/>
-                <input class="form-control form-control-lg" type="text" id="poster" name="poster"/><br/><br/>
-              </div>
-              <div class="form-group">
-                <label for="dur">Event Duration:</label><br />
-                <input class="form-control form-control-lg" type="text"  id="dur" name="dur" placeholder="Duration..." /><br /><br />
-              </div>
-              <div class="form-group">
-                <label for="genre">Genre:</label><br />
-                <input class="form-control form-control-lg" type="text"  id="genre" name="genre" placeholder="Genre..." /><br /><br />
-              </div>
-              <div class="form-group">
-                <label for="date">Event Date:</label><br />
-                <input class="form-control form-control-lg" type="text"  id="date" name="date" placeholder="Date..." /><br /><br />
-              </div>
-              <div class="form-group">
-                <label for="date">Event Location:</label><br />
-                <input class="form-control form-control-lg" type="text"  id="location" name="location" placeholder="Location..." /><br /><br />
-              </div>
+          <form>     
+              <h1>Event Name:</h1>
+              <TextField id="name" name="name" />
+              {/* <br/><br/>
+              <h1>Event Details:</h1>
+              <TextField id="about" name="about" multiline rows={4} /> */}
+              <br/><br/>
+              <Grid container>
+                  <Grid item xs={6}>
+                    <h1>Event Details:</h1>
+                    <TextField id="about" name="about" multiline rows={4} />
+                  </Grid>
+                  <Grid item xs={6}> 
+                    <h1>Event Location:</h1>
+                    <TextField id="location" name="location" multiline rows={4} />
+                  </Grid>
+              </Grid>
+              <br/><br/>
+              <Grid container>
+                  <Grid item xs={4}> 
+                  <div class="form-group">
+                    <h1>Event Poster</h1>
+                    <TextField onChange={handleImage} id="poster" name="poster" />
+                  </div>
+                  </Grid>
+                  <Grid item xs={4}>
+                      <div style={{"margin-top":"50px"}}>
+                      <img src={img} height="60px" width="60px"/>
+                      </div>
+                  </Grid>
+              </Grid>
+              <br/><br/>
+              <Grid container>
+                  <Grid item xs={6}>
+                    <h1>Event Date:</h1>
+                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} inline/>
+                  </Grid>
+                  <Grid item xs={6}> 
+                    <h1>Event Duration:</h1>
+                    <DurationPicker onChange={handleTime} initialDuration={{ hours: 1, minutes: 0}} maxHours={5}/>
+                    <br/><br/><br/>
+                    <Grid container>
+                    <Grid item xs={6}> 
+                      <h1>Is Event Premier?</h1>
+                    </Grid>
+                    <Grid item xs={1}> 
+                      <Checkbox checked={checked} onChange={handleChecked} inputProps={{ 'aria-label': 'controlled' }} icon={<FavoriteBorder />} checkedIcon={<Favorite />} sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}/>
+                    </Grid>
+                    </Grid>
+                  </Grid>
+              </Grid>
+              {/* <h1>Event Duration:</h1>
+              <DurationPicker onChange={handleTime} initialDuration={{ hours: 1, minutes: 0}} maxHours={5}/> */}
+              <br/><br/>
+              <h1>Event Genre:</h1>
+              <Select options={options_genre} isMulti onChange={handleGenre} id="genre" name="genre"/>
+              <br/><br/>
+              {/* <h1>Event Date:</h1>
+              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} inline/> */}
+              {/* <br/><br/> */}
+              {/* <h1>Event Location:</h1>
+              <TextField id="location" name="location" multiline rows={3} /><br /><br /> */}
+              {/* <br/><br/> */}
+              <h1>Event Languages:</h1>
+              <Select options={options_lang} isMulti onChange={handleLang} id="languages" name="languages"/>
           </form>
           <Link to="/" style={{ marginLeft: 20, color: "black" }}>  
             <button

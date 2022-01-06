@@ -29,7 +29,7 @@ const SeeAll = () => {
   React.useEffect(() => {
     setMovie(movies_data);
   }, [movies_data]);
-  
+  console.log(movie);
   const filterMovies = () => {
     if (filterLanguage.length > 0) {
       const updated = movie.filter((item) =>
@@ -49,7 +49,6 @@ const SeeAll = () => {
       setMovie(updated);
     }
     if ( filterLanguage.length === 0 && filterGenre.length === 0) {
-      console.log(filterLanguage);
       setMovie(movies_data);
     }
   };
@@ -75,11 +74,9 @@ const SeeAll = () => {
     if (language !== "") {
       const index = filterLanguage.indexOf(language);
       if (index !== -1) {
-        console.log(filterLanguage);
         let newf = filterLanguage;
         newf.splice(index, 1);
         setFilterLanguage(newf);
-        console.log(filterLanguage);
       } else {
         setFilterLanguage([...filterLanguage, language]);
       }
@@ -103,8 +100,6 @@ const SeeAll = () => {
   const itemsPerPage = 6
   const pagesVisited = pageNumber*itemsPerPage
   const displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
-  console.log('Items.length'+ items.length);
-  console.log('Items'+ itemsPerPage);
 
   const PageCount = Math.ceil(items.length / itemsPerPage);
   const changePage = ({selected})=>{

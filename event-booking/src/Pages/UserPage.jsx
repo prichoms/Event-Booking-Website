@@ -76,7 +76,7 @@ export default function UserPage({ action, handleCloseLogin }) {
       >
 
       </div>
-      <img className="profilepic" src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(webp):focal(1390x540:1392x538)/origin-imgresizer.eurosport.com/2021/08/05/3195392-65463108-2560-1440.jpg"/>
+      <img className="profilepic" src={user_data.image}/>
       <div className="userdetails">
         <h1>{user_data.name}</h1>
         <h4>{user_data.about}</h4>

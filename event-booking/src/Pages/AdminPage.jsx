@@ -106,7 +106,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
       >
 
       </div>
-      <img className="profilepic" src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(webp):focal(1390x540:1392x538)/origin-imgresizer.eurosport.com/2021/08/05/3195392-65463108-2560-1440.jpg"/>
+      <img className="profilepic" src={admin_data.image}/>
       <div className="userdetails">
         <h1>{admin_data.name}</h1>
         <h4>{admin_data.about}</h4>
@@ -114,10 +114,9 @@ export default function AdminPage({ action, handleCloseLogin }) {
       <br/><br/><br/><br/>
       <center>
         <Button autoFocus variant="contained" color="primary">
-          <Link to="/create" style={{ marginLeft: 20, color: "black" }}>
+          <Link to={{ pathname: `/create/${admin_data.id}`}}  style={{ marginLeft: 20, color: "black" }}>
               <div>
-                <AddIcon style={{ fontSize: "20px" }} />
-                <span>Create New Event</span>
+                <span> + Create New Event</span>
               </div>
           </Link>
         </Button>

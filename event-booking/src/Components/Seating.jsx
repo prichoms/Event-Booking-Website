@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./Seating.css";
 import { rows, rows2 } from "./data";
 import { useSelector } from "react-redux";
+
 const Silver = ["A", "B", "C", "D"];
 const ticketList = {
   silver: [],
@@ -10,14 +11,10 @@ const ticketList = {
 };
 const Seating = ({
   seatingActive = false,
-  name = "Tom And Jerry",
-  location = "INOX: Neelyog, Ghatkopar E",
-  timeAndDate = "Tomorrow, 12 Mar, 10:30 AM",
-  type1 = "SILVER",
-  type2 = "Premium",
-  ticketPrice1 = 112,
-  ticketPrice2 = 100,
-  ticketListfunc,
+  type1 = "Premium",
+  type2 = "Standard",
+  ticketPrice1 = 500,
+  ticketPrice2 = 400,
   handleCloseSeatingModal,
   handleCloseSeatingButton
 }) => {
@@ -86,16 +83,19 @@ const Seating = ({
           <div>
             <h4 style={{ color: "white", fontSize: 20 }}>{movie_details.name}</h4>
             <h5 style={{ color: "white" }}>{movie_details.cinemas_name}</h5>
+            <h5 style={{ color: "white" }}>{movie_details.time}</h5>
           </div>
           <div>
             <button style={{ cursor: "pointer", fontSize: 25 }} onClick={() => handleCloseSeatingButton()}>X</button>
           </div>
         </div>
-        <div>
-          <h3>{movie_details.date} {monthNames[new Date().getMonth()]} {movie_details.time}</h3>
-        </div>
       </div>
+      
       <div className="seatingModal__seatContainer">
+      <div className="Screen">
+            {/* <img src="https://img.favpng.com/4/3/7/theater-drapes-and-stage-curtains-clip-art-png-favpng-7xwt0rghJQdh7iUqmBcFeidkZ.jpg" alt="screen" style={{"height": "100px"}}/> */}
+            <h1 style={{"color":"white", "marginLeft":"450px"}}>Stage Here</h1>
+          </div>
         <div>
           <h5>
             {type1}-Rs. {ticketPrice1}
@@ -161,9 +161,10 @@ const Seating = ({
             </div>
           </div>
 
-          <div className="Screen">
-            <img src="https://i.imgur.com/XhsTL5Y.png" alt="screen" />
-          </div>
+          {/* <div className="Screen">
+            <img src="https://img.favpng.com/4/3/7/theater-drapes-and-stage-curtains-clip-art-png-favpng-7xwt0rghJQdh7iUqmBcFeidkZ.jpg" alt="screen" style={{"height": "100px"}}/>
+            <h1 style={{"color":"white", "marginLeft":"165px"}}>Stage Here</h1>
+          </div> */}
         </div>
       </div>
       <div
