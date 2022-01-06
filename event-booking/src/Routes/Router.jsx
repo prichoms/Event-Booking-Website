@@ -26,7 +26,7 @@ const Router = () => {
           <AboutPage />
         </Route>
         <Route exact path="/allmovies">
-          <AllMoviesPage />
+          <SeeAll />
         </Route>
         <Route exact path="/events/:id">
           <MoviePage></MoviePage>
