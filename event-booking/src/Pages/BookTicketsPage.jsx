@@ -9,64 +9,63 @@ import { getMovies } from "../Redux/data/actions";
 import { Filter } from "../Components/BookTickets/Filter";
 
 export const BookTicketsPage = () => {
-    const dispatch = useDispatch();
-    const { id } = useParams();
-    const [filters, setFilters] = useState([])
-    const [count, setCount] = useState(0)
-    // const movie = useSelector(state => state.data.movies).data;
-    const name = useSelector(state => state.booking_details);
-    // console.log(name)
-    // const [bookingDetails, setBookingDetails] = useState({
-    //     name: "",
-    //     date: "",
-    //     day: "",
-    //     time: "",
-    //     cinemas_name: ""
-    // });
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  const [filters, setFilters] = useState([]);
+  const [count, setCount] = useState(0);
+  // const movie = useSelector(state => state.data.movies).data;
+  const name = useSelector((state) => state.booking_details);
+  // console.log(name)
+  // const [bookingDetails, setBookingDetails] = useState({
+  //     name: "",
+  //     date: "",
+  //     day: "",
+  //     time: "",
+  //     cinemas_name: ""
+  // });
 
+  useEffect(() => {
+    dispatch(getCinemas());
+    dispatch(getMovies(id));
+  }, []);
 
-    useEffect(() => {
-        dispatch(getCinemas());
-        dispatch(getMovies(id));
-    }, [])
-
-    const handleFilters = (item) => {
-        const newData = filters;
-        if (filters.indexOf(item) >= 0) {
-            newData.splice(filters.indexOf(item), 1);
-            setFilters(newData);
-        } else {
-            newData.push(item);
-            setFilters(newData);
-        }
-        setCount(prev => prev + 1);
+  const handleFilters = (item) => {
+    const newData = filters;
+    if (filters.indexOf(item) >= 0) {
+      newData.splice(filters.indexOf(item), 1);
+      setFilters(newData);
+    } else {
+      newData.push(item);
+      setFilters(newData);
     }
+    setCount((prev) => prev + 1);
+  };
 
-    // const handleSelectNameTime = (cinemas_name, time) => {
-    //     console.log(cinemas_name, time)
-    //     setBookingDetails({ ...bookingDetails, cinemas_name, time })
-    //     setCount(prev => prev + 1);
-    // }
+  // const handleSelectNameTime = (cinemas_name, time) => {
+  //     console.log(cinemas_name, time)
+  //     setBookingDetails({ ...bookingDetails, cinemas_name, time })
+  //     setCount(prev => prev + 1);
+  // }
 
-    // const handleSelectDate = (date, day) => {
-    //     setBookingDetails({ ...bookingDetails, date, day });
-    //     setCount(prev => prev + 1);
-    // }
+  // const handleSelectDate = (date, day) => {
+  //     setBookingDetails({ ...bookingDetails, date, day });
+  //     setCount(prev => prev + 1);
+  // }
 
-    // const handleMovieName = (name) => {
-    //     setBookingDetails({ ...bookingDetails, name })
-    // }
+  // const handleMovieName = (name) => {
+  //     setBookingDetails({ ...bookingDetails, name })
+  // }
 
-    useEffect(() => {
-        // console.log(count, "count")
-        // console.log(bookingDetails)
-    }, [count])
+  useEffect(() => {
+    // console.log(count, "count")
+    // console.log(bookingDetails)
+  }, [count]);
 
-    return (
-        <div style={{ backgroundColor: "#F2F2F2", paddingBottom: 20 }}>
-            <Header />
-            <Filter handleFilters={handleFilters} filters={filters} />
-            <CinemasBody filters={filters} />
-        </div>
-    )
-}
+  return (
+    <div style={{ backgroundColor: "#383838", paddingBottom: 20 }}>
+      <Header />
+      <Filter handleFilters={handleFilters} filters={filters} />
+      <CinemasBody filters={filters} />
+    </div>
+  );
+};
