@@ -336,7 +336,7 @@ const Navbar = () => {
                     ></path>
                   </svg>
                   <Link
-                    to="/user/booking-history"
+                    to="/booking-history"
                     style={{ marginLeft: 20, color: "black" }}
                   >
                     <span>Booking History</span>

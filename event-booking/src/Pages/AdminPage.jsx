@@ -14,6 +14,7 @@ import { useHistory, useParams } from "react-router-dom";
 import { MovieCarousel } from "../Components/HomePage/MovieCarousel";
 import { ModifyCarousel } from "../Components/HomePage/ModifyCarousel";
 import styles from "../Components/Styling/RecommendedMovies.module.css";
+import Grid from '@material-ui/core/Grid'
 
 export default function AdminPage({ action, handleCloseLogin }) {
   const { id } = useParams();
@@ -21,6 +22,8 @@ export default function AdminPage({ action, handleCloseLogin }) {
   var feedback_data = jsondata.feed;
   const user_events = jsondata.organizers.filter(ele => ele.id == id)[0].organized_events;
   const events_data = jsondata.events;
+  const booking_data = jsondata.booking;
+  console.log(booking_data);
   const filteredEvents = events_data.filter(event => (
     user_events.includes(event.id) 
   ))
@@ -33,6 +36,10 @@ export default function AdminPage({ action, handleCloseLogin }) {
   const [ascmod, setAscmod] = React.useState(true);
   const ascmodchange = () => {
     setAscmod(!ascmod);
+  }
+  const [ascbookmod, setAscbookmod] = React.useState(true);
+  const ascbookmodchange = () => {
+    setAscbookmod(!ascbookmod);
   }
   function SortButton(props){
     let ddd = [];
@@ -47,7 +54,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
     if (ascmod){
       ddd.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
       btn = <>
-              <button onClick={ascmodchange}>Sort in Descending?</button>
+              <button onClick={ascmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Descending?</button>
               <table className="styled-table">
                 <thead>
                   <tr>
@@ -70,7 +77,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
     }else{
       ddd.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
       btn = <>
-      <button onClick={ascmodchange}>Sort in Ascending?</button>
+      <button onClick={ascmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Ascending?</button>
       <table className="styled-table">
         <thead>
           <tr>
@@ -89,6 +96,63 @@ export default function AdminPage({ action, handleCloseLogin }) {
           ))}
         </tbody>
       </table>
+    </>
+    }
+    return btn;
+  }
+  function BookingButton(props){
+    let bbb = [];
+    let zz = 0;
+    for(let i=0;i<booking_data.length;i++){
+      zz = zz + 1;
+      bbb.push({"name": booking_data[i].name, "price": booking_data[i].total_price, "place": booking_data[i].cinemas_name})
+    }
+    let btn;
+    if (ascbookmod){
+      bbb.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+      btn = <>
+              <button onClick={ascbookmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Descending?</button>
+              <table className="styled-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Amount Paid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bbb.map((i) => (
+                          <tr key={i.id}>
+                            <td>{i.name}</td>
+                            <td>{i.place}</td>
+                            <td>{i.price}</td>
+                          </tr>
+                  ))}
+                </tbody>
+              </table>
+            </>
+    }else{
+      bbb.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
+      btn = <>
+      <button onClick={ascbookmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Ascending?</button>
+      <table className="styled-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Event</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Amount Paid</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {bbb.map((i) => (
+                          <tr key={i.id}>
+                            <td>{i.name}</td>
+                            <td>{i.place}</td>
+                            <td>{i.price}</td>
+                          </tr>
+                  ))}
+                </tbody>
+              </table>
     </>
     }
     return btn;
@@ -148,48 +212,43 @@ export default function AdminPage({ action, handleCloseLogin }) {
 
 <center>
 
-<table className="styled-table">
-  <thead>
-    <tr>
-    <th scope="col">S.No</th>
-      <th scope="col">Name</th>
-      <th scope="col">Feedback</th>
-    </tr>
-  </thead>
-  <tbody>
-    {feedback_data.map((i) => (
-            <tr key={i.id}>
-              <td>{i.id}</td>
-              <td>{i.name}</td>
-              <td>{i.feed}</td>
-            </tr>
-    ))}
-  </tbody>
-</table>
-<br/><br/>
-<h1 style={{"color":"white"}}>Feedback for Each Event</h1>
-<br/>
-<div>
-  <SortButton />
-</div>
-{/* <table className="styled-table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Event</th>
-      <th scope="col">Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    {ddd.map((i) => (
-            <tr key={i.id}>
-              <td>{i.name}</td>
-              <td>{i.event}</td>
-              <td>{i.rating}</td>
-            </tr>
-    ))}
-  </tbody>
-</table> */}
+<Grid container>
+  <Grid item xs={6}> 
+  <h1 style={{"color":"white"}}>Pricing for Each Event</h1>
+    <br/>
+    <div>
+      <BookingButton />
+    </div>
+  </Grid>
+  <Grid item xs={6}> 
+    <h1 style={{"color":"white"}}>Feedback for Each Event</h1>
+    <br/>
+    <div>
+      <SortButton />
+    </div>
+  </Grid>
+</Grid>
+<br/><br/><br/>
+<h1 style={{"color":"white"}}>Feedback for Website</h1>
+    <br/>
+    <table className="styled-table">
+      <thead>
+        <tr>
+        <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Feedback</th>
+        </tr>
+      </thead>
+      <tbody>
+        {feedback_data.map((i) => (
+                <tr key={i.id}>
+                  <td>{i.id}</td>
+                  <td>{i.name}</td>
+                  <td>{i.feed}</td>
+                </tr>
+        ))}
+      </tbody>
+    </table>
 </center>
     </div>
   );

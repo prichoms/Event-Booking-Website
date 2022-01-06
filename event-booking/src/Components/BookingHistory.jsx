@@ -2,9 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Ticket } from "./Ticket";
 import styles from "./Styling/Ticket.module.css";
+import db from "../scraped_data/db.json"
 
 export const BookingHistory = () => {
-    const booking_data = useSelector(state => state.after_payment.booking_data).reverse();
+    const booking_data = db.booking;
     // console.log(booking_data)
     // console.log("History")
     booking_data.sort((a, b) => {

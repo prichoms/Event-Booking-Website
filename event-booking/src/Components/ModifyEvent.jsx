@@ -366,14 +366,14 @@ const ModifyEvent = () => {
   function DeleteEvent(){
     let aa = window.confirm('Are you sure you want to delete this event?');
     if (aa) {
-      console.log('deleted.');
       fetch(`http://localhost:3001/events/${data.id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"
           }
         }
-    )
+      )
+      history.push("/")
     }
   }
   const Trash = ({size=40, color="#d0021b"}) => (<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="square" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>);
@@ -400,12 +400,10 @@ const ModifyEvent = () => {
             </div>
           </div>
           <center>
-          <Link to="/admin" style={{ marginLeft: 20, color: "black" }} >
             <button className="Delete" onClick={DeleteEvent}>
               <Trash/><br/>
               Delete Event?
             </button>
-          </Link>
 
           </center>
           <div className='rowC'>
