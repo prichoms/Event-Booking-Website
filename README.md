@@ -15,22 +15,22 @@ After clicking, Proceed button, the user can make the payment and will be redire
 
 ## Screenshots
 ### Homepage
-![homepage snap 1](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/home.PNG)
+![homepage snap 1](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/home.PNG)
 
 ### All Eventpage
-![event snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/event.PNG)
+![event snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/event.PNG)
 ### Specific Eventpage
-![specific event snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/specific.PNG)
+![specific event snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/specific.PNG)
 
 ### Admin Account
-![Admin snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/admin1.PNG)
-![Admin snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/admin2.PNG)
+![Admin snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/admin1.PNG)
+![Admin snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/admin2.PNG)
 
 ### User Account
-![User snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/user2.PNG)
-![User snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/user3.PNG)
-![User snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/user4.PNG)
-![User snap](https://github.com/Shreyashm16/Hospital-Appointment-and-Information-System/blob/main/Screenshot/user5.PNG)
+![User snap](https://github.com/Shreyashm16/Event-Booking-Websitem/blob/main/Screenshot/user2.PNG)
+![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user3.PNG)
+![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user4.PNG)
+![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user5.PNG)
 
 ## Functional Description
 
