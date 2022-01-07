@@ -194,14 +194,19 @@ const Navbar = () => {
   }
   const Intro = () => {
     const tid = user;
-    const dt = userdata.users.filter(ele => ele.id == tid)[0];
-    if(dt.friend_requests.length > 0 && isAuth){
-    return (<>
-          <Announcement style={{ fontSize: "20px",marginBottom: "150px",marginLeft: "150px", position: "absolute" }} />
-          <AccountCircleIcon style={{ fontSize: "40px" }} />
-          <div>Hi, User..</div></>);
+    const dt = userdata.users.filter(ele => ele.id == tid);
+    if (dt.length === 1){
+      if(isAuth && dt[0].friend_requests.length > 0){
+      return (<>
+            <Announcement style={{ fontSize: "20px",marginBottom: "150px",marginLeft: "150px", position: "absolute" }} />
+            <AccountCircleIcon style={{ fontSize: "40px" }} />
+            <div>Hi, User..</div></>);
+      }
+      else if (isAuth){
+        return (<><AccountCircleIcon style={{ fontSize: "40px" }} /><div>Hi, User..</div></>)
+      }
     }
-    return (<><AccountCircleIcon style={{ fontSize: "40px" }} /><div>Hi, User..</div></>);
+    return (<></>);
   }
   return (
     <div>
