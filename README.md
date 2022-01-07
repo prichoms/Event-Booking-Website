@@ -41,7 +41,6 @@ After clicking, Proceed button, the user can make the payment and will be redire
 * List of booking, sorting of prices, rating of events (for admin only)
 * All events page (For Pagination purpose)
 * Create Event Page (CRUD operations) (Admin only)
-* Medical History of the Patient*
 * Feedback System for Users (Contact form + specific event rating + website feedback)
 * Secure Login Authentication (Signup and then Login)
 
