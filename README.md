@@ -27,7 +27,7 @@ After clicking, Proceed button, the user can make the payment and will be redire
 ![Admin snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/admin2.PNG)
 
 ### User Account
-![User snap](https://github.com/Shreyashm16/Event-Booking-Websitem/blob/main/Screenshot/user2.PNG)
+![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user2.PNG)
 ![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user3.PNG)
 ![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user4.PNG)
 ![User snap](https://github.com/Shreyashm16/Event-Booking-Website/blob/main/Screenshot/user5.PNG)
@@ -59,11 +59,11 @@ To run the program offline, follow the following steps:
 * `npm i`
 *  `npm install redux react-redux redux-thunk react-router-dom material-ui/@core @material-ui/icons @material-ui/lab antd react-multi-carousel`
 
-###### To start the server you have to open two terminal on the same path (`\FSD-2\event-booking`)
-On first terminal execute
-`npm run start`
-On second terminal execute
-`npx json-server --watch src/database/db.json --port 3001`
+#### To start the server you have to open two terminal on the same path (`\FSD-2\event-booking`)
+* On first terminal execute
+* `npm run start`
+* On second terminal execute
+* `npx json-server --watch src/database/db.json --port 3001`
 For any queries, reach out to the Developers :
 
 | NAME | ROLL NO |
