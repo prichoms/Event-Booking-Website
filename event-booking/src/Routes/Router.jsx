@@ -9,9 +9,6 @@ import UserPage from "../Pages/UserPage";
 import ContactPage from "../Pages/ContactPage";
 import AboutPage from "../Pages/AboutPage";
 import { BookingHistory } from "../Components/BookingHistory";
-import FirstSection from "../Components/PaymentsPage/FirstSection";
-import styles from "../Components/Styling/PaymentsPage.module.css";
-import SecondSection from "../Components/PaymentsPage/SecondSection";
 import CreateEvent from "../Components/CreateEvent";
 import ModifyEvent from "../Components/ModifyEvent";
 const Router = () => {

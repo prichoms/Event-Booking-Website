@@ -105,6 +105,20 @@
     {
       "id": 1,
       "image": "https://gdsciiits.netlify.app/static/media/shreyash_mishra.3f9cfc3431e4c7dff3dc.png",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action",
+        "Thriller",
+        "Comedy",
+        "Fantasy"
+      ],
+      "friends": [
+        {
+          "id": 2,
+          "status": "accepted"
+        }
+      ],
+      "friend_requests": [],
       "name": "Shreyash",
       "about": "Lionel Andrés Messi, also known as Leo Messi, is an Argentine professional footballer who plays as a forward for Ligue 1 club Paris Saint-Germain and captains the Argentina national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Messi has won a record seven Ballon d'Or awards, a record six European Golden Shoes, and in 2020 was named to the Ballon d'Or Dream Team. Until leaving the club in 2021, he had spent his entire professional career with Barcelona, where he won a club-record 35 trophies, including ten La Liga titles, seven Copa del Rey titles and four UEFA Champions Leagues. A prolific goalscorer and creative playmaker, Messi holds the records for most goals in La Liga (474), a La Liga and European league season (50), most hat-tricks in La Liga (36) and the UEFA Champions League (8), and most assists in La Liga (192), a La Liga season (21) and the Copa América (17). He also holds the record for most international goals by a South American male (80). Messi has scored over 750 senior career goals for club and country, and has the most goals by a player for a single club.",
       "booked_events": [
@@ -123,6 +137,19 @@
     {
       "id": 2,
       "name": "Aditya",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action",
+        "Thriller",
+        "Comedy"
+      ],
+      "friends": [
+        {
+          "id": 1,
+          "status": "accepted"
+        }
+      ],
+      "friend_requests": [],
       "image": "https://i.imgflip.com/3sksxo.png",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
@@ -444,48 +471,6 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "grade": "ua",
       "id": 12
-    },
-    {
-      "name": "Ways of Passive Income",
-      "date": 9,
-      "day": "Sunday",
-      "time": "07:40 PM",
-      "venues_name": "Theatre of Dreams: Nehru Place",
-      "silver": [
-        "B4",
-        "B6",
-        "B7"
-      ],
-      "platinium": [
-        "A6",
-        "B9"
-      ],
-      "price": 2300,
-      "total_price": 2328,
-      "banner_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAhjRtkHdhOanActd6YdrHj0qa1sUF2Gidg&usqp=CAU",
-      "grade": "ua",
-      "id": 13
-    },
-    {
-      "name": "Ways of Passive Income",
-      "date": 9,
-      "day": "Sunday",
-      "time": "07:40 PM",
-      "venues_name": "Theatre of Dreams: Nehru Place",
-      "silver": [
-        "B4",
-        "B6",
-        "B7"
-      ],
-      "platinium": [
-        "A6",
-        "B9"
-      ],
-      "price": 2300,
-      "total_price": 2328,
-      "banner_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAhjRtkHdhOanActd6YdrHj0qa1sUF2Gidg&usqp=CAU",
-      "grade": "ua",
-      "id": 14
     }
   ],
   "food": [
