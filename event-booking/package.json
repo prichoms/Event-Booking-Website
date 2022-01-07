@@ -42,7 +42,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev-server": "json-server -p src/scraped_data/feedback.json --port 8080"
+    "dev-server": "json-server -p src/database/feedback.json --port 8080"
   },
   "eslintConfig": {
     "extends": [

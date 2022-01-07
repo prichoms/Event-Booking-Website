@@ -9,7 +9,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/CreatePage.css'
-import data from "../scraped_data/db.json"
+import data from "../database/db.json"
 import { useHistory, useParams} from "react-router-dom";
 import Select from 'react-select'
 import DatePicker from "react-datepicker";

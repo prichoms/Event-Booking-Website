@@ -15,7 +15,7 @@ import { PremierEvents } from "../Components/HomePage/PremierEvents";
 import { RecommendedEvents } from "../Components/HomePage/RecommendedEvents";
 import { BookedEvents } from '../Components/BookedEvents';
 import { useHistory, useParams } from "react-router-dom";
-import jsondata from "../scraped_data/db.json"
+import jsondata from "../database/db.json"
 
 const styles = (theme) => ({
   root: {

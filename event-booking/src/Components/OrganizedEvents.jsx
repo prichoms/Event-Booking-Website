@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { EventCarousel } from "./HomePage/EventCarousel";
 import { ModifyCarousel } from "./HomePage/ModifyCarousel";
 import styles from "./Styling/RecommendedEvents.module.css";
-import userdata from '../scraped_data/db.json';
+import userdata from '../database/db.json';
 
 export const OrganizedEvents = () => {
     const events_data = useSelector(state => state.app.events_data);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Ticket } from "./Ticket";
 import styles from "./Styling/Ticket.module.css";
-import db from "../scraped_data/db.json"
+import db from "../database/db.json"
 
 export const BookingHistory = () => {
     const booking_data = db.booking;

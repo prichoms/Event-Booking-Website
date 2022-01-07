@@ -6,7 +6,7 @@ import {
     GET_POPULAR_EVENTS_REQUEST,
     GET_POPULAR_EVENTS_SUCCESS
 } from "./actionTypes"
-import datpop from '../../scraped_data/db.json';
+import datpop from '../../database/db.json';
 
 
 

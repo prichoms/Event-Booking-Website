@@ -1,6 +1,6 @@
 import * as actionType from "./actionTypes";
-// import dat from '../../scraped_data/bookMyShow.json';
-import datpop from '../../scraped_data/db.json';
+// import dat from '../../database/bookMyShow.json';
+import datpop from '../../database/db.json';
 import axios from "axios";
 const getEventRequest = () => {
   return {

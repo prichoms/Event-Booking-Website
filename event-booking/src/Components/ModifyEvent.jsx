@@ -9,7 +9,7 @@ import Login from "../Pages/LoginPage";
 import { storeAuth } from "../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
-import userdata from '../scraped_data/db.json';
+import userdata from '../database/db.json';
 const ModifyEvent = () => {
   const [state, setState] = React.useState(false);
   const { id } = useParams();

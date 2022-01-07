@@ -5,7 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
 import "../Components/Styling/admin.css";
-import jsondata from "../scraped_data/db.json"
+import jsondata from "../database/db.json"
 import { OrganizedEvents } from '../Components/OrganizedEvents';
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";

@@ -3,7 +3,7 @@
 ### Steps to run the Project 
 #### nGo to the \FSD-2\event-booking enter the following command 
 * `npm i`
-*  `npx json-server --watch src/scraped_data/db.json --port 3001`
+*  `npx json-server --watch src/database/db.json --port 3001`
 * Now come to new terminal on the same path and run `npm run start`
 
 ### Team Details

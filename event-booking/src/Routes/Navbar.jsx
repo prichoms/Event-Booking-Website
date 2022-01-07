@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { storeAuth } from "../Redux/app/actions";
 import Login from "../Pages/LoginPage";
 import { useHistory } from 'react-router-dom';
-import userdata from '../scraped_data/db.json';
+import userdata from '../database/db.json';
 
 
 const useStyles = makeStyles({
