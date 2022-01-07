@@ -1,56 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getMovies, putMovies } from "../Redux/data/actions";
 import { useHistory, useParams } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 import "./MoviePage/moviePage.css";
 import "./Styling/ModifyEvent.css"
 import Carousel from "react-elastic-carousel";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import Typography from "@material-ui/core/Typography";
-import Slider from "@material-ui/core/Slider";
 import Login from "../Pages/LoginPage";
 import { storeAuth } from "../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
-import userdata from '../scraped_data/users.json';
-import db from "../scraped_data/db.json"
-
-function valuetext(value) {
-  return `${value}`;
-}
-
-const useStyles = makeStyles((theme) => ({
-  modal: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    height: "400px",
-    width: "300px",
-  },
-  root: {
-    width: 250,
-    margin: 20,
-    textAlign: "center",
-  },
-}));
-
+import userdata from '../scraped_data/db.json';
 const ModifyEvent = () => {
-  const [isMuted, setIsMuted] = React.useState(true)
-  const video = 'https://vimeo.com/331414823';
-  const [rValue, setRvalue] = React.useState(0);
-  const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState(false);
-  const classes = useStyles();
   const { id } = useParams();
   const data = useSelector((state) => state.data.movies.data);
   const dispatch = useDispatch();
@@ -63,49 +24,10 @@ const ModifyEvent = () => {
     dispatch(getMovies(id));
     window.scrollTo(window.scrollX, 0);
   }, []);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-  const handleChange = (e, v) => {
-    setRvalue(v);
-  };
-  const handleRating = () => {
-    dispatch(
-      putMovies(id, {
-        rating: {
-          percentage: data.rating.percentage,
-          no_of_ratings: data.rating.no_of_ratings + 1,
-        },
-      })
-    );
-    setOpen(false);
-  };
-
-  const handleClick = () => {
-    if (isAuth) {
-      history.push(`/booktickets/`)
-      
-    } else {
-      alert("Please login to book your tickets")
-      setAction(true)
-    }
-  }
 
   const redirect_admin = () => {
     history.push('/admin')
   }
-  const redirect_user = () => {
-    history.push('/user')
-  }
-  const signout_user = () => {
-    setAuth(false);
-    history.push('/')
-  }
-
 
   const handleCloseLogin = (email, pass, number) => {
     let r = "";
@@ -142,16 +64,12 @@ const ModifyEvent = () => {
         else if (+email == "") {
           setAuth(false);
           alert("Please type your email");
-          //handleCloseLogin(email, pass, number);
         }
         else if (+pass == "") {
           setAuth(false);
           alert("Please type your passsword");
-          //handleCloseLogin(email, pass, number);
         }
-
       }
-
       else {
         setAuth(false);
         alert("You are not registered");
@@ -404,12 +322,10 @@ const ModifyEvent = () => {
               <Trash/><br/>
               Delete Event?
             </button>
-
           </center>
           <div className='rowC'>
           <div className="middleContainer">
             <div>
-              {/* {about} */}
               <Aboutbox dat={data} />
             </div>
             <hr />
@@ -439,15 +355,11 @@ const ModifyEvent = () => {
                     <img src="https://videos.jdmagicbox.com/delhi/e7/011pxx11.xx11.190311123542.t6e7/video/4902f76a299bfa23d3b6deee37576770_m.jpg" className="sliderimg"/>
                     <img src="https://nearmetrade.com/local/public/vendor/event-noida2.jpg" className="sliderimg"/>
                     <img src="https://www.gl-events.com/sites/glevents2022/files/styles/max_2600x2600/public/2019-03/about_us.jpg?itok=VCR0q3hv" className="sliderimg"/>
-                    <img src="https://total-event.com/wp-content/uploads/2018/01/event-planning-microsoft-ignite.jpg" className="sliderimg"/>
-                    
+                    <img src="https://total-event.com/wp-content/uploads/2018/01/event-planning-microsoft-ignite.jpg" className="sliderimg"/>     
               </AliceCarousel>
             </div>
           </div>
           <div className="middleContainer_right">
-            {/* <div className="container__card">
-              <img src={data.banner_image_url} alt="title" />
-            </div> */}
             <Posterbox dat={data} />
             <div className="container__movieDetail_rating">
                 <img
@@ -463,24 +375,9 @@ const ModifyEvent = () => {
                   <h4 style={{ color: "white" }}>Your ratings matter</h4>
                 </div>
                 <div>
-                  <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
+                  <button style={{ cursor: "pointer" }} >Rate Now</button>
                 </div>
-              </div>
-              {/* <div className="container__movieDetail">
-                <div className="container__movieDetail_language">
-                  <div>
-                    <p>{data.languages}</p>
-                  </div>
-                </div>
-                <div style={{ color: "white", fontSize: 18 }}>
-                  <h5 style={{ color: "white", fontSize: 18 }}>
-                    {`${data.duration} - ${data.genre.map(
-                      (e) => " " + e.genre
-                    )} - ${data.release_date}`}
-                  </h5>
-                </div>
-              </div> */}
-            
+              </div>       
               <Detailsbox dat={data} />
           </div>
           </div>

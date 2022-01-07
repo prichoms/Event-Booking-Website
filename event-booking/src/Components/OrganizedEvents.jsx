@@ -1,10 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { MovieCarousel } from "./HomePage/MovieCarousel";
 import { ModifyCarousel } from "./HomePage/ModifyCarousel";
 import styles from "./Styling/RecommendedMovies.module.css";
-import { RiArrowRightSLine } from "react-icons/ri";
 import userdata from '../scraped_data/db.json';
 
 export const OrganizedEvents = () => {

@@ -52,7 +52,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
     }
     let btn;
     if (ascmod){
-      ddd.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+      ddd.sort((a, b) => (Number(a.rating) > Number(b.rating)) ? 1 : -1);
       btn = <>
               <button onClick={ascmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Descending?</button>
               <table className="styled-table">
@@ -75,7 +75,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
               </table>
             </>
     }else{
-      ddd.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
+      ddd.sort((a, b) => (Number(a.rating) > Number(b.rating)) ? -1 : 1);
       btn = <>
       <button onClick={ascmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Ascending?</button>
       <table className="styled-table">
@@ -109,7 +109,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
     }
     let btn;
     if (ascbookmod){
-      bbb.sort((a, b) => (a.rating > b.rating) ? 1 : -1);
+      bbb.sort((a, b) => (Number(a.price) > Number(b.price)) ? 1 : -1);
       btn = <>
               <button onClick={ascbookmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Descending?</button>
               <table className="styled-table">
@@ -132,7 +132,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
               </table>
             </>
     }else{
-      bbb.sort((a, b) => (a.rating > b.rating) ? -1 : 1);
+      bbb.sort((a, b) => (Number(a.price) > Number(b.price)) ? -1 : 1);
       btn = <>
       <button onClick={ascbookmodchange} style={{backgroundColor: "red", border: "1px solid red", borderRadius: "20px", fontSize: "15px", color: "#16161D"}}>Sort in Ascending?</button>
       <table className="styled-table">

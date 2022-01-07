@@ -12,7 +12,6 @@ export const DropDowns = ({ handleFilters, filters }) => {
     "Noida",
     "Faridabad",
   ];
-  // const filters = []
   const menu = (
     <Menu>
       {subRegions?.map((region, index) => (
@@ -40,9 +39,6 @@ export const DropDowns = ({ handleFilters, filters }) => {
           Filter Sub Regions <DownOutlined />
         </div>
       </Dropdown>
-      {/* <DropDown>
-
-            </DropDown> */}
     </div>
   );
 };

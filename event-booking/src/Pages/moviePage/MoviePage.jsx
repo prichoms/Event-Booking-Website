@@ -8,14 +8,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { RecommendedMovies } from "../../Components/HomePage/RecommendedMovies";
 import Login from "../LoginPage";
 import { storeAuth } from "../../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
-import userdata from '../../scraped_data/users.json';
+import userdata from '../../scraped_data/db.json';
 import TextField from '@mui/material/TextField';
 
 function valuetext(value) {
@@ -43,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MoviePage = () => {
-  const [isMuted] = React.useState(true)
-  const video = 'https://vimeo.com/331414823';
+  const [user,setUser] = React.useState(-1);
+  const [usertype,setUsertype] = React.useState("");
   const [rValue, setRvalue] = React.useState(0);
   const [open, setOpen] = React.useState(false);
   const [state, setState] = React.useState(false);
@@ -82,7 +81,6 @@ const MoviePage = () => {
     let nid = {"name":n,"rating":rValue};
     brr.push(nid);
     newdata.feedback = brr;
-    console.log(newdata);
     fetch(`http://localhost:3001/events/${data.id}`, {
           method: "PUT",
           headers: {
@@ -104,8 +102,8 @@ const MoviePage = () => {
     }
   }
 
-  const redirect_admin = () => {
-    history.push('/admin')
+  const redirect_admin = (id) => {
+    history.push(`/admin/${id}`)
   }
   const redirect_user = () => {
     history.push('/user')
@@ -140,77 +138,60 @@ const MoviePage = () => {
     }
 
     if (r === "Organizer") {
-      var obj_email_check = userdata.organizers.filter(ele => ele.email == +email);
-      var obj_pass_check = userdata.organizers.filter(ele => ele.password == +pass);
-      var obj_mob_check = userdata.organizers.filter(ele => ele.phone == +number)[0];
-      if (obj_mob_check) {
+      var obj_email_check = userdata.organizers.filter(ele => ele.email == email)[0];
+      var obj_pass_check = userdata.organizers.filter(ele => ele.password == pass)[0];
+      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
         setAuth(true);
+        setUser(obj_email_check.id);
+        setUsertype("organizer");
         alert("Successfully Logged in");
-        redirect_admin();
+        redirect_admin(obj_email_check.id);
       }
-      else if (+number == "" && +email == "") {
+      else if (email == "") {
         setAuth(false);
-        alert("Both Email & Mob is missing");
+        setUser(-1);
+        setUsertype("");
+        alert("Please type your email");
       }
-      else if (+number == "") {
+      else if (pass == "") {
         setAuth(false);
-        if (obj_email_check && obj_pass_check) {
-          setAuth(true);
-          alert("Successfully Logged in");
-          redirect_admin();
-        }
-        else if (+email == "") {
-          setAuth(false);
-          alert("Please type your email");
-          //handleCloseLogin(email, pass, number);
-        }
-        else if (+pass == "") {
-          setAuth(false);
-          alert("Please type your passsword");
-          //handleCloseLogin(email, pass, number);
-        }
-
+        setUser(-1);
+        setUsertype("");
+        alert("Please type your passsword");
       }
-
       else {
         setAuth(false);
+        setUser(-1);
         alert("You are not registered");
       }
       setAction(false);
       setState(false);
     }
     else if (r=="User"){
-      var obj_email_check = userdata.users.filter(ele => ele.email == +email);
-      var obj_pass_check = userdata.users.filter(ele => ele.password == +pass);
-      var obj_mob_check = userdata.users.filter(ele => ele.phone == +number)[0];
-      if (obj_mob_check) {
+      var obj_email_check = userdata.users.filter(ele => ele.email == email)[0];
+      var obj_pass_check = userdata.users.filter(ele => ele.password == pass)[0];
+      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
         setAuth(true);
+        setUser(obj_email_check.id);
+        setUsertype("user");
         alert("Successfully Logged in");
       }
-      else if (+number == "" && +email == "") {
+      else if (email == "") {
         setAuth(false);
-        alert("Both Email & Mob is missing");
+        setUser(-1);
+        setUsertype("");
+        alert("Please type your email");
       }
-      else if (+number == "") {
+      else if (pass == "") {
         setAuth(false);
-        if (obj_email_check && obj_pass_check) {
-          setAuth(true);
-          alert("Successfully Logged in");
-        }
-        else if (+email == "") {
-          setAuth(false);
-          alert("Please type your email");
-          handleCloseLogin(email, pass, number);
-        }
-        else if (+pass == "") {
-          setAuth(false);
-          alert("Please type your passsword");
-          handleCloseLogin(email, pass, number);
-        }
-
+        setUser(-1);
+        setUsertype("");
+        alert("Please type your passsword");
       }
       else {
         setAuth(false);
+        setUser(-1);
+          setUsertype("");
         alert("You are not registered");
       }
       setAction(false);
@@ -343,17 +324,8 @@ const MoviePage = () => {
                 </button>
               </div>
               <div className={classes.root}>
-                {/* <Typography id="discrete-slider" gutterBottom>
-                  Name
-                </Typography>
-                <div class="form-group">
-                  <input class="form-control form-control-lg" type="text"  id="name" name="name" placeholder="Your Name...." /><br /><br />
-                </div> */}
                 <TextField label="Name" id="name" name="name" placeholder="Your name" />
                 <br /><br />
-                {/* <Typography id="discrete-slider" gutterBottom>
-                  How would you rate the movie?
-                </Typography> */}
                 <h3><b>How would you rate the event?</b></h3>
                 <Slider
                   onChange={handleChange}

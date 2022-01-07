@@ -51,17 +51,6 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
     setTotalFood(sum);
   }, [foodArray]);
 
-  // console.log(foodArray, totalFood)
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleChange = (e) => {};
-
   let totalAmount = booking_details.price + 28 + totalFood;
 
   const handleProceed = () => {
@@ -70,9 +59,6 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
   };
   return (
     <div>
-      {/* <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open full-screen dialog
-      </Button> */}
       <Dialog
         fullScreen
         open={foodModalOpen}
@@ -137,13 +123,11 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
                 color: "white",
               }}
             >
-              {/* Your current State is <a href="">{city}</a> */}
             </div>
             <div className={styles.total}>
               <div>Amount Payable</div>
               <div>Rs {totalAmount}</div>
             </div>
-            {/* <h3 className={styles.ticketType}>Select Ticket Type</h3> */}
             <div onClick={handleProceed} className={styles.proceedBtn}>
               <div>Total : Rs {totalAmount}</div>
               <div> Proceed</div>

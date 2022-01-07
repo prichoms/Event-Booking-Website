@@ -25,12 +25,6 @@ const Seating = ({
   const [price, setPrice] = React.useState(0);
   const movie_details = useSelector(state => state.booking_details);
 
-  const monthNames = ["January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
-  ];
-
-
-  // console.log(seatingActive);
 
   const handleClick = (value) => {
     setRowData(
@@ -92,89 +86,76 @@ const Seating = ({
       </div>
       
       <div className="seatingModal__seatContainer">
-      <div className="Screen">
-            {/* <img src="https://img.favpng.com/4/3/7/theater-drapes-and-stage-curtains-clip-art-png-favpng-7xwt0rghJQdh7iUqmBcFeidkZ.jpg" alt="screen" style={{"height": "100px"}}/> */}
-            <h1 style={{"color":"white", "marginLeft":"450px"}}>Stage Here</h1>
-          </div>
-        <div>
-          <h5>
-            {type1}-Rs. {ticketPrice1}
-          </h5>
-
-          <div className="seatingModal__seatContainer_can">
-            <div style={{ display: "grid" }}>
-              {Silver.map((e) => (
-                <div style={{ margin: 10, color: "gray" }} key={e}>
-                  {e}
-                </div>
-              ))}
+        <div className="Screen">
+          <h1 style={{"color":"white", "marginLeft":"450px"}}>Stage Here</h1>
+        </div>
+      <div>
+      <h5>
+        {type1}-Rs. {ticketPrice1}
+      </h5>
+      <div className="seatingModal__seatContainer_can">
+        <div style={{ display: "grid" }}>
+          {Silver.map((e) => (
+            <div style={{ margin: 10, color: "gray" }} key={e}>
+              {e}
             </div>
-            <div className="seatingModal__seatContainer_seats">
-              {rowsData.map((e) => (
-                <div
-                  onClick={() => handleClick(e.id)}
-                  className={
-                    e.disable
-                      ? "disable"
-                      : e.isReserved
-                        ? "reserved"
-                        : e.isSelected
-                          ? "select"
-                          : "seats"
-                  }
-                  key={e.id}
-                >
-                  <p>{e.number}</p>
-                </div>
-              ))}
+          ))}
+        </div>
+        <div className="seatingModal__seatContainer_seats">
+          {rowsData.map((e) => (
+            <div
+              onClick={() => handleClick(e.id)}
+              className={
+                e.disable
+                  ? "disable"
+                  : e.isReserved
+                    ? "reserved"
+                    : e.isSelected
+                      ? "select"
+                      : "seats"
+              }
+              key={e.id}
+            >
+              <p>{e.number}</p>
             </div>
-          </div>
-          <h5>
-            {type2}-Rs. {ticketPrice2}
-          </h5>
-          <div className="seatingModal__seatContainer_can">
-            <div style={{ display: "grid" }}>
-              {Silver.map((e) => (
-                <div style={{ margin: 10, color: "gray" }} key={e}>
-                  {e}
-                </div>
-              ))}
-            </div>
-            <div className="seatingModal__seatContainer_seats">
-              {rowsData2.map((e) => (
-                <div
-                  onClick={() => handleClick(e.id)}
-                  className={
-                    e.disable
-                      ? "disable"
-                      : e.isReserved
-                        ? "reserved"
-                        : e.isSelected
-                          ? "select"
-                          : "seats"
-                  }
-                  key={e.id}
-                >
-                  <p>{e.number}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* <div className="Screen">
-            <img src="https://img.favpng.com/4/3/7/theater-drapes-and-stage-curtains-clip-art-png-favpng-7xwt0rghJQdh7iUqmBcFeidkZ.jpg" alt="screen" style={{"height": "100px"}}/>
-            <h1 style={{"color":"white", "marginLeft":"165px"}}>Stage Here</h1>
-          </div> */}
+          ))}
         </div>
       </div>
-      <div
-        style={active ? { display: "block" } : { display: "none" }}
-        className="PriceButton"
-      >
-        <button
-          onClick={() => handleSeat()}
-          style={{ height: 40, margin: 10, marginLeft: "40%", cursor: "pointer" }}
-        >
+      <h5>
+        {type2}-Rs. {ticketPrice2}
+      </h5>
+      <div className="seatingModal__seatContainer_can">
+        <div style={{ display: "grid" }}>
+          {Silver.map((e) => (
+            <div style={{ margin: 10, color: "gray" }} key={e}>
+              {e}
+            </div>
+          ))}
+        </div>
+        <div className="seatingModal__seatContainer_seats">
+          {rowsData2.map((e) => (
+            <div
+              onClick={() => handleClick(e.id)}
+              className={
+                e.disable
+                  ? "disable"
+                  : e.isReserved
+                    ? "reserved"
+                    : e.isSelected
+                      ? "select"
+                      : "seats"
+              }
+              key={e.id}
+            >
+              <p>{e.number}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+        </div>
+      </div>
+      <div style={active ? { display: "block" } : { display: "none" }} className="PriceButton" >
+        <button onClick={() => handleSeat()} style={{ height: 40, margin: 10, marginLeft: "40%", cursor: "pointer" }}>
           Rs. {price}
         </button>
       </div>

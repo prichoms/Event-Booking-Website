@@ -13,22 +13,11 @@ export const BookTicketsPage = () => {
   const { id } = useParams();
   const [filters, setFilters] = useState([]);
   const [count, setCount] = useState(0);
-  // const movie = useSelector(state => state.data.movies).data;
   const name = useSelector((state) => state.booking_details);
-  // console.log(name)
-  // const [bookingDetails, setBookingDetails] = useState({
-  //     name: "",
-  //     date: "",
-  //     day: "",
-  //     time: "",
-  //     cinemas_name: ""
-  // });
-
   useEffect(() => {
     dispatch(getCinemas());
     dispatch(getMovies(id));
   }, []);
-
   const handleFilters = (item) => {
     const newData = filters;
     if (filters.indexOf(item) >= 0) {
@@ -40,27 +29,8 @@ export const BookTicketsPage = () => {
     }
     setCount((prev) => prev + 1);
   };
-
-  // const handleSelectNameTime = (cinemas_name, time) => {
-  //     console.log(cinemas_name, time)
-  //     setBookingDetails({ ...bookingDetails, cinemas_name, time })
-  //     setCount(prev => prev + 1);
-  // }
-
-  // const handleSelectDate = (date, day) => {
-  //     setBookingDetails({ ...bookingDetails, date, day });
-  //     setCount(prev => prev + 1);
-  // }
-
-  // const handleMovieName = (name) => {
-  //     setBookingDetails({ ...bookingDetails, name })
-  // }
-
   useEffect(() => {
-    // console.log(count, "count")
-    // console.log(bookingDetails)
   }, [count]);
-
   return (
     <div style={{ paddingBottom: 20 }}>
       <Header />

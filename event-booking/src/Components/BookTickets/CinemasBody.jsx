@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "../Styling/Cinemas.module.css";
-import {
-  handleAddingSeatingData,
-  handleSelectNameTime,
-} from "../../Redux/booking_details/actions";
+import { handleAddingSeatingData, handleSelectNameTime} from "../../Redux/booking_details/actions";
 import "antd/dist/antd.css";
 import { Modal, Button } from "antd";
 import Seating from "../Seating";
@@ -15,11 +12,9 @@ export const CinemasBody = ({ filters }) => {
   const date = useSelector((state) => state.booking_details.date);
   const data = useSelector((state) => state.booking_details);
   const dispatch = useDispatch();
-
   let filteredData = cinemas_data;
   const [seatingModalOpen, setSeatingModalOpen] = useState(false);
   const [foodModalOpen, setFoodModalOpen] = useState(false);
-
   const handleFilter = () => {
     if (filters.length) {
       filteredData = cinemas_data?.filter((item) => {
@@ -27,12 +22,10 @@ export const CinemasBody = ({ filters }) => {
       });
     }
   };
-
   handleFilter();
   React.useEffect(() => {
     window.scrollTo(window.scrollX, 0);
   }, [seatingModalOpen]);
-
   function formatAMPM(date) {
     let hours = date.getHours();
     let minutes = date.getMinutes();
@@ -44,17 +37,14 @@ export const CinemasBody = ({ filters }) => {
     let strTime = hours + ":" + minutes + " " + ampm;
     return strTime;
   }
-
   const time = formatAMPM(new Date());
   const amOrPm = time[time.length - 2] + time[time.length - 1];
   const currentTime = time.split(":").map(Number).shift();
-
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const showModal = () => {
     setVisible(true);
   };
-
   const handleOk = () => {
     setConfirmLoading(true);
     setTimeout(() => {
@@ -63,31 +53,25 @@ export const CinemasBody = ({ filters }) => {
       setConfirmLoading(false);
     }, 2000);
   };
-
   const handleCancel = () => {
     console.log("Clicked cancel button");
     setVisible(false);
   };
-
   const handleClick = (name, time) => {
     dispatch(handleSelectNameTime(name, time));
     showModal();
   };
-
   const handleCloseSeatingModal = (seatingData) => {
     setSeatingModalOpen(false);
     setFoodModalOpen(true);
     dispatch(handleAddingSeatingData(seatingData));
   };
-
   const handleCloseFoodModal = () => {
     setFoodModalOpen(false);
   };
-
   const handleCloseSeatingButton = () => {
     setSeatingModalOpen(false);
   };
-
   return seatingModalOpen ? (
     <Seating
       handleCloseSeatingButton={handleCloseSeatingButton}

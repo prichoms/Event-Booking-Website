@@ -111,7 +111,6 @@ const Food = () => {
 
   return (
     <div className={styles.container}>
-      {/* <img src="https://in.bmscdn.com/bmsin/fnb/offerbanner/web/web-offerbanner.jpg" alt="banner"/> */}
       <div className={styles.wrapper}>
         <div>Pick up all your cravings here!</div>
         <span className={styles.span}>
@@ -174,7 +173,6 @@ const Food = () => {
             <FoodCard
               {...item}
               handleCount={handleCount}
-              // handleCounter={handleCounter}
             />
           ))}
         </div>

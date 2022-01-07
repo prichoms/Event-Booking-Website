@@ -1,17 +1,7 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-import MuiDialogContent from '@material-ui/core/DialogContent';
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/AboutPage.css'
 import naveen from "../static/naveen.jpeg"
-
-
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiDialogContent);
-
 
 
 export default function AboutPage({ action, handleCloseLogin }) {
@@ -100,11 +90,6 @@ export default function AboutPage({ action, handleCloseLogin }) {
             </div>
         </div>
     </div>
-
-
-   
-      
-    
     </div >
   );
 }

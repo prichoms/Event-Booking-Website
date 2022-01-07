@@ -1,31 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../Components/Styling/Navbar.module.css";
-import SearchIcon from "@material-ui/icons/Search";
-import Button from "@material-ui/core/Button";
-import Dialog from "@material-ui/core/Dialog";
-import DialogActions from "@material-ui/core/DialogActions";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogContentText from "@material-ui/core/DialogContentText";
-import DialogTitle from "@material-ui/core/DialogTitle";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { useTheme } from "@material-ui/core/styles";
 import Slide from "@material-ui/core/Slide";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-import clsx from "clsx";
-import { useReducer } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cityRequest, storeAuth } from "../Redux/app/actions";
 import Login from "../Pages/LoginPage";
 import { useHistory } from 'react-router-dom';
-import userdata from '../scraped_data/users.json';
+import userdata from '../scraped_data/db.json';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="down" ref={ref} {...props} />;
-});
 
 const useStyles = makeStyles({
   list: {
@@ -114,14 +101,12 @@ const Navbar = () => {
         setUser(-1);
         setUsertype("");
         alert("Please type your email");
-        //handleCloseLogin(email, pass, number);
       }
       else if (pass == "") {
         setAuth(false);
         setUser(-1);
         setUsertype("");
         alert("Please type your passsword");
-        //handleCloseLogin(email, pass, number);
       }
       else {
         setAuth(false);

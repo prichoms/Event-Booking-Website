@@ -408,6 +408,24 @@
       "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
       "grade": "ua",
       "id": 10
+    },
+    {
+      "name": "Best of Laugh Store",
+      "date": 9,
+      "day": "Sunday",
+      "time": "06:20 PM",
+      "cinemas_name": "Segway Club: Ambience, Gurgaon",
+      "silver": [
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "platinium": [],
+      "price": 1500,
+      "total_price": 1948,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxNiBKYW4%3D,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00301197-uuzmrjmmqn-portrait.jpg",
+      "grade": "ua",
+      "id": 11
     }
   ],
   "food": [
@@ -1474,7 +1492,12 @@
       "id": 18,
       "name": "Ben Bohmer (Live) Begin Again Tour - Delhi",
       "location": "Mehrauli: Delhi",
-      "feedback": [],
+      "feedback": [
+        {
+          "name": "Sid Star",
+          "rating": 60
+        }
+      ],
       "is_popular": true,
       "duration": "12h",
       "about": "Ben Bohmer starts his world tour from Delhi. Join his fans and enjoy an experience like no other!",
@@ -1487,8 +1510,8 @@
       "grade": "ua",
       "languages": "English, Hindi, Tamil, Telugu",
       "rating": {
-        "percentage": 88,
-        "no_of_ratings": 197
+        "percentage": 87,
+        "no_of_ratings": 198
       },
       "release_date": "29 Dec, 2020",
       "is_premier": false,
@@ -1828,7 +1851,7 @@
       "name": "Fitness First",
       "release_date": "12 Mar, 2018",
       "grade": "ua",
-      "languages": "English, Hindi, Tamil, Telugu",
+      "languages": "English, Hindi",
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "rating": {
         "percentage": 90,
@@ -2588,6 +2611,66 @@
         }
       ],
       "banner_image_url": "https://static.india.com/wp-content/uploads/2014/07/chand-mubarak-4.jpg",
+      "rating": {
+        "percentage": 88,
+        "no_of_ratings": 197
+      },
+      "cast": [
+        {
+          "original_name": "Gal Gadot",
+          "character": "as Wonder Woman/ Diana Prince",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"
+        },
+        {
+          "original_name": "Chris Pine",
+          "character": "as Steve Trevor",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"
+        },
+        {
+          "original_name": "Kristen Wiig",
+          "character": "as Cheetah",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"
+        },
+        {
+          "original_name": "Pedro Pascal",
+          "character": "as Max Lord",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"
+        },
+        {
+          "original_name": "Connie Nielsen",
+          "character": "as Hippolyta",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"
+        },
+        {
+          "original_name": "Robin Wright",
+          "character": "as Antiope",
+          "cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"
+        }
+      ],
+      "feedback": []
+    },
+    {
+      "id": 26,
+      "name": "Party",
+      "location": "Bihar!",
+      "about": "About",
+      "is_popular": false,
+      "duration": "4h 24min",
+      "languages": "English,Hindi",
+      "release_date": "Sun Jan 16 2022",
+      "is_premier": true,
+      "genre": [
+        {
+          "genre": "Action"
+        },
+        {
+          "genre": "Comedy"
+        },
+        {
+          "genre": "Adventure"
+        }
+      ],
+      "banner_image_url": "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
       "rating": {
         "percentage": 88,
         "no_of_ratings": 197

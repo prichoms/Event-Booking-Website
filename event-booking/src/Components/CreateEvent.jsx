@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
 import MuiDialogActions from '@material-ui/core/DialogActions';
@@ -11,18 +9,12 @@ import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/CreatePage.css'
-import { PopularEvents } from "../Components/HomePage/PopularEvents";
-import { PremierMovies } from "../Components/HomePage/PremierMovies";
-import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
-import { BookedEvents } from '../Components/BookedEvents';
 import data from "../scraped_data/db.json"
-//import "../Components/MoviePage/moviePage.css";
 import { useHistory, useParams} from "react-router-dom";
 import Select from 'react-select'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import DurationPicker from 'react-duration-picker'
-import Modal from "@material-ui/core/Modal";
 import TextField from '@mui/material/TextField';
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@mui/material/Checkbox';
@@ -42,41 +34,8 @@ const styles = (theme) => ({
   },
 });
 
-const DialogTitle = withStyles(styles)((props) => {
-  const { children, classes, onClose, ...other } = props;
-  return (
-    <MuiDialogTitle disableTypography className={classes.root} {...other}>
-      <Typography variant="h6">{children}</Typography>
-      {onClose ? (
-        <IconButton aria-label="close" className={classes.closeButton} onClick={onClose}>
-          <CloseIcon />
-        </IconButton>
-      ) : null}
-    </MuiDialogTitle>
-  );
-});
-
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-  },
-}))(MuiDialogContent);
-
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-  },
-}))(MuiDialogActions);
-
 export default function CreateEvent({ action, handleCloseLogin }) {
   const { admin_id } = useParams();
-  const options_time = [
-    {value: 1, label: '1'},
-    {value: 2, label: '2'},
-    {value: 3, label: '3'},
-    {value: 4, label: '4'}
-  ] 
   const [startDate, setStartDate] = React.useState(new Date());
   const options_lang = [
     {value: 'English', label: 'English'},
@@ -107,10 +66,6 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     return max;
   }
   const [lang,setLang] = React.useState([]);
-  const handleLanguage = (e) => {
-    let value = Array.from(e.target.selectedOptions, option => option.value);
-    setLang(value.join());
-  }
   const handleLang = (e) => {
     let value = Array.from(e, option => option.value);
     setLang(value.join());
@@ -198,9 +153,6 @@ export default function CreateEvent({ action, handleCloseLogin }) {
           <form>     
               <h1>Event Name:</h1>
               <TextField id="name" name="name" />
-              {/* <br/><br/>
-              <h1>Event Details:</h1>
-              <TextField id="about" name="about" multiline rows={4} /> */}
               <br/><br/>
               <Grid container>
                   <Grid item xs={6}>
@@ -246,18 +198,10 @@ export default function CreateEvent({ action, handleCloseLogin }) {
                     </Grid>
                   </Grid>
               </Grid>
-              {/* <h1>Event Duration:</h1>
-              <DurationPicker onChange={handleTime} initialDuration={{ hours: 1, minutes: 0}} maxHours={5}/> */}
               <br/><br/>
               <h1>Event Genre:</h1>
               <Select options={options_genre} isMulti onChange={handleGenre} id="genre" name="genre"/>
               <br/><br/>
-              {/* <h1>Event Date:</h1>
-              <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} inline/> */}
-              {/* <br/><br/> */}
-              {/* <h1>Event Location:</h1>
-              <TextField id="location" name="location" multiline rows={3} /><br /><br /> */}
-              {/* <br/><br/> */}
               <h1>Event Languages:</h1>
               <Select options={options_lang} isMulti onChange={handleLang} id="languages" name="languages"/>
           </form>

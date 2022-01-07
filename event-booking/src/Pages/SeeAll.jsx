@@ -120,6 +120,7 @@ const SeeAll = () => {
   const changePage = ({selected})=>{
       setPageNumber(selected);
   };
+  
   const updateevents = () => {
     displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
     PageCount = Math.ceil(movie.length / itemsPerPage);

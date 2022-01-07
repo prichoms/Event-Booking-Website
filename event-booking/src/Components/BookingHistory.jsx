@@ -1,13 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { Ticket } from "./Ticket";
 import styles from "./Styling/Ticket.module.css";
 import db from "../scraped_data/db.json"
 
 export const BookingHistory = () => {
     const booking_data = db.booking;
-    // console.log(booking_data)
-    // console.log("History")
     booking_data.sort((a, b) => {
         if (a.date === b.date) {
             const aShowTime = a.time.split(":").map(Number).shift();
@@ -19,8 +16,6 @@ export const BookingHistory = () => {
         }
         return a.date - b.date;
     })
-
-
     const previous_booking = booking_data?.filter(item => (
         item.date < new Date().getDate()
     ))
@@ -31,8 +26,6 @@ export const BookingHistory = () => {
                 <div className={styles.ticket__container}>
                     {
                         booking_data?.map(item => {
-                            console.log(item.date)
-
                             return item.date >= new Date().getDate() && <Ticket key={item.id} {...item} />
                         })
                     }
@@ -43,8 +36,6 @@ export const BookingHistory = () => {
                 <div className={styles.ticket__container}>
                     {
                         previous_booking?.map(item => {
-                            // console.log(item.date)
-
                             return <Ticket key={item.id} {...item} />
                         })
                     }

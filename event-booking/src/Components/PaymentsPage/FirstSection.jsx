@@ -5,26 +5,7 @@ const FirstSection = ({ handlePayment }) => {
   return (
     <div>
       <div className={styles.contact}>
-        <div>
-          <span style={{ color: "white" }}>Share your contact details</span>
-        </div>
-        <div
-          className={styles.contact_details}
-          style={{
-            background: "#383838",
-            color: "white",
-            border: "none",
-          }}
-        >
-          <input type="email" placeholder="Email Address" />
-          <input type="text" placeholder="Nobile number" />
-          <button style={{ marginBottom: "-5px", color: "white" }}>
-            continue
-          </button>
-        </div>
-      </div>
-      <div className={styles.contact}>
-        <div>More Payment options</div>
+        <div>Payment options</div>
         <div className={styles.StoredCard}>
           <div className={styles.sidebar}>
             <div style={{ background: "#383838", color: "white" }}>
@@ -68,9 +49,8 @@ const FirstSection = ({ handlePayment }) => {
               <input
                 type="text"
                 placeholder="Name on the card"
-                value="Veer Bahadur Shastri"
+                value="Group 20"
               />
-
               <div className={styles.otherDetails}>
                 <div>
                   <div style={{ fontSize: "13px", color: "gray" }}>Expiry</div>
@@ -79,7 +59,6 @@ const FirstSection = ({ handlePayment }) => {
                     <input type="text" placeholder="YY" value="23" />
                   </div>
                 </div>
-
                 <div>
                   <div style={{ fontSize: "13px", color: "gray" }}>CVV</div>
                   <div>
@@ -93,7 +72,6 @@ const FirstSection = ({ handlePayment }) => {
                 </div>
               </div>
             </div>
-
             <div className={styles.payment}>
               <button onClick={handlePayment}>Make Payment</button>
             </div>

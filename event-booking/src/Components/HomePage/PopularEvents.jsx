@@ -5,8 +5,6 @@ import styles from "../Styling/RecommendedMovies.module.css";
 
 export const PopularEvents = () => {
     const popular_events = useSelector(state => state.app.popular_events);
-    // console.log(popular_events);
-
     return (
         <div className={styles.parent}>
             <div className={styles.parent__text}>

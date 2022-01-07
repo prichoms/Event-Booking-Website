@@ -2,9 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router';
 import styles from './Styling/Card.module.css';
 
-const ModifyCard = ({ banner_image_url
-    , name , genre, id }) => {
-    
+const ModifyCard = ({ banner_image_url, name , genre, id }) => {
     const history = useHistory();
     const handleChange = () => {
         history.push(`/modifyevents/${id}`)
@@ -17,5 +15,4 @@ const ModifyCard = ({ banner_image_url
         </div>
     )
 }
-
 export default ModifyCard

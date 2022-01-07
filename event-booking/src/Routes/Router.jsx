@@ -46,8 +46,7 @@ const Router = () => {
           <ContactPage />
         </Route>
         <Route exact path="/booking-history">
-          <BookingHistory />
-         
+          <BookingHistory />    
         </Route>
         <Route exact path="/booktickets/:id">
           <BookTicketsPage></BookTicketsPage>

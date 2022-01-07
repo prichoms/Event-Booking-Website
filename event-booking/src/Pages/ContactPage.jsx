@@ -1,18 +1,7 @@
 import React from 'react';
-import { withStyles } from '@material-ui/core/styles';
-
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/Contact.css'
-
-
-
-
-
-
-
 export default function ContactPage({ action, handleCloseLogin }) {
-
-
     return (
         <div>
             <div className="contact-section">
@@ -30,7 +19,6 @@ export default function ContactPage({ action, handleCloseLogin }) {
                         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         <input type="submit" name="submit" class="send-btn" value="Send" />
                     </form>
-
                 </div>
             </div>
         </div>

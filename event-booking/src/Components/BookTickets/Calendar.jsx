@@ -9,10 +9,6 @@ export const Calendar = () => {
   let currentDay = new Date().getDay();
   let [selectedDate, setSelectedDate] = useState(0);
   const dispatch = useDispatch();
-  // const date = useSelector(state => state.booking_details);
-  console.log(selectedDate);
-
-  // console.log(currentDay)
   let dates = [];
   let weekdays = [
     "Sunday",
@@ -26,12 +22,10 @@ export const Calendar = () => {
   for (let i = 0; i < 5; i++) {
     if (currentDate > 30) currentDate = 1;
     if (currentDay === 7) currentDay = 0;
-
     dates.push({ date: currentDate, day: weekdays[currentDay] });
     currentDate++;
     currentDay++;
   }
-
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -54,9 +48,6 @@ export const Calendar = () => {
   const handleDateChange = (index) => {
     setSelectedDate(index);
   };
-
-  // const arrowClass = "react-multiple-carousel__arrow";
-
   return (
     <div style={{ width: 250 }}>
       <Carousel

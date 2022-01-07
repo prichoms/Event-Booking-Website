@@ -1,15 +1,7 @@
 import React from "react";
 import styles from "../Styling/Food.module.css";
 
-const FoodCard = ({
-  food_image = "https://in.bmscdn.com/bmsin/v2/Web-v2/d-combo/2000131_22112019112957.jpg",
-  food_name = "Title",
-  food_tag = "des",
-  food_price = "59",
-  _id,
-  handleCount,
-  count,
-}) => {
+const FoodCard = ({food_image, food_name, food_tag, food_price, _id, handleCount, count,}) => {
   return (
     <div className={styles.card}>
       <div className={styles.price}>
@@ -24,7 +16,6 @@ const FoodCard = ({
           <div style={{ color: "White" }}>{food_name}</div>
           <div style={{ color: "White" }}>{food_tag}</div>
         </div>
-
         <div className={styles.btn}>
           <div>
             <div className={styles.veg}>

@@ -5,24 +5,13 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import styles from "../Styling/Cinemas.module.css";
 import { handleAddMovieName } from "../../Redux/booking_details/actions";
-import { useHistory, useParams } from "react-router-dom";
-import { getMovies, putMovies } from "../../Redux/data/actions";
 
 export const Header = () => {
     const data_temp = useSelector((state) => state.data);
-    console.log(data_temp);
-    const { id } = useParams();
     const movie = useSelector(state => state.data.movies).data;
     const isLoading = useSelector(state => state.data.isLoading);
     const isError = useSelector(state => state.data.isError);
     const dispatch = useDispatch();
-    console.log(movie);
-    console.log(isLoading);
-    console.log(isError);
-    // useEffect(() => {
-    //     dispatch(getMovies(id));
-    //     window.scrollTo(window.scrollX, 0);
-    //   }, []);
     useEffect(() => {
         if (movie) {
             dispatch(handleAddMovieName(movie.name, movie.grade, movie.banner_image_url))
