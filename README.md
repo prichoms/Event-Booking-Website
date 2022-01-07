@@ -71,7 +71,7 @@ For any queries, reach out to the Developers :
 |[Siddharth Pandey](mailto:siddharth25pandey@gmail.com) | S20190010163 | 
 |[Priyam Bajpai](mailto:priyambajpai@yahoo.in) | S20190010144 |
 |[Yaduraj Deshmukh](mailto:yadurajdeshmukh2.303@gmail.com) | S20190010194 |
-|[Naveen Kumar](mailto:naveenkumar.k19@gmail.com) | S201900100192 |
+|[Naveen Kumar](mailto:naveenkumar.k19@gmail.com) | S20190010192 |
 
 ##
 ![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)![ForTheBadge makes-people-smile](http://ForTheBadge.com/images/badges/makes-people-smile.svg)
