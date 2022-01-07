@@ -1,25 +1,25 @@
 import * as actionType from "./actionTypes";
 
 const initState = {
-  movies: [],
+  events: [],
   isError: false,
   isLoading: false,
 };
 
-export const movieReducer = (state = initState, action) => {
+export const eventReducer = (state = initState, action) => {
   switch (action.type) {
-    case actionType.GET_MOVIE_REQUEST:
+    case actionType.GET_EVENT_REQUEST:
       return {
         ...state,
         isLoading: true,
       };
-    case actionType.GET_MOVIE_SUCCESS:
+    case actionType.GET_EVENT_SUCCESS:
       return {
         ...state,
-        movies: action.payload,
+        events: action.payload,
         isLoading: false,
       };
-    case actionType.GET_MOVIE_FAILURE:
+    case actionType.GET_EVENT_FAILURE:
       return {
         ...state,
         isError: true,

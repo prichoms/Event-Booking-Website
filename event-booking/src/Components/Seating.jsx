@@ -23,7 +23,7 @@ const Seating = ({
   const [rowsData, setRowData] = React.useState(rows);
   const [rowsData2, setRowData2] = React.useState(rows2);
   const [price, setPrice] = React.useState(0);
-  const movie_details = useSelector(state => state.booking_details);
+  const event_details = useSelector(state => state.booking_details);
 
 
   const handleClick = (value) => {
@@ -75,9 +75,9 @@ const Seating = ({
       <div className="seatingModal__nav">
         <div>
           <div>
-            <h4 style={{ color: "white", fontSize: 20 }}>{movie_details.name}</h4>
-            <h5 style={{ color: "white" }}>{movie_details.cinemas_name}</h5>
-            <h5 style={{ color: "white" }}>{movie_details.time}</h5>
+            <h4 style={{ color: "white", fontSize: 20 }}>{event_details.name}</h4>
+            <h5 style={{ color: "white" }}>{event_details.venues_name}</h5>
+            <h5 style={{ color: "white" }}>{event_details.time}</h5>
           </div>
           <div>
             <button style={{ cursor: "pointer", fontSize: 25 }} onClick={() => handleCloseSeatingButton()}>X</button>

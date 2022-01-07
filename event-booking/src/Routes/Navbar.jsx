@@ -8,7 +8,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import { useDispatch, useSelector } from "react-redux";
-import { cityRequest, storeAuth } from "../Redux/app/actions";
+import { storeAuth } from "../Redux/app/actions";
 import Login from "../Pages/LoginPage";
 import { useHistory } from 'react-router-dom';
 import userdata from '../scraped_data/db.json';
@@ -52,9 +52,6 @@ const Navbar = () => {
   };
 
   const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(cityRequest(cityName));
-  }, [cityName]);
 
   const toggleDrawer = (open) => (event) => {
     setState(!state);

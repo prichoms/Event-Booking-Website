@@ -10,7 +10,7 @@ const SecondSection = () => {
         <div>Booking Summery</div>
         <div className={styles.categories}>
           <div style={{ textTransform: "uppercase" }}>
-            {booking_details.cinemas_name}
+            {booking_details.venues_name}
           </div>
           <div>
             {booking_details.silver.length + booking_details.platinium.length}{" "}

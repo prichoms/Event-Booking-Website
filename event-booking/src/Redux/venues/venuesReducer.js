@@ -1,35 +1,35 @@
 import React from "react";
 import {
-    GET_CINEMAS_FAILURE,
-    GET_CINEMAS_REQUEST,
-    GET_CINEMAS_SUCCESS
+    GET_VENUES_FAILURE,
+    GET_VENUES_REQUEST,
+    GET_VENUES_SUCCESS
 } from "./actionTypes";
 
 const initState = {
     isLoading: false,
     isError: false,
-    cinemas_data: []
+    venues_data: []
 }
 
-export const cinemasReducer = (state = initState, {
+export const venuesReducer = (state = initState, {
     type,
     payload
 }) => {
     switch (type) {
-        case GET_CINEMAS_REQUEST: {
+        case GET_VENUES_REQUEST: {
             return {
                 ...state,
                 isLoading: true
             }
         }
-        case GET_CINEMAS_SUCCESS: {
+        case GET_VENUES_SUCCESS: {
             return {
                 ...state,
                 isLoading: false,
-                cinemas_data: payload
+                venues_data: payload
             }
         }
-        case GET_CINEMAS_FAILURE: {
+        case GET_VENUES_FAILURE: {
             return {
                 ...state,
                 isLoading: false,

@@ -91,7 +91,7 @@ export default function SummaryPage({ foodModalOpen, handleCloseFoodModal }) {
             <div>Booking Summery</div>
             <div className={styles.categories}>
               <div style={{ textTransform: "uppercase" }}>
-                {booking_details.cinemas_name}
+                {booking_details.venues_name}
               </div>
               <div>Rs {booking_details.price}</div>
             </div>

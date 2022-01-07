@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { AddCarousel } from "../Components/HomePage/AddCarousel";
 import { PopularEvents } from "../Components/HomePage/PopularEvents";
-import { PremierMovies } from "../Components/HomePage/PremierMovies";
-import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
-import { getMovies, getPopularEvents } from "../Redux/app/actions";
+import { PremierEvents } from "../Components/HomePage/PremierEvents";
+import { RecommendedEvents } from "../Components/HomePage/RecommendedEvents";
+import { getEvents, getPopularEvents } from "../Redux/app/actions";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
@@ -12,7 +12,7 @@ import Fade from "@material-ui/core/Fade";
 import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { putMovies } from "../Redux/data/actions";
+import { putEvents } from "../Redux/data/actions";
 import TextField from '@mui/material/TextField';
 
 var fs = require("fs");
@@ -79,7 +79,7 @@ export const HomePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getMovies());
+    dispatch(getEvents());
     dispatch(getPopularEvents());
   }, []);
   return (
@@ -112,9 +112,9 @@ export const HomePage = () => {
           </button>
         </div>
 
-        <PremierMovies />
+        <PremierEvents />
         <div style={{ backgroundColor: "#16161D" }}>
-          <RecommendedMovies />
+          <RecommendedEvents />
         </div>
         <div style={{ backgroundColor: "#16161D" }}>
           <PopularEvents />
@@ -136,7 +136,7 @@ export const HomePage = () => {
               <div style={{ textAlign: "center", position: "relative" }}>
                 <h5 style={{ margin: 0, padding: 0, marginTop: 10 }}></h5>
                 <p style={{ margin: 0, padding: 0 }}>
-                  {/* {"movie" && "hehe"} */}
+                  {/* {"event" && "hehe"} */}
                 </p>
                 <button
                   onClick={handleClose}

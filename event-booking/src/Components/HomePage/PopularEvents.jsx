@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { CommonCarousel } from "./CommonCarousel";
-import styles from "../Styling/RecommendedMovies.module.css";
+import styles from "../Styling/RecommendedEvents.module.css";
 
 export const PopularEvents = () => {
     const popular_events = useSelector(state => state.app.popular_events);

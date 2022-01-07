@@ -4,7 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 
-export const MovieCarousel = ({ movies }) => {
+export const EventCarousel = ({ events }) => {
 
     const responsive = {
         superLargeDesktop: {
@@ -28,8 +28,8 @@ export const MovieCarousel = ({ movies }) => {
         <div style={{ width: "80%", margin: "auto" }}>
             <Carousel responsive={responsive} removeArrowOnDeviceType={["tablet", "mobile"]}>
                 {
-                    movies?.map(movie => (
-                        <Card {...movie} key={movie.id} />
+                    events?.map(event => (
+                        <Card {...event} key={event.id} />
                     ))
                 }
             </Carousel>

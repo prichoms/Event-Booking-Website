@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { handleSelectDate } from "../../Redux/booking_details/actions";
-import styles from "../Styling/Cinemas.module.css";
+import styles from "../Styling/Venues.module.css";
 
 export const Calendar = () => {
   let currentDate = new Date().getDate();

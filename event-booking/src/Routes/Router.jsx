@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import MoviePage from "../Pages/moviePage/MoviePage";
+import EventPage from "../Pages/eventPage/EventPage";
 import { HomePage } from "../Pages/HomePage";
 import SeeAll from "../Pages/SeeAll";
 import { BookTicketsPage } from "../Pages/BookTicketsPage";
@@ -28,7 +28,7 @@ const Router = () => {
           <SeeAll />
         </Route>
         <Route exact path="/events/:id">
-          <MoviePage></MoviePage>
+          <EventPage></EventPage>
         </Route>
         <Route exact path="/modifyevents/:id">
           <ModifyEvent></ModifyEvent>

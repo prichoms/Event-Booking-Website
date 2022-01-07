@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Styling/Ticket.module.css";
 import { BsFillStarFill } from "react-icons/bs";
 
-export const Ticket = ({ banner_image_url, name, grade, date, day, time, cinemas_name, silver, platinium }) => {
+export const Ticket = ({ banner_image_url, name, grade, date, day, time, venues_name, silver, platinium }) => {
     return (
         <div className={styles.ticket}>
             <div className={styles.ticket__top}>
@@ -20,7 +20,7 @@ export const Ticket = ({ banner_image_url, name, grade, date, day, time, cinemas
                         <span>{time}</span>
                     </div>
                     <div>
-                        <p>{cinemas_name}</p>
+                        <p>{venues_name}</p>
                     </div>
                 </div>
             </div>

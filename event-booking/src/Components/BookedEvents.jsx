@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { MovieCarousel } from "./HomePage/MovieCarousel";
-import styles from "./Styling/RecommendedMovies.module.css";
+import { EventCarousel } from "./HomePage/EventCarousel";
+import styles from "./Styling/RecommendedEvents.module.css";
 import userdata from '../scraped_data/db.json';
 
 export const BookedEvents = () => {
-    const events_data = useSelector(state => state.app.movies_data);
+    const events_data = useSelector(state => state.app.events_data);
     const user_events = userdata.users.filter(ele => ele.id == 1)[0].booked_events;
     const filteredBookedEvents = events_data.filter(event => (
         user_events.includes(event.id)
@@ -15,7 +15,7 @@ export const BookedEvents = () => {
             <div className={styles.parent__text}>
                 <h1>Booked Events</h1>
             </div>
-            <MovieCarousel movies={filteredBookedEvents} />
+            <EventCarousel events={filteredBookedEvents} />
         </div>
     )
 }

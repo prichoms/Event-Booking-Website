@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { MovieCarousel } from "./HomePage/MovieCarousel";
+import { EventCarousel } from "./HomePage/EventCarousel";
 import { ModifyCarousel } from "./HomePage/ModifyCarousel";
-import styles from "./Styling/RecommendedMovies.module.css";
+import styles from "./Styling/RecommendedEvents.module.css";
 import userdata from '../scraped_data/db.json';
 
 export const OrganizedEvents = () => {
-    const events_data = useSelector(state => state.app.movies_data);
+    const events_data = useSelector(state => state.app.events_data);
     const user_events = userdata.organizers.filter(ele => ele.id == 1)[0].organized_events;
 
 
@@ -22,19 +22,19 @@ export const OrganizedEvents = () => {
                 <div className={styles.parent__text}>
                     <h1>Upcoming Events</h1>
                 </div>
-                <MovieCarousel movies={filteredUpcomingEvents} />
+                <EventCarousel events={filteredUpcomingEvents} />
             </div>
             <div className={styles.parent}>
                 <div className={styles.parent__text}>
                     <h1>Past Events</h1>
                 </div>
-                <MovieCarousel movies={filteredPastEvents} />
+                <EventCarousel events={filteredPastEvents} />
             </div>
             <div className={styles.parent}>
                 <div className={styles.parent__text}>
                     <h1>Modify Events</h1>
                 </div>
-                <ModifyCarousel movies={events_data} />
+                <ModifyCarousel events={events_data} />
             </div>
         </>
     )

@@ -2,7 +2,7 @@ import React from "react";
 import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
-import styles from "../Styling/Cinemas.module.css";
+import styles from "../Styling/Venues.module.css";
 
 export const DropDowns = ({ handleFilters, filters }) => {
   const subRegions = [

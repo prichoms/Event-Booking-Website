@@ -7,7 +7,7 @@ import {
 } from "./actionTypes"
 
 
-export const handleAddMovieName = (name, grade, banner_image_url) => {
+export const handleAddEventName = (name, grade, banner_image_url) => {
     return {
         type: ADD_name,
         payload: {
@@ -28,11 +28,11 @@ export const handleSelectDate = (date, day) => {
     }
 }
 
-export const handleSelectNameTime = (cinemas_name, time) => {
+export const handleSelectNameTime = (venues_name, time) => {
     return {
         type: ADD_NAME_TIME,
         payload: {
-            cinemas_name,
+            venues_name,
             time
         }
     }

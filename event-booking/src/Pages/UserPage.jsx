@@ -11,8 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/UserPage.css'
 import { PopularEvents } from "../Components/HomePage/PopularEvents";
-import { PremierMovies } from "../Components/HomePage/PremierMovies";
-import { RecommendedMovies } from "../Components/HomePage/RecommendedMovies";
+import { PremierEvents } from "../Components/HomePage/PremierEvents";
+import { RecommendedEvents } from "../Components/HomePage/RecommendedEvents";
 import { BookedEvents } from '../Components/BookedEvents';
 import { useHistory, useParams } from "react-router-dom";
 import jsondata from "../scraped_data/db.json"
@@ -84,7 +84,7 @@ export default function UserPage({ action, handleCloseLogin }) {
       <br/><br/><br/><br/>
 
         <div style={{ backgroundColor: "#16161D" }}>
-          <RecommendedMovies />
+          <RecommendedEvents />
         </div>
         <div style={{ backgroundColor: "#16161D" }}>
           <BookedEvents />

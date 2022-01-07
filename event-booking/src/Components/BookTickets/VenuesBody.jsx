@@ -1,23 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import styles from "../Styling/Cinemas.module.css";
+import styles from "../Styling/Venues.module.css";
 import { handleAddingSeatingData, handleSelectNameTime} from "../../Redux/booking_details/actions";
 import "antd/dist/antd.css";
 import { Modal, Button } from "antd";
 import Seating from "../Seating";
 import SummaryPage from "../../Pages/SummeryPage";
 
-export const CinemasBody = ({ filters }) => {
-  const cinemas_data = useSelector((state) => state.cinemas.cinemas_data);
+export const VenuesBody = ({ filters }) => {
+  const venues_data = useSelector((state) => state.venues.venues_data);
   const date = useSelector((state) => state.booking_details.date);
   const data = useSelector((state) => state.booking_details);
   const dispatch = useDispatch();
-  let filteredData = cinemas_data;
+  let filteredData = venues_data;
   const [seatingModalOpen, setSeatingModalOpen] = useState(false);
   const [foodModalOpen, setFoodModalOpen] = useState(false);
   const handleFilter = () => {
     if (filters.length) {
-      filteredData = cinemas_data?.filter((item) => {
+      filteredData = venues_data?.filter((item) => {
         return filters.indexOf(item.sub_region) >= 0;
       });
     }
@@ -126,9 +126,9 @@ export const CinemasBody = ({ filters }) => {
         </div>
       </Modal>
       <div style={{ padding: "15px", background: "#16161D", borderRadius: "10px" }}>
-        {filteredData?.map((cinema) => (
+        {filteredData?.map((venue) => (
           <div
-            key={cinema.id}
+            key={venue.id}
             className="rowA"
             style={{
               marginTop: "30px",
@@ -143,7 +143,7 @@ export const CinemasBody = ({ filters }) => {
           >
             <div className="imagecard">
               <img
-                src={cinema.image}
+                src={venue.image}
                 style={{
                   height: "100px",
                   width: "120px",
@@ -155,12 +155,12 @@ export const CinemasBody = ({ filters }) => {
             </div>
             <div className={styles.container__card}>
               <div className={styles.container__card__title}>
-                <h4 style={{ color: "white" }}>{cinema.name}</h4>
+                <h4 style={{ color: "white" }}>{venue.name}</h4>
               </div>
               <div className={styles.container__card__info}>
                 <div className={styles.container__card__info__times__container}>
                   <div>
-                    {cinema.timings?.map((time, index) => {
+                    {venue.timings?.map((time, index) => {
                       const showTime = time.time.split(":").map(Number).shift();
                       const showMinutes = +time.time
                         .split(":")[1]
@@ -168,7 +168,7 @@ export const CinemasBody = ({ filters }) => {
                         .shift();
                       return (
                         <div
-                          onClick={() => handleClick(cinema.name, time.time)}
+                          onClick={() => handleClick(venue.name, time.time)}
                           style={
                             amOrPm === "AM" ||
                             (showTime === currentTime

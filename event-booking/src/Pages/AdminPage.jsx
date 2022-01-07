@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import AddIcon from "@material-ui/icons/Add";
 import { useHistory, useParams } from "react-router-dom";
-import { MovieCarousel } from "../Components/HomePage/MovieCarousel";
+import { EventCarousel } from "../Components/HomePage/EventCarousel";
 import { ModifyCarousel } from "../Components/HomePage/ModifyCarousel";
-import styles from "../Components/Styling/RecommendedMovies.module.css";
+import styles from "../Components/Styling/RecommendedEvents.module.css";
 import Grid from '@material-ui/core/Grid'
 
 export default function AdminPage({ action, handleCloseLogin }) {
@@ -105,7 +105,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
     let zz = 0;
     for(let i=0;i<booking_data.length;i++){
       zz = zz + 1;
-      bbb.push({"name": booking_data[i].name, "price": booking_data[i].total_price, "place": booking_data[i].cinemas_name})
+      bbb.push({"name": booking_data[i].name, "price": booking_data[i].total_price, "place": booking_data[i].venues_name})
     }
     let btn;
     if (ascbookmod){
@@ -193,19 +193,19 @@ export default function AdminPage({ action, handleCloseLogin }) {
                 <div className={styles.parent__text}>
                     <h1>Upcoming Events</h1>
                 </div>
-                <MovieCarousel movies={filteredUpcomingEvents} />
+                <EventCarousel events={filteredUpcomingEvents} />
             </div>
             <div className={styles.parent}>
                 <div className={styles.parent__text}>
                     <h1>Past Events</h1>
                 </div>
-                <MovieCarousel movies={filteredPastEvents} />
+                <EventCarousel events={filteredPastEvents} />
             </div>
             <div className={styles.parent}>
                 <div className={styles.parent__text}>
                     <h1>Modify Events</h1>
                 </div>
-                <ModifyCarousel movies={filteredEvents} />
+                <ModifyCarousel events={filteredEvents} />
             </div>
         </>
       </div>

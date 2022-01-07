@@ -1,15 +1,15 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../../Redux/data/actions";
+import { getEvents } from "../../Redux/data/actions";
 import { useHistory, useParams } from "react-router-dom";
-import "../../Components/MoviePage/moviePage.css";
+import "../../Components/EventPage/eventPage.css";
 import Carousel from "react-elastic-carousel";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Slider from "@material-ui/core/Slider";
-import { RecommendedMovies } from "../../Components/HomePage/RecommendedMovies";
+import { RecommendedEvents } from "../../Components/HomePage/RecommendedEvents";
 import Login from "../LoginPage";
 import { storeAuth } from "../../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MoviePage = () => {
+const EventPage = () => {
   const [user,setUser] = React.useState(-1);
   const [usertype,setUsertype] = React.useState("");
   const [rValue, setRvalue] = React.useState(0);
@@ -49,14 +49,14 @@ const MoviePage = () => {
   const [state, setState] = React.useState(false);
   const classes = useStyles();
   const { id } = useParams();
-  const data = useSelector((state) => state.data.movies.data);
+  const data = useSelector((state) => state.data.events.data);
   const dispatch = useDispatch();
   const history = useHistory();
   const [action, setAction] = React.useState(false);
   const isAuth = useSelector(state => state.app.isAuth)
   const [auth, setAuth] = React.useState(false);
   React.useEffect(() => {
-    dispatch(getMovies(id));
+    dispatch(getEvents(id));
     window.scrollTo(window.scrollX, 0);
   }, []);
   const data_temp = useSelector((state) => state.data);
@@ -216,7 +216,7 @@ const MoviePage = () => {
             }}
           >
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="movie_details">
+            <div className="event_details">
               <h1>{data.name}</h1>
               <div className="BookButton">
                 <button onClick={handleClick}>Book Tickets</button>
@@ -266,7 +266,7 @@ const MoviePage = () => {
             <div className="container__card">
               <img src={data.banner_image_url} alt="title" />
             </div>
-            <div className="container__movieDetail_rating">
+            <div className="container__eventDetail_rating">
                 <img
                   src="https://www.leadingwithhonor.com/wp-content/uploads/2021/02/redheart.png"
                   alt="Rating"
@@ -275,7 +275,7 @@ const MoviePage = () => {
                 <h1>{data.rating.percentage}%</h1>
               </div>
               <h3>{Math.ceil(data.rating.no_of_ratings)} Ratings</h3>
-              <div className="container__movieDetail_ratingButton">
+              <div className="container__eventDetail_ratingButton">
                 <div>
                   <h4 style={{ color: "white" }}>Your ratings matter</h4>
                 </div>
@@ -283,8 +283,8 @@ const MoviePage = () => {
                   <button style={{ cursor: "pointer" }} onClick={handleOpen}>Rate Now</button>
                 </div>
               </div>
-              <div className="container__movieDetail">
-                <div className="container__movieDetail_language">
+              <div className="container__eventDetail">
+                <div className="container__eventDetail_language">
                   <div>
                     <p>{data.languages}</p>
                   </div>
@@ -379,9 +379,9 @@ const MoviePage = () => {
           </Fade>
         </Modal>
       </div>
-      <RecommendedMovies></RecommendedMovies>
+      <RecommendedEvents></RecommendedEvents>
     </div>
   );
 };
 
-export default MoviePage;
+export default EventPage;

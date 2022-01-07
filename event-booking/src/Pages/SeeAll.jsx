@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Components/Styling/SeeAll.module.css";
 import "../Components/Styling/sa.css";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies } from "../Redux/app/actions";
+import { getEvents } from "../Redux/app/actions";
 import CardSeeAll from "../Components/Card_seeAll";
 import ReactPaginate from "react-paginate";
 import { useEffect,useState } from "react";
@@ -14,37 +14,37 @@ const SeeAll = () => {
   const [genre, SetGenre] = React.useState(false);
   const [filterLanguage, setFilterLanguage] = React.useState([]);
   const [filterGenre, setFilterGenre] = React.useState([]);
-  const [movie, setMovie] = React.useState([]);
+  const [event, setEvent] = React.useState([]);
 
   React.useEffect(() => {
-    dispatch(getMovies());
+    dispatch(getEvents());
     window.scrollTo(window.scrollX, 0);
   }, []);
 
-  const movies_data = useSelector((state) => state.app.movies_data);
+  const events_data = useSelector((state) => state.app.events_data);
   const city = useSelector((state) => state.app.city);
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    setMovie(movies_data);
-  }, [movies_data]);
-  console.log(movie);
-  const filterMovies = () => {
+    setEvent(events_data);
+  }, [events_data]);
+  console.log(event);
+  const filterEvents = () => {
     if (filterLanguage.length > 0) {
-      const updated = movie.filter((item) =>
+      const updated = event.filter((item) =>
         item.languages.includes(filterLanguage[filterLanguage.length - 1])
       );
-      setMovie(updated);
+      setEvent(updated);
     }
     if (filterGenre.length > 0) {
       let updated = [];
       let flg=1;
-      for(let ii=0;ii<movie.length;ii++){
+      for(let ii=0;ii<event.length;ii++){
         flg=1;
         let genre_m = [];
-        for(let jj=0;jj<movie[ii].genre.length;jj++){
-          let n = movie[ii].genre[jj].genre;
+        for(let jj=0;jj<event[ii].genre.length;jj++){
+          let n = event[ii].genre[jj].genre;
           genre_m.push(n);
         }
         for(let kk=0;kk<filterGenre.length;kk++){
@@ -53,13 +53,13 @@ const SeeAll = () => {
           }
         }
         if(flg===1){
-          updated.push(movie[ii]);
+          updated.push(event[ii]);
         }
       }
-      setMovie(updated);
+      setEvent(updated);
     }
     if ( filterLanguage.length === 0 && filterGenre.length === 0) {
-      setMovie(movies_data);
+      setEvent(events_data);
     }
     updateevents();
   };
@@ -69,16 +69,16 @@ const SeeAll = () => {
       filterLanguage.length === 0 &&
       filterGenre.length === 0 
     ) {
-      setMovie(movies_data);
+      setEvent(events_data);
     }
-  }, [movie]);
+  }, [event]);
   const handleClear = (text) => {
     if (text === "languages") {
       setFilterLanguage([]);
     } else {
       setFilterGenre([]);
     }
-    filterMovies();
+    filterEvents();
   };
 
   const handleFilter = (language, genre) => {
@@ -103,7 +103,7 @@ const SeeAll = () => {
         setFilterGenre(fff);
       }
     }
-    filterMovies();
+    filterEvents();
   };
 
   React.useEffect(() => {
@@ -114,16 +114,16 @@ const SeeAll = () => {
   const [pageNumber, setPageNumber]= useState(0);
   const itemsPerPage = 6
   const pagesVisited = pageNumber*itemsPerPage
-  let displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
+  let displayItems=event.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
 
-  let PageCount = Math.ceil(movie.length / itemsPerPage);
+  let PageCount = Math.ceil(event.length / itemsPerPage);
   const changePage = ({selected})=>{
       setPageNumber(selected);
   };
   
   const updateevents = () => {
-    displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
-    PageCount = Math.ceil(movie.length / itemsPerPage);
+    displayItems=event.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
+    PageCount = Math.ceil(event.length / itemsPerPage);
   }
   return (
     <div className={styles.container}>

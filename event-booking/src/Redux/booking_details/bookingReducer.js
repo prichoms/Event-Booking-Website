@@ -11,7 +11,7 @@ const initState = {
     date: "",
     day: "",
     time: "",
-    cinemas_name: "",
+    venues_name: "",
     silver: [],
     platinium: [],
     price: 0,

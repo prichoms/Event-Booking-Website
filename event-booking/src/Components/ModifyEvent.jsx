@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getMovies, putMovies } from "../Redux/data/actions";
+import { getEvents, putEvents } from "../Redux/data/actions";
 import { useHistory, useParams } from "react-router-dom";
-import "./MoviePage/moviePage.css";
+import "./EventPage/eventPage.css";
 import "./Styling/ModifyEvent.css"
 import Carousel from "react-elastic-carousel";
 import Login from "../Pages/LoginPage";
@@ -13,7 +13,7 @@ import userdata from '../scraped_data/db.json';
 const ModifyEvent = () => {
   const [state, setState] = React.useState(false);
   const { id } = useParams();
-  const data = useSelector((state) => state.data.movies.data);
+  const data = useSelector((state) => state.data.events.data);
   const dispatch = useDispatch();
   const history = useHistory();
   const [action, setAction] = React.useState(false);
@@ -21,7 +21,7 @@ const ModifyEvent = () => {
   const [auth, setAuth] = React.useState(false);
   
   React.useEffect(() => {
-    dispatch(getMovies(id));
+    dispatch(getEvents(id));
     window.scrollTo(window.scrollX, 0);
   }, []);
 
@@ -240,7 +240,7 @@ const ModifyEvent = () => {
     if (detmod1) {
       details = <>
                 <button onClick={detmodsave} className="bttn_det">Save</button>
-                <div className="container__movieDetail">
+                <div className="container__eventDetail">
                   <div style={{ color: "white", fontSize: 18 }}>
                     <div class="form-group otherdet">
                       <label for="languages"><h3>Languages:</h3></label><br />
@@ -262,8 +262,8 @@ const ModifyEvent = () => {
     } else {
       details = <>
                 <button onClick={detmodchange} className="bttn_det">Modify</button>
-                <div className="container__movieDetail">
-                  <div className="container__movieDetail_language">
+                <div className="container__eventDetail">
+                  <div className="container__eventDetail_language">
                     <div>
                       <p>{dat.languages}</p>
                     </div>
@@ -310,7 +310,7 @@ const ModifyEvent = () => {
             }}
           >
             <Login action={action} handleCloseLogin={handleCloseLogin} />
-            <div className="movie_details">
+            <div className="event_details">
               <h1>{data.name}</h1>
               <div className="BookButton">
                 <button >Book Tickets</button>
@@ -361,7 +361,7 @@ const ModifyEvent = () => {
           </div>
           <div className="middleContainer_right">
             <Posterbox dat={data} />
-            <div className="container__movieDetail_rating">
+            <div className="container__eventDetail_rating">
                 <img
                   src="https://www.leadingwithhonor.com/wp-content/uploads/2021/02/redheart.png"
                   alt="Rating"
@@ -370,7 +370,7 @@ const ModifyEvent = () => {
                 <h1>{data.rating.percentage}%</h1>
               </div>
               <h3>{Math.ceil(data.rating.no_of_ratings)} Ratings</h3>
-              <div className="container__movieDetail_ratingButton">
+              <div className="container__eventDetail_ratingButton">
                 <div>
                   <h4 style={{ color: "white" }}>Your ratings matter</h4>
                 </div>
