@@ -13,6 +13,7 @@ import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { putMovies } from "../Redux/data/actions";
+import TextField from '@mui/material/TextField';
 
 var fs = require("fs");
 
@@ -72,6 +73,7 @@ export const HomePage = () => {
         })
       );
     handleClose();
+    alert("Thank you for your feedback!")
   };
 
   const dispatch = useDispatch();
@@ -146,33 +148,19 @@ export const HomePage = () => {
               <br />
               <br />
               <div className={classes.root}>
-                <Typography id="discrete-slider" gutterBottom>
+                {/* <Typography id="discrete-slider" gutterBottom>
                   How would you rate the website?
-                </Typography>
+                </Typography> */}
+                <h3><b>How would you rate the website?</b></h3>
                 <form>
                   <div class="form-group">
-                    <label for="name">Name:</label>
-                    <br />
-                    <input
-                      class="form-control"
-                      type="text"
-                      id="name"
-                      name="name"
-                      placeholder="Your name"
-                    />
+                  <br />
+                    <TextField label="Name" id="name" name="name" placeholder="Your name" />
                     <br />
                   </div>
                   <div class="form-group">
-                    <label for="feed">Feedback:</label>
                     <br />
-                    <input
-                      class="form-control form-control-lg"
-                      type="text-area"
-                      id="feed"
-                      name="feed"
-                      placeholder="Your feedback"
-                    />
-                    <br />
+                    <TextField label="Feedback" id="feed" name="feed" placeholder="Your feedback" />
                     <br />
                   </div>
                 </form>

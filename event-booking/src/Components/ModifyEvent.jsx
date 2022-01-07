@@ -436,10 +436,10 @@ const ModifyEvent = () => {
             <div className="cimg">
               <h1>Highlights</h1>
               <AliceCarousel autoPlay autoPlayInterval="3000" infinite autoHeight>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAcC4jk3L5nr5wp358To4YCDRvZJL8rS3zlL5VxWmoHriH6-6lwbNktamxKWAiF8FD1Y&usqp=CAU" className="sliderimg"/>
-                    <img src="https://cdn.livekindly.co/wp-content/uploads/2021/01/male-chick.jpeg" className="sliderimg"/>
-                    <img src="https://www.macmillandictionary.com/external/slideshow/full/155876_full.jpg" className="sliderimg"/>
-                    <img src="https://media.wired.com/photos/5926ea678d4ebc5ab806be8c/master/w_2560%2Cc_limit/GettyImages-79312712-sa.jpg" className="sliderimg"/>
+                    <img src="https://videos.jdmagicbox.com/delhi/e7/011pxx11.xx11.190311123542.t6e7/video/4902f76a299bfa23d3b6deee37576770_m.jpg" className="sliderimg"/>
+                    <img src="https://nearmetrade.com/local/public/vendor/event-noida2.jpg" className="sliderimg"/>
+                    <img src="https://www.gl-events.com/sites/glevents2022/files/styles/max_2600x2600/public/2019-03/about_us.jpg?itok=VCR0q3hv" className="sliderimg"/>
+                    <img src="https://total-event.com/wp-content/uploads/2018/01/event-planning-microsoft-ignite.jpg" className="sliderimg"/>
                     
               </AliceCarousel>
             </div>

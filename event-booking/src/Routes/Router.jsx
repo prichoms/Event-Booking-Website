@@ -8,7 +8,6 @@ import AdminPage from "../Pages/AdminPage";
 import UserPage from "../Pages/UserPage";
 import ContactPage from "../Pages/ContactPage";
 import AboutPage from "../Pages/AboutPage";
-import AllMoviesPage from "../Pages/AllMoviesPage";
 import { BookingHistory } from "../Components/BookingHistory";
 import FirstSection from "../Components/PaymentsPage/FirstSection";
 import styles from "../Components/Styling/PaymentsPage.module.css";

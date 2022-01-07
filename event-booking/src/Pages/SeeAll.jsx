@@ -38,14 +38,6 @@ const SeeAll = () => {
       setMovie(updated);
     }
     if (filterGenre.length > 0) {
-      // let updated = movie.filter(
-      //   (item) =>
-      //     item.genre.find((gen) =>
-      //       gen.genre == filterGenre[filterGenre.length - 1]
-      //         ? gen.genre
-      //         : "none"
-      //     ).genre == filterGenre[filterGenre.length - 1]
-      // );
       let updated = [];
       let flg=1;
       for(let ii=0;ii<movie.length;ii++){
@@ -124,12 +116,13 @@ const SeeAll = () => {
   const pagesVisited = pageNumber*itemsPerPage
   let displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
 
-  let PageCount = Math.ceil(displayItems.length / itemsPerPage);
+  let PageCount = Math.ceil(movie.length / itemsPerPage);
   const changePage = ({selected})=>{
       setPageNumber(selected);
   };
   const updateevents = () => {
     displayItems=movie.slice(pagesVisited, pagesVisited+itemsPerPage).map((item) => <CardSeeAll {...item} />)
+    PageCount = Math.ceil(movie.length / itemsPerPage);
   }
   return (
     <div className={styles.container}>
@@ -138,7 +131,7 @@ const SeeAll = () => {
         <h2 style={{ background: "none", fontSize: "30px", fontWeight: "700", color: "white" }}>
           Filters
         </h2>
-        <div style={{"border-radius": "30px",	"border-width": "2px",	"border-style": "solid",	"border-color": "fuchsia"}}>
+        <div style={{"borderRadius": "30px",	"borderWidth": "2px",	"borderStyle": "solid",	"borderColor": "fuchsia"}}>
           <div className={styles.header}>
             <div onClick={() => SetLanguage(!language)}>
               <span
@@ -161,7 +154,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Hindi")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Hindi", "")}
             >
@@ -171,7 +164,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("English")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("English", "")}
             >
@@ -181,7 +174,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Telugu")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Telugu", "")}
             >
@@ -191,7 +184,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Tamil")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Tamil", "")}
             >
@@ -201,7 +194,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Japanese")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Japanese", "")}
             >
@@ -211,7 +204,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Malyalam")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Malyalam", "")}
             >
@@ -221,7 +214,7 @@ const SeeAll = () => {
               style={
                 filterLanguage.includes("Punjabi")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("Punjabi", "")}
             >
@@ -230,7 +223,7 @@ const SeeAll = () => {
           </div>
         </div>
 
-        <div style={{"border-radius": "30px",	"border-width": "2px",	"border-style": "solid",	"border-color": "fuchsia", "marginTop": "30px"}}>
+        <div style={{"borderRadius": "30px",	"borderWidth": "2px",	"borderStyle": "solid",	"borderColor": "fuchsia", "marginTop": "30px"}}>
           <div className={styles.header}>
             <div onClick={() => SetGenre(!genre)}>
               <span
@@ -252,7 +245,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Action")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Action")}
             >
@@ -262,7 +255,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Drama")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Drama")}
             >
@@ -272,7 +265,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Triller")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Triller")}
             >
@@ -282,7 +275,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Comedy")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Comedy")}
             >
@@ -292,7 +285,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Adventure")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Adventure")}
             >
@@ -302,7 +295,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Family")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Family")}
             >
@@ -312,7 +305,7 @@ const SeeAll = () => {
               style={
                 filterGenre.includes("Fantasy")
                   ? { background: "#e67088", color: "white", borderRadius: "15px" }
-                  : {borderRadius: "15px", "border-style": "solid",	"border-color": "#e67088"}
+                  : {borderRadius: "15px", "borderStyle": "solid",	"borderColor": "#e67088"}
               }
               onClick={() => handleFilter("", "Fantasy")}
             >

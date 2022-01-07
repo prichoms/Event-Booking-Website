@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BsHeartFill, BsCircleFill } from "react-icons/bs";
-import { VscDeviceMobile } from "react-icons/vsc";
-import { IoFastFoodOutline } from "react-icons/io5";
 import styles from "../Styling/Cinemas.module.css";
 import {
   handleAddingSeatingData,
@@ -51,9 +48,6 @@ export const CinemasBody = ({ filters }) => {
   const time = formatAMPM(new Date());
   const amOrPm = time[time.length - 2] + time[time.length - 1];
   const currentTime = time.split(":").map(Number).shift();
-  // const currentMinutes = +time.split(":")[1].split(" ").shift();
-  // console.log(typeof currentMinutes);
-  // console.log(amOrPm)
 
   const [visible, setVisible] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
@@ -130,60 +124,24 @@ export const CinemasBody = ({ filters }) => {
         <div className={styles.modalText}>
           <p>
             1. For your own safety, wearing face masks is compulsory for
-            entering the cinema premises.
+            entering the event premises.
           </p>
+          <p>2. Entry is allowed only for valid ticket holders.</p>
           <p>
-            2. Temperature checks will be conducted at the cinema.Patrons with
-            high temperature (above 37.3 C or 99.14 F) will not be allowed
-            inside.
-          </p>
-          <p>3. Entry is allowed only for valid ticket holders.</p>
-          <p>
-            4. Guests aged under 18 will not be allowed in "A" rated movies.
-          </p>
-          <p>
-            5. Children above the age of 3 years require tickets for "U" or "U /
-            A" rated movies.
-          </p>
-          <p>
-            6. In case a ticket is lost or misplaced, a duplicate ticket cannot
-            be issued.
-          </p>
-          <p>
-            7. Tickets once purchased cannot be cancelled, exchanged or
+            3. Tickets once purchased cannot be cancelled, exchanged or
             refunded.
           </p>
           <p>
-            8. Guest Agrees to be contacted by INOX Management for the purpose
+            4. User agrees to be contacted by the G-20 management for the purpose
             of seeking feedback for service improvement.
           </p>
           <p>
-            9. Decision(s) taken by INOX shall be final and binding, Rights of
+            5. Decision(s) taken by the G-20 management shall be final and binding, Rights of
             admission reserved.
-          </p>
-          <p>
-            10. Outside food and beverages are not allowed inside the cinema
-            premises.
-          </p>
-          <p>
-            11. Contactless food and beverage purchase transaction and self pick
-            -up from the counter.
           </p>
         </div>
       </Modal>
-      {/* <div className={styles.container__info}>
-                <div>
-                    <BsCircleFill style={{ color: "#4ABD5D", fontSize: 10 }} />
-                    <span>AVAILABLE</span>
-                </div>
-                <div>
-                    <BsCircleFill style={{ color: "rgb(253, 102, 0)", fontSize: 10 }} />
-                    <span>FAST FILLING</span>
-                </div>
-            </div> */}
-      <div
-        style={{ padding: "15px", background: "#16161D", borderRadius: "10px" }}
-      >
+      <div style={{ padding: "15px", background: "#16161D", borderRadius: "10px" }}>
         {filteredData?.map((cinema) => (
           <div
             key={cinema.id}
@@ -213,20 +171,9 @@ export const CinemasBody = ({ filters }) => {
             </div>
             <div className={styles.container__card}>
               <div className={styles.container__card__title}>
-                {/* <BsHeartFill className={styles.container__card__title__icon} /> */}
                 <h4 style={{ color: "white" }}>{cinema.name}</h4>
               </div>
               <div className={styles.container__card__info}>
-                {/* <div className={styles.container__card__info__options}>
-                                    <div style={{ color: "#49BA8E" }}>
-                                        <VscDeviceMobile />
-                                        <span>M-Ticket</span>
-                                    </div>
-                                    <div style={{ color: "#FFB23F" }}>
-                                        <IoFastFoodOutline />
-                                        <span>F&B</span>
-                                    </div>
-                                </div> */}
                 <div className={styles.container__card__info__times__container}>
                   <div>
                     {cinema.timings?.map((time, index) => {
@@ -235,7 +182,6 @@ export const CinemasBody = ({ filters }) => {
                         .split(":")[1]
                         .split(" ")
                         .shift();
-                      // console.log(showTime, currentTime, showMinutes, new Date().getMinutes());
                       return (
                         <div
                           onClick={() => handleClick(cinema.name, time.time)}
@@ -257,32 +203,10 @@ export const CinemasBody = ({ filters }) => {
                           className={styles.button}
                         >
                           {time.time}
-                          {/* <div className={styles.price__container}>
-                                                            <div>
-                                                                <p>Rs. 150</p>
-                                                                <span>NORMAL</span> <br />
-                                                                <span style={{ color: "#4abd5d" }}>Available</span>
-                                                            </div>
-                                                            <div>
-                                                                <p>Rs. 200</p>
-                                                                <span>CLASSIC</span> <br />
-                                                                <span style={{ color: "#4abd5d" }}>Available</span>
-                                                            </div>
-                                                            <div>
-                                                                <p>Rs. 300</p>
-                                                                <span>VIP</span> <br />
-                                                                <span style={{ color: "#4abd5d" }}>Available</span>
-                                                            </div>
-                                                        </div> */}
                         </div>
                       );
                     })}
                   </div>
-                  {/* {
-                                        cinema.cancellation_availability && <div style={{ display: "flex", alignItems: "center" }} >
-                                            <BsCircleFill style={{ color: "#FFC610", fontSize: 8, marginRight: 5 }} /> <span style={{ fontSize: 12, color: "gray" }}>Cancellation Available</span>
-                                        </div>
-                                    } */}
                 </div>
               </div>
             </div>

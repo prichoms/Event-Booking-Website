@@ -67,7 +67,12 @@
 .inputs div {
   margin: 5px;
 }
-
+.einputs {
+  margin-bottom: 20px;
+}
+.einputs div {
+  margin: 5px;
+}
 *,
 *:before,
 *:after {

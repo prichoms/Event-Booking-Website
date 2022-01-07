@@ -16,6 +16,7 @@ import { storeAuth } from "../../Redux/app/actions";
 import AliceCarousel from 'react-alice-carousel';
 import "react-alice-carousel/lib/alice-carousel.css";
 import userdata from '../../scraped_data/users.json';
+import TextField from '@mui/material/TextField';
 
 function valuetext(value) {
   return `${value}`;
@@ -90,6 +91,7 @@ const MoviePage = () => {
           body: JSON.stringify(newdata)
         })
     setOpen(false);
+    alert("Thank you for your feedback!");
   };
 
   const handleClick = () => {
@@ -270,10 +272,10 @@ const MoviePage = () => {
             <div className="cimg">
               <h1>Highlights</h1>
               <AliceCarousel autoPlay autoPlayInterval="3000" infinite autoHeight>
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAcC4jk3L5nr5wp358To4YCDRvZJL8rS3zlL5VxWmoHriH6-6lwbNktamxKWAiF8FD1Y&usqp=CAU" className="sliderimg"/>
-                    <img src="https://cdn.livekindly.co/wp-content/uploads/2021/01/male-chick.jpeg" className="sliderimg"/>
-                    <img src="https://www.macmillandictionary.com/external/slideshow/full/155876_full.jpg" className="sliderimg"/>
-                    <img src="https://media.wired.com/photos/5926ea678d4ebc5ab806be8c/master/w_2560%2Cc_limit/GettyImages-79312712-sa.jpg" className="sliderimg"/>
+                    <img src="https://videos.jdmagicbox.com/delhi/e7/011pxx11.xx11.190311123542.t6e7/video/4902f76a299bfa23d3b6deee37576770_m.jpg" className="sliderimg"/>
+                    <img src="https://nearmetrade.com/local/public/vendor/event-noida2.jpg" className="sliderimg"/>
+                    <img src="https://www.gl-events.com/sites/glevents2022/files/styles/max_2600x2600/public/2019-03/about_us.jpg?itok=VCR0q3hv" className="sliderimg"/>
+                    <img src="https://total-event.com/wp-content/uploads/2018/01/event-planning-microsoft-ignite.jpg" className="sliderimg"/>
                     
               </AliceCarousel>
             </div>
@@ -333,27 +335,26 @@ const MoviePage = () => {
           <Fade in={open}>
             <div className={classes.paper}>
               <div style={{ textAlign: "center", position: "relative" }}>
-                <p style={{ margin: 0, padding: 0 }}>
-                  {data && data.movie_name}
-                </p>
                 <button
                   onClick={handleClose}
-                  style={{ position: "absolute", right: 10, top: 0 }}
+                  style={{ position: "absolute", right: 5, top: 2, backgroundColor: "#f84464", border: "1px solid #f84464", borderRadius: "40px", color: "white" }}
                 >
                   X
                 </button>
               </div>
-              <hr />
               <div className={classes.root}>
-                <Typography id="discrete-slider" gutterBottom>
+                {/* <Typography id="discrete-slider" gutterBottom>
                   Name
                 </Typography>
                 <div class="form-group">
                   <input class="form-control form-control-lg" type="text"  id="name" name="name" placeholder="Your Name...." /><br /><br />
-                </div>
-                <Typography id="discrete-slider" gutterBottom>
+                </div> */}
+                <TextField label="Name" id="name" name="name" placeholder="Your name" />
+                <br /><br />
+                {/* <Typography id="discrete-slider" gutterBottom>
                   How would you rate the movie?
-                </Typography>
+                </Typography> */}
+                <h3><b>How would you rate the event?</b></h3>
                 <Slider
                   onChange={handleChange}
                   defaultValue={10}

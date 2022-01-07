@@ -81,25 +81,11 @@ const Navbar = () => {
   const redirect_admin = (tid) => {
     history.push(`/admin/${tid}`)
   }
-  const redirect_user = () => {
-    history.push('/user')
-  }
   const signout_user = () => {
     setAuth(false);
     history.push('/')
   }
 
-  const gotouserpage = (email) => {
-    if ((+email === 9876543210)) {
-      console.log("admin redirect");
-      return "/admin"
-    }
-    else if (+email === 123456789) {
-      console.log("user redirect");
-      return "/user"
-    }
-    return ""
-  }
 
   const handleCloseLogin = (email, pass, number) => {
     let r = "";
@@ -114,50 +100,29 @@ const Navbar = () => {
     }
 
     if (r === "Organizer") {
-      var obj_email_check = userdata.organizers.filter(ele => ele.email == +email);
-      var obj_pass_check = userdata.organizers.filter(ele => ele.password == +pass);
-      var obj_mob_check = userdata.organizers.filter(ele => ele.phone == +number)[0];
-      if (obj_mob_check) {
+      var obj_email_check = userdata.organizers.filter(ele => ele.email == email)[0];
+      var obj_pass_check = userdata.organizers.filter(ele => ele.password == pass)[0];
+      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
         setAuth(true);
-        setUser(obj_mob_check.id);
+        setUser(obj_email_check.id);
         setUsertype("organizer");
         alert("Successfully Logged in");
-        redirect_admin(obj_mob_check.id);
+        redirect_admin(obj_email_check.id);
       }
-      else if (+number == "" && +email == "") {
+      else if (email == "") {
         setAuth(false);
         setUser(-1);
         setUsertype("");
-        alert("Both Email & Mob is missing");
+        alert("Please type your email");
+        //handleCloseLogin(email, pass, number);
       }
-      else if (+number == "") {
+      else if (pass == "") {
         setAuth(false);
         setUser(-1);
         setUsertype("");
-        if (obj_email_check && obj_pass_check) {
-          setAuth(true);
-          setUser(obj_email_check.id);
-          setUsertype("organizer");
-          alert("Successfully Logged in");
-          redirect_admin(obj_email_check.id);
-        }
-        else if (+email == "") {
-          setAuth(false);
-          setUser(-1);
-          setUsertype("");
-          alert("Please type your email");
-          //handleCloseLogin(email, pass, number);
-        }
-        else if (+pass == "") {
-          setAuth(false);
-          setUser(-1);
-          setUsertype("");
-          alert("Please type your passsword");
-          //handleCloseLogin(email, pass, number);
-        }
-
+        alert("Please type your passsword");
+        //handleCloseLogin(email, pass, number);
       }
-
       else {
         setAuth(false);
         setUser(-1);
@@ -167,46 +132,25 @@ const Navbar = () => {
       setState(false);
     }
     else if (r=="User"){
-      var obj_email_check = userdata.users.filter(ele => ele.email == +email);
-      var obj_pass_check = userdata.users.filter(ele => ele.password == +pass);
-      var obj_mob_check = userdata.users.filter(ele => ele.phone == +number)[0];
-      if (obj_mob_check) {
+      var obj_email_check = userdata.users.filter(ele => ele.email == email)[0];
+      var obj_pass_check = userdata.users.filter(ele => ele.password == pass)[0];
+      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
         setAuth(true);
-        setUser(obj_mob_check.id);
+        setUser(obj_email_check.id);
         setUsertype("user");
         alert("Successfully Logged in");
       }
-      else if (+number == "" && +email == "") {
+      else if (email == "") {
         setAuth(false);
         setUser(-1);
         setUsertype("");
-        alert("Both Email & Mob is missing");
+        alert("Please type your email");
       }
-      else if (+number == "") {
+      else if (pass == "") {
         setAuth(false);
         setUser(-1);
         setUsertype("");
-        if (obj_email_check && obj_pass_check) {
-          setAuth(true);
-          setUser(obj_mob_check.id);
-          setUsertype("user");
-          alert("Successfully Logged in");
-        }
-        else if (+email == "") {
-          setAuth(false);
-          setUser(-1);
-          setUsertype("");
-          alert("Please type your email");
-          handleCloseLogin(email, pass, number);
-        }
-        else if (+pass == "") {
-          setAuth(false);
-          setUser(-1);
-          setUsertype("");
-          alert("Please type your passsword");
-          handleCloseLogin(email, pass, number);
-        }
-
+        alert("Please type your passsword");
       }
       else {
         setAuth(false);
