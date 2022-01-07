@@ -444,6 +444,48 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "grade": "ua",
       "id": 12
+    },
+    {
+      "name": "Ways of Passive Income",
+      "date": 9,
+      "day": "Sunday",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B4",
+        "B6",
+        "B7"
+      ],
+      "platinium": [
+        "A6",
+        "B9"
+      ],
+      "price": 2300,
+      "total_price": 2328,
+      "banner_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAhjRtkHdhOanActd6YdrHj0qa1sUF2Gidg&usqp=CAU",
+      "grade": "ua",
+      "id": 13
+    },
+    {
+      "name": "Ways of Passive Income",
+      "date": 9,
+      "day": "Sunday",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B4",
+        "B6",
+        "B7"
+      ],
+      "platinium": [
+        "A6",
+        "B9"
+      ],
+      "price": 2300,
+      "total_price": 2328,
+      "banner_image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaAhjRtkHdhOanActd6YdrHj0qa1sUF2Gidg&usqp=CAU",
+      "grade": "ua",
+      "id": 14
     }
   ],
   "food": [

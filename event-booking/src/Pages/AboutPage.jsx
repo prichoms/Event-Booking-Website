@@ -69,7 +69,7 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <img src="https://media-exp1.licdn.com/dms/image/C5103AQE5wI9lOPBApg/profile-displayphoto-shrink_100_100/0/1571461881884?e=1643846400&v=beta&t=-ioqWLETsXQNuGz78BfHYoIHTdGyrLS8RNSya63J59A"
                     alt=""/>
                 <strong>Yaduraj Deshmukh</strong>
-                <p>S201900194</p>
+                <p>S20190010194</p>
             </div>
             <div class="btn">
                 <a href="mailto:yadurajdeshmukh2.303@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
@@ -82,7 +82,7 @@ export default function AboutPage({ action, handleCloseLogin }) {
                 <img src={naveen}
                     alt=""/>
                 <strong>Naveen Kumar</strong>
-                <p>S2019001XXX</p>
+                <p>S20190010192</p>
             </div>
             <div class="btn">
                 <a href="naveenkumar.v19@gmail.com"><i class="fa fa-phone" aria-hidden="true"></i>Contact</a>
