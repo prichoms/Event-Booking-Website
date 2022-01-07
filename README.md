@@ -56,8 +56,8 @@ To run the program offline, follow the following steps:
 * Install NPM (Node Package Manager)
 * Clone the repository
 * Open Terminal & Go to the path `\FSD-2\event-booking` and Execute Following Commands  :
-`npm i`
- `npm install redux react-redux redux-thunk react-router-dom material-ui/@core @material-ui/icons @material-ui/lab antd react-multi-carousel`
+* `npm i`
+*  `npm install redux react-redux redux-thunk react-router-dom material-ui/@core @material-ui/icons @material-ui/lab antd react-multi-carousel`
 
 ###### To start the server you have to open two terminal on the same path (`\FSD-2\event-booking`)
 On first terminal execute
