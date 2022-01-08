@@ -222,19 +222,23 @@ export default function UserPage({ action, handleCloseLogin }) {
           <thead>
             <tr>
             <th scope="col">S.No</th>
+            <th scope="col">Profile Pic</th>
               <th scope="col">Name</th>
               <th scope="col">Profile</th>
               <th scope="col">E-mail</th>
+              <th scope="col">Favorite Genres</th>
             </tr>
           </thead>
           <tbody>
             {goodfraands.map((i) => (
                     <tr key={i.id}>
                       <td>{i.id}</td>
+                      <td><center><img src={i.image} height="40px" width="40px" style={{borderRadius: "50px"}}/></center></td>
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}`}}><button>{i.name}'s Profile</button></Link></td>
                       {/* <td><button onClick={sendRequest(i.id)} >Send Request</button></td>  */}
                       <td>{i.email}</td>
+                      <td>{i.fav_genres.join(', ')}</td>
                       {/* onClick={sendRequest(i.id)} */}
                     </tr>
             ))}
