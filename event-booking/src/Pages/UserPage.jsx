@@ -21,6 +21,7 @@ import { TextareaAutosize } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import SaveIcon from '@mui/icons-material/Save';
 import Select from 'react-select'
+import { useSelector } from "react-redux";
 
 const styles = (theme) => ({
   root: {
@@ -268,10 +269,14 @@ export default function UserPage({ action, handleCloseLogin }) {
     }
     SetEmail(!email);
   }
+  const isAuth = useSelector((state) => state.app.isAuth);
   const EmailData = () => {
     let r;
-    if (email){
+    if (email && isAuth){
       r = (<><h4><a href="" style={{ color: "#f84464" }}>Email: </a>{" "}{user_data.email}<button style={{marginLeft: "20px", background: "#16161D", borderStyle: "none"}} onClick={changeEmail}><EditIcon/></button></h4></>)
+    }
+    else if (email){
+      r = (<><h4><a href="" style={{ color: "#f84464" }}>Email: </a>{" "}{user_data.email}</h4></>)
     }
     else{
       r = (<><h4><a href="" style={{ color: "#f84464" }}>Email: </a>{" "}<TextField   inputProps={{ style: { color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white' }}} id="email" name="email" placeholder={user_data.email}/><button style={{marginLeft: "20px", background: "#16161D", borderStyle: "none"}} onClick={saveEmail}><SaveIcon/></button></h4></>)
@@ -298,8 +303,11 @@ export default function UserPage({ action, handleCloseLogin }) {
   }
   const AboutData = () => {
     let r;
-    if (about){
+    if (about && isAuth){
       r = (<><button style={{marginLeft: "800px", background: "#16161D", borderStyle: "none", color: "gold"}} onClick={changeAbout}><EditIcon/></button><h4>{user_data.about}</h4></>)
+    }
+    else if (about){
+      r = (<><h4>{user_data.about}</h4></>)
     }
     else{
       r = (<><button style={{marginLeft: "800px", background: "#16161D", borderStyle: "none", color: "gold"}} onClick={saveAbout}><SaveIcon/></button><h4><TextareaAutosize style={{ backgroundColor:"#16161D", color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white', width: "800px" }} minrows={7} id="about" name="about" placeholder={user_data.about}/></h4></>)
@@ -311,7 +319,7 @@ export default function UserPage({ action, handleCloseLogin }) {
     let value = document.getElementById("poster").value;
     setImg(value);
   }
-  const [imgmod, setImgmod] = React.useState(false);
+  const [imgmod, setImgmod] = React.useState(true);
   const imgmodchange = () => {
     setImgmod(!imgmod);
   }
@@ -334,22 +342,27 @@ export default function UserPage({ action, handleCloseLogin }) {
   function Posterbox(props) {
     const imgmod1 = imgmod;
     let poster;
-    if (imgmod1) {
+    if (imgmod1 && isAuth ) {
+      poster = <>
+              <img className="profilepic" src={user_data.image}/>
+              <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodchange}><EditIcon/></button>
+            </>
+    }
+    else if (imgmod1) {
       poster = <>
                 <img className="profilepic" src={user_data.image}/>
-                <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodsave}><SaveIcon/></button>
-                <br/>
-                <div style={{marginLeft: "50px", position: "absolute"}}>
-                  <TextField inputProps={{ style: { color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white' }}} id="poster" name="poster" onChange={handleImage} />
-                  <br/><br/> 
-                  <img style={{marginLeft: "80px", borderRadius: "50px" }} src={img} height="50px" width="50px"/>
-                </div>
               </>
     } else {
       poster = <>
-                <img className="profilepic" src={user_data.image}/>
-                <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodchange}><EditIcon/></button>
-              </>
+      <img className="profilepic" src={user_data.image}/>
+      <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodsave}><SaveIcon/></button>
+      <br/>
+      <div style={{marginLeft: "50px", position: "absolute"}}>
+        <TextField inputProps={{ style: { color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white' }}} id="poster" name="poster" onChange={handleImage} />
+        <br/><br/> 
+        <img style={{marginLeft: "80px", borderRadius: "50px" }} src={img} height="50px" width="50px"/>
+      </div>
+    </>
     }
     return poster;
   }
@@ -396,7 +409,8 @@ export default function UserPage({ action, handleCloseLogin }) {
         <div style={{ backgroundColor: "#16161D" }}>
           <BookedEvents />
         </div>
-        <Fraand/>
+        {isAuth && <Fraand/>}
+        {/* <Fraand/> */}
       <br/><br/><br/>
     </div>
   );
