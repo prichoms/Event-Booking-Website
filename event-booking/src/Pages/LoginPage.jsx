@@ -98,7 +98,7 @@ export default function Login({ action, handleCloseLogin }) {
                 <label htmlFor="password">Password</label>
                 <input style={{ background: "#383838", border: "none", borderBottom: "1px solid gray", padding: "10px", fontSize: "16px", outline: "none", borderRadius: "0% !important" }} type="password" name="password" placeholder="Enter your password" onChange={(e)=>setPassword(e.target.value)} />
               </div>
-              <div style={{ marginTop: "20px" }}>
+              <div style={{ marginTop: "10px" }}>
                 I agree to the{" "}
                 <a href="" style={{ color: "#f84464" }}>
                   Terms &amp; Conditions
@@ -107,6 +107,9 @@ export default function Login({ action, handleCloseLogin }) {
                 <a href="" style={{ color: "#f84464" }}>
                   Privacy Policy
                 </a>
+              </div>
+              <div style={{ marginTop: "20px" }}>
+                New user? Register  <a href="" style={{ color: "#f84464"}}> here </a>
               </div>
             </form>
           </>

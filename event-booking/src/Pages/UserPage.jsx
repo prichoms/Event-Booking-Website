@@ -16,6 +16,11 @@ import { RecommendedEvents } from "../Components/HomePage/RecommendedEvents";
 import { BookedEvents } from '../Components/BookedEvents';
 import { useHistory, useParams, Link } from "react-router-dom";
 import jsondata from "../database/db.json"
+import TextField from '@mui/material/TextField';
+import { TextareaAutosize } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import SaveIcon from '@mui/icons-material/Save';
+import Select from 'react-select'
 
 const styles = (theme) => ({
   root: {
@@ -28,6 +33,18 @@ const styles = (theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
+  textField: {
+    width: '90%',
+    marginLeft: 'auto',
+    marginRight: 'auto',            
+    paddingBottom: 0,
+    marginTop: 0,
+    fontWeight: 500,
+    color: 'white'
+},
+input: {
+    color: 'white'
+}
 });
 
 const DialogTitle = withStyles(styles)((props) => {
@@ -229,8 +246,120 @@ export default function UserPage({ action, handleCloseLogin }) {
     }
     return ret;
   }
-
-
+  const [email,SetEmail] = React.useState(true);
+  const changeEmail = () => {
+    SetEmail(!email);
+  }
+  const saveEmail = () => {
+    let jj = document.getElementById("email").value;
+    if(jj!=""){
+      user_data.email =jj;
+      fetch(`http://localhost:3001/users/${user_data.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user_data)
+      })
+    }
+    SetEmail(!email);
+  }
+  const EmailData = () => {
+    let r;
+    if (email){
+      r = (<><h4><a href="" style={{ color: "#f84464" }}>Email: </a>{" "}{user_data.email}<button style={{marginLeft: "20px", background: "#16161D", borderStyle: "none"}} onClick={changeEmail}><EditIcon/></button></h4></>)
+    }
+    else{
+      r = (<><h4><a href="" style={{ color: "#f84464" }}>Email: </a>{" "}<TextField   inputProps={{ style: { color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white' }}} id="email" name="email" placeholder={user_data.email}/><button style={{marginLeft: "20px", background: "#16161D", borderStyle: "none"}} onClick={saveEmail}><SaveIcon/></button></h4></>)
+    }
+    return r;
+  }
+  const [about,SetAbout] = React.useState(true);
+  const changeAbout = () => {
+    SetAbout(!about);
+  }
+  const saveAbout = () => {
+    let jj = document.getElementById("about").value;
+    if(jj!=""){
+      user_data.about =jj;
+      fetch(`http://localhost:3001/users/${user_data.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user_data)
+      })
+    }
+    SetAbout(!about);
+  }
+  const AboutData = () => {
+    let r;
+    if (about){
+      r = (<><button style={{marginLeft: "800px", background: "#16161D", borderStyle: "none", color: "gold"}} onClick={changeAbout}><EditIcon/></button><h4>{user_data.about}</h4></>)
+    }
+    else{
+      r = (<><button style={{marginLeft: "800px", background: "#16161D", borderStyle: "none", color: "gold"}} onClick={saveAbout}><SaveIcon/></button><h4><TextareaAutosize style={{ backgroundColor:"#16161D", color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white', width: "800px" }} minrows={7} id="about" name="about" placeholder={user_data.about}/></h4></>)
+    }
+    return r;
+  }
+  const [img,setImg] = React.useState("https://miro.medium.com/max/880/0*H3jZONKqRuAAeHnG.jpg");
+  const handleImage = (e) => {
+    let value = document.getElementById("poster").value;
+    setImg(value);
+  }
+  const [imgmod, setImgmod] = React.useState(false);
+  const imgmodchange = () => {
+    setImgmod(!imgmod);
+  }
+  const imgmodsave = () => {
+    imgmodchange();
+    let a = document.getElementById("poster").value;
+    let newdata = user_data;
+    if (a != "" ){
+      newdata.image = a;
+    }
+    fetch(`http://localhost:3001/users/${newdata.id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newdata)
+        }
+    )
+  }
+  function Posterbox(props) {
+    const imgmod1 = imgmod;
+    let poster;
+    if (imgmod1) {
+      poster = <>
+                <img className="profilepic" src={user_data.image}/>
+                <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodsave}><SaveIcon/></button>
+                <br/>
+                <div style={{marginLeft: "50px", position: "absolute"}}>
+                  <TextField inputProps={{ style: { color: 'white', border: 'none', borderColor: '#16161D', borderBottom: '1px solid white' }}} id="poster" name="poster" onChange={handleImage} />
+                  <br/><br/> 
+                  <img style={{marginLeft: "80px", borderRadius: "50px" }} src={img} height="50px" width="50px"/>
+                </div>
+              </>
+    } else {
+      poster = <>
+                <img className="profilepic" src={user_data.image}/>
+                <button style={{background: "#16161D", borderStyle: "none", color: "gold"}} onClick={imgmodchange}><EditIcon/></button>
+              </>
+    }
+    return poster;
+  }
+  const FriendData = () => {
+    let r;
+    if(user_data.friend_interest){
+      const gens_n = user_data.fav_genres.join(', ');
+      r = (<><h4><a href="" style={{ color: "#f84464" }}>Favorite Genres: </a>{" "}{gens_n}</h4></>)
+    }
+    else{
+      r = (<></>)
+    }
+    return r;
+  }
   return (
     <div>
       <div
@@ -244,10 +373,16 @@ export default function UserPage({ action, handleCloseLogin }) {
       >
 
       </div>
-      <img className="profilepic" src={user_data.image}/>
+      {/* <img className="profilepic" src={user_data.image}/> */}
+      <Posterbox/>
       <div className="userdetails">
         <h1>{user_data.name}</h1>
-        <h4>{user_data.about}</h4>
+        <br/><br/>
+        <EmailData/>
+        <br/><br/>
+        <AboutData/>
+        <br/><br/>
+        <FriendData/>
       </div>
       <br/><br/><br/><br/>
 
@@ -257,7 +392,7 @@ export default function UserPage({ action, handleCloseLogin }) {
         <div style={{ backgroundColor: "#16161D" }}>
           <BookedEvents />
         </div>
-        {/* <Fraand/> */}
+        <Fraand/>
       <br/><br/><br/>
     </div>
   );

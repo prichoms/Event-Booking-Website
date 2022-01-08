@@ -104,7 +104,7 @@
   "users": [
     {
       "id": 1,
-      "image": "https://gdsciiits.netlify.app/static/media/shreyash_mishra.3f9cfc3431e4c7dff3dc.png",
+      "image": "https://i.kym-cdn.com/entries/icons/original/000/013/564/doge.jpg",
       "friend_interest": true,
       "fav_genres": [
         "Action",
@@ -115,6 +115,10 @@
       "friends": [
         {
           "id": 2,
+          "status": "accepted"
+        },
+        {
+          "id": 3,
           "status": "accepted"
         }
       ],
@@ -131,7 +135,7 @@
         7
       ],
       "phone": "7021904275",
-      "email": "user1@gmail.com",
+      "email": "user16@gmail.com",
       "password": "user1"
     },
     {
@@ -144,6 +148,45 @@
         "Comedy"
       ],
       "friends": [
+        {
+          "id": 1,
+          "status": "accepted"
+        },
+        {
+          "id": 3,
+          "status": "accepted"
+        }
+      ],
+      "friend_requests": [],
+      "image": "https://i.imgflip.com/3sksxo.png",
+      "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
+      "booked_events": [
+        8,
+        9,
+        10,
+        11,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phone": "1234567890",
+      "email": "user2@gmail.com",
+      "password": "user2"
+    },
+    {
+      "id": 3,
+      "name": "Sid",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action"
+      ],
+      "friends": [
+        {
+          "id": 2,
+          "status": "accepted"
+        },
         {
           "id": 1,
           "status": "accepted"
