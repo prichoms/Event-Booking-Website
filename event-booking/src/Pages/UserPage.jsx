@@ -257,7 +257,7 @@ export default function UserPage({ action, handleCloseLogin }) {
         <div style={{ backgroundColor: "#16161D" }}>
           <BookedEvents />
         </div>
-        <Fraand/>
+        {/* <Fraand/> */}
       <br/><br/><br/>
     </div>
   );

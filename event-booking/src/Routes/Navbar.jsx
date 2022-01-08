@@ -17,7 +17,19 @@ import { storeAuth } from "../Redux/app/actions";
 import Login from "../Pages/LoginPage";
 import { useHistory } from 'react-router-dom';
 import userdata from '../database/db.json';
-
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import Search from 'react-search'
+import Select, { components, DropdownIndicatorProps }  from 'react-select'
+import "../Components/Styling/navsearch.css"
+import { borderBottom } from "@mui/system";
+import Creatable, { useCreatable } from 'react-select/creatable';
 
 const useStyles = makeStyles({
   list: {
@@ -26,10 +38,25 @@ const useStyles = makeStyles({
   fullList: {
     width: "auto",
   },
+  root: {
+    "& .MuiInput-root .MuiInput-notchedOutline": {
+      borderColor: "white"
+    },
+    "&:hover .MuiInput-root .MuiInput-notchedOutline": {
+      borderColor: "red"
+    },
+    "& .MuiInput-root.Mui-focused .MuiInput-notchedOutline": {
+      borderColor: "purple"
+    }
+  }
 });
 
 
 const Navbar = () => {
+  let items = []
+  for(let kkkk=0;kkkk<userdata.events.length;kkkk++){
+    items.push({'label':userdata.events[kkkk].name, 'value':userdata.events[kkkk].id })
+  }
   const [query, setQuery] = React.useState("");
   const [city, setCity] = React.useState("");
   const [open, setOpen] = React.useState(false);
@@ -208,19 +235,39 @@ const Navbar = () => {
     }
     return (<></>);
   }
+  const customStyles = {
+    control: (provided, state) => ({
+      ...provided,
+      width: 400,
+      backgroundColor: '#16161D',
+      color: "white",
+      borderStyle: "none",
+      borderBottom: "1px solid white",
+      borderRadius: "0px",
+      fontSize: "15px" 
+    }),
+    menu: (provided, state) => ({
+      ...provided,
+      backgroundColor: 'grey',
+      opacity: 0.8
+    }),
+  }
+  const searchMovie = (e) => {
+    history.push(`/events/${e.value}`)
+  }
   return (
     <div>
       <div className={styles.navbar}>
-        <div style={{ display: "flex", alignItems: "center", width: "60%", height: "100%" }}>
+        <div style={{ display: "flex", alignItems: "center", width: "30%", height: "100%" }}>
           <Link className={styles.link} to="/">
-            <svg style={{ marginTop: "55px" }} >
+            <svg style={{ marginTop: "55px"}} >
               <image height="100" width="100"
                 href="//www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png"
               ></image>
             </svg>
           </Link>
         </div>
-        <div>
+        <Select options={items} id="languages" name="languages" styles={customStyles} width="200px" placeholder="Search Events..." onChange={searchMovie} openMenuOnClick={false}/>
           <Link className={styles.link} to="">
             Home
           </Link>
@@ -233,9 +280,6 @@ const Navbar = () => {
           <Link className={styles.link} to="/contact">
             Contact
           </Link>
-          
-          
-        </div>
         <div style={{ display: "flex", alignItems: "center", fontSize: "20px", size: "20px" }}>
 
           {!isAuth && (
