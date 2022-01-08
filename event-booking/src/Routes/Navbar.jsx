@@ -26,7 +26,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import Search from 'react-search'
-import Select, { components, DropdownIndicatorProps }  from 'react-select'
+import Select, { components, DropdownIndicatorProps } from 'react-select'
 import "../Components/Styling/navsearch.css"
 import { borderBottom } from "@mui/system";
 import Creatable, { useCreatable } from 'react-select/creatable';
@@ -50,18 +50,24 @@ const useStyles = makeStyles({
     }
   }
 });
-
+const validateEmail = (email) => {
+  let ans = email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+  if (ans == null) return false;
+  return true;
+};
 
 const Navbar = () => {
   let items = []
-  for(let kkkk=0;kkkk<userdata.events.length;kkkk++){
-    items.push({'label':userdata.events[kkkk].name, 'value':userdata.events[kkkk].id })
+  for (let kkkk = 0; kkkk < userdata.events.length; kkkk++) {
+    items.push({ 'label': userdata.events[kkkk].name, 'value': userdata.events[kkkk].id })
   }
   const [query, setQuery] = React.useState("");
   const [city, setCity] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [user,setUser] = React.useState(-1);
-  const [usertype,setUsertype] = React.useState("");
+  const [user, setUser] = React.useState(-1);
+  const [usertype, setUsertype] = React.useState("");
   const [cityName, setCityName] = React.useState("Select City");
   const theme = useTheme();
   const classes = useStyles();
@@ -116,64 +122,75 @@ const Navbar = () => {
     }
 
     if (r === "Organizer") {
-      var obj_email_check = userdata.organizers.filter(ele => ele.email == email)[0];
-      var obj_pass_check = userdata.organizers.filter(ele => ele.password == pass)[0];
-      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
-        setAuth(true);
-        setUser(obj_email_check.id);
-        setUsertype("organizer");
-        alert("Successfully Logged in");
-        redirect_admin(obj_email_check.id);
-      }
-      else if (email == "") {
-        setAuth(false);
-        setUser(-1);
-        setUsertype("");
-        alert("Please type your email");
-      }
-      else if (pass == "") {
-        setAuth(false);
-        setUser(-1);
-        setUsertype("");
-        alert("Please type your passsword");
-      }
-      else {
-        setAuth(false);
-        setUser(-1);
-        alert("You are not registered");
-      }
-      setAction(false);
-      setState(false);
-    }
-    else if (r=="User"){
-      var obj_email_check = userdata.users.filter(ele => ele.email == email)[0];
-      var obj_pass_check = userdata.users.filter(ele => ele.password == pass)[0];
-      if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
-        setAuth(true);
-        setUser(obj_email_check.id);
-        setUsertype("user");
-        alert("Successfully Logged in");
-      }
-      else if (email == "") {
-        setAuth(false);
-        setUser(-1);
-        setUsertype("");
-        alert("Please type your email");
-      }
-      else if (pass == "") {
-        setAuth(false);
-        setUser(-1);
-        setUsertype("");
-        alert("Please type your passsword");
-      }
-      else {
-        setAuth(false);
-        setUser(-1);
+      if (validateEmail(email) == true) {
+        var obj_email_check = userdata.organizers.filter(ele => ele.email == email)[0];
+        var obj_pass_check = userdata.organizers.filter(ele => ele.password == pass)[0];
+        if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
+          setAuth(true);
+          setUser(obj_email_check.id);
+          setUsertype("organizer");
+          alert("Successfully Logged in");
+          redirect_admin(obj_email_check.id);
+        }
+        else if (email == "") {
+          setAuth(false);
+          setUser(-1);
           setUsertype("");
-        alert("You are not registered");
+          alert("Please type your email");
+        }
+        else if (pass == "") {
+          setAuth(false);
+          setUser(-1);
+          setUsertype("");
+          alert("Please type your passsword");
+        }
+        else {
+          setAuth(false);
+          setUser(-1);
+          alert("You are not registered");
+        }
+        setAction(false);
+        setState(false);
       }
-      setAction(false);
-      setState(false);
+      else {
+        alert("Please type a valid email address");
+      }
+
+    }
+    else if (r == "User") {
+      if (validateEmail(email) == true) {
+        var obj_email_check = userdata.users.filter(ele => ele.email == email)[0];
+        var obj_pass_check = userdata.users.filter(ele => ele.password == pass)[0];
+        if (obj_email_check && obj_pass_check && obj_pass_check.id === obj_email_check.id) {
+          setAuth(true);
+          setUser(obj_email_check.id);
+          setUsertype("user");
+          alert("Successfully Logged in");
+        }
+        else if (email == "") {
+          setAuth(false);
+          setUser(-1);
+          setUsertype("");
+          alert("Please type your email");
+        }
+        else if (pass == "") {
+          setAuth(false);
+          setUser(-1);
+          setUsertype("");
+          alert("Please type your passsword");
+        }
+        else {
+          setAuth(false);
+          setUser(-1);
+          setUsertype("");
+          alert("You are not registered");
+        }
+        setAction(false);
+        setState(false);
+      }
+      else {
+        alert("Please type a valid email address");
+      }
     }
   };
 
@@ -181,20 +198,20 @@ const Navbar = () => {
     dispatch(storeAuth(auth));
   }, [auth]);
 
-  function ProfileRedirect(){
+  function ProfileRedirect() {
     const tid = user;
     const tp = usertype;
     let a;
-    if (tp=="organizer"){
-      a = <><Link to={{ pathname: `/admin/${tid}`}} style={{ marginLeft: 20, color: "black" }}>
+    if (tp == "organizer") {
+      a = <><Link to={{ pathname: `/admin/${tid}` }} style={{ marginLeft: 20, color: "black" }}>
         <div>
           <AccountCircleIcon style={{ fontSize: "40px" }} />
           <span>Profile</span>
         </div>
       </Link>
       </>
-    }else if(tp=="user"){
-      a = <><Link to={{ pathname: `/user/${tid}`}} style={{ marginLeft: 20, color: "black" }}>
+    } else if (tp == "user") {
+      a = <><Link to={{ pathname: `/user/${tid}` }} style={{ marginLeft: 20, color: "black" }}>
         <div>
           <AccountCircleIcon style={{ fontSize: "40px" }} />
           <span>Profile</span>
@@ -208,8 +225,8 @@ const Navbar = () => {
   const Notif = () => {
     const tid = user;
     const dt = userdata.users.filter(ele => ele.id == tid)[0];
-    if(dt.friend_requests.length > 0){
-      return ( <NotificationImportant style={{ fontSize: "40px" }} /> )
+    if (dt.friend_requests.length > 0) {
+      return (<NotificationImportant style={{ fontSize: "40px" }} />)
     }
     return (<Notifications style={{ fontSize: "40px" }} />)
   }
@@ -222,14 +239,14 @@ const Navbar = () => {
   const Intro = () => {
     const tid = user;
     const dt = userdata.users.filter(ele => ele.id == tid);
-    if (dt.length === 1){
-      if(isAuth && dt[0].friend_requests.length > 0){
-      return (<>
-            <Announcement style={{ fontSize: "20px",marginBottom: "150px",marginLeft: "150px", position: "absolute" }} />
-            <AccountCircleIcon style={{ fontSize: "40px" }} />
-            <div>Hi, User..</div></>);
+    if (dt.length === 1) {
+      if (isAuth && dt[0].friend_requests.length > 0) {
+        return (<>
+          <Announcement style={{ fontSize: "20px", marginBottom: "150px", marginLeft: "150px", position: "absolute" }} />
+          <AccountCircleIcon style={{ fontSize: "40px" }} />
+          <div>Hi, User..</div></>);
       }
-      else if (isAuth){
+      else if (isAuth) {
         return (<><AccountCircleIcon style={{ fontSize: "40px" }} /><div>Hi, User..</div></>)
       }
     }
@@ -244,7 +261,7 @@ const Navbar = () => {
       borderStyle: "none",
       borderBottom: "1px solid white",
       borderRadius: "0px",
-      fontSize: "15px" 
+      fontSize: "15px"
     }),
     menu: (provided, state) => ({
       ...provided,
@@ -261,26 +278,26 @@ const Navbar = () => {
       <div className={styles.navbar}>
         <div style={{ display: "flex", alignItems: "center", width: "30%", height: "100%" }}>
           <Link className={styles.link} to="/">
-            <svg style={{ marginTop: "55px"}} >
+            <svg style={{ marginTop: "55px" }} >
               <image height="100" width="100"
                 href="//www.iasplus.com/en/images/responsive/badges/g20/@@images/465e1ae9-46a0-4131-b3d0-984fcbb8233a.png"
               ></image>
             </svg>
           </Link>
         </div>
-        <Select options={items} id="languages" name="languages" styles={customStyles} width="200px" placeholder="Search Events..." onChange={searchMovie} openMenuOnClick={false}/>
-          <Link className={styles.link} to="">
-            Home
-          </Link>
-          <Link className={styles.link} to="/about">
-            About
-          </Link>
-          <Link className={styles.link} to="/allevents">
-            Events
-          </Link>
-          <Link className={styles.link} to="/contact">
-            Contact
-          </Link>
+        <Select options={items} id="languages" name="languages" styles={customStyles} width="200px" placeholder="Search Events..." onChange={searchMovie} openMenuOnClick={false} />
+        <Link className={styles.link} to="">
+          Home
+        </Link>
+        <Link className={styles.link} to="/about">
+          About
+        </Link>
+        <Link className={styles.link} to="/allevents">
+          Events
+        </Link>
+        <Link className={styles.link} to="/contact">
+          Contact
+        </Link>
         <div style={{ display: "flex", alignItems: "center", fontSize: "20px", size: "20px" }}>
 
           {!isAuth && (
@@ -295,7 +312,7 @@ const Navbar = () => {
             onClose={toggleDrawer(false)}
             className={styles.profile}
           >
-            <Intro/>
+            <Intro />
             <Drawer anchor="right" open={state}>
               <div className={styles.drawer}>
                 <div>
@@ -304,7 +321,7 @@ const Navbar = () => {
                 <AccountCircleIcon style={{ fontSize: "60px" }} />
               </div>
               <div className={styles.sideber_content}>
-                <ProfileRedirect/>
+                <ProfileRedirect />
                 <div onClick={handleNotif}>
                   <Notif />
                   <span>Notifications</span>

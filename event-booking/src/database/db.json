@@ -514,6 +514,25 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "grade": "ua",
       "id": 12
+    },
+    {
+      "name": "Biggest Fear in Life by Shiv Kehra",
+      "date": 10,
+      "day": "Monday",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B9",
+        "C10",
+        "D8",
+        "D10"
+      ],
+      "platinium": [],
+      "price": 2000,
+      "total_price": 2988,
+      "banner_image_url": "http://www.profitmagazin.com/upload/images/broj/broj110111/shiv-kera-300.jpg",
+      "grade": "ua",
+      "id": 13
     }
   ],
   "food": [
