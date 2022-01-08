@@ -154,7 +154,10 @@ const Navbar = () => {
       }
       else {
         alert("Please type a valid email address");
+       
       }
+      setAction(false);
+      setState(false);
 
     }
     else if (r == "User") {
@@ -190,7 +193,10 @@ const Navbar = () => {
       }
       else {
         alert("Please type a valid email address");
+        
       }
+      setAction(false);
+        setState(false);
     }
   };
 
