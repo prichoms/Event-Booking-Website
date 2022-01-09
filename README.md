@@ -38,6 +38,7 @@ After clicking, Proceed button, the user can make the payment and will be redire
 * Space for advertisement banners
 * View and book event tickets
 * Rating and filteration of each event using Languages & Genre
+* User can find event buddy based on common interest
 * List of booking, sorting of prices, rating of events (for admin only)
 * All events page (For Pagination purpose)
 * Create Event Page (CRUD operations) (Admin only)
@@ -47,7 +48,6 @@ After clicking, Proceed button, the user can make the payment and will be redire
 ### In this project, a few technologies and packages are used, listed below
 ##### React, Redux-thunks, Redux, CSS, react-router-dom, Material UI, antd, React multi carousel
 
-### For database
 
 ## HOW TO RUN THIS PROJECT
 

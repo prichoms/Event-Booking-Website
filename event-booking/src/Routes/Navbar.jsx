@@ -111,7 +111,7 @@ const Navbar = () => {
     history.push("/");
   };
 
-  const handleCloseLogin = (email, pass, number) => {
+  const handleCloseLogin = (email, pass) => {
     let r = "";
     if (document.getElementById("tab-1").checked) {
       r = document.getElementById("tab-1").value;

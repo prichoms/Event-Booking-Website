@@ -24,7 +24,6 @@ const DialogActions = withStyles((theme) => ({
 export default function Login({ action, handleCloseLogin }) {
   const [email_id, setEmail] = React.useState("");
   const [pass, setPassword] = React.useState("");
-  const [number, setNumber] = React.useState("");
   let history = useHistory();
 
   const redirect_admin = () => {
@@ -119,7 +118,7 @@ export default function Login({ action, handleCloseLogin }) {
         <DialogActions style={{ backgroundColor: "#383838" }}>
           <Button
             autoFocus
-            onClick={() => handleCloseLogin(email_id, pass, number)}
+            onClick={() => handleCloseLogin(email_id, pass)}
             style={{ color: "#f84464" }}
           >
             Sign in
