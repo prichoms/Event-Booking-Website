@@ -41,7 +41,7 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     {value: 'English', label: 'English'},
     {value:'Hindi', label:'Hindi'},
     {value: 'Tamil', label: 'Telugu'},
-    {value:'Tamil', label: 'Telugu'},
+    {value:'Telugu', label: 'Telugu'},
     {value: 'Japanese', label: 'Japanese'},
     {value: 'Kannada', label: 'Kannada'},
     {value: 'Punjabi', label: 'Punjabi'}

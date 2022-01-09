@@ -11,6 +11,8 @@ import AboutPage from "../Pages/AboutPage";
 import { BookingHistory } from "../Components/BookingHistory";
 import CreateEvent from "../Components/CreateEvent";
 import ModifyEvent from "../Components/ModifyEvent";
+import AdminLogin from "../Pages/AdminConsole/AdminLogin";
+import AdminMain from "../Pages/AdminConsole/AdminMain";
 const Router = () => {
   return (
     <div>
@@ -47,6 +49,12 @@ const Router = () => {
         </Route>
         <Route exact path="/booktickets/:id">
           <BookTicketsPage></BookTicketsPage>
+        </Route>
+        <Route exact path="/admin-console-login">
+          <AdminLogin/>    
+        </Route>
+        <Route exact path="/admin-console-main">
+          <AdminMain/>    
         </Route>
         <Route>
           <div>404. Page not found</div>
