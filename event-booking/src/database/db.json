@@ -209,6 +209,87 @@
       "phone": "1234567890",
       "email": "user2@gmail.com",
       "password": "user2"
+    },
+    {
+      "id": 4,
+      "name": "Sid1",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action"
+      ],
+      "friends": [
+      ],
+      "friend_requests": [],
+      "image": "https://i.imgflip.com/3sksxo.png",
+      "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
+      "booked_events": [
+        8,
+        9,
+        10,
+        11,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phone": "1234567890",
+      "email": "user4@gmail.com",
+      "password": "user4"
+    },
+    {
+      "id": 5,
+      "name": "Sid2",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action"
+      ],
+      "friends": [
+      ],
+      "friend_requests": [],
+      "image": "https://i.imgflip.com/3sksxo.png",
+      "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
+      "booked_events": [
+        8,
+        9,
+        10,
+        11,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phone": "1234567890",
+      "email": "user5@gmail.com",
+      "password": "user5"
+    },
+    {
+      "id": 6,
+      "name": "Sid4",
+      "friend_interest": true,
+      "fav_genres": [
+        "Action"
+      ],
+      "friends": [
+      ],
+      "friend_requests": [],
+      "image": "https://i.imgflip.com/3sksxo.png",
+      "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
+      "booked_events": [
+        8,
+        9,
+        10,
+        11,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "phone": "1234567890",
+      "email": "user6@gmail.com",
+      "password": "user6"
     }
   ],
   "organizers": [
@@ -533,11 +614,28 @@
       "banner_image_url": "http://www.profitmagazin.com/upload/images/broj/broj110111/shiv-kera-300.jpg",
       "grade": "ua",
       "id": 13
+    },
+    {
+      "name": "Fitness First",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "03:00 PM",
+      "venues_name": "Segway Club: Piyush Mahendra, Faridabad",
+      "silver": [],
+      "platinium": [
+        "C10",
+        "C11"
+      ],
+      "price": 800,
+      "total_price": 1578,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
+      "grade": "ua",
+      "id": 14
     }
   ],
   "food": [
     {
-      "_id": "604b7f2e3441b3fa78c36771",
+      "id": "604b7f2e3441b3fa78c36771",
       "food_name": "Big Tub Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -548,7 +646,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36772",
+      "id": "604b7f2e3441b3fa78c36772",
       "food_name": "Nachos with Salsa & Cheese Sauce + Large Coke(0) 500 COKE LARGE(1) 260.00 NACHOS JALAPENO WITH CHEESE & SALSA(1) 240.00 Nachos Combo",
       "is_popcorn": false,
       "is_coke": false,
@@ -559,7 +657,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36773",
+      "id": "604b7f2e3441b3fa78c36773",
       "food_name": "Extra Large Coke",
       "is_popcorn": false,
       "is_coke": true,
@@ -570,7 +668,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36774",
+      "id": "604b7f2e3441b3fa78c36774",
       "food_name": "Big Tub Cheese Popcorn + 2 Extra Large Coke(0) 800 COKE EXTRA LARGE(2) 580.00 POPCORN CHEESE BIG TUB(1) 220.00 Get Away Combo (Cheese)",
       "is_popcorn": false,
       "is_coke": false,
@@ -581,7 +679,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36775",
+      "id": "604b7f2e3441b3fa78c36775",
       "food_name": "Big Tub Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -592,7 +690,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36776",
+      "id": "604b7f2e3441b3fa78c36776",
       "food_name": "Tub Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -603,7 +701,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36777",
+      "id": "604b7f2e3441b3fa78c36777",
       "food_name": "Georgia Cappuccino",
       "is_popcorn": false,
       "is_coke": false,
@@ -614,7 +712,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36778",
+      "id": "604b7f2e3441b3fa78c36778",
       "food_name": "Price Breakup Tub Cheese Popcorn + 2 Large Coke(0) 720 COKE LARGE(2) 520.00 POPCORN CHEESE TUB(1) 200.00 Tub Combo (Cheese)",
       "is_popcorn": false,
       "is_coke": false,
@@ -625,7 +723,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36779",
+      "id": "604b7f2e3441b3fa78c36779",
       "food_name": "Large Caramel Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -636,7 +734,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677a",
+      "id": "604b7f2e3441b3fa78c3677a",
       "food_name": "Large Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -647,7 +745,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677b",
+      "id": "604b7f2e3441b3fa78c3677b",
       "food_name": "Super Saver Combo",
       "is_popcorn": false,
       "is_coke": false,
@@ -658,7 +756,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677c",
+      "id": "604b7f2e3441b3fa78c3677c",
       "food_name": "Iced Tea 400ml",
       "is_popcorn": false,
       "is_coke": false,
@@ -669,7 +767,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677d",
+      "id": "604b7f2e3441b3fa78c3677d",
       "food_name": "Cardamom Tea",
       "is_popcorn": false,
       "is_coke": false,
@@ -680,7 +778,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677e",
+      "id": "604b7f2e3441b3fa78c3677e",
       "food_name": "Large Coke",
       "is_popcorn": false,
       "is_coke": true,
@@ -691,7 +789,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3677f",
+      "id": "604b7f2e3441b3fa78c3677f",
       "food_name": "Big Tub Caramel Popcorn",
       "is_popcorn": false,
       "is_coke": false,
@@ -702,7 +800,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36780",
+      "id": "604b7f2e3441b3fa78c36780",
       "food_name": "Large Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -713,7 +811,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36781",
+      "id": "604b7f2e3441b3fa78c36781",
       "food_name": "Tomato Premix Soup",
       "is_popcorn": false,
       "is_coke": true,
@@ -724,7 +822,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36782",
+      "id": "604b7f2e3441b3fa78c36782",
       "food_name": "Price Breakup Big Tub Caramel Popcorn + 2 Extra Large Coke(0) 800 COKE EXTRA LARGE(2) 580.00 POPCORN CARAMEL BIG TUB(1) 220.00 Get Away Combo (Caramel)",
       "is_popcorn": false,
       "is_coke": false,
@@ -735,7 +833,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36783",
+      "id": "604b7f2e3441b3fa78c36783",
       "food_name": "Greenfit Tea - Lemon Honey",
       "is_popcorn": false,
       "is_coke": true,
@@ -746,7 +844,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36784",
+      "id": "604b7f2e3441b3fa78c36784",
       "food_name": "Tub Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -757,7 +855,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36785",
+      "id": "604b7f2e3441b3fa78c36785",
       "food_name": "Price Breakup Tub Caramel Popcorn + 2 Large Coke(0) 720 COKE LARGE(2) 520.00 POPCORN CARAMEL TUB(1) 200.00 Tub Combo (Caramel)",
       "is_popcorn": false,
       "is_coke": false,
@@ -768,7 +866,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36786",
+      "id": "604b7f2e3441b3fa78c36786",
       "food_name": "Greenfit Tea - Tulsi",
       "is_popcorn": false,
       "is_coke": true,
@@ -779,7 +877,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36787",
+      "id": "604b7f2e3441b3fa78c36787",
       "food_name": "Manchow Premix Soup",
       "is_popcorn": false,
       "is_coke": true,
@@ -790,7 +888,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36788",
+      "id": "604b7f2e3441b3fa78c36788",
       "food_name": "Greenfit Tea - Vitality",
       "is_popcorn": false,
       "is_coke": true,
@@ -801,7 +899,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c36789",
+      "id": "604b7f2e3441b3fa78c36789",
       "food_name": "Turmeric Latte",
       "is_popcorn": false,
       "is_coke": true,
@@ -812,7 +910,7 @@
       "count": 0
     },
     {
-      "_id": "604b7f2e3441b3fa78c3678a",
+      "id": "604b7f2e3441b3fa78c3678a",
       "food_name": "Tub Caramel Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -826,7 +924,7 @@
   "venue": [
     [
       {
-        "_id": "6048b56497bb2858d390be3f",
+        "id": "6048b56497bb2858d390be3f",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Nehru Place",
         "sub_region": "Delhi",
@@ -843,7 +941,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be40",
+        "id": "6048b56497bb2858d390be40",
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Prem Garden: DLF Avenue, Saket",
         "sub_region": "Delhi",
@@ -863,7 +961,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be41",
+        "id": "6048b56497bb2858d390be41",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Segway Club: Select City Walk, Delhi",
         "sub_region": "Delhi",
@@ -880,7 +978,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be42",
+        "id": "6048b56497bb2858d390be42",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Segway Club: Ambience, Gurgaon",
         "sub_region": "Gurgaon",
@@ -897,7 +995,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be43",
+        "id": "6048b56497bb2858d390be43",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Pacific, Subhash Nagar, Delhi",
         "sub_region": "Delhi",
@@ -911,7 +1009,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be44",
+        "id": "6048b56497bb2858d390be44",
         "image": "https://content3.jdmagicbox.com/comp/def_content/venue_halls/default-venue-halls-1.jpg?clr=1d2c49",
         "name": "Segway Club: MGF, Gurgaon",
         "sub_region": "Gurgaon",
@@ -928,7 +1026,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be45",
+        "id": "6048b56497bb2858d390be45",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Segway Club: Gaur City, Greater Noida",
         "sub_region": "Greater Noida",
@@ -942,7 +1040,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be46",
+        "id": "6048b56497bb2858d390be46",
         "image": "https://content3.jdmagicbox.com/comp/def_content/venue_halls/default-venue-halls-1.jpg?clr=1d2c49",
         "name": "Prem Garden: Janak Venue, New Delhi",
         "sub_region": "Delhi",
@@ -956,7 +1054,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be47",
+        "id": "6048b56497bb2858d390be47",
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Segway Club: Gold, Logix City Centre, Noida",
         "sub_region": "Noida",
@@ -976,7 +1074,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be48",
+        "id": "6048b56497bb2858d390be48",
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Segway Club: Logix, Noida",
         "sub_region": "Noida",
@@ -999,7 +1097,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be49",
+        "id": "6048b56497bb2858d390be49",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Theatre of Dreams Eros One: Jangpura Extn",
         "sub_region": "Delhi",
@@ -1013,7 +1111,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4a",
+        "id": "6048b56497bb2858d390be4a",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club: ECX Chanakyapuri, Delhi",
         "sub_region": "Delhi",
@@ -1027,7 +1125,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4b",
+        "id": "6048b56497bb2858d390be4b",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Segway Club: Shalimar Bagh",
         "sub_region": "Delhi",
@@ -1044,7 +1142,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4c",
+        "id": "6048b56497bb2858d390be4c",
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Theatre of Dreams: Janak Place",
         "sub_region": "Delhi",
@@ -1058,7 +1156,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4d",
+        "id": "6048b56497bb2858d390be4d",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club Promenade: Vasant Kunj",
         "sub_region": "Delhi",
@@ -1078,7 +1176,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4e",
+        "id": "6048b56497bb2858d390be4e",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxzgRAQSzEfYUsmrExdr4bqB1sdlWL0NQw8A&usqp=CAU",
         "name": "Segway Club: Pacific, Dwarka",
         "sub_region": "Delhi",
@@ -1092,7 +1190,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be4f",
+        "id": "6048b56497bb2858d390be4f",
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Segway Club: Delux, Ambience Delhi",
         "sub_region": "Delhi",
@@ -1112,7 +1210,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be50",
+        "id": "6048b56497bb2858d390be50",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Select City Walk (Gold), Delhi",
         "sub_region": "Delhi",
@@ -1129,7 +1227,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be51",
+        "id": "6048b56497bb2858d390be51",
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Theatre of Dreams Sapphire 90 Mall: Gurugram",
         "sub_region": "Gurgaon",
@@ -1143,7 +1241,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be52",
+        "id": "6048b56497bb2858d390be52",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Plateau: Raheja Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1157,7 +1255,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be53",
+        "id": "6048b56497bb2858d390be53",
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Theatre of Dreams: Insignia At Epicuria, Nehru Place",
         "sub_region": "Delhi",
@@ -1177,7 +1275,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be54",
+        "id": "6048b56497bb2858d390be54",
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Sangam, Delhi",
         "sub_region": "Delhi",
@@ -1191,7 +1289,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be55",
+        "id": "6048b56497bb2858d390be55",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Plaza-CP, Delhi",
         "sub_region": "Delhi",
@@ -1205,7 +1303,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be56",
+        "id": "6048b56497bb2858d390be56",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Prem Garden: Unity One Mall Rohini, Delhi",
         "sub_region": "Delhi",
@@ -1219,7 +1317,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be57",
+        "id": "6048b56497bb2858d390be57",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Theatre of Dreams Gurgaon Ardee Mall",
         "sub_region": "Gurgaon",
@@ -1242,7 +1340,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be58",
+        "id": "6048b56497bb2858d390be58",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Gurgaon Sapphire 83",
         "sub_region": "Gurgaon",
@@ -1256,7 +1354,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be59",
+        "id": "6048b56497bb2858d390be59",
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Miraj Maximum Metropolis Mall: Gurgaon",
         "sub_region": "Gurgaon",
@@ -1270,7 +1368,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5a",
+        "id": "6048b56497bb2858d390be5a",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club: Star Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1284,7 +1382,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5b",
+        "id": "6048b56497bb2858d390be5b",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Plateau: TGIP",
         "sub_region": "Noida",
@@ -1301,7 +1399,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5c",
+        "id": "6048b56497bb2858d390be5c",
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Ambience Gold, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1318,7 +1416,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5d",
+        "id": "6048b56497bb2858d390be5d",
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Crown Interiorz Mall, Delhi Mathura Road",
         "sub_region": "Faridabad",
@@ -1332,7 +1430,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5e",
+        "id": "6048b56497bb2858d390be5e",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Mega Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1346,7 +1444,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be5f",
+        "id": "6048b56497bb2858d390be5f",
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Piyush Mahendra, Faridabad",
         "sub_region": "Faridabad",
@@ -1360,7 +1458,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be60",
+        "id": "6048b56497bb2858d390be60",
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Theatre of Dreams: Shipra Mall, Ghaziabad",
         "sub_region": "Ghaziabad",
@@ -1374,7 +1472,7 @@
         ]
       },
       {
-        "_id": "6048b56497bb2858d390be61",
+        "id": "6048b56497bb2858d390be61",
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Theatre of Dreams: Omaxe Connaught Place Mall, Greater Noida",
         "sub_region": "Greater Noida",

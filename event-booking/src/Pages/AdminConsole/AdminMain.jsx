@@ -50,6 +50,35 @@ import Select from 'react-select'
   for(let ii=0;ii<foods.length;ii++){
     row_f.push({'id':ii+1, 'Food': foods[ii].food_name, 'Popcorn': yesno(foods[ii].is_popcorn), 'Coke': yesno(foods[ii].is_coke), 'Combo': yesno(foods[ii].is_combo), 'Price': foods[ii].food_price})
   }
+  let col_us = [
+    { field: 'id', headerName: 'ID', width: 20 },
+    { field: 'Name', headerName: 'Name', width:100 },
+    { field: 'About', headerName: 'About', width: 510 },
+    { field: 'Booked Events', headerName: 'Booked Events', width: 150 },
+    { field: 'Phone', headerName: 'Phone', width: 100 },
+    { field: 'E-mail', headerName: 'E-mail', width: 140 },
+    { field: 'Friend Interest', headerName: 'Friend Interest', width: 130 },
+    { field: 'Friends', headerName: 'Friends', width: 100 },
+    { field: 'Friend Requests', headerName: 'Friend Requests', width: 150 }
+  ];
+  let row_us = [];
+  const users = db.users;
+  for(let ii=0;ii<users.length;ii++){
+    row_us.push({'id':ii+1, 'Name': users[ii].name, 'About':users[ii].about, 'Booked Events': users[ii].booked_events, 'Phone': users[ii].phone, 'E-mail': users[ii].email, 'Friend Interest': yesno(users[ii].friend_interest), 'Friends': users[ii].friends.length, 'Friend Requests': users[ii].friend_requests.length})
+  }
+  let col_org = [
+    { field: 'id', headerName: 'ID', width: 20 },
+    { field: 'Name', headerName: 'Name', width:100 },
+    { field: 'About', headerName: 'About', width: 600 },
+    { field: 'Organized Events', headerName: 'Organized Events', width: 150 },
+    { field: 'Phone', headerName: 'Phone', width: 100 },
+    { field: 'E-mail', headerName: 'E-mail', width: 140 }
+  ];
+  let row_org = [];
+  const orgns = db.organizers;
+  for(let ii=0;ii<orgns.length;ii++){
+    row_org.push({'id':ii+1, 'Name': orgns[ii].name, 'About':orgns[ii].about, 'Organized Events': orgns[ii].organized_events, 'Phone': orgns[ii].phone, 'E-mail': orgns[ii].email})
+  }
   let options_events = [];
   for(let ii=0;ii<events.length;ii++){
       options_events.push({'label': events[ii].name, 'value': events[ii].id})
@@ -58,20 +87,42 @@ export default function AdminLogin() {
     const [event,setEvent] = React.useState(false);
     const [venue,setVenue] = React.useState(false);
     const [food,setFood] = React.useState(false);
+    const [us,setUs] = React.useState(false);
+    const [org,setOrg] = React.useState(false);
     const handleEvents = () => {
-        setEvent(!event);
         setVenue(false);
         setFood(false);
+        setOrg(false);
+        setUs(false);
+        setEvent(!event);
     }
     const handleVenues = () => {
-        setVenue(!venue);
         setEvent(false);
         setFood(false);
+        setOrg(false);
+        setUs(false);
+        setVenue(!venue);
     }
     const handleFoods = () => {
         setVenue(false);
         setEvent(false);
+        setOrg(false);
+        setUs(false);
         setFood(!food);
+    }
+    const handleUs = () => {
+        setVenue(false);
+        setEvent(false);
+        setFood(false);
+        setOrg(false);
+        setUs(!us);
+    }
+    const handleOrg = () => {
+        setVenue(false);
+        setEvent(false);
+        setFood(false);
+        setUs(false);
+        setOrg(!org);
     }
     const createEvent = () => {
         let n = document.getElementById("name").value;
@@ -116,7 +167,7 @@ export default function AdminLogin() {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"_id": getMax(venues) ,"name": n, "capacity": c, "sub_region": r, "package":pt, "cancellation_availability":tf(t), "image":"", "timings":[]})
+          body: JSON.stringify({"id": getMax(venues) ,"name": n, "capacity": c, "sub_region": r, "package":pt, "cancellation_availability":tf(t), "image":"", "timings":[]})
         })
     }
     const createFood = () => {
@@ -130,7 +181,7 @@ export default function AdminLogin() {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"_id": getMax(foods) ,"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
+          body: JSON.stringify({"id": getMax(foods) ,"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
         })
     }
     const [evdet,setEvdet] = React.useState(-1);
@@ -152,7 +203,7 @@ export default function AdminLogin() {
     return (
         <div>
             <center>
-            <button style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'100px'}} onClick={handleEvents}>Events</button><button onClick={handleVenues} style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'100px'}}>Venues</button><button onClick={handleFoods} style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'100px'}}>Food</button>
+            <button style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'40px'}} onClick={handleUs}>Users</button><button style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'40px'}} onClick={handleOrg}>Organizers</button><button style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'40px'}} onClick={handleEvents}>Events</button><button onClick={handleVenues} style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'40px'}}>Venues</button><button onClick={handleFoods} style={{backgroundColor: 'red', height: '50px', width:'200px', borderRadius: '10px', border: '1px solid red', fontSize: '20px', margin:'40px'}}>Food</button>
             </center>
             {event && 
             <div style={{ height: 400, width: '100%', backgroundColor: 'gold'}}>
@@ -179,6 +230,26 @@ export default function AdminLogin() {
             <DataGrid
                     rows={row_f}
                     columns={col_f}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                />
+                </div>
+            }
+            {us && 
+            <div style={{ height: 400, width: '100%', backgroundColor: 'gold'}}>
+            <DataGrid
+                    rows={row_us}
+                    columns={col_us}
+                    pageSize={5}
+                    rowsPerPageOptions={[5]}
+                />
+                </div>
+            }
+            {org && 
+            <div style={{ height: 400, width: '80%', backgroundColor: 'gold', marginLeft: '150px'}}>
+            <DataGrid
+                    rows={row_org}
+                    columns={col_org}
                     pageSize={5}
                     rowsPerPageOptions={[5]}
                 />

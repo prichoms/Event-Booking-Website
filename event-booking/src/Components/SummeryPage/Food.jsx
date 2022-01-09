@@ -89,7 +89,7 @@ const Food = () => {
   const handleCount = (id, val) => {
     if (selectedFood.length < 5) {
       let selected = filteredFood.map((item) =>
-        item._id === id ? { ...item, count: item.count + val } : item
+        item.id === id ? { ...item, count: item.count + val } : item
       );
       setFliteredFood(selected);
     } else {

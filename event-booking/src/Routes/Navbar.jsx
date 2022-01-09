@@ -285,6 +285,14 @@ const Navbar = () => {
         );
       }
     }
+    else if (isAuth) {
+      return (
+        <>
+          <AccountCircleIcon style={{ fontSize: "40px" }} />
+          <div>Hi, User..</div>
+        </>
+      );
+    }
     return <></>;
   };
   const customStyles = {
