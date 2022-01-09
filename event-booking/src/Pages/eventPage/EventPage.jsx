@@ -1,3 +1,4 @@
+//event page
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getEvents } from "../../Redux/data/actions";
@@ -20,7 +21,7 @@ import TextField from '@mui/material/TextField';
 function valuetext(value) {
   return `${value}`;
 }
-
+//styling
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -60,17 +61,16 @@ const EventPage = () => {
     window.scrollTo(window.scrollX, 0);
   }, []);
   const data_temp = useSelector((state) => state.data);
-  console.log(data_temp);
   const handleOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
   const handleChange = (e, v) => {
     setRvalue(v);
   };
+  // put rating event 
   const handleRating = () => {
     let newdata = data;
     let per = (data.rating.no_of_ratings)*(data.rating.percentage) + rValue;
@@ -124,7 +124,7 @@ const EventPage = () => {
     }
     return ""
   }
-
+  //Login
   const handleCloseLogin = (email, pass, number) => {
     let r = "";
     if (document.getElementById('tab-1').checked) {
