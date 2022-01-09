@@ -99,6 +99,46 @@
       "id": 20,
       "name": "Shreyash",
       "feed": "Great Website!"
+    },
+    {
+      "id": 21,
+      "name": "A",
+      "feed": "Good"
+    },
+    {
+      "id": 22,
+      "name": "Shreyash",
+      "feed": "Food"
+    },
+    {
+      "id": 23,
+      "name": "A",
+      "feed": "gOOD"
+    },
+    {
+      "id": 24,
+      "name": "Shreyash",
+      "feed": "Good"
+    },
+    {
+      "id": 25,
+      "name": "Shreyash",
+      "feed": "Good"
+    },
+    {
+      "id": 26,
+      "name": "Shreyash",
+      "feed": "Ho"
+    },
+    {
+      "id": 27,
+      "name": "S",
+      "feed": "A"
+    },
+    {
+      "id": 28,
+      "name": "Sh",
+      "feed": "A"
     }
   ],
   "users": [
@@ -118,12 +158,12 @@
           "status": "accepted"
         },
         {
-          "id": 3,
+          "id": 4,
           "status": "accepted"
         },
         {
-          "id": 4,
-          "status": "accepted"
+          "id": 3,
+          "status": "requested"
         }
       ],
       "friend_requests": [],
@@ -139,7 +179,7 @@
         7
       ],
       "phone": "7021904275",
-      "email": "user16@gmail.com",
+      "email": "user1@gmail.com",
       "password": "user1"
     },
     {
@@ -154,10 +194,6 @@
       "friends": [
         {
           "id": 1,
-          "status": "accepted"
-        },
-        {
-          "id": 3,
           "status": "accepted"
         }
       ],
@@ -186,18 +222,9 @@
       "fav_genres": [
         "Action"
       ],
-      "friends": [
-        {
-          "id": 2,
-          "status": "accepted"
-        },
-        {
-          "id": 1,
-          "status": "accepted"
-        }
-      ],
+      "friends": [],
       "friend_requests": [
-        5
+        1
       ],
       "image": "https://i.imgur.com/n08A8NO.jpg",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
@@ -224,10 +251,6 @@
         "Action"
       ],
       "friends": [
-        {
-          "id": 5,
-          "status": "accepted"
-        },
         {
           "id": 1,
           "status": "accepted"
@@ -258,20 +281,7 @@
       "fav_genres": [
         "Action"
       ],
-      "friends": [
-        {
-          "id": 4,
-          "status": "accepted"
-        },
-        {
-          "id": 3,
-          "status": "requested"
-        },
-        {
-          "id": 6,
-          "status": "requested"
-        }
-      ],
+      "friends": [],
       "friend_requests": [],
       "image": "https://img.buzzfeed.com/buzzfeed-static/static/2019-01/23/13/asset/buzzfeed-prod-web-06/sub-buzz-1138-1548268729-1.jpg?crop=450:450;233,0",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
@@ -298,9 +308,7 @@
         "Action"
       ],
       "friends": [],
-      "friend_requests": [
-        5
-      ],
+      "friend_requests": [],
       "image": "https://static.stacker.com/s3fs-public/styles/slide_desktop/s3/2019-03/Screen%20Shot%202019-03-14%20at%2011.28.25%20AM.png",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
@@ -393,8 +401,8 @@
   "booking": [
     {
       "name": "Best of Laugh Store",
-      "date": "",
-      "day": "",
+      "date": 5,
+      "day": "Wednesday",
       "time": "07:40 PM",
       "venues_name": "INOX: Nehru Place",
       "silver": [
@@ -415,8 +423,8 @@
     },
     {
       "name": "Fitness First",
-      "date": "",
-      "day": "",
+      "date": 6,
+      "day": "Thursday",
       "time": "09:00 PM",
       "venues_name": "Cinepolis: DLF Avenue, Saket",
       "silver": [
@@ -438,8 +446,8 @@
     },
     {
       "name": "Fitness First",
-      "date": "",
-      "day": "",
+      "date": 7,
+      "day": "Friday",
       "time": "07:45 PM",
       "venues_name": "PVR: Logix, Noida",
       "silver": [
@@ -474,6 +482,7 @@
       "platinium": [],
       "price": 336,
       "total_price": 364,
+      "language": "English",
       "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
       "grade": "ua",
       "id": 4
@@ -497,8 +506,8 @@
     },
     {
       "name": "Fitness First",
-      "date": "",
-      "day": "",
+      "date": 2,
+      "day": "Sunday",
       "time": "03:15 PM",
       "venues_name": "Theatre of Dreams Eros One: Jangpura Extn",
       "silver": [],
@@ -513,8 +522,8 @@
     },
     {
       "name": "Stand up Solo",
-      "date": "",
-      "day": "",
+      "date": 1,
+      "day": "Saturday",
       "time": "07:40 PM",
       "venues_name": "Theatre of Dreams: Nehru Place",
       "silver": [
@@ -532,8 +541,8 @@
     },
     {
       "name": "Stand up Solo",
-      "date": "",
-      "day": "",
+      "date": 1,
+      "day": "Saturday",
       "time": "07:40 PM",
       "venues_name": "Theatre of Dreams: Nehru Place",
       "silver": [
@@ -677,6 +686,249 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00318931-frbraqrrnr-portrait.jpg",
       "grade": "ua",
       "id": 15
+    },
+    {
+      "name": "Avengers 4 watch party",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "01:45 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [],
+      "platinium": [
+        "D7",
+        "D8",
+        "D9",
+        "D10"
+      ],
+      "price": 1600,
+      "total_price": 2128,
+      "banner_image_url": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/d1pklzbuyaab0la-1552597012.jpg",
+      "grade": "ua",
+      "id": 16
+    },
+    {
+      "name": "Sunburn Music Festival",
+      "date": 12,
+      "day": "Wednesday",
+      "time": "02:40 PM",
+      "venues_name": "Prem Garden: DLF Avenue, Saket",
+      "silver": [
+        "B10",
+        "B11",
+        "B12",
+        "B13"
+      ],
+      "platinium": [],
+      "price": 2000,
+      "total_price": 4158,
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "grade": "ua",
+      "id": 17
+    },
+    {
+      "name": "Civil War ",
+      "date": 12,
+      "day": "Wednesday",
+      "time": "09:00 PM",
+      "venues_name": "Prem Garden: DLF Avenue, Saket",
+      "silver": [
+        "B10",
+        "B11",
+        "B12",
+        "B13",
+        "A13",
+        "A14"
+      ],
+      "platinium": [],
+      "price": 1000,
+      "total_price": 1177,
+      "banner_image_url": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_.jpg",
+      "id": 18
+    },
+    {
+      "name": "Civil War ",
+      "date": "",
+      "day": "",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B11"
+      ],
+      "platinium": [],
+      "price": 500,
+      "total_price": 528,
+      "banner_image_url": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_.jpg",
+      "id": 19
+    },
+    {
+      "name": "Civil War ",
+      "date": "",
+      "day": "",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B11"
+      ],
+      "platinium": [],
+      "price": 500,
+      "total_price": 528,
+      "banner_image_url": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_.jpg",
+      "id": 20
+    },
+    {
+      "name": "Civil War ",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "B10",
+        "B11"
+      ],
+      "platinium": [],
+      "price": 1000,
+      "total_price": 1278,
+      "banner_image_url": "https://m.media-amazon.com/images/M/MV5BMjQ0MTgyNjAxMV5BMl5BanBnXkFtZTgwNjUzMDkyODE@._V1_.jpg",
+      "id": 21
+    },
+    {
+      "name": "Doctor Strange: MOM",
+      "date": "",
+      "day": "",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "C8"
+      ],
+      "platinium": [],
+      "price": 500,
+      "total_price": 778,
+      "banner_image_url": "https://cdn.onebauer.media/one/media/61c3/5427/d02f/1ec8/e8e3/aea9/doctor-strange-mom-poster.jpg?format=jpg&quality=80&width=440&ratio=1-1&resize=aspectfit",
+      "grade": "ua",
+      "id": 22
+    },
+    {
+      "name": "Fitness First",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "01:55 PM",
+      "venues_name": "Segway Club: Gaur City, Greater Noida",
+      "silver": [
+        "C8",
+        "B6",
+        "B7"
+      ],
+      "platinium": [],
+      "price": 1000,
+      "total_price": 1148,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
+      "grade": "ua",
+      "id": 23
+    },
+    {
+      "name": "Sunburn Music Festival",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "07:15 PM",
+      "venues_name": "Theatre of Dreams: Omaxe Connaught Place Mall, Greater Noida",
+      "silver": [
+        "B7",
+        "B8"
+      ],
+      "platinium": [],
+      "price": 1000,
+      "total_price": 1307,
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "grade": "ua",
+      "id": 24
+    },
+    {
+      "name": "Sunburn Music Festival",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "07:15 PM",
+      "venues_name": "Theatre of Dreams: Omaxe Connaught Place Mall, Greater Noida",
+      "silver": [
+        "B7",
+        "B8"
+      ],
+      "platinium": [],
+      "price": 1000,
+      "total_price": 1307,
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "grade": "ua",
+      "id": 25
+    },
+    {
+      "name": "Sunburn Music Festival",
+      "date": 9,
+      "day": "Sunday",
+      "time": "09:00 PM",
+      "venues_name": "Prem Garden: DLF Avenue, Saket",
+      "silver": [],
+      "platinium": [
+        "A7",
+        "A8"
+      ],
+      "price": 800,
+      "total_price": 1078,
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "grade": "ua",
+      "id": 26
+    },
+    {
+      "name": "Sunburn Music Festival",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "07:40 PM",
+      "venues_name": "Theatre of Dreams: Nehru Place",
+      "silver": [
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "platinium": [],
+      "price": 1500,
+      "total_price": 1677,
+      "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
+      "grade": "ua",
+      "id": 27
+    },
+    {
+      "name": "Best of Laugh Store",
+      "date": 11,
+      "day": "Tuesday",
+      "time": "12:50 PM",
+      "venues_name": "Segway Club: Ambience, Gurgaon",
+      "silver": [
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "platinium": [],
+      "price": 1500,
+      "total_price": 1778,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxNiBKYW4%3D,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00301197-uuzmrjmmqn-portrait.jpg",
+      "grade": "ua",
+      "id": 28
+    },
+    {
+      "name": "Fitness First",
+      "date": 10,
+      "day": "Monday",
+      "time": "06:20 PM",
+      "venues_name": "Segway Club: Ambience, Gurgaon",
+      "silver": [
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "platinium": [],
+      "price": 1500,
+      "total_price": 1618,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
+      "grade": "ua",
+      "id": 29
     }
   ],
   "food": [
@@ -970,7 +1222,7 @@
   "venue": [
     [
       {
-        "id": "6048b56497bb2858d390be3f",
+        "id": 1,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Nehru Place",
         "sub_region": "Delhi",
@@ -987,7 +1239,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be40",
+        "id": 2,
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Prem Garden: DLF Avenue, Saket",
         "sub_region": "Delhi",
@@ -1007,7 +1259,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be41",
+        "id": 3,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Segway Club: Select City Walk, Delhi",
         "sub_region": "Delhi",
@@ -1024,7 +1276,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be42",
+        "id": 4,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Segway Club: Ambience, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1041,7 +1293,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be43",
+        "id": 5,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Pacific, Subhash Nagar, Delhi",
         "sub_region": "Delhi",
@@ -1055,8 +1307,8 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be44",
-        "image": "https://content3.jdmagicbox.com/comp/def_content/venue_halls/default-venue-halls-1.jpg?clr=1d2c49",
+        "id": 6,
+        "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZXZlbnR8ZW58MHx8MHx8&w=1000&q=80",
         "name": "Segway Club: MGF, Gurgaon",
         "sub_region": "Gurgaon",
         "package": 2024,
@@ -1072,7 +1324,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be45",
+        "id": 7,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Segway Club: Gaur City, Greater Noida",
         "sub_region": "Greater Noida",
@@ -1086,8 +1338,8 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be46",
-        "image": "https://content3.jdmagicbox.com/comp/def_content/venue_halls/default-venue-halls-1.jpg?clr=1d2c49",
+        "id": 8,
+        "image": "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZXZlbnR8ZW58MHx8MHx8&w=1000&q=80",
         "name": "Prem Garden: Janak Venue, New Delhi",
         "sub_region": "Delhi",
         "package": 2029,
@@ -1100,7 +1352,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be47",
+        "id": 9,
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Segway Club: Gold, Logix City Centre, Noida",
         "sub_region": "Noida",
@@ -1120,7 +1372,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be48",
+        "id": 10,
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Segway Club: Logix, Noida",
         "sub_region": "Noida",
@@ -1143,7 +1395,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be49",
+        "id": 11,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Theatre of Dreams Eros One: Jangpura Extn",
         "sub_region": "Delhi",
@@ -1157,7 +1409,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4a",
+        "id": 12,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club: ECX Chanakyapuri, Delhi",
         "sub_region": "Delhi",
@@ -1171,7 +1423,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4b",
+        "id": 13,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Segway Club: Shalimar Bagh",
         "sub_region": "Delhi",
@@ -1188,7 +1440,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4c",
+        "id": 14,
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Theatre of Dreams: Janak Place",
         "sub_region": "Delhi",
@@ -1202,7 +1454,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4d",
+        "id": 15,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club Promenade: Vasant Kunj",
         "sub_region": "Delhi",
@@ -1222,7 +1474,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4e",
+        "id": 16,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxzgRAQSzEfYUsmrExdr4bqB1sdlWL0NQw8A&usqp=CAU",
         "name": "Segway Club: Pacific, Dwarka",
         "sub_region": "Delhi",
@@ -1236,7 +1488,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be4f",
+        "id": 17,
         "image": "https://thumbs.dreamstime.com/b/kingdom-dreams-gurgaon-india-s-first-live-entertainment-theatre-leisure-destination-haryana-india-47945362.jpg",
         "name": "Segway Club: Delux, Ambience Delhi",
         "sub_region": "Delhi",
@@ -1256,7 +1508,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be50",
+        "id": 18,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Select City Walk (Gold), Delhi",
         "sub_region": "Delhi",
@@ -1273,7 +1525,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be51",
+        "id": 19,
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Theatre of Dreams Sapphire 90 Mall: Gurugram",
         "sub_region": "Gurgaon",
@@ -1287,7 +1539,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be52",
+        "id": 20,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Plateau: Raheja Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1301,7 +1553,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be53",
+        "id": 21,
         "image": "https://cdn.venuelook.com/uploads/space_947/1407235376_595x400.png",
         "name": "Theatre of Dreams: Insignia At Epicuria, Nehru Place",
         "sub_region": "Delhi",
@@ -1321,7 +1573,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be54",
+        "id": 22,
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Sangam, Delhi",
         "sub_region": "Delhi",
@@ -1335,7 +1587,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be55",
+        "id": 23,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Plaza-CP, Delhi",
         "sub_region": "Delhi",
@@ -1349,7 +1601,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be56",
+        "id": 24,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Prem Garden: Unity One Mall Rohini, Delhi",
         "sub_region": "Delhi",
@@ -1363,7 +1615,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be57",
+        "id": 25,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Theatre of Dreams Gurgaon Ardee Mall",
         "sub_region": "Gurgaon",
@@ -1386,7 +1638,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be58",
+        "id": 26,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Gurgaon Sapphire 83",
         "sub_region": "Gurgaon",
@@ -1400,7 +1652,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be59",
+        "id": 27,
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFB1_NCZFwXVITQt4rbUyn7RDcb5wEe3ql4I4HAswHaht_-nJmSvbKgV45oidflRpy28&usqp=CAU",
         "name": "Miraj Maximum Metropolis Mall: Gurgaon",
         "sub_region": "Gurgaon",
@@ -1414,7 +1666,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5a",
+        "id": 28,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Segway Club: Star Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1428,7 +1680,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5b",
+        "id": 29,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Plateau: TGIP",
         "sub_region": "Noida",
@@ -1445,7 +1697,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5c",
+        "id": 30,
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Ambience Gold, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1462,7 +1714,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5d",
+        "id": 30,
         "image": "https://www.holidify.com/images/cmsuploads/compressed/attr_1838_20190221142113jpg",
         "name": "Theatre of Dreams: Crown Interiorz Mall, Delhi Mathura Road",
         "sub_region": "Faridabad",
@@ -1476,7 +1728,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5e",
+        "id": 31,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Segway Club: Mega Mall, Gurgaon",
         "sub_region": "Gurgaon",
@@ -1490,7 +1742,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be5f",
+        "id": 32,
         "image": "https://hire4event.com/blogs/wp-content/uploads/2019/03/Best-Party-Places-in-DELHI-Noida.jpg",
         "name": "Segway Club: Piyush Mahendra, Faridabad",
         "sub_region": "Faridabad",
@@ -1504,7 +1756,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be60",
+        "id": 33,
         "image": "https://i.pinimg.com/originals/bc/69/35/bc6935d29458e144012fe0c607e3d728.jpg",
         "name": "Theatre of Dreams: Shipra Mall, Ghaziabad",
         "sub_region": "Ghaziabad",
@@ -1518,7 +1770,7 @@
         ]
       },
       {
-        "id": "6048b56497bb2858d390be61",
+        "id": 34,
         "image": "https://media.weddingz.in/images/1f03a66c7add9e61422d0d1203aeb083/best-wedding-reception-halls-in-patna-you-will-absolutely-fall-in-love-with.jpg",
         "name": "Theatre of Dreams: Omaxe Connaught Place Mall, Greater Noida",
         "sub_region": "Greater Noida",
@@ -1531,24 +1783,19 @@
           }
         ]
       }
-    ],
-    {
-      "id": -1,
-      "name": "",
-      "capacity": "",
-      "sub_region": "",
-      "package": "",
-      "cancellation_availability": false,
-      "image": "",
-      "timings": []
-    }
+    ]
   ],
   "events": [
     {
       "id": 11,
       "name": "How to become Successful by Sandeep Maheswari",
       "location": "DLF Avenue Saket: Delhi",
-      "feedback": [],
+      "feedback": [
+        {
+          "name": "Shreyash Mishra",
+          "rating": 80
+        }
+      ],
       "is_popular": true,
       "duration": "12h",
       "about": "How to become Successful by Sandeep Maheswari at DLF Avenue Saket: Delhi",
@@ -1561,8 +1808,8 @@
       "grade": "ua",
       "languages": "English, Hindi, Tamil, Telugu",
       "rating": {
-        "percentage": 88,
-        "no_of_ratings": 197
+        "percentage": 87,
+        "no_of_ratings": 198
       },
       "release_date": "29 Dec, 2020",
       "is_premier": false,
@@ -1883,12 +2130,12 @@
       "id": 16,
       "name": "Sunburn Music Festival",
       "location": "Sector 48,Gurgaon",
-      "grade": "ua",
       "languages": "English, Hindi, Tamil, Telugu",
+      "grade": "ua",
       "banner_image_url": "https://media.resources.festicket.com/image/372x525/center/middle/filters:quality(70)/www/photos/5386-poster.jpg",
       "rating": {
-        "percentage": 90,
-        "no_of_ratings": 1036
+        "percentage": 84,
+        "no_of_ratings": 1049
       },
       "feedback": [
         {
@@ -1906,6 +2153,58 @@
         {
           "name": "Lulu Yadav",
           "rating": 80
+        },
+        {
+          "name": "Shreyash",
+          "rating": 100
+        },
+        {
+          "name": "Shreyash",
+          "rating": 100
+        },
+        {
+          "name": "Shreyash",
+          "rating": 90
+        },
+        {
+          "name": "Sh",
+          "rating": 80
+        },
+        {
+          "name": "Shreyash Mishra",
+          "rating": 60
+        },
+        {
+          "name": "Shreyash",
+          "rating": 90
+        },
+        {
+          "name": "Ah",
+          "rating": 80
+        },
+        {
+          "name": "A",
+          "rating": 90
+        },
+        {
+          "name": "A",
+          "rating": 100
+        },
+        {
+          "name": "Shreyash",
+          "rating": 100
+        },
+        {
+          "name": "Shreyash",
+          "rating": 40
+        },
+        {
+          "name": "Shreyash",
+          "rating": 80
+        },
+        {
+          "name": "Shreyash",
+          "rating": 70
         }
       ],
       "is_popular": false,
@@ -2070,9 +2369,15 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxNiBKYW4%3D,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00301197-uuzmrjmmqn-portrait.jpg",
       "rating": {
         "percentage": 88,
-        "no_of_ratings": 197
+        "no_of_ratings": 198
       },
-      "feedback": [],
+      "languages": "English",
+      "feedback": [
+        {
+          "name": "Shreyash",
+          "rating": 100
+        }
+      ],
       "is_popular": false,
       "duration": "2h 41m",
       "location": "Sector 48,Gurgaon",
@@ -2124,12 +2429,16 @@
       "languages": "English, Hindi, Tamil, Telugu",
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00318931-frbraqrrnr-portrait.jpg",
       "rating": {
-        "percentage": 90,
-        "no_of_ratings": 172
+        "percentage": 89,
+        "no_of_ratings": 173
       },
       "feedback": [
         {
           "name": "chand",
+          "rating": 70
+        },
+        {
+          "name": "Shreyash",
           "rating": 70
         }
       ],

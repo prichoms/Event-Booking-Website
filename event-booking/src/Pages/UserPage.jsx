@@ -174,21 +174,21 @@ export default function UserPage({ action, handleCloseLogin }) {
         <table className="styled-table">
           <thead>
             <tr>
-            <th scope="col">S.No</th>
+            <th scope="col">Profile Pic</th>
               <th scope="col">Name</th>
               <th scope="col">Profile</th>
+              <th scope="col">Favorite Genres</th>
               <th scope="col">Send Request?</th>
             </tr>
           </thead>
           <tbody>
             {fraands.map((i) => (
                     <tr key={i.id}>
-                      <td>{i.id}</td>
+                      <td><center><img src={i.image} height="40px" width="40px" style={{borderRadius: "50px"}}/></center></td>
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}` }} target="_blank"><button>{i.name}'s Profile</button></Link></td>
-                      {/* <td><button onClick={sendRequest(i.id)} >Send Request</button></td>  */}
-                      <td><button style={{color: 'blue'}} onClick={() => sendRequest(i.id)}>Send</button></td>
-                      {/* onClick={sendRequest(i.id)} */}
+                      <td><center>{i.fav_genres.join(', ')}</center></td>
+                      <td><center><button style={{color: 'blue'}} onClick={() => sendRequest(i.id)}>Send</button></center></td>
                     </tr>
             ))}
           </tbody>
@@ -198,21 +198,21 @@ export default function UserPage({ action, handleCloseLogin }) {
         <table className="styled-table">
           <thead>
             <tr>
-            <th scope="col">S.No</th>
+            <th scope="col">Profile Pic</th>
               <th scope="col">Name</th>
               <th scope="col">Profile</th>
+              <th scope="col">Favorite Genres</th>
               <th scope="col">Accept Request?</th>
             </tr>
           </thead>
           <tbody>
             {acceptf.map((i) => (
                     <tr key={i.id}>
-                      <td>{i.id}</td>
+                      <td><center><img src={i.image} height="40px" width="40px" style={{borderRadius: "50px"}}/></center></td>
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}`}} target="_blank"><button>{i.name}'s Profile</button></Link></td>
-                      {/* <td><button onClick={sendRequest(i.id)} >Send Request</button></td>  */}
+                      <td>{i.fav_genres.join(', ')}</td>
                       <td><button style={{color: 'blue'}} onClick={() => acceptRequest(i.id)}>Accept</button></td>
-                      {/* onClick={sendRequest(i.id)} */}
                     </tr>
             ))}
           </tbody>
@@ -222,7 +222,6 @@ export default function UserPage({ action, handleCloseLogin }) {
         <table className="styled-table">
           <thead>
             <tr>
-            <th scope="col">S.No</th>
             <th scope="col">Profile Pic</th>
               <th scope="col">Name</th>
               <th scope="col">Profile</th>
@@ -233,7 +232,6 @@ export default function UserPage({ action, handleCloseLogin }) {
           <tbody>
             {goodfraands.map((i) => (
                     <tr key={i.id}>
-                      <td>{i.id}</td>
                       <td><center><img src={i.image} height="40px" width="40px" style={{borderRadius: "50px"}}/></center></td>
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}`} } target="_blank"><button>{i.name}'s Profile</button></Link></td>

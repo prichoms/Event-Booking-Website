@@ -136,9 +136,11 @@ export default function FullScreenDialog({ proceed }) {
             </div>}
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleMove} variant="contained" color="secondary">
+          <Link to="/">
+          <Button autoFocus variant="contained" color="secondary">
             OK
           </Button>
+          </Link>
         </DialogActions>
       </Dialog>
     </div >
