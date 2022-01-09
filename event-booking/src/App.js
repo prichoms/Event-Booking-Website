@@ -5,7 +5,7 @@ import Router from "./Routes/Router";
 
 function App() {
   const cw = window.location.href;
-  if (cw.includes("admin-console")){
+  if (cw.includes("admin")){
     return (<div className="App"><Router /></div>)
   }
   return (

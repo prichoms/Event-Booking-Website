@@ -170,7 +170,7 @@ export default function UserPage({ action, handleCloseLogin }) {
       }
       goodfraands = jsondata.users.filter(ele => fids.includes(ele.id));
       ret=(<center>
-        <h1 style={{color:"white"}}>Fraaaand Requests</h1>
+        <h1 style={{color:"white"}}>Send Friend Requests</h1>
         <table className="styled-table">
           <thead>
             <tr>
@@ -187,14 +187,14 @@ export default function UserPage({ action, handleCloseLogin }) {
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}` }} target="_blank"><button>{i.name}'s Profile</button></Link></td>
                       {/* <td><button onClick={sendRequest(i.id)} >Send Request</button></td>  */}
-                      <td><button onClick={() => sendRequest(i.id)}>Send</button></td>
+                      <td><button style={{color: 'blue'}} onClick={() => sendRequest(i.id)}>Send</button></td>
                       {/* onClick={sendRequest(i.id)} */}
                     </tr>
             ))}
           </tbody>
         </table>
 
-        <h1 style={{color:"white"}}>Accept Fraaaands</h1>
+        <h1 style={{color:"white"}}>Accept Friend Requests</h1>
         <table className="styled-table">
           <thead>
             <tr>
@@ -211,14 +211,14 @@ export default function UserPage({ action, handleCloseLogin }) {
                       <td>{i.name}</td>
                       <td><Link to={{ pathname: `/user/${i.id}`}} target="_blank"><button>{i.name}'s Profile</button></Link></td>
                       {/* <td><button onClick={sendRequest(i.id)} >Send Request</button></td>  */}
-                      <td><button onClick={() => acceptRequest(i.id)}>Accept</button></td>
+                      <td><button style={{color: 'blue'}} onClick={() => acceptRequest(i.id)}>Accept</button></td>
                       {/* onClick={sendRequest(i.id)} */}
                     </tr>
             ))}
           </tbody>
         </table>
 
-        <h1 style={{color:"white"}}>Fraaaands</h1>
+        <h1 style={{color:"white"}}>Friends</h1>
         <table className="styled-table">
           <thead>
             <tr>

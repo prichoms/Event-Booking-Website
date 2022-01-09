@@ -103,7 +103,7 @@ const EventPage = () => {
   }
 
   const redirect_admin = (id) => {
-    history.push(`/admin/${id}`)
+    history.push(`/organizer/${id}`)
   }
   const redirect_user = () => {
     history.push('/user')

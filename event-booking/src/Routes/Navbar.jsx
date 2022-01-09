@@ -104,7 +104,7 @@ const Navbar = () => {
   };
 
   const redirect_admin = (tid) => {
-    history.push(`/admin/${tid}`);
+    history.push(`/organizer/${tid}`);
   };
   const signout_user = () => {
     setAuth(false);
@@ -216,7 +216,7 @@ const Navbar = () => {
       a = (
         <>
           <Link
-            to={{ pathname: `/admin/${tid}` }}
+            to={{ pathname: `/organizer/${tid}` }}
             style={{ marginLeft: 20, color: "black" }}
           >
             <div>

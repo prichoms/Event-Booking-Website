@@ -120,6 +120,10 @@
         {
           "id": 3,
           "status": "accepted"
+        },
+        {
+          "id": 4,
+          "status": "accepted"
         }
       ],
       "friend_requests": [],
@@ -192,8 +196,10 @@
           "status": "accepted"
         }
       ],
-      "friend_requests": [],
-      "image": "https://i.imgflip.com/3sksxo.png",
+      "friend_requests": [
+        5
+      ],
+      "image": "https://i.imgur.com/n08A8NO.jpg",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
         8,
@@ -218,6 +224,14 @@
         "Action"
       ],
       "friends": [
+        {
+          "id": 5,
+          "status": "accepted"
+        },
+        {
+          "id": 1,
+          "status": "accepted"
+        }
       ],
       "friend_requests": [],
       "image": "https://i.imgflip.com/3sksxo.png",
@@ -245,9 +259,21 @@
         "Action"
       ],
       "friends": [
+        {
+          "id": 4,
+          "status": "accepted"
+        },
+        {
+          "id": 3,
+          "status": "requested"
+        },
+        {
+          "id": 6,
+          "status": "requested"
+        }
       ],
       "friend_requests": [],
-      "image": "https://i.imgflip.com/3sksxo.png",
+      "image": "https://img.buzzfeed.com/buzzfeed-static/static/2019-01/23/13/asset/buzzfeed-prod-web-06/sub-buzz-1138-1548268729-1.jpg?crop=450:450;233,0",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
         8,
@@ -271,10 +297,11 @@
       "fav_genres": [
         "Action"
       ],
-      "friends": [
+      "friends": [],
+      "friend_requests": [
+        5
       ],
-      "friend_requests": [],
-      "image": "https://i.imgflip.com/3sksxo.png",
+      "image": "https://static.stacker.com/s3fs-public/styles/slide_desktop/s3/2019-03/Screen%20Shot%202019-03-14%20at%2011.28.25%20AM.png",
       "about": "Shaktimaan was depicted as a character who had attained superhuman powers through meditation and five elements of nature. He is trained by a mystical sect of saints to fight against all odds and defeat the evil prevailing within the society. Shaktimaan's alter ego is Gangadhar, who is a funny geek.",
       "booked_events": [
         8,
@@ -631,11 +658,30 @@
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "grade": "ua",
       "id": 14
+    },
+    {
+      "name": "Stand up Solo",
+      "date": 12,
+      "day": "Wednesday",
+      "time": "07:45 PM",
+      "venues_name": "Segway Club: Logix, Noida",
+      "silver": [
+        "A5",
+        "A6",
+        "A7",
+        "A8"
+      ],
+      "platinium": [],
+      "price": 2000,
+      "total_price": 2127,
+      "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U2F0LCAxMSBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00318931-frbraqrrnr-portrait.jpg",
+      "grade": "ua",
+      "id": 15
     }
   ],
   "food": [
     {
-      "id": "604b7f2e3441b3fa78c36771",
+      "id": 1,
       "food_name": "Big Tub Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -646,7 +692,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36772",
+      "id": 2,
       "food_name": "Nachos with Salsa & Cheese Sauce + Large Coke(0) 500 COKE LARGE(1) 260.00 NACHOS JALAPENO WITH CHEESE & SALSA(1) 240.00 Nachos Combo",
       "is_popcorn": false,
       "is_coke": false,
@@ -657,7 +703,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36773",
+      "id": 3,
       "food_name": "Extra Large Coke",
       "is_popcorn": false,
       "is_coke": true,
@@ -668,7 +714,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36774",
+      "id": 4,
       "food_name": "Big Tub Cheese Popcorn + 2 Extra Large Coke(0) 800 COKE EXTRA LARGE(2) 580.00 POPCORN CHEESE BIG TUB(1) 220.00 Get Away Combo (Cheese)",
       "is_popcorn": false,
       "is_coke": false,
@@ -679,7 +725,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36775",
+      "id": 5,
       "food_name": "Big Tub Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -690,7 +736,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36776",
+      "id": 6,
       "food_name": "Tub Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -701,7 +747,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36777",
+      "id": 7,
       "food_name": "Georgia Cappuccino",
       "is_popcorn": false,
       "is_coke": false,
@@ -712,7 +758,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36778",
+      "id": 8,
       "food_name": "Price Breakup Tub Cheese Popcorn + 2 Large Coke(0) 720 COKE LARGE(2) 520.00 POPCORN CHEESE TUB(1) 200.00 Tub Combo (Cheese)",
       "is_popcorn": false,
       "is_coke": false,
@@ -723,7 +769,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36779",
+      "id": 9,
       "food_name": "Large Caramel Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -734,7 +780,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677a",
+      "id": 10,
       "food_name": "Large Cheese Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -745,7 +791,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677b",
+      "id": 11,
       "food_name": "Super Saver Combo",
       "is_popcorn": false,
       "is_coke": false,
@@ -756,7 +802,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677c",
+      "id": 12,
       "food_name": "Iced Tea 400ml",
       "is_popcorn": false,
       "is_coke": false,
@@ -767,7 +813,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677d",
+      "id": 13,
       "food_name": "Cardamom Tea",
       "is_popcorn": false,
       "is_coke": false,
@@ -778,7 +824,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677e",
+      "id": 14,
       "food_name": "Large Coke",
       "is_popcorn": false,
       "is_coke": true,
@@ -789,7 +835,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3677f",
+      "id": 15,
       "food_name": "Big Tub Caramel Popcorn",
       "is_popcorn": false,
       "is_coke": false,
@@ -800,7 +846,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36780",
+      "id": 16,
       "food_name": "Large Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -811,7 +857,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36781",
+      "id": 17,
       "food_name": "Tomato Premix Soup",
       "is_popcorn": false,
       "is_coke": true,
@@ -822,7 +868,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36782",
+      "id": 18,
       "food_name": "Price Breakup Big Tub Caramel Popcorn + 2 Extra Large Coke(0) 800 COKE EXTRA LARGE(2) 580.00 POPCORN CARAMEL BIG TUB(1) 220.00 Get Away Combo (Caramel)",
       "is_popcorn": false,
       "is_coke": false,
@@ -833,7 +879,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36783",
+      "id": 19,
       "food_name": "Greenfit Tea - Lemon Honey",
       "is_popcorn": false,
       "is_coke": true,
@@ -844,7 +890,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36784",
+      "id": 20,
       "food_name": "Tub Salted Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -855,7 +901,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36785",
+      "id": 21,
       "food_name": "Price Breakup Tub Caramel Popcorn + 2 Large Coke(0) 720 COKE LARGE(2) 520.00 POPCORN CARAMEL TUB(1) 200.00 Tub Combo (Caramel)",
       "is_popcorn": false,
       "is_coke": false,
@@ -866,7 +912,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36786",
+      "id": 22,
       "food_name": "Greenfit Tea - Tulsi",
       "is_popcorn": false,
       "is_coke": true,
@@ -877,7 +923,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36787",
+      "id": 23,
       "food_name": "Manchow Premix Soup",
       "is_popcorn": false,
       "is_coke": true,
@@ -888,7 +934,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36788",
+      "id": 24,
       "food_name": "Greenfit Tea - Vitality",
       "is_popcorn": false,
       "is_coke": true,
@@ -899,7 +945,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c36789",
+      "id": 25,
       "food_name": "Turmeric Latte",
       "is_popcorn": false,
       "is_coke": true,
@@ -910,7 +956,7 @@
       "count": 0
     },
     {
-      "id": "604b7f2e3441b3fa78c3678a",
+      "id": 26,
       "food_name": "Tub Caramel Popcorn",
       "is_popcorn": true,
       "is_coke": false,
@@ -1485,7 +1531,17 @@
           }
         ]
       }
-    ]
+    ],
+    {
+      "id": -1,
+      "name": "",
+      "capacity": "",
+      "sub_region": "",
+      "package": "",
+      "cancellation_availability": false,
+      "image": "",
+      "timings": []
+    }
   ],
   "events": [
     {
@@ -2011,7 +2067,6 @@
       "name": "Best of Laugh Store",
       "release_date": "2 Dec, 2019",
       "grade": "ua",
-      "languages": "English, Hindi, Tamil, Telugu",
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxNiBKYW4%3D,ots-29,otc-FFFFFF,oy-612,ox-24:oi-discovery-catalog@@icons@@bundle-icon-shadow-4x.png,ox-15,oy-15,ow-50/et00301197-uuzmrjmmqn-portrait.jpg",
       "rating": {
         "percentage": 88,
@@ -2026,7 +2081,7 @@
           "genre": "By Gaurav Gupta"
         }
       ],
-      "about": "Based on Jack Kirby`s Eternals, Marvel Studios brings yet another thrilling superhero flick with the saga of The Eternals, a race of immortal beings who lived on Earth and shaped its history and civilizations.",
+      "about": "laugh",
       "cast": [
         {
           "original_name": "Gal Gadot",
@@ -2129,13 +2184,17 @@
       "languages": "English, Hindi",
       "banner_image_url": "https://in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:ote-U3VuLCAxMiBEZWM%3D,ots-29,otc-FFFFFF,oy-612,ox-24/et00319381-jnqfbzrpje-portrait.jpg",
       "rating": {
-        "percentage": 90,
-        "no_of_ratings": 172
+        "percentage": 89,
+        "no_of_ratings": 173
       },
       "feedback": [
         {
           "name": "Shreyash",
           "rating": 80
+        },
+        {
+          "name": "Yaduraj",
+          "rating": 20
         }
       ],
       "is_popular": false,

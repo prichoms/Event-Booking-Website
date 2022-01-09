@@ -167,7 +167,7 @@ export default function AdminLogin() {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"id": getMax(venues) ,"name": n, "capacity": c, "sub_region": r, "package":pt, "cancellation_availability":tf(t), "image":"", "timings":[]})
+          body: JSON.stringify({"id": getMax(venues)+1,"name": n, "capacity": c, "sub_region": r, "package":pt, "cancellation_availability":tf(t), "image":"", "timings":[]})
         })
     }
     const createFood = () => {
@@ -176,12 +176,14 @@ export default function AdminLogin() {
         let r = document.getElementById("location").value;
         let t = document.getElementById("duration").value;
         let pt = document.getElementById("date").value;
+        let idm =  getMax(foods)+1;
+        console.log(idm);
         fetch("http://localhost:3001/food", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"id": getMax(foods) ,"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
+          body: JSON.stringify({"id": idm,"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
         })
     }
     const [evdet,setEvdet] = React.useState(-1);

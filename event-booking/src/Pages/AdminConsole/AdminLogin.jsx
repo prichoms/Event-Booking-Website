@@ -9,7 +9,7 @@ export default function AdminLogin() {
         const p = document.getElementById("password").value;
         if(e==="admin@gmail.com" && p==="admin"){
             alert("Successful Login");
-            history.push('/admin-console-main');
+            history.push('/admin-main');
         }
         else{
             alert("Unsuccessful Login");

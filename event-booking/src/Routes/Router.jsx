@@ -32,7 +32,7 @@ const Router = () => {
         <Route exact path="/modifyevents/:id">
           <ModifyEvent></ModifyEvent>
         </Route>
-        <Route exact path="/admin/:id">
+        <Route exact path="/organizer/:id">
           <AdminPage></AdminPage>
         </Route>
         <Route exact path="/user/:id">
@@ -50,10 +50,10 @@ const Router = () => {
         <Route exact path="/booktickets/:id">
           <BookTicketsPage></BookTicketsPage>
         </Route>
-        <Route exact path="/admin-console-login">
+        <Route exact path="/admin-login">
           <AdminLogin/>    
         </Route>
-        <Route exact path="/admin-console-main">
+        <Route exact path="/admin-main">
           <AdminMain/>    
         </Route>
         <Route>
