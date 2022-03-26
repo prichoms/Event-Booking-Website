@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const HomePage = () => {
+  
   const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const handleOpen = () => {
@@ -84,10 +85,14 @@ export const HomePage = () => {
   }, []);
   return (
     <div style={{ backgroundColor: "#16161D" }}>
+      <form action="../../post" method="post"
+    className="form">
+    <button type="submit">Connected?</button>
+  </form>
       <div>
         <AddCarousel />
         <div>
-        
+
           <button
             style={{
               cursor: "pointer",
@@ -154,7 +159,7 @@ export const HomePage = () => {
                 <h3><b>How would you rate the website?</b></h3>
                 <form>
                   <div class="form-group">
-                  <br />
+                    <br />
                     <TextField label="Name" id="name" name="name" placeholder="Your name" />
                     <br />
                   </div>
