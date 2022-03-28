@@ -27,3 +27,6 @@ connection.once('open',()=>{
 });
 
 app.use(express.json())
+
+const FeedRouter = require('./routes/feedroutes')
+app.use('/feeds', FeedRouter)
