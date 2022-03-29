@@ -33,3 +33,6 @@ app.use('/feeds', FeedRouter)
 
 const FoodRouter = require('./routes/foodroutes')
 app.use('/food', FoodRouter)
+
+const UserRouter = require('./routes/userroutes')
+app.use('/user', UserRouter)

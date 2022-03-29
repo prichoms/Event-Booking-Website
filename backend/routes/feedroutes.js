@@ -4,7 +4,7 @@ const Feed = require("../models/feed")
 const router = Router()
 
 // Get collection for Feed
-router.get("/get_feed", async (req, res) =>{
+router.get("/", async (req, res) =>{
     try {
         const data = await Feed.find()
         res.json(data)
@@ -14,7 +14,7 @@ router.get("/get_feed", async (req, res) =>{
 })
 
 //Create individual
-router.post("/add_feed", async (req, res) =>{
+router.post("/", async (req, res) =>{
     const data = new Feed({
         name: req.body.name,
         feedback: req.body.feedback,
@@ -41,8 +41,6 @@ router.patch("/:id", getFeed, async (req, res) =>{
     if(req.body.feedback != null){
         res.feeds.feedback = req.body.feedback
     }
-   
-
     try {
         const updatedFeed = await res.survey.save()
         res.status(200).json("Feed Data Updated !!")
