@@ -30,7 +30,7 @@ router.post("/", async (req, res) =>{
     })
     try {
         const newData = await data.save()
-        res.status(200).json("Food Added!")
+        res.status(200).json("User Added!")
     } catch (error) {
         res.status(400).json({message: error.message})
     }

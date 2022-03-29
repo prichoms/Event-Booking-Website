@@ -29,10 +29,16 @@ connection.once('open',()=>{
 app.use(express.json())
 
 const FeedRouter = require('./routes/feedroutes')
-app.use('/feeds', FeedRouter)
+app.use('/feed', FeedRouter)
 
 const FoodRouter = require('./routes/foodroutes')
 app.use('/food', FoodRouter)
 
 const UserRouter = require('./routes/userroutes')
-app.use('/user', UserRouter)
+app.use('/users', UserRouter)
+
+const OrganizerRouter = require('./routes/organizerroutes')
+app.use('/organizers', OrganizerRouter)
+
+const BookingRouter = require('./routes/bookingroutes')
+app.use('/booking', BookingRouter)
