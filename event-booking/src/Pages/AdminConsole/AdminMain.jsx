@@ -178,12 +178,12 @@ export default function AdminLogin() {
         let pt = document.getElementById("date").value;
         let idm =  getMax(foods)+1;
         console.log(idm);
-        fetch("http://localhost:3001/food", {
+        fetch("http://localhost:4000/food", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({"id": idm,"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
+          body: JSON.stringify({"food_name": n, "is_popcorn": c, "is_coke": r, "is_combo":t, "food_tag":n, "food_image":"", "count":0, "food_price":pt})
         })
     }
     const [evdet,setEvdet] = React.useState(-1);

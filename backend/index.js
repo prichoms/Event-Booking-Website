@@ -6,7 +6,7 @@ const mongoose =require('mongoose');
 require('dotenv').config();
 
 const app = express();
-
+app.use(cors());
 app.get("/", (req, res) => {
 res.send("Hello World!");
 });
@@ -30,3 +30,6 @@ app.use(express.json())
 
 const FeedRouter = require('./routes/feedroutes')
 app.use('/feeds', FeedRouter)
+
+const FoodRouter = require('./routes/foodroutes')
+app.use('/food', FoodRouter)

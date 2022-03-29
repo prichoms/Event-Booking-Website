@@ -34,11 +34,15 @@ export const storeSelectedFood = (selectedFood) => {
 export const getFood = () => (dispatch) => {
   dispatch(getFoodRequest());
   return axios
-    .get(`http://localhost:3001/food`)
+    .get(`http://localhost:4000/food`)
     .then((res) => {
+      console.log(res);
       dispatch(getFoodSuccess(res.data));
     })
-    .catch((err) => dispatch(getFoodFailure(err)));
+    .catch((err) => {
+      console.log(err);
+      dispatch(getFoodFailure(err));
+    });
 };
 
 

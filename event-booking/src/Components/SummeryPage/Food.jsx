@@ -16,6 +16,8 @@ const Food = () => {
   const [filteredFood, setFliteredFood] = React.useState([]);
   const foods = useSelector((state) => state.food.foods);
   const [active, setActive] = React.useState(init);
+
+  console.log(foods);
   const [selectedFood, setSelectedFood] = React.useState([]);
 
   React.useEffect(() => {
@@ -86,10 +88,10 @@ const Food = () => {
     }
   };
 
-  const handleCount = (id, val) => {
+  const handleCount = (_id, val) => {
     if (selectedFood.length < 5) {
       let selected = filteredFood.map((item) =>
-        item.id === id ? { ...item, count: item.count + val } : item
+        item._id === _id ? { ...item, count: item.count + val } : item
       );
       setFliteredFood(selected);
     } else {
