@@ -42,3 +42,9 @@ app.use('/organizers', OrganizerRouter)
 
 const BookingRouter = require('./routes/bookingroutes')
 app.use('/booking', BookingRouter)
+
+const VenueRouter = require('./routes/venueroutes')
+app.use('/venue', VenueRouter)
+
+const EventRouter = require('./routes/eventroutes')
+app.use('/events', EventRouter)
