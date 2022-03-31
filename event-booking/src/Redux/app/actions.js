@@ -7,6 +7,7 @@ import {
     GET_POPULAR_EVENTS_SUCCESS
 } from "./actionTypes"
 import datpop from '../../database/db.json';
+import axios from "axios";
 
 
 
@@ -32,8 +33,14 @@ const getEventsFailure = (error) => {
 
 export const getEvents = () => (dispatch) => {
     dispatch(getEventsRequest);
-    var filtered = datpop.events.filter(a => a.is_popular == false);
-    return dispatch(getEventsSuccess(filtered));
+    return axios.get("http://localhost:4000/events")
+        .then(res => {
+            console.log(res);
+            let data = res.data.filter(a => a.is_popular == false);
+            dispatch(getEventsSuccess(data))})
+        .catch(error => dispatch(getEventsFailure(error)))
+    // var filtered = datpop.events.filter(a => a.is_popular == false);
+    // return dispatch(getEventsSuccess(filtered));
 }
 
 
@@ -59,8 +66,11 @@ const getPopularEventsFailure = () => {
 
 export const getPopularEvents = () => dispatch => {
     dispatch(getPopularEventsRequest());
-    var filtered = datpop.events.filter(a => a.is_popular == true);
-   return dispatch(getPopularEventsSuccess(filtered));
+    return axios.get("http://localhost:4000/events")
+        .then(res => {
+            let data = res.data.filter(a => a.is_popular == true);
+            dispatch(getPopularEventsSuccess(data))})
+        .catch(error => dispatch(getPopularEventsFailure(error)))
         
 }
 

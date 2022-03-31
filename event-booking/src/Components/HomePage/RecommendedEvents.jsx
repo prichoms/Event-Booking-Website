@@ -1,11 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { EventCarousel } from "./EventCarousel";
 import styles from "../Styling/RecommendedEvents.module.css";
+import { getEvents, getPopularEvents } from "../../Redux/app/actions";
 import db from "../../database/db.json"
 
 export const RecommendedEvents = () => {
-    const events_data = db.events;
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getEvents());
+        dispatch(getPopularEvents());
+      }, []);
+    // const events_data = db.events;
+    const events_data = useSelector(state => state.app.events_data);
+    // const events_data = useSelector((state) => state.data.events.data);
     const filteredRecommendedEvents = events_data.filter(moive => (
         !moive.is_premier
     ))

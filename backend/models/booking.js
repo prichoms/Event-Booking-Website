@@ -25,7 +25,7 @@ const bookingSchema = new mongoose.Schema({
         type: [String],
         required: true
     },
-    platinum:{
+    platinium:{
         type: [String],
         required: true
     },

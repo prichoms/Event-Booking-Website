@@ -62,15 +62,15 @@ export const HomePage = () => {
   const feedback_submit = () => {
     let n = document.getElementById("name").value;
     let f = document.getElementById("feed").value;
-    fetch("http://localhost:3001/feed")
+    fetch("http://localhost:4000/feed")
       .then((res) => res.json())
       .then((result) =>
-        fetch("http://localhost:3001/feed", {
+        fetch("http://localhost:4000/feed", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ id: getMax(result) + 1, name: n, feed: f }),
+          body: JSON.stringify({ name: n, feed: f }),
         })
       );
     handleClose();

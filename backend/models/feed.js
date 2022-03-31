@@ -5,7 +5,7 @@ const feedSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    feedback:{
+    feed:{
         type: String,
         required: true
     },

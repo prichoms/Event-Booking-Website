@@ -22,7 +22,7 @@ router.post("/", async (req, res) =>{
         time: req.body.time,
         venues_name: req.body.venues_name,
         silver: req.body.silver,
-        platinum: req.body.platinum,
+        platinium: req.body.platinium,
         price: req.body.price,
         total_price: req.body.total_price,
         banner_image_url: req.body.banner_image_url,
@@ -62,8 +62,8 @@ router.patch("/:id", getBooking, async (req, res) =>{
     if(req.body.silver != null){
         res.bookings.silver = req.body.silver
     }
-    if(req.body.platinum != null){
-        res.bookings.platinum = req.body.platinum
+    if(req.body.platinium != null){
+        res.bookings.platinium = req.body.platinium
     }
     if(req.body.price != null){
         res.bookings.price = req.body.price

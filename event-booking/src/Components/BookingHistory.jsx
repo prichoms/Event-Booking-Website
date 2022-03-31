@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {  useSelector, useDispatch } from "react-redux";
 import { Ticket } from "./Ticket";
 import styles from "./Styling/Ticket.module.css";
 import db from "../database/db.json"
+import { getBookingDetails} from '../Redux/booking/action';
+
 
 export const BookingHistory = () => {
-    const booking_data = db.booking;
+    const dispatch = useDispatch();
+    dispatch(getBookingDetails()); 
+    let booking_data = useSelector(state => state.after_payment.booking_data);
+    console.log(booking_data);
     booking_data.sort((a, b) => {
         if (a.date === b.date) {
             const aShowTime = a.time.split(":").map(Number).shift();
@@ -26,7 +32,7 @@ export const BookingHistory = () => {
                 <div className={styles.ticket__container}>
                     {
                         booking_data?.map(item => {
-                            return item.date >= new Date().getDate() && <Ticket key={item.id} {...item} />
+                            return item.date >= new Date().getDate() && <Ticket key={item._id} {...item} />
                         })
                     }
                 </div>

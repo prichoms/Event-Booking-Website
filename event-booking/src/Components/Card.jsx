@@ -6,6 +6,7 @@ const Card = ({ banner_image_url, name , genre, id }) => {
     const history = useHistory();
     const handleChange = () => {
         history.push(`/events/${id}`)
+        window.location.reload(false);
     }
     return (
         <div onClick={handleChange} className={styles.card}> 

@@ -17,7 +17,7 @@ router.get("/", async (req, res) =>{
 router.post("/", async (req, res) =>{
     const data = new Feed({
         name: req.body.name,
-        feedback: req.body.feedback,
+        feed: req.body.feed,
     })
     try {
         const newData = await data.save()
@@ -38,8 +38,8 @@ router.patch("/:id", getFeed, async (req, res) =>{
     if(req.body.name != null){
         res.feeds.name = req.body.name
     }
-    if(req.body.feedback != null){
-        res.feeds.feedback = req.body.feedback
+    if(req.body.feed != null){
+        res.feeds.feed = req.body.feed
     }
     try {
         const updatedFeed = await res.survey.save()

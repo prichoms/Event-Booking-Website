@@ -27,9 +27,9 @@ const getVenuesFailure = () => {
 
 export const getVenues = () => dispatch => {
     dispatch(getVenuesRequest());
-    return axios.get("http://localhost:3001/venue")
+    return axios.get("http://localhost:4000/venue")
         .then(res => {
-            console.log(res.data[0]);
-            dispatch(getVenuesSuccess(res.data[0]))})
+            console.log(res.data);
+            dispatch(getVenuesSuccess(res.data))})
         .catch(error => dispatch(getVenuesFailure(error)))
 }

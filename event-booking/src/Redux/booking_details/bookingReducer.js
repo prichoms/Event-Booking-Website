@@ -8,8 +8,8 @@ import {
 
 const initState = {
     name: "",
-    date: "",
-    day: "",
+    date: 0,
+    day: "-",
     time: "",
     venues_name: "",
     silver: [],

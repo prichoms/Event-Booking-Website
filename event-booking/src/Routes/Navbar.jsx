@@ -315,7 +315,7 @@ const Navbar = () => {
   };
   const searchMovie = (e) => {
     history.push(`/events/${e.value}`);
-    window.location.reload(false);
+    // window.location.reload(false);
   };
   return (
     <div>

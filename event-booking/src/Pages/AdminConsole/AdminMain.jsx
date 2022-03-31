@@ -162,7 +162,7 @@ export default function AdminLogin() {
         let r = document.getElementById("location").value;
         let t = document.getElementById("duration").value;
         let pt = document.getElementById("date").value;
-        fetch("http://localhost:3001/venue", {
+        fetch("http://localhost:4000/venue", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -178,7 +178,7 @@ export default function AdminLogin() {
         let pt = document.getElementById("date").value;
         let idm =  getMax(foods)+1;
         console.log(idm);
-        fetch("http://localhost:4000/food", {
+        fetch("http://localhost:3001/food", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

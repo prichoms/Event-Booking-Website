@@ -3,6 +3,7 @@ import styles from "./Styling/Ticket.module.css";
 import { BsFillStarFill } from "react-icons/bs";
 
 export const Ticket = ({ banner_image_url, name, grade, date, day, time, venues_name, silver, platinium }) => {
+    console.log(platinium, name, date);
     return (
         <div className={styles.ticket}>
             <div className={styles.ticket__top}>

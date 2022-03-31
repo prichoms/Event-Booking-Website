@@ -22,7 +22,7 @@ export default function AdminPage({ action, handleCloseLogin }) {
   var feedback_data = jsondata.feed;
   const user_events = jsondata.organizers.filter((ele) => ele.id == id)[0]
     .organized_events;
-  const events_data = jsondata.events;
+  const events_data = useSelector(state => state.app.events_data);
   const booking_data = jsondata.booking;
   console.log(booking_data);
   const filteredEvents = events_data.filter((event) =>
