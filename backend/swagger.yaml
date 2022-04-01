@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.0.0
+servers:
+  - url: http://localhost:4000/
+    description:  Main (production) Backend server
+  - url: http://localhost:3000/
+    description:  Main (production) Frontend server
+tags:
+  - name: Event Management System
+    description:  WBD Database
+
+components:
+  schemas:
+    Event Management System:
+     

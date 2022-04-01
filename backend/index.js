@@ -9,7 +9,9 @@ const bparser = require('body-parser')
 var csrf = require('csurf')
 const fs = require('fs');
 const fsr = require('file-stream-rotator');
-
+const yaml = require('yamljs');
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = yaml.load('./swagger.yaml');
 const morgan = require('morgan')
 const multer = require('multer')
 
@@ -25,7 +27,11 @@ var csrfProtect = csrf({ cookie: true })
 app.use(bparser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
-
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerDocument)
+)
 app.get("/", (req, res) => {
 res.send("Hello World!");
 });
