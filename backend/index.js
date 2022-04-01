@@ -28,7 +28,7 @@ app.use(bparser.urlencoded({ extended: false }))
 app.use(cookieParser())
 
 app.use(
-  "/api-docs",
+  "/api",
   swaggerUi.serve,
   swaggerUi.setup(swaggerDocument)
 )
