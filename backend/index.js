@@ -50,7 +50,8 @@ const connection = mongoose.connection;
 connection.once('open',()=>{
     console.log("MongoDb Connection is Successful");
 });
-
+let logsinfo = fsr.getStream({ filename: "text.log", frequency: "1h", verbose: true });
+app.use(morgan('combined', { stream: logsinfo })) //tiny,dev,common,combined
 app.use(express.json())
 
 const FeedRouter = require('./routes/feedroutes')
