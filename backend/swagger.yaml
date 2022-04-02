@@ -837,10 +837,187 @@ components:
           description: The feedback of the show from the user.
     Food:
       type: object
+      required:
+        - food_name
+        - is_popcorn
+        - is_coke
+        - is_combo
+        - food_tag
+        - food_image
+        - food_price
+        - count
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the Food.
+        food_name:
+          type: string
+          description: The name of the food.
+        is_popcorn:
+          type: boolean
+          items:
+            type: string
+          description: Food is popcorn or not
+        is_coke:
+          type: boolean
+          items:
+            type: string
+          description: Food is Coke or not
+        is_combo:
+          type: boolean
+          items:
+            type: string
+          description: Food is combo pack or not
+        food_tag:
+          type: string
+          description: The tag of the food.
+        food_image:
+          type: string
+          description: URL of the food image
+        food_price:
+          type: string
+          description: The price of the food
+        count: 
+          type: integer
+          description: The count of the food
     Organizer:
       type: object
+      required:
+        - name
+        - about
+        - email
+        - phone
+        - password
+        - image
+        - organized_events
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the Organizer.
+        name:
+          type: string
+          description: The name of the organizer
+        about:
+          type: string
+          description: The about of the organizer
+        email:
+          type: string
+          description: The email of the organizer
+        phone:
+          type: string
+          description: The phone of the organizer
+        password:
+          type: string
+          description: The password of the organizer
+        image:
+          type: string
+          description: The iamge url of the organizer
+        organized_events:
+          type: array
+          items:
+            type: string
+          description: The password of the organizer
     User:
       type: object
+      required:
+        - name
+        - about
+        - email
+        - phone
+        - password
+        - image
+        - friend_interest
+        - fav_genres
+        - booked_event
+        - friends
+        - friend_requests
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the User.
+        name:
+          type: string
+          description: The name of the organizer
+        about:
+          type: string
+          description: The about of the organizer
+        email:
+          type: string
+          description: The email of the organizer
+        phone:
+          type: string
+          description: The phone of the organizer
+        password:
+          type: string
+          description: The password of the organizer
+        iamge:
+          type: string
+          description: The iamge url of the organizer
+        friend_interest:
+          type: boolean
+          items:
+            type: string
+          description: The user has sent friend request or not
+        fav_genres:
+          type: array
+          items:
+            type: string
+          description: The favourite genres of the user
+        booked_event:
+          type: array
+          items:
+            type: string
+          description: The booked events of the user
+        friends:
+          type: array
+          items:
+            type: string
+          description: The friends of the user
+        friend_requests:
+          type: array
+          items:
+            type: string
+          description: The friends request of the user
+
+        
     Venue:
       type: object
+      required:
+        - name
+        - image
+        - sub-region
+        - package
+        - capacity
+        - cancellation_availability
+        - timings
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the Venue.
+        name:
+          type: string
+          description: The name of the venue
+        iamge:
+          type: string
+          description: The iamge url of the user
+        sub-region:
+          type: string
+          description: The sub-region of the venue
+        package:
+          type: integer
+          description: The package of the venue
+        capacity:
+          type: integer
+          description: The capacity of the user
+        cancellation_availability:
+          type: boolean
+          items:
+            type: string
+          description: The cancellation availability at the venue
+        timings:
+          type: array
+          items:
+            type: string
+          description: The timing of the venue
+       
      
