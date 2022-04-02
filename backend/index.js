@@ -14,12 +14,15 @@ const swaggerUi = require('swagger-ui-express')
 const swaggerDocument = yaml.load('./swagger.yaml');
 const morgan = require('morgan')
 const multer = require('multer')
+const helmet = require("helmet");
+
 
 
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
+app.use(helmet());
 
 var parseForm = bparser.urlencoded({ extended: false });
 var csrfProtect = csrf({ cookie: true })
