@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from "axios"
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -77,36 +78,52 @@ const DialogActions = withStyles((theme) => ({
 
 export default function UserPage({ action, handleCloseLogin }) {
   const { id } = useParams();
-  let user_data = jsondata.users.filter(ele => ele.id == id)[0];
+  // let user_data = all_data.filter(ele => ele.id == id)[0];
+  const [user_data,setUdt] = React.useState({"name":"","about":"","booked_events":[],"phone":"","email":"","password":""});
+  const [all_data,setAllData] = React.useState([{"name":"","about":"","booked_events":[],"phone":"","email":"","password":""}])
+  const getuserData = (user_data) => {
+    return axios.get("http://localhost:4000/users")
+        .then(res => { 
+          let ud = res.data.filter(ele => ele.id == id)[0];
+          setUdt(ud); 
+          setAllData(res.data); 
+        })
+        .catch(error => console.log(error))
+  }
+  React.useEffect(() => {
+    getuserData();
+  }, []);
   let eligible=[];
   let fraands = [];
   let acceptf = [];
   let goodfraands = [];
+  const mapping_ids = {"1": "624455b77b88e84a609d2419","2":"624455b77b88e84a609d241b","3":"624455b77b88e84a609d241a","4":"624455b77b88e84a609d241c"}
   const sendRequest = (tid) => {
-    const target = jsondata.users.filter(ele => ele.id == tid)[0];
+    const target = all_data.filter(ele => ele.id == tid)[0];
     target.friend_requests.push(user_data.id);
-    fetch(`http://localhost:3001/users/${target.id}`, {
-      method: "PUT",
+    fetch(`http://localhost:4000/users/${target._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(target)
     })
     user_data.friends.push({"id":tid,"status":"requested"})
-    fetch(`http://localhost:3001/users/${user_data.id}`, {
-      method: "PUT",
+    fetch(`http://localhost:4000/users/${user_data._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(user_data)
     })
+    console.log(target);
     const index = eligible.indexOf(tid);
     if (index > -1) {
       eligible.splice(index, 1);
     }
   }
   const acceptRequest = (tid) => {
-    const target = jsondata.users.filter(ele => ele.id == tid)[0];
+    const target = all_data.filter(ele => ele.id == tid)[0];
     let s=0;
     for(let ii=0;ii<target.friends.length;ii++){
       if(target.friends[ii].id==user_data.id ){
@@ -118,8 +135,8 @@ export default function UserPage({ action, handleCloseLogin }) {
     if(s==0){
       target.friends.push({"id":user_data.id,"status":"accepted"})
     }
-    fetch(`http://localhost:3001/users/${tid}`, {
-      method: "PUT",
+    fetch(`http://localhost:4000/users/${target._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
@@ -130,8 +147,8 @@ export default function UserPage({ action, handleCloseLogin }) {
       user_data.friend_requests.splice(index, 1);
     }
     user_data.friends.push({"id":target.id,"status":"accepted"})
-    fetch(`http://localhost:3001/users/${user_data.id}`, {
-      method: "PUT",
+    fetch(`http://localhost:4000/users/${user_data._id}`, {
+      method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       },
@@ -141,17 +158,21 @@ export default function UserPage({ action, handleCloseLogin }) {
   const Fraand = () => {
     let ret;
     if (user_data.friend_interest){
-      let allusers = jsondata.users.filter(ele => ele.friend_interest  && ele.id!=user_data.id);
+      let allusers = all_data.filter(ele => ele.friend_interest  && ele.id!=user_data.id);
       let flg=0;
       let kk=0;
       let fids=[];
+      console.log(user_data.friends);
       for(let rr=0;rr<user_data.friends.length;rr++){
         fids.push(user_data.friends[rr].id);
       }
       eligible=[];
+      console.log(allusers.length);
       for(let i=0;i<allusers.length;i++){
         flg=0;
+        console.log(allusers[i]);
         if (!fids.includes(allusers[i].id)){
+          console.log(allusers[i].id);
           if(!user_data.friend_requests.includes(allusers[i].id)){
             if(!eligible.includes(allusers[i].id)){
               eligible.push(allusers[i].id);
@@ -159,16 +180,21 @@ export default function UserPage({ action, handleCloseLogin }) {
           }
         }
       }
-      fraands = jsondata.users.filter(ele => eligible.includes(ele.id))
+      fraands = all_data.filter(ele => eligible.includes(ele.id))
       acceptf = user_data.friend_requests;
-      acceptf = jsondata.users.filter(ele => acceptf.includes(ele.id));
+      acceptf = all_data.filter(ele => acceptf.includes(ele.id));
       fids=[];
       for(let rr=0;rr<user_data.friends.length;rr++){
         if(user_data.friends[rr].status=="accepted"){
           fids.push(user_data.friends[rr].id);
         }
       }
-      goodfraands = jsondata.users.filter(ele => fids.includes(ele.id));
+      goodfraands = all_data.filter(ele => fids.includes(ele.id));
+      console.log(fids);
+      console.log(allusers);
+      console.log(eligible);
+      console.log(fraands);
+      console.log(all_data);
       ret=(<center>
         <h1 style={{color:"white"}}>Send Friend Requests</h1>
         <table className="styled-table">
@@ -257,8 +283,8 @@ export default function UserPage({ action, handleCloseLogin }) {
     let jj = document.getElementById("email").value;
     if(jj!=""){
       user_data.email =jj;
-      fetch(`http://localhost:3001/users/${user_data.id}`, {
-        method: "PUT",
+      fetch(`http://localhost:4000/users/${user_data._id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json"
         },
@@ -289,8 +315,8 @@ export default function UserPage({ action, handleCloseLogin }) {
     let jj = document.getElementById("about").value;
     if(jj!=""){
       user_data.about =jj;
-      fetch(`http://localhost:3001/users/${user_data.id}`, {
-        method: "PUT",
+      fetch(`http://localhost:4000/users/${user_data._id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json"
         },
@@ -328,8 +354,8 @@ export default function UserPage({ action, handleCloseLogin }) {
     if (a != "" ){
       newdata.image = a;
     }
-    fetch(`http://localhost:3001/users/${newdata.id}`, {
-          method: "PUT",
+    fetch(`http://localhost:4000/users/${newdata._id}`, {
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },

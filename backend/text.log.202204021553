@@ -1,0 +1,3 @@
+::1 - - [02/Apr/2022:10:23:17 +0000] "PATCH /users/624455b77b88e84a609d2419 HTTP/1.1" 200 22 "-" "PostmanRuntime/7.28.4"
+::1 - - [02/Apr/2022:10:23:25 +0000] "GET /users/ HTTP/1.1" 200 3396 "-" "PostmanRuntime/7.28.4"
+::1 - - [02/Apr/2022:10:23:45 +0000] "GET /users/624455b77b88e84a609d241a HTTP/1.1" 200 602 "-" "PostmanRuntime/7.28.4"

@@ -130,8 +130,8 @@ const ModifyEvent = () => {
     if (a != "" ){
       newdata.about = a;
     }
-    fetch(`http://localhost:3001/events/${data.id}`, {
-          method: "PUT",
+    fetch(`http://localhost:4000/events/${data._id}`, {
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
@@ -170,8 +170,8 @@ const ModifyEvent = () => {
     if (a != "" ){
       newdata.banner_image_url = a;
     }
-    fetch(`http://localhost:3001/events/${data.id}`, {
-          method: "PUT",
+    fetch(`http://localhost:4000/events/${data._id}`, {
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
@@ -224,8 +224,8 @@ const ModifyEvent = () => {
     if (c != "" ){
       newdata.release_date = c;
     }
-    fetch(`http://localhost:3001/events/${data.id}`, {
-          method: "PUT",
+    fetch(`http://localhost:4000/events/${data._id}`, {
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },
@@ -284,7 +284,7 @@ const ModifyEvent = () => {
   function DeleteEvent(){
     let aa = window.confirm('Are you sure you want to delete this event?');
     if (aa) {
-      fetch(`http://localhost:3001/events/${data.id}`, {
+      fetch(`http://localhost:4000/events/${data._id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json"

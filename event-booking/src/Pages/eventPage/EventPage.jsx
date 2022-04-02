@@ -81,7 +81,7 @@ const EventPage = () => {
     let nid = {"name":n,"rating":rValue};
     brr.push(nid);
     newdata.feedback = brr;
-    fetch(`http://localhost:3001/events/${data.id}`, {
+    fetch(`http://localhost:4000/events/${data._id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json"

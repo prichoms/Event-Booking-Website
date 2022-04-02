@@ -1,0 +1,4 @@
+::1 - - [02/Apr/2022:06:45:30 +0000] "DELETE /users/624455861da852d57f76ac1c HTTP/1.1" 200 38 "-" "PostmanRuntime/7.28.4"
+::1 - - [02/Apr/2022:06:45:41 +0000] "DELETE /users/624455861da852d57f76ac17/ HTTP/1.1" 200 38 "-" "PostmanRuntime/7.28.4"
+::1 - - [02/Apr/2022:06:45:48 +0000] "DELETE /users/624455861da852d57f76ac18/ HTTP/1.1" 200 38 "-" "PostmanRuntime/7.28.4"
+::1 - - [02/Apr/2022:06:45:54 +0000] "DELETE /users/624455861da852d57f76ac19 HTTP/1.1" 200 38 "-" "PostmanRuntime/7.28.4"

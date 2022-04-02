@@ -69,7 +69,7 @@ const Navbar = () => {
   const [query, setQuery] = React.useState("");
   const [city, setCity] = React.useState("");
   const [open, setOpen] = React.useState(false);
-  const [user, setUser] = React.useState(-1);
+  const [user, setUser] = React.useState(1);
   const [usertype, setUsertype] = React.useState("");
   const [cityName, setCityName] = React.useState("Select City");
   const theme = useTheme();

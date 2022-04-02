@@ -111,10 +111,10 @@ export default function CreateEvent({ action, handleCloseLogin }) {
     brr.push(nid);
     let admindata =  data.organizers.filter(a => a.id == 1)[0];
     admindata.organized_events=brr;
-    fetch("http://localhost:3001/events")
+    fetch("http://localhost:4000/events")
       .then(res => res.json())
       .then(result =>
-        fetch("http://localhost:3001/events", {
+        fetch("http://localhost:4000/events", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -123,8 +123,8 @@ export default function CreateEvent({ action, handleCloseLogin }) {
         })
       )
       .then(r => 
-        fetch(`http://localhost:3001/organizers/${admin_id}`, {
-          method: "PUT",
+        fetch(`http://localhost:4000/organizers/${admindata._id}`, {
+          method: "PATCH",
           headers: {
             "Content-Type": "application/json"
           },

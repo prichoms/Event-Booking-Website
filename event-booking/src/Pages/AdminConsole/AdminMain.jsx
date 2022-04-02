@@ -81,7 +81,7 @@ import Select from 'react-select'
   }
   let options_events = [];
   for(let ii=0;ii<events.length;ii++){
-      options_events.push({'label': events[ii].name, 'value': events[ii].id})
+      options_events.push({'label': events[ii].name, 'value': events[ii]._id})
   }
 export default function AdminLogin() {
     const [event,setEvent] = React.useState(false);
@@ -134,7 +134,7 @@ export default function AdminLogin() {
         let lg = [...checked].map(option => option.value);
         let r = {"percentage":88, "no_of_ratings": 197};
         let c = [{"original_name": "Gal Gadot","character": "as Wonder Woman/ Diana Prince","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/gal-gadot-11088-17-10-2017-11-45-36.jpg"},{"original_name": "Chris Pine","character": "as Steve Trevor","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/chris-pine-435-24-03-2017-13-51-09.jpg"},{"original_name": "Kristen Wiig","character": "as Cheetah","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/kristen-wiig-9007-24-03-2017-12-36-08.jpg"},{"original_name": "Pedro Pascal","character": "as Max Lord","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/pedro-pascal-1065016-24-03-2017-17-40-11.jpg"},{"original_name": "Connie Nielsen","character": "as Hippolyta","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/connie-nielsen-7706-15-05-2017-11-42-20.jpg"},{"original_name": "Robin Wright","character": "as Antiope","cast_image": "https://in.bmscdn.com/iedb/artist/images/website/poster/large/robin-wright-22180-24-03-2017-12-31-27.jpg"}]
-        fetch("http://localhost:3001/events", {
+        fetch("http://localhost:4000/events", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -178,7 +178,7 @@ export default function AdminLogin() {
         let pt = document.getElementById("date").value;
         let idm =  getMax(foods)+1;
         console.log(idm);
-        fetch("http://localhost:3001/food", {
+        fetch("http://localhost:4000/food", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -193,7 +193,7 @@ export default function AdminLogin() {
     function DeleteEvent(){
         let aa = window.confirm('Are you sure you want to delete this event?');
         if (aa) {
-          fetch(`http://localhost:3001/events/${evdet}`, {
+          fetch(`http://localhost:4000/events/${evdet}`, {
               method: "DELETE",
               headers: {
                 "Content-Type": "application/json"
