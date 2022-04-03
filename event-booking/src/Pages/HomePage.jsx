@@ -85,10 +85,6 @@ export const HomePage = () => {
   }, []);
   return (
     <div style={{ backgroundColor: "#16161D" }}>
-      <form action="../../post" method="post"
-    className="form">
-    <button type="submit">Connected?</button>
-  </form>
       <div>
         <AddCarousel />
         <div>
