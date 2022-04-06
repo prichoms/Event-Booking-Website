@@ -1,0 +1,4 @@
+::1 - - [06/Apr/2022:12:46:00 +0000] "GET /users HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
+::1 - - [06/Apr/2022:12:46:00 +0000] "GET /events HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
+::1 - - [06/Apr/2022:12:46:01 +0000] "GET /events HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
+::1 - - [06/Apr/2022:12:46:15 +0000] "PATCH /users/624455b77b88e84a609d2419 HTTP/1.1" 200 22 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"

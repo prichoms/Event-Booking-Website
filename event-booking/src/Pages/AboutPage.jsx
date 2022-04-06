@@ -2,6 +2,7 @@ import React from 'react';
 import '../Components/Styling/LoginPag.css'
 import '../Components/Styling/AboutPage.css'
 import naveen from "../static/naveen.jpeg"
+import yaduraj from "../static/yaduraj.jpeg"
 
 
 export default function AboutPage({ action, handleCloseLogin }) {
@@ -39,7 +40,7 @@ export default function AboutPage({ action, handleCloseLogin }) {
         <div class="box">
             <div class="top-bar"></div>
             <div class="content">
-                <img src="https://media-exp1.licdn.com/dms/image/C5103AQHQTVbEUI1_aQ/profile-displayphoto-shrink_200_200/0/1579593645085?e=1643241600&v=beta&t=0Ae5HWSYSpjPPoVHt3HQoswoKBl9wYJAA5rD7276A7U"
+                <img src="https://gdsciiits.netlify.app/static/media/shreyash_mishra.3f9cfc3431e4c7dff3dc.png"
                     alt=""/>
                 <strong>Shreyash Mishra</strong>
                 <p>S20190010120</p>
@@ -66,7 +67,7 @@ export default function AboutPage({ action, handleCloseLogin }) {
         <div class="box">
             <div class="top-bar"></div>
             <div class="content">
-                <img src="https://media-exp1.licdn.com/dms/image/C5103AQE5wI9lOPBApg/profile-displayphoto-shrink_100_100/0/1571461881884?e=1643846400&v=beta&t=-ioqWLETsXQNuGz78BfHYoIHTdGyrLS8RNSya63J59A"
+                <img src={yaduraj}
                     alt=""/>
                 <strong>Yaduraj Deshmukh</strong>
                 <p>S20190010194</p>

@@ -1,7 +1,0 @@
-::1 - - [02/Apr/2022:10:22:17 +0000] "GET /users HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:24 +0000] "PATCH /users/624455b77b88e84a609d241a HTTP/1.1" 200 22 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:24 +0000] "PATCH /users/624455b77b88e84a609d2419 HTTP/1.1" 200 22 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:43 +0000] "GET /events HTTP/1.1" 200 161590 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:43 +0000] "GET /users HTTP/1.1" 200 3483 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:43 +0000] "GET /events HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [02/Apr/2022:10:22:47 +0000] "GET /users/624455b77b88e84a609d2419 HTTP/1.1" 200 1612 "-" "PostmanRuntime/7.28.4"

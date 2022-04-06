@@ -1,2 +1,0 @@
-::1 - - [02/Apr/2022:06:44:11 +0000] "DELETE /users/624455b77b88e84a609d2418 HTTP/1.1" 200 38 "-" "PostmanRuntime/7.28.4"
-::1 - - [02/Apr/2022:06:44:18 +0000] "GET /users HTTP/1.1" 200 7605 "-" "PostmanRuntime/7.28.4"
