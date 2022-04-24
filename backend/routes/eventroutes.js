@@ -1,17 +1,40 @@
 const Router  = require("express");
 const Event = require("../models/Events")
+const redis = require('redis');
 
+const REDIS_PORT = process.env.PORT || 6379;
+const redis_client = redis.createClient(REDIS_PORT);
+redis_client.connect();
 const router = Router()
 
 // Get collection for Event
-router.get("/", async (req, res) =>{
-    try {
-        const data = await Event.find()
-        res.json(data)
+async function getEventsAll (req,res,next){
+    try{
+        const api_data = await Event.find()
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        redis_client.setEx('Allevents',3600,JSON.stringify(api_data))
+        res.json(api_data)
     } catch (error) {
         res.status(400).json({message: error.message})
     }
-})
+}
+async function Alleventscache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const value = await redis_client.get('Allevents')
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/",Alleventscache,getEventsAll)
+
 
 //Create new individual
 router.post("/", async (req, res) =>{
@@ -39,10 +62,41 @@ router.post("/", async (req, res) =>{
     }
 })
 
-//Get individual
-router.get("/:id", getEvent, (req, res) =>{
-    res.status(200).json(res.events)
-})
+// Get collection for Event
+async function getEventsOne (req,res,next){
+    try{
+        const api_data = await Event.findById(req.params.id)
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Event'.concat(req.params.id.toString())
+        redis_client.setEx(key,3600,JSON.stringify(api_data))
+        res.json(api_data)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+}
+async function Eventscache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Event'.concat(req.params.id.toString())
+        const value = await redis_client.get(key)
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/:id",Eventscache,getEventsOne)
+
+// //Get individual
+// router.get("/:id", getEvent, (req, res) =>{
+//     res.status(200).json(res.events)
+// })
+
 
 
 //update individual

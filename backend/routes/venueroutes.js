@@ -1,17 +1,39 @@
 const Router  = require("express");
 const Venue = require("../models/Venue")
+const redis = require('redis');
 
+const REDIS_PORT = process.env.PORT || 6379;
+const redis_client = redis.createClient(REDIS_PORT);
+redis_client.connect();
 const router = Router()
 
 // Get collection for Venue
-router.get("/", async (req, res) =>{
-    try {
-        const data = await Venue.find()
-        res.json(data)
+async function getVenueAll (req,res,next){
+    try{
+        const api_data = await Venue.find()
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        redis_client.setEx('Allvenue',3600,JSON.stringify(api_data))
+        res.json(api_data)
     } catch (error) {
         res.status(400).json({message: error.message})
     }
-})
+}
+async function Allvenuecache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const value = await redis_client.get('Allvenue')
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/",Allvenuecache,getVenueAll)
 
 //Create new individual
 router.post("/", async (req, res) =>{
@@ -33,9 +55,34 @@ router.post("/", async (req, res) =>{
 })
 
 //Get individual
-router.get("/:id", getVenue, (req, res) =>{
-    res.status(200).json(res.venues)
-})
+async function getVenueOne (req,res,next){
+    try{
+        const api_data = await Venue.findById(req.params.id)
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Venue'.concat(req.params.id.toString())
+        redis_client.setEx(key,3600,JSON.stringify(api_data))
+        res.json(api_data)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+}
+async function Venuecache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Venue'.concat(req.params.id.toString())
+        const value = await redis_client.get(key)
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/:id",Venuecache,getVenueOne)
 
 
 //update individual

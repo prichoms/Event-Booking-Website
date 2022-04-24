@@ -1,0 +1,5 @@
+::1 - - [24/Apr/2022:04:09:35 +0000] "GET /food HTTP/1.1" 200 7877 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
+::1 - - [24/Apr/2022:04:09:36 +0000] "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 171 "-" "Safari/17612.4.9.1.5 CFNetwork/1329 Darwin/21.3.0"
+::1 - - [24/Apr/2022:04:09:36 +0000] "GET /apple-touch-icon.png HTTP/1.1" 404 159 "-" "Safari/17612.4.9.1.5 CFNetwork/1329 Darwin/21.3.0"
+::1 - - [24/Apr/2022:04:09:59 +0000] "GET /events HTTP/1.1" 400 41 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
+::1 - - [24/Apr/2022:04:09:59 +0000] "GET /event HTTP/1.1" 404 144 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"

@@ -1,17 +1,39 @@
 const Router  = require("express");
 const Food = require("../models/food")
+const redis = require('redis');
 
+const REDIS_PORT = process.env.PORT || 6379;
+const redis_client = redis.createClient(REDIS_PORT);
+redis_client.connect();
 const router = Router()
 
 // Get collection for Food
-router.get("/", async (req, res) =>{
-    try {
-        const data = await Food.find()
-        res.json(data)
+async function getFoodAll (req,res,next){
+    try{
+        const api_data = await Food.find()
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        redis_client.setEx('Allfood',3600,JSON.stringify(api_data))
+        res.json(api_data)
     } catch (error) {
         res.status(400).json({message: error.message})
     }
-})
+}
+async function Allfoodcache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const value = await redis_client.get('Allfood')
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/",Allfoodcache,getFoodAll)
 
 //Create new individual
 router.post("/", async (req, res) =>{
@@ -34,10 +56,34 @@ router.post("/", async (req, res) =>{
 })
 
 //Get individual
-router.get("/:id", getFood, (req, res) =>{
-    res.status(200).json(res.foods)
-})
-
+async function getFoodOne (req,res,next){
+    try{
+        const api_data = await Food.findById(req.params.id)
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Food'.concat(req.params.id.toString())
+        redis_client.setEx(key,3600,JSON.stringify(api_data))
+        res.json(api_data)
+    } catch (error) {
+        res.status(400).json({message: error.message})
+    }
+}
+async function Foodcache (req,res,next){
+    try{
+        redis_client.on('error', (err) => console.log('Redis Client Error', err));
+        const key = 'Food'.concat(req.params.id.toString())
+        const value = await redis_client.get(key)
+        if (value!=null){
+            const obj = JSON.parse(value.toString());
+            res.json(obj)
+        }
+        else{
+            next();
+        }
+    }catch(error){
+        throw error;
+    }
+}
+router.get("/:id",Foodcache,getFoodOne)
 
 //update individual
 router.patch("/:id", getFood, async (req, res) =>{
