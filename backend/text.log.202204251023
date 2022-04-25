@@ -1,7 +1,0 @@
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:00 +0000] "GET /events HTTP/1.1" 200 117802 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:13 +0000] "GET /events HTTP/1.1" 200 117802 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:13 +0000] "POST /events HTTP/1.1" 400 375 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:24 +0000] "GET /events HTTP/1.1" 200 117802 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:24 +0000] "POST /events HTTP/1.1" 400 375 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:49 +0000] "GET /events HTTP/1.1" 200 117802 "-" "node-superagent/3.8.3"
-::ffff:127.0.0.1 - - [25/Apr/2022:04:53:49 +0000] "POST /events HTTP/1.1" 400 375 "-" "node-superagent/3.8.3"

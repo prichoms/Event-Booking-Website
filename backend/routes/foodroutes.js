@@ -2,8 +2,11 @@ const Router  = require("express");
 const Food = require("../models/food")
 const redis = require('redis');
 
-const REDIS_PORT = process.env.PORT || 6379;
-const redis_client = redis.createClient(REDIS_PORT);
+const url = `redis://redis-14479.c301.ap-south-1-1.ec2.cloud.redislabs.com:14479`;
+const redis_client = redis.createClient({
+    url,
+    password: "liwaro9995@wowcg.com"
+});
 redis_client.connect();
 const router = Router()
 
