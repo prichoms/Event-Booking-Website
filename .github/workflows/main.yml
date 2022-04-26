@@ -17,10 +17,7 @@ jobs:
         run: npm install
       - name: Install mocha
         working-directory: ./backend
-        run: | 
-          npm install -g mocha 
-          npm install -g chai 
-          npm install -g chai-http
+        run: npm install -g mocha chai chai-http
       - name: Run Test
         working-directory: ./backend
-        run: mocha test
+        run: node test
