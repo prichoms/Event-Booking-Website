@@ -54,15 +54,13 @@ After clicking, Proceed button, the user can make the payment and will be redire
 To run the program offline, follow the following steps:
 * Install NPM (Node Package Manager)
 * Clone the repository
-* Open Terminal & Go to the path `\FSD-2\event-booking` and Execute Following Commands  :
+* Open Terminal & Go to the path `.\event-booking` and Execute Following Commands  :
 * `npm i`
-*  `npm install redux react-redux redux-thunk react-router-dom material-ui/@core @material-ui/icons @material-ui/lab antd react-multi-carousel`
 
-#### To start the server you have to open two terminal on the same path (`\FSD-2\event-booking`)
+#### To start the server you have to open two terminal on the same path (`.\event-booking`)
 * On first terminal execute
 * `npm run start`
-* On second terminal execute
-* `npx json-server --watch src/database/db.json --port 3001`
+
 For any queries, reach out to the Developers :
 
 | NAME | ROLL NO |
