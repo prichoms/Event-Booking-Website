@@ -1,42 +1,25 @@
-version: '2.3'
+version: "2.2"
 
 services:
   server:
     build:
-      context: ./server
+      context: ./backend
       dockerfile: Dockerfile
-    image: myapp-server
-    container_name: myapp-node-server
-    command: /usr/src/app/node_modules/.bin/nodemon server.js
-    volumes:
-      - ./server/: "/home/siddharth/Desktop/Event-Booking-Website/backend/index/usr/src/app/node_modules"
+    image: backend
+    container_name: event-booking-backend
+    command: nodemon index.js
     ports:
-      - "5000:5000"
-    depends_on:
-      - mongo
-    env_file: ./server/.env
-    environment:
-      - NODE_ENV=development
+      - "4000:4000"
     networks:
       - app-network
-  mongo:
-    image: mongo
-    volumes:
-      - data-volume:/data/db
-    ports:
-      - "27017:27017"
-    networks:
-      - app-network
+
   client:
     build:
-      context: ./client
+      context: ./event-booking
       dockerfile: Dockerfile
-    image: myapp-client
-    container_name: myapp-react-client
-    command: npm start
-    volumes:
-      - ./client/: "/home/siddharth/Desktop/Event-Booking-Website/event-booking/src/app"
-      - /usr/app/node_modules
+    image: frontend
+    container_name: event-booking-frontend
+    command: npm run start
     depends_on:
       - server
     ports:
@@ -45,11 +28,11 @@ services:
       - app-network
 
 networks:
-    app-network:
-        driver: bridge
+  app-network:
+    driver: bridge
 
 volumes:
-    data-volume:
-    node_modules:
-    web-root:
-      driver: local
+  data-volume:
+  node_modules:
+  web-root:
+    driver: local

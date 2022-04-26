@@ -1,5 +1,5 @@
 const Router  = require("express");
-const Event = require("../models/Events")
+const Event = require("../models/events")
 const redis = require('redis');
 
 // const REDIS_PORT = process.env.PORT || 6379;

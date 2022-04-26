@@ -1,5 +1,5 @@
 const Router  = require("express");
-const Venue = require("../models/Venue")
+const Venue = require("../models/venue")
 const redis = require('redis');
 
 const url = `redis://redis-14479.c301.ap-south-1-1.ec2.cloud.redislabs.com:14479`;
