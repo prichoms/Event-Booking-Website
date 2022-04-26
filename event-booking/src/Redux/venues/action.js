@@ -27,7 +27,7 @@ const getVenuesFailure = () => {
 
 export const getVenues = () => dispatch => {
     dispatch(getVenuesRequest());
-    return axios.get("http://localhost:4000/venue")
+    return axios.get("http://chomspro.herokuapp.com/venue")
         .then(res => {
             console.log(res.data);
             dispatch(getVenuesSuccess(res.data))})
