@@ -6,7 +6,7 @@ export default function AdminLogin() {
     let val;
     const [users, setUsers] = React.useState([]);
     async function getuserdata(){
-        let val = await fetch('http://localhost:4000/admins')
+        let val = await fetch('http://chomspro.herokuapp.com/admins')
             .then(res => res.json())
             .then(json => {
                 return json
@@ -55,7 +55,7 @@ export default function AdminLogin() {
             alert("Invalid Key.")
             return
         }
-        fetch("http://localhost:4000/admins", {
+        fetch("http://chomspro.herokuapp.com/admins", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"

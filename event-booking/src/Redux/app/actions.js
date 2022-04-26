@@ -33,7 +33,7 @@ const getEventsFailure = (error) => {
 
 export const getEvents = () => (dispatch) => {
     dispatch(getEventsRequest);
-    return axios.get("http://localhost:4000/events")
+    return axios.get("http://chomspro.herokuapp.com/events")
         .then(res => {
             console.log(res);
             let data = res.data.filter(a => a.is_popular == false);
@@ -66,7 +66,7 @@ const getPopularEventsFailure = () => {
 
 export const getPopularEvents = () => dispatch => {
     dispatch(getPopularEventsRequest());
-    return axios.get("http://localhost:4000/events")
+    return axios.get("http://chomspro.herokuapp.com/events")
         .then(res => {
             let data = res.data.filter(a => a.is_popular == true);
             dispatch(getPopularEventsSuccess(data))})

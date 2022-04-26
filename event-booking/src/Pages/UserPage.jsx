@@ -82,7 +82,7 @@ export default function UserPage({ action, handleCloseLogin }) {
   const [user_data,setUdt] = React.useState({"name":"","about":"","booked_events":[],"phone":"","email":"","password":""});
   const [all_data,setAllData] = React.useState([{"name":"","about":"","booked_events":[],"phone":"","email":"","password":""}])
   const getuserData = (user_data) => {
-    return axios.get("http://localhost:4000/users")
+    return axios.get("http://chomspro.herokuapp.com/users")
         .then(res => { 
           let ud = res.data.filter(ele => ele.id == id)[0];
           setUdt(ud); 
@@ -101,7 +101,7 @@ export default function UserPage({ action, handleCloseLogin }) {
   const sendRequest = (tid) => {
     const target = all_data.filter(ele => ele.id == tid)[0];
     target.friend_requests.push(user_data.id);
-    fetch(`http://localhost:4000/users/${target._id}`, {
+    fetch(`http://chomspro.herokuapp.com/users/${target._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -109,7 +109,7 @@ export default function UserPage({ action, handleCloseLogin }) {
       body: JSON.stringify(target)
     })
     user_data.friends.push({"id":tid,"status":"requested"})
-    fetch(`http://localhost:4000/users/${user_data._id}`, {
+    fetch(`http://chomspro.herokuapp.com/users/${user_data._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -135,7 +135,7 @@ export default function UserPage({ action, handleCloseLogin }) {
     if(s==0){
       target.friends.push({"id":user_data.id,"status":"accepted"})
     }
-    fetch(`http://localhost:4000/users/${target._id}`, {
+    fetch(`http://chomspro.herokuapp.com/users/${target._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -147,7 +147,7 @@ export default function UserPage({ action, handleCloseLogin }) {
       user_data.friend_requests.splice(index, 1);
     }
     user_data.friends.push({"id":target.id,"status":"accepted"})
-    fetch(`http://localhost:4000/users/${user_data._id}`, {
+    fetch(`http://chomspro.herokuapp.com/users/${user_data._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -283,7 +283,7 @@ export default function UserPage({ action, handleCloseLogin }) {
     let jj = document.getElementById("email").value;
     if(jj!=""){
       user_data.email =jj;
-      fetch(`http://localhost:4000/users/${user_data._id}`, {
+      fetch(`http://chomspro.herokuapp.com/users/${user_data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -315,7 +315,7 @@ export default function UserPage({ action, handleCloseLogin }) {
     let jj = document.getElementById("about").value;
     if(jj!=""){
       user_data.about =jj;
-      fetch(`http://localhost:4000/users/${user_data._id}`, {
+      fetch(`http://chomspro.herokuapp.com/users/${user_data._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json"
@@ -354,7 +354,7 @@ export default function UserPage({ action, handleCloseLogin }) {
     if (a != "" ){
       newdata.image = a;
     }
-    fetch(`http://localhost:4000/users/${newdata._id}`, {
+    fetch(`http://chomspro.herokuapp.com/users/${newdata._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json"
