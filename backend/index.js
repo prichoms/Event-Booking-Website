@@ -69,6 +69,9 @@ app.use('/users', UserRouter)
 const OrganizerRouter = require('./routes/organizerroutes')
 app.use('/organizers', OrganizerRouter)
 
+const AdminRouter = require('./routes/adminroutes')
+app.use('/admins', AdminRouter)
+
 const BookingRouter = require('./routes/bookingroutes')
 app.use('/booking', BookingRouter)
 
