@@ -17,7 +17,7 @@ jobs:
         run: npm install
       - name: Install mocha
         run: |
-          npm i -D redis jsonwebtoken chai chai-http express mongoose cookie-parser csurf fs file-stream-rotator swagger-ui-express yamljs morgan multer helmet cors dotenv
+          npm i redis jsonwebtoken chai chai-http express mongoose cookie-parser csurf fs file-stream-rotator swagger-ui-express yamljs morgan multer helmet cors dotenv
           npm i mocha -g
       - name: Run Test
         working-directory: ./backend
