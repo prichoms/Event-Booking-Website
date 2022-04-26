@@ -38,12 +38,14 @@ export default function AdminLogin() {
             if(e==users[i].email && p==users[i].password){
                 alert("Successful Login!")
                 jj=1;
-                history.push('/admin-main');
+                return true;
+                // history.push('/admin-main');
             }
         }
         if(jj==0){
             alert("Unsuccessful Login")
         }
+        return false;
     }
     const register = () =>{
         const e = document.getElementById("email").value;
@@ -67,7 +69,7 @@ export default function AdminLogin() {
         setLoginBool(!login_bool);
     }
     function LoginData(){
-        let r = (<> <div class="login-form"> <form> <h1>Login</h1> <div class="content"> <div class="input-field"> <input type="email" placeholder="Email" id="email" name="email"/> </div> <div class="input-field"> <input type="password" placeholder="Password" id="password" name="password"/></div></div> <div class="action"> <button onClick={log}>Sign in</button> <br/> <button onClick={reg}>Register?</button></div> </form> </div> </>);
+        let r = (<> <div class="login-form"> <form method="POST" action="../../../post" onsubmit="return log()"> <h1>Login</h1> <div class="content"> <div class="input-field"> <input type="email" placeholder="Email" id="email" name="email"/> </div> <div class="input-field"> <input type="password" placeholder="Password" id="password" name="password"/></div></div> <div class="action"> <button type="submit">Sign in</button> <br/> <button onClick={reg}>Register?</button></div> </form> </div> </>);
         return r;
     }
     function RegisterData(){

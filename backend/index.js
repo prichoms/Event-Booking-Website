@@ -26,6 +26,7 @@ app.use(helmet());
 
 var parseForm = bparser.urlencoded({ extended: false });
 var csrfProtect = csrf({ cookie: true })
+const jwt = require("jsonwebtoken");
 
 app.use(bparser.urlencoded({ extended: false }))
 app.use(cookieParser())
@@ -38,10 +39,24 @@ app.use(
 app.get("/", (req, res) => {
 res.send("Hello World!");
 });
-app.post("/post", (req, res) => {
-    console.log("Connected to React");
-    res.redirect("/");
+function generateAccessToken(username) {
+  return jwt.sign({ username }, process.env.TOKEN_SECRET, { expiresIn: "1800s", });
+}
+function validateToken(token){
+  if (token == null) return res.sendStatus(401);
+  jwt.verify(token, process.env.TOKEN_SECRET, (err, decoded) => {
+    if (err) return res.sendStatus(403);
   });
+  return true;
+}
+function getToken(req, res, next){
+  email=req.body.email;
+  const token = generateAccessToken(email);
+  if(validateToken(token)){
+    res.redirect("/admin-main")
+  }
+}
+app.post("/post", getToken);
 
 
 app.listen(port, console.log(`Server started on port ${port}`));

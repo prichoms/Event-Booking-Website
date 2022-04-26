@@ -1,2 +1,0 @@
-::1 - - [26/Apr/2022:02:02:57 +0000] "GET /events HTTP/1.1" - - "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
-::1 - - [26/Apr/2022:02:02:58 +0000] "GET /food HTTP/1.1" 200 7877 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.3 Safari/605.1.15"
