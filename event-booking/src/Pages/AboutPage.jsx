@@ -82,7 +82,7 @@ export default function AboutPage({ action, handleCloseLogin }) {
             <div class="content">
                 <img src={naveen}
                     alt=""/>
-                <strong>Naveen Kumar</strong>
+                <strong>Naveen Vula</strong>
                 <p>S20190010192</p>
             </div>
             <div class="btn">
