@@ -34,7 +34,7 @@ export const storeSelectedFood = (selectedFood) => {
 export const getFood = () => (dispatch) => {
   dispatch(getFoodRequest());
   return axios
-    .get(`http://localhost:4000/food`)
+    .get(`http://chomspro.herokuapp.com/food`)
     .then((res) => {
       console.log(res);
       dispatch(getFoodSuccess(res.data));

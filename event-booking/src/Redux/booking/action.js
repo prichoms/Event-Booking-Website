@@ -29,7 +29,7 @@ const postBookingDetailsFailure = () => {
 export const postBookingDetails = (payload) => dispatch => {
     console.log(payload)
     dispatch(postBookingDetailsRequest());
-    return axios.post("http://localhost:4000/booking", payload)
+    return axios.post("http://chomspro.herokuapp.com/booking", payload)
         .then(res => {
             
             dispatch(postBookingDetailsSuccess(res.data));
@@ -66,7 +66,7 @@ const getBookingDetailsFailure = () => {
 }
 export const getBookingDetails = () => dispatch => {
     dispatch(getBookingDetailsRequest());
-    return axios.get("http://localhost:4000/booking")
+    return axios.get("http://chomspro.herokuapp.com/booking")
         .then(res => {
             dispatch(getBookingDetailsSuccess(res.data));
         })

@@ -4,7 +4,7 @@ info:
   description: An API developed for our WBD project that serves our project.
   version: 1.0.0
 servers:
-  - url: http://localhost:4000
+  - url: http://chomspro.herokuapp.com
     description:  Main (production) Backend server
   - url: http://localhost:3000
     description:  Main (production) Frontend server

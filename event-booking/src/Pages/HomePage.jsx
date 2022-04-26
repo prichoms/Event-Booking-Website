@@ -62,10 +62,10 @@ export const HomePage = () => {
   const feedback_submit = () => {
     let n = document.getElementById("name").value;
     let f = document.getElementById("feed").value;
-    fetch("http://localhost:4000/feed")
+    fetch("http://chomspro.herokuapp.com/feed")
       .then((res) => res.json())
       .then((result) =>
-        fetch("http://localhost:4000/feed", {
+        fetch("http://chomspro.herokuapp.com/feed", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
