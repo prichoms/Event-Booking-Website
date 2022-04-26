@@ -1,8 +1,5 @@
 process.env.NODE_ENV = 'test';
 
-let mongoose = require("mongoose");
-let Event = require('./models/Events');
-
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let server = require('./index');
