@@ -18,6 +18,6 @@ jobs:
       - name: Install mocha
         working-directory: ./backend
         run: npm install -g mocha chai chai-http
-      - name: Run Test
-        working-directory: ./backend
-        run: node test
+#       - name: Run Test
+#         working-directory: ./backend
+#         run: node test
